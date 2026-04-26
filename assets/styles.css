@@ -303,6 +303,56 @@ section {
 
 .layers-stack { display: flex; flex-direction: column; gap: 6px; }
 
+/* Direcionadores Estratégicos — orientadores externos, acima da pirâmide */
+.strategic-drivers {
+  border-left: 3px solid var(--accent-gold);
+  background: var(--bg-primary);
+  padding: 18px 22px 18px 22px;
+  margin-bottom: 28px;
+}
+.strategic-drivers .sd-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 6px;
+}
+.strategic-drivers .sd-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin-bottom: 10px;
+  letter-spacing: -0.005em;
+}
+.strategic-drivers .sd-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.strategic-drivers .sd-pill {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink-primary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--rule);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.strategic-drivers .sd-arrow {
+  display: block;
+  text-align: center;
+  margin: 14px 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
 .layer-group-label {
   font-size: 11px;
   font-weight: 700;
