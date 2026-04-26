@@ -1,0 +1,45 @@
+<svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Estrutura modular — cubos que representam a arquitetura corporativa">
+  <defs>
+    <linearGradient id="cubeFace" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8E2D4"/>
+    </linearGradient>
+    <linearGradient id="cubeSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C9C2B1"/>
+      <stop offset="100%" stop-color="#9F9785"/>
+    </linearGradient>
+    <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F5F2EC"/>
+      <stop offset="100%" stop-color="#D9D4C7"/>
+    </linearGradient>
+    <symbol id="unitCube" viewBox="0 0 80 92" width="80" height="92" overflow="visible">
+      <polygon points="40,0 80,22 40,44 0,22" fill="url(#cubeTop)" stroke="#B8B2A0" stroke-width="0.5"/>
+      <polygon points="0,22 40,44 40,90 0,68" fill="url(#cubeFace)" stroke="#B8B2A0" stroke-width="0.5"/>
+      <polygon points="80,22 40,44 40,90 80,68" fill="url(#cubeSide)" stroke="#9F9785" stroke-width="0.5"/>
+    </symbol>
+  </defs>
+
+  <!-- Cluster principal 3x3 -->
+  <g transform="translate(60 80)">
+    <use href="#unitCube" transform="translate(0 0)"/>
+    <use href="#unitCube" transform="translate(60 0)"/>
+    <use href="#unitCube" transform="translate(120 0)"/>
+    <use href="#unitCube" transform="translate(-30 52)"/>
+    <use href="#unitCube" transform="translate(30 52)"/>
+    <use href="#unitCube" transform="translate(90 52)"/>
+    <use href="#unitCube" transform="translate(-60 104)"/>
+    <use href="#unitCube" transform="translate(0 104)"/>
+    <use href="#unitCube" transform="translate(60 104)"/>
+  </g>
+
+  <!-- Cubos soltos -->
+  <g opacity="0.92">
+    <use href="#unitCube" transform="translate(280 240) scale(0.7)"/>
+    <use href="#unitCube" transform="translate(340 290) scale(0.6)"/>
+    <use href="#unitCube" transform="translate(220 340) scale(0.65)"/>
+    <use href="#unitCube" transform="translate(310 360) scale(0.55)"/>
+  </g>
+
+  <!-- Sombra sutil -->
+  <ellipse cx="180" cy="400" rx="160" ry="14" fill="#1A1A1A" opacity="0.06"/>
+</svg>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clara/EA — Arquitetura Corporativa</title>
+<meta name="description" content="ClaraEA — Framework de Arquitetura Corporativa por Marcelo Clara. Integrando negócios e tecnologia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">Clara<span>/</span>EA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#framework" data-i18n="nav.framework">Framework</a></li>
+        <li><a href="ClaraEA-CMDB.html" data-i18n="nav.cmdb">EA/CMDB</a></li>
+        <li><a href="#casos" data-i18n="nav.cases">Casos</a></li>
+        <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="pt" class="active">PT</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="es">ES</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="border-top: none; padding-top: 96px;">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="hero-eyebrow" data-i18n="hero.eyebrow">Arquitetura Corporativa</p>
+        <h1 class="hero-quote" data-i18n="hero.quote">A estrutura condiciona o comportamento.</h1>
+        <p class="hero-attribution" data-i18n="hero.attribution">— Carlos Valdesuso (in memoriam)</p>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">ClaraEA é o framework prático que integra arquitetura de negócios e arquitetura de tecnologia. Fruto de mais de 35 anos de experiência no setor financeiro.</p>
+        <div class="hero-ctas">
+          <a href="#framework" class="btn btn-primary" data-i18n="hero.cta1">Conheça o Framework</a>
+          <a href="#livro" class="btn btn-outline" data-i18n="hero.cta2">Leia uma amostra</a>
+        </div>
+      </div>
+      <div class="hero-visual" id="tesseractHost" aria-label="Tesseract — estrutura multidimensional em movimento" role="img"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto">
+  <div class="container reveal">
+    <div class="manifesto-grid">
+      <div>
+        <p class="section-eyebrow" data-i18n="manifesto.eyebrow">Manifesto</p>
+        <h2 class="section-title" data-i18n="manifesto.title">Por que estrutura importa</h2>
+      </div>
+      <div>
+        <p class="section-lead" data-i18n="manifesto.p1">Da estrutura de um átomo às engrenagens de uma máquina, da organização de um ser vivo aos processos de uma empresa, tudo depende da forma como seus componentes se organizam e se relacionam.</p>
+        <p class="section-lead" data-i18n="manifesto.p2">A maneira como uma organização se estrutura — seus processos, sua tomada de decisão, sua arquitetura tecnológica — condiciona diretamente os resultados que ela alcança. Estruturas fragmentadas produzem sistemas fragmentados. Estruturas alinhadas produzem soluções coerentes e escaláveis.</p>
+        <blockquote class="pullquote" data-i18n="manifesto.quote">"A estrutura organizacional influencia diretamente a arquitetura do software que a empresa desenvolve."<cite data-i18n="manifesto.cite">Lei de Conway, 1968</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section id="framework" class="framework">
+  <div class="container reveal">
+    <div style="margin-bottom: 64px;">
+      <p class="section-eyebrow" data-i18n="framework.eyebrow">O Framework</p>
+      <h2 class="section-title" data-i18n="framework.title">Camadas que conectam negócio e tecnologia</h2>
+      <p class="section-lead" data-i18n="framework.lead">O ClaraEA estrutura a organização em camadas interdependentes — da estratégia à infraestrutura. Clique em cada camada para ver detalhes.</p>
+    </div>
+
+    <div class="framework-grid">
+      <div class="layers-stack">
+        <div class="layer-group-label" data-i18n="framework.business">Arquitetura de Negócios</div>
+        <div class="layer active" data-layer="strategy"><span data-i18n="layer.strategy">Direcionadores Estratégicos</span><span class="num">I</span></div>
+        <div class="layer" data-layer="culture"><span data-i18n="layer.culture">Missão, Visão, Valores</span><span class="num">II</span></div>
+        <div class="layer" data-layer="structure"><span data-i18n="layer.structure">Estrutura, Papéis e Responsabilidades</span><span class="num">III</span></div>
+        <div class="layer" data-layer="metrics"><span data-i18n="layer.metrics">Métricas de Gestão e Controle</span><span class="num">IV</span></div>
+        <div class="layer" data-layer="processes"><span data-i18n="layer.processes">Políticas, Processos e Procedimentos</span><span class="num">V</span></div>
+        <div class="layer" data-layer="channels"><span data-i18n="layer.channels">Canais de Distribuição e Atendimento</span><span class="num">VI</span></div>
+        <div class="layer" data-layer="products"><span data-i18n="layer.products">Produtos e Serviços</span><span class="num">VII</span></div>
+        <div class="layer" data-layer="market"><span data-i18n="layer.market">Mercado, Segmento e Nicho</span><span class="num">VIII</span></div>
+
+        <div class="layer-group-label" data-i18n="framework.tech">Arquitetura de Tecnologia</div>
+        <div class="layer" data-layer="solutions"><span data-i18n="layer.solutions">Arquitetura de Soluções</span><span class="num">IX</span></div>
+        <div class="layer" data-layer="data"><span data-i18n="layer.data">Arquitetura de Dados</span><span class="num">X</span></div>
+        <div class="layer" data-layer="technology"><span data-i18n="layer.technology">Arquitetura de Tecnologia</span><span class="num">XI</span></div>
+        <div class="layer" data-layer="infra"><span data-i18n="layer.infra">Infraestrutura</span><span class="num">XII</span></div>
+        <div class="layer" data-layer="security"><span data-i18n="layer.security">Segurança da Informação</span><span class="num">XIII</span></div>
+      </div>
+
+      <div class="layer-detail" id="layerDetail">
+        <p class="layer-cat" data-i18n="layerDetail.cat">Arquitetura de Negócios</p>
+        <h3 id="layerTitle">Direcionadores Estratégicos</h3>
+        <p id="layerDesc">A camada estratégica define para onde a organização vai. Aqui residem os objetivos de longo prazo, as escolhas de mercado e os indicadores que orientam a tomada de decisão executiva.</p>
+        <ul id="layerArtifacts">
+          <li>Mapa estratégico</li>
+          <li>OKRs e métricas de negócio</li>
+          <li>Modelo de negócios canvas</li>
+          <li>Visão de portfólio</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EA/CMDB -->
+<section id="cmdb" class="cmdb">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="cmdb.eyebrow">A ferramenta</p>
+    <h2 class="section-title" data-i18n="cmdb.title">EA/CMDB — o catálogo vivo da arquitetura corporativa</h2>
+    <p class="section-lead" data-i18n="cmdb.lead">A ferramenta que materializa o framework Clara/EA. Estrutura em grafo que mapeia camadas, entidades e processos de cada domínio e subdomínio, com integrações nativas para descoberta automática de assets e métricas de gestão — da observabilidade ao FinOps.</p>
+
+    <div class="cmdb-grid">
+      <div class="cmdb-graph" aria-hidden="true">
+        <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#F5E5B5" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#B8945E" stop-opacity="0.4"/>
+            </radialGradient>
+          </defs>
+          <!-- edges -->
+          <g stroke="#B8945E" stroke-opacity="0.45" stroke-width="1" fill="none">
+            <!-- camada negócio -->
+            <line x1="120" y1="90"  x2="240" y2="60"/>
+            <line x1="240" y1="60"  x2="360" y2="100"/>
+            <line x1="120" y1="90"  x2="200" y2="170"/>
+            <line x1="240" y1="60"  x2="200" y2="170"/>
+            <line x1="360" y1="100" x2="290" y2="180"/>
+            <line x1="200" y1="170" x2="290" y2="180"/>
+            <!-- core central -->
+            <line x1="200" y1="170" x2="240" y2="240"/>
+            <line x1="290" y1="180" x2="240" y2="240"/>
+            <line x1="240" y1="240" x2="160" y2="280"/>
+            <line x1="240" y1="240" x2="340" y2="270"/>
+            <line x1="240" y1="240" x2="240" y2="340"/>
+            <!-- camada tecnologia -->
+            <line x1="160" y1="280" x2="100" y2="360"/>
+            <line x1="160" y1="280" x2="220" y2="380"/>
+            <line x1="340" y1="270" x2="380" y2="370"/>
+            <line x1="340" y1="270" x2="280" y2="380"/>
+            <line x1="240" y1="340" x2="220" y2="380"/>
+            <line x1="240" y1="340" x2="280" y2="380"/>
+            <line x1="100" y1="360" x2="220" y2="380"/>
+            <line x1="380" y1="370" x2="280" y2="380"/>
+            <!-- diagonais cross-camada -->
+            <line x1="120" y1="90"  x2="160" y2="280" stroke-opacity="0.18"/>
+            <line x1="360" y1="100" x2="340" y2="270" stroke-opacity="0.18"/>
+            <line x1="240" y1="60"  x2="240" y2="240" stroke-opacity="0.18"/>
+          </g>
+          <!-- nodes secundários -->
+          <g>
+            <circle cx="120" cy="90"  r="6" fill="#E8DCC0"/>
+            <circle cx="240" cy="60"  r="7" fill="#E8DCC0"/>
+            <circle cx="360" cy="100" r="6" fill="#E8DCC0"/>
+            <circle cx="200" cy="170" r="5" fill="#B8945E"/>
+            <circle cx="290" cy="180" r="5" fill="#B8945E"/>
+            <circle cx="160" cy="280" r="5" fill="#B8945E"/>
+            <circle cx="340" cy="270" r="5" fill="#B8945E"/>
+            <circle cx="100" cy="360" r="6" fill="#E8DCC0"/>
+            <circle cx="220" cy="380" r="6" fill="#E8DCC0"/>
+            <circle cx="280" cy="380" r="6" fill="#E8DCC0"/>
+            <circle cx="380" cy="370" r="6" fill="#E8DCC0"/>
+            <circle cx="240" cy="340" r="5" fill="#B8945E"/>
+          </g>
+          <!-- núcleo central com glow -->
+          <circle cx="240" cy="240" r="22" fill="url(#nodeGlow)"/>
+          <circle cx="240" cy="240" r="9" fill="#F5E5B5"/>
+          <!-- labels discretos -->
+          <g font-family="'Source Serif 4', serif" font-style="italic" font-size="11" fill="#B8945E" opacity="0.7">
+            <text x="60"  y="55">Negócio</text>
+            <text x="395" y="55">Domínios</text>
+            <text x="245" y="245" fill="#1A1A1A" font-style="normal" font-weight="600" font-size="9" letter-spacing="2">EA</text>
+            <text x="35"  y="430">Tecnologia</text>
+          </g>
+        </svg>
+      </div>
+
+      <div>
+        <div class="cmdb-features">
+          <div class="cmdb-feature">
+            <span class="feature-icon">I</span>
+            <h4 data-i18n="cmdb.f1.title">Estrutura em grafo</h4>
+            <p data-i18n="cmdb.f1.desc">Camadas, entidades e processos de cada domínio e subdomínio mapeados como grafo navegável. Relacionamentos explícitos, navegação multidimensional.</p>
+          </div>
+          <div class="cmdb-feature">
+            <span class="feature-icon">II</span>
+            <h4 data-i18n="cmdb.f2.title">Descoberta de assets</h4>
+            <p data-i18n="cmdb.f2.desc">Integrações nativas com ferramentas de mercado e padrões abertos para auto-discovery de aplicações, infraestrutura e dados.</p>
+          </div>
+          <div class="cmdb-feature">
+            <span class="feature-icon">III</span>
+            <h4 data-i18n="cmdb.f3.title">Métricas integradas</h4>
+            <p data-i18n="cmdb.f3.desc">Da observabilidade técnica ao FinOps. KPIs operacionais, custo por aplicação, risco e qualidade — vinculados às entidades do grafo.</p>
+          </div>
+          <div class="cmdb-feature">
+            <span class="feature-icon">IV</span>
+            <h4 data-i18n="cmdb.f4.title">Implementa o framework</h4>
+            <p data-i18n="cmdb.f4.desc">Cada princípio, conceito e camada do Clara/EA é traduzido em entidades, relações e governança dentro da ferramenta.</p>
+          </div>
+        </div>
+
+        <div class="hero-ctas" style="margin-top: 40px;">
+          <a href="ClaraEA-CMDB.html" class="btn btn-primary" data-i18n="cmdb.cta1">Conheça a ferramenta →</a>
+          <a href="#contato" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);" data-i18n="cmdb.cta2">Solicitar demonstração</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="casos" style="background: var(--bg-elevated);">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="cases.eyebrow">Casos de Uso</p>
+    <h2 class="section-title" data-i18n="cases.title">Aplicação no mercado financeiro</h2>
+    <p class="section-lead" data-i18n="cases.lead">O ClaraEA nasceu da prática em ambientes de alta complexidade regulatória, operacional e tecnológica. Os primeiros casos publicados detalham aplicação em instituições financeiras de grande porte.</p>
+
+    <div class="case-card">
+      <div>
+        <p class="case-tag" data-i18n="case.tag">Setor Financeiro</p>
+        <h3 data-i18n="case.title">Alinhamento entre estratégia, processos e tecnologia em uma instituição de grande porte</h3>
+        <p style="color: var(--ink-muted); margin-bottom: 24px;" data-i18n="case.desc">Como a aplicação do framework permitiu mapear interdependências entre áreas de negócio e sistemas, reduzindo redundâncias e acelerando a entrega de iniciativas estratégicas.</p>
+        <a href="#" class="btn btn-outline" data-i18n="case.cta">Ver caso completo →</a>
+      </div>
+      <div class="case-stat">
+        <div class="figure">17</div>
+        <div class="desc" data-i18n="case.stat">anos de aplicação contínua do método em ambiente bancário</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="contato" class="newsletter">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="news.eyebrow">Acompanhe</p>
+    <h2 data-i18n="news.title">Atualizações sobre o framework e a ferramenta</h2>
+    <p data-i18n="news.lead">Cadastre-se para acompanhar novos casos, artigos sobre o framework e atualizações do EA/CMDB. Para demonstração ou consultoria, escreva diretamente.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Inscrição registrada (demo).');">
+      <input type="email" placeholder="seu@email.com" data-i18n-attr="placeholder" data-i18n="news.placeholder" required>
+      <button type="submit" data-i18n="news.button">Inscrever</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo">Clara<span>/</span>EA</a>
+        <p class="footer-tagline" data-i18n="footer.tagline">Arquitetura corporativa que conecta estratégia, negócios e tecnologia.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h1">Framework</h4>
+        <ul>
+          <li><a href="#framework" data-i18n="footer.l1">Camadas</a></li>
+          <li><a href="#" data-i18n="footer.l2">Metodologia</a></li>
+          <li><a href="#" data-i18n="footer.l3">Artefatos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h2">Ferramenta</h4>
+        <ul>
+          <li><a href="ClaraEA-CMDB.html" data-i18n="footer.l4">EA/CMDB</a></li>
+          <li><a href="#casos" data-i18n="footer.l5">Casos</a></li>
+          <li><a href="ClaraEA-CMDB.html#compare" data-i18n="footer.l6">Comparativo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h3">Sobre</h4>
+        <ul>
+          <li><a href="ClaraEA-Autor.html" data-i18n="footer.l7">Autor</a></li>
+          <li><a href="mailto:contato@claraea.com">contato@claraea.com</a></li>
+          <li><a href="#" data-i18n="footer.l8">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div data-i18n="footer.copy">© 2026 Marcelo Andrade Clara. Todos os direitos reservados.</div>
+      <div data-i18n="footer.lang">PT · EN · ES</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ============ TESSERACT — multidimensional cube in motion ============
+  (function () {
+    if (typeof THREE === 'undefined') return;
+    const host = document.getElementById('tesseractHost');
+    if (!host) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+    camera.position.set(0, 0, 7);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0);
+    host.appendChild(renderer.domElement);
+
+    // ----- Tesseract: nested wireframe cubes rotating independently -----
+    const tesseract = new THREE.Group();
+
+    function makeCube(size, color, opacity) {
+      const geo = new THREE.BoxGeometry(size, size, size);
+      const edges = new THREE.EdgesGeometry(geo);
+      const mat = new THREE.LineBasicMaterial({
+        color: color,
+        transparent: true,
+        opacity: opacity
+      });
+      return new THREE.LineSegments(edges, mat);
+    }
+
+    // Edges only — navy outer fading into gold core (brand palette as depth)
+    const cubes = [
+      makeCube(3.0, 0x1B2D4F, 0.95),  // outer — deep navy (--brand-deep)
+      makeCube(2.3, 0x344560, 0.78),  // middle — softer navy
+      makeCube(1.6, 0x8E6F3D, 0.70),  // inner — bronze/dark gold
+      makeCube(0.9, 0xB8945E, 0.85)   // core — gold (--accent-gold)
+    ];
+    cubes.forEach(c => tesseract.add(c));
+
+    scene.add(tesseract);
+
+    // ----- Mouse parallax (gentle) -----
+    let targetX = 0, targetY = 0;
+    let curX = 0, curY = 0;
+    host.addEventListener('mousemove', (e) => {
+      const r = host.getBoundingClientRect();
+      targetX = ((e.clientX - r.left) / r.width  - 0.5) * 0.6;
+      targetY = ((e.clientY - r.top)  / r.height - 0.5) * 0.4;
+    });
+    host.addEventListener('mouseleave', () => { targetX = 0; targetY = 0; });
+
+    // ----- Resize handling -----
+    function resize() {
+      const w = host.clientWidth;
+      const h = host.clientHeight;
+      if (w === 0 || h === 0) return;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    const ro = new ResizeObserver(resize);
+    ro.observe(host);
+    resize();
+
+    // ----- Pause when off-screen -----
+    let isVisible = true;
+    new IntersectionObserver(entries => {
+      entries.forEach(e => isVisible = e.isIntersecting);
+    }, { threshold: 0.05 }).observe(host);
+
+    // ----- Animate -----
+    let t = 0;
+    const speeds = [
+      { x: 0.18, y: 0.24, z: 0.05 },
+      { x: -0.30, y: 0.35, z: 0.10 },
+      { x: 0.22, y: -0.45, z: 0.18 },
+      { x: -0.55, y: 0.60, z: -0.30 }
+    ];
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if (!isVisible) return;
+      t += 0.005;
+
+      // each nested cube rotates at its own pace — the tesseract effect
+      cubes.forEach((c, i) => {
+        c.rotation.x = t * speeds[i].x;
+        c.rotation.y = t * speeds[i].y;
+        c.rotation.z = t * speeds[i].z;
+      });
+
+      // gentle group sway (the whole structure breathing)
+      tesseract.rotation.y = Math.sin(t * 0.25) * 0.18;
+      tesseract.rotation.x = Math.cos(t * 0.18) * 0.12;
+
+      // mouse parallax — eased
+      curX += (targetX - curX) * 0.04;
+      curY += (targetY - curY) * 0.04;
+      camera.position.x = curX * 1.2;
+      camera.position.y = -curY * 1.2;
+
+      // subtle camera dolly — feels like falling slowly
+      camera.position.z = 7 + Math.sin(t * 0.3) * 0.25;
+      camera.lookAt(0, 0, 0);
+
+      renderer.render(scene, camera);
+    }
+    animate();
+  })();
+
+  // ============ TRANSLATIONS ============
+  const translations = {
+    pt: {
+      'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contato',
+      'hero.eyebrow': 'Arquitetura Corporativa',
+      'hero.quote': 'A estrutura condiciona o comportamento.',
+      'hero.attribution': '— Carlos Valdesuso (in memoriam)',
+      'hero.subtitle': 'ClaraEA é o framework prático que integra arquitetura de negócios e arquitetura de tecnologia. Fruto de mais de 35 anos de experiência no setor financeiro.',
+      'hero.cta1': 'Conheça o Framework', 'hero.cta2': 'Ver a ferramenta',
+      'manifesto.eyebrow': 'Manifesto', 'manifesto.title': 'Por que estrutura importa',
+      'manifesto.p1': 'Da estrutura de um átomo às engrenagens de uma máquina, da organização de um ser vivo aos processos de uma empresa, tudo depende da forma como seus componentes se organizam e se relacionam.',
+      'manifesto.p2': 'A maneira como uma organização se estrutura — seus processos, sua tomada de decisão, sua arquitetura tecnológica — condiciona diretamente os resultados que ela alcança. Estruturas fragmentadas produzem sistemas fragmentados. Estruturas alinhadas produzem soluções coerentes e escaláveis.',
+      'manifesto.quote': '"A estrutura organizacional influencia diretamente a arquitetura do software que a empresa desenvolve."',
+      'manifesto.cite': 'Lei de Conway, 1968',
+      'framework.eyebrow': 'O Framework', 'framework.title': 'Camadas que conectam negócio e tecnologia',
+      'framework.lead': 'O ClaraEA estrutura a organização em camadas interdependentes — da estratégia à infraestrutura. Clique em cada camada para ver detalhes.',
+      'framework.business': 'Arquitetura de Negócios', 'framework.tech': 'Arquitetura de Tecnologia',
+      'layer.strategy': 'Direcionadores Estratégicos', 'layer.culture': 'Missão, Visão, Valores',
+      'layer.structure': 'Estrutura, Papéis e Responsabilidades', 'layer.metrics': 'Métricas de Gestão e Controle',
+      'layer.processes': 'Políticas, Processos e Procedimentos', 'layer.channels': 'Canais de Distribuição e Atendimento',
+      'layer.products': 'Produtos e Serviços', 'layer.market': 'Mercado, Segmento e Nicho',
+      'layer.solutions': 'Arquitetura de Soluções', 'layer.data': 'Arquitetura de Dados',
+      'layer.technology': 'Arquitetura de Tecnologia', 'layer.infra': 'Infraestrutura',
+      'layer.security': 'Segurança da Informação',
+      'layerDetail.cat': 'Arquitetura de Negócios',
+      'cmdb.eyebrow': 'A ferramenta',
+      'cmdb.title': 'EA/CMDB — o catálogo vivo da arquitetura corporativa',
+      'cmdb.lead': 'A ferramenta que materializa o framework Clara/EA. Estrutura em grafo que mapeia camadas, entidades e processos de cada domínio e subdomínio, com integrações nativas para descoberta automática de assets e métricas de gestão — da observabilidade ao FinOps.',
+      'cmdb.f1.title': 'Estrutura em grafo',
+      'cmdb.f1.desc': 'Camadas, entidades e processos de cada domínio e subdomínio mapeados como grafo navegável. Relacionamentos explícitos, navegação multidimensional.',
+      'cmdb.f2.title': 'Descoberta de assets',
+      'cmdb.f2.desc': 'Integrações nativas com ferramentas de mercado e padrões abertos para auto-discovery de aplicações, infraestrutura e dados.',
+      'cmdb.f3.title': 'Métricas integradas',
+      'cmdb.f3.desc': 'Da observabilidade técnica ao FinOps. KPIs operacionais, custo por aplicação, risco e qualidade — vinculados às entidades do grafo.',
+      'cmdb.f4.title': 'Implementa o framework',
+      'cmdb.f4.desc': 'Cada princípio, conceito e camada do Clara/EA é traduzido em entidades, relações e governança dentro da ferramenta.',
+      'cmdb.cta1': 'Conheça a ferramenta →', 'cmdb.cta2': 'Solicitar demonstração',
+      'cases.eyebrow': 'Casos de Uso', 'cases.title': 'Aplicação no mercado financeiro',
+      'cases.lead': 'O ClaraEA nasceu da prática em ambientes de alta complexidade regulatória, operacional e tecnológica. Os primeiros casos publicados detalham aplicação em instituições financeiras de grande porte.',
+      'case.tag': 'Setor Financeiro',
+      'case.title': 'Alinhamento entre estratégia, processos e tecnologia em uma instituição de grande porte',
+      'case.desc': 'Como a aplicação do framework permitiu mapear interdependências entre áreas de negócio e sistemas, reduzindo redundâncias e acelerando a entrega de iniciativas estratégicas.',
+      'case.cta': 'Ver caso completo →',
+      'case.stat': 'anos de aplicação contínua do método em ambiente bancário',
+      'news.eyebrow': 'Acompanhe',
+      'news.title': 'Atualizações sobre o framework e a ferramenta',
+      'news.lead': 'Cadastre-se para acompanhar novos casos, artigos sobre o framework e atualizações do EA/CMDB. Para demonstração ou consultoria, escreva diretamente.',
+      'news.placeholder': 'seu@email.com', 'news.button': 'Inscrever',
+      'footer.tagline': 'Arquitetura corporativa que conecta estratégia, negócios e tecnologia.',
+      'footer.h1': 'Framework', 'footer.h2': 'Ferramenta', 'footer.h3': 'Sobre',
+      'footer.l1': 'Camadas', 'footer.l2': 'Metodologia', 'footer.l3': 'Artefatos',
+      'footer.l4': 'EA/CMDB', 'footer.l5': 'Casos', 'footer.l6': 'Comparativo',
+      'footer.l7': 'Autor', 'footer.l8': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. Todos os direitos reservados.',
+      'footer.lang': 'PT · EN · ES'
+    },
+    en: {
+      'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Cases', 'nav.contact': 'Contact',
+      'hero.eyebrow': 'Enterprise Architecture',
+      'hero.quote': 'Structure shapes behavior.',
+      'hero.attribution': '— Carlos Valdesuso (in memoriam)',
+      'hero.subtitle': 'ClaraEA is the practical framework that integrates business architecture and technology architecture. Built on more than 35 years of experience in the financial industry.',
+      'hero.cta1': 'Explore the Framework', 'hero.cta2': 'See the tool',
+      'manifesto.eyebrow': 'Manifesto', 'manifesto.title': 'Why structure matters',
+      'manifesto.p1': 'From the structure of an atom to the gears of a machine, from the organization of a living being to the processes of a company, everything depends on how its components are organized and related.',
+      'manifesto.p2': 'The way an organization is structured — its processes, decision-making, technological architecture — directly conditions the results it achieves. Fragmented structures produce fragmented systems. Aligned structures produce coherent, scalable solutions.',
+      'manifesto.quote': '"Organizations design systems that mirror their own communication structure."',
+      'manifesto.cite': "Conway's Law, 1968",
+      'framework.eyebrow': 'The Framework', 'framework.title': 'Layers connecting business and technology',
+      'framework.lead': 'ClaraEA structures the organization into interdependent layers — from strategy to infrastructure. Click any layer to see details.',
+      'framework.business': 'Business Architecture', 'framework.tech': 'Technology Architecture',
+      'layer.strategy': 'Strategic Drivers', 'layer.culture': 'Mission, Vision, Values',
+      'layer.structure': 'Structure, Roles and Responsibilities', 'layer.metrics': 'Management and Control Metrics',
+      'layer.processes': 'Policies, Processes and Procedures', 'layer.channels': 'Distribution and Service Channels',
+      'layer.products': 'Products and Services', 'layer.market': 'Market, Segment and Niche',
+      'layer.solutions': 'Solutions Architecture', 'layer.data': 'Data Architecture',
+      'layer.technology': 'Technology Architecture', 'layer.infra': 'Infrastructure',
+      'layer.security': 'Information Security',
+      'layerDetail.cat': 'Business Architecture',
+      'cmdb.eyebrow': 'The Tool',
+      'cmdb.title': 'EA/CMDB — the living catalog of enterprise architecture',
+      'cmdb.lead': 'The tool that materializes the Clara/EA framework. A graph structure that maps layers, entities, and processes of each domain and subdomain, with native integrations for asset auto-discovery and management metrics — from observability to FinOps.',
+      'cmdb.f1.title': 'Graph structure',
+      'cmdb.f1.desc': 'Layers, entities, and processes of each domain and subdomain mapped as a navigable graph. Explicit relationships, multidimensional navigation.',
+      'cmdb.f2.title': 'Asset discovery',
+      'cmdb.f2.desc': 'Native integrations with market tools and open standards for auto-discovery of applications, infrastructure, and data.',
+      'cmdb.f3.title': 'Integrated metrics',
+      'cmdb.f3.desc': 'From technical observability to FinOps. Operational KPIs, cost per application, risk and quality — bound to graph entities.',
+      'cmdb.f4.title': 'Implements the framework',
+      'cmdb.f4.desc': 'Every principle, concept, and layer of Clara/EA is translated into entities, relationships, and governance within the tool.',
+      'cmdb.cta1': 'Explore the tool →', 'cmdb.cta2': 'Request a demo',
+      'cases.eyebrow': 'Use Cases', 'cases.title': 'Application in financial services',
+      'cases.lead': 'ClaraEA was born from practice in environments of high regulatory, operational, and technological complexity. The first published cases detail application in large financial institutions.',
+      'case.tag': 'Financial Services',
+      'case.title': 'Alignment of strategy, processes, and technology in a large financial institution',
+      'case.desc': 'How applying the framework made it possible to map interdependencies between business areas and systems, reducing redundancies and accelerating the delivery of strategic initiatives.',
+      'case.cta': 'See the full case →',
+      'case.stat': 'years of continuous application of the method in banking environments',
+      'news.eyebrow': 'Stay updated',
+      'news.title': 'Updates on the framework and the tool',
+      'news.lead': 'Subscribe to follow new cases, articles on the framework, and EA/CMDB updates. For demos or consulting, write directly.',
+      'news.placeholder': 'your@email.com', 'news.button': 'Subscribe',
+      'footer.tagline': 'Enterprise architecture that connects strategy, business, and technology.',
+      'footer.h1': 'Framework', 'footer.h2': 'Tool', 'footer.h3': 'About',
+      'footer.l1': 'Layers', 'footer.l2': 'Methodology', 'footer.l3': 'Artifacts',
+      'footer.l4': 'EA/CMDB', 'footer.l5': 'Cases', 'footer.l6': 'Comparison',
+      'footer.l7': 'Author', 'footer.l8': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. All rights reserved.',
+      'footer.lang': 'PT · EN · ES'
+    },
+    es: {
+      'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contacto',
+      'hero.eyebrow': 'Arquitectura Empresarial',
+      'hero.quote': 'La estructura condiciona el comportamiento.',
+      'hero.attribution': '— Carlos Valdesuso (in memoriam)',
+      'hero.subtitle': 'ClaraEA es el framework práctico que integra arquitectura de negocio y arquitectura de tecnología. Fruto de más de 35 años de experiencia en el sector financiero.',
+      'hero.cta1': 'Conoce el Framework', 'hero.cta2': 'Ver la herramienta',
+      'manifesto.eyebrow': 'Manifiesto', 'manifesto.title': 'Por qué importa la estructura',
+      'manifesto.p1': 'Desde la estructura de un átomo hasta los engranajes de una máquina, desde la organización de un ser vivo hasta los procesos de una empresa, todo depende de cómo se organizan y relacionan sus componentes.',
+      'manifesto.p2': 'La forma en que se estructura una organización — sus procesos, su toma de decisiones, su arquitectura tecnológica — condiciona directamente los resultados que alcanza. Estructuras fragmentadas producen sistemas fragmentados. Estructuras alineadas producen soluciones coherentes y escalables.',
+      'manifesto.quote': '"La estructura organizacional influye directamente en la arquitectura del software que la empresa desarrolla."',
+      'manifesto.cite': 'Ley de Conway, 1968',
+      'framework.eyebrow': 'El Framework', 'framework.title': 'Capas que conectan negocio y tecnología',
+      'framework.lead': 'ClaraEA estructura la organización en capas interdependientes — desde la estrategia hasta la infraestructura. Haz clic en cada capa para ver detalles.',
+      'framework.business': 'Arquitectura de Negocio', 'framework.tech': 'Arquitectura de Tecnología',
+      'layer.strategy': 'Direccionadores Estratégicos', 'layer.culture': 'Misión, Visión, Valores',
+      'layer.structure': 'Estructura, Roles y Responsabilidades', 'layer.metrics': 'Métricas de Gestión y Control',
+      'layer.processes': 'Políticas, Procesos y Procedimientos', 'layer.channels': 'Canales de Distribución y Atención',
+      'layer.products': 'Productos y Servicios', 'layer.market': 'Mercado, Segmento y Nicho',
+      'layer.solutions': 'Arquitectura de Soluciones', 'layer.data': 'Arquitectura de Datos',
+      'layer.technology': 'Arquitectura de Tecnología', 'layer.infra': 'Infraestructura',
+      'layer.security': 'Seguridad de la Información',
+      'layerDetail.cat': 'Arquitectura de Negocio',
+      'cmdb.eyebrow': 'La herramienta',
+      'cmdb.title': 'EA/CMDB — el catálogo vivo de la arquitectura empresarial',
+      'cmdb.lead': 'La herramienta que materializa el framework Clara/EA. Estructura en grafo que mapea capas, entidades y procesos de cada dominio y subdominio, con integraciones nativas para descubrimiento automático de assets y métricas de gestión — desde observabilidad hasta FinOps.',
+      'cmdb.f1.title': 'Estructura en grafo',
+      'cmdb.f1.desc': 'Capas, entidades y procesos de cada dominio y subdominio mapeados como grafo navegable. Relaciones explícitas, navegación multidimensional.',
+      'cmdb.f2.title': 'Descubrimiento de assets',
+      'cmdb.f2.desc': 'Integraciones nativas con herramientas de mercado y estándares abiertos para auto-discovery de aplicaciones, infraestructura y datos.',
+      'cmdb.f3.title': 'Métricas integradas',
+      'cmdb.f3.desc': 'Desde observabilidad técnica hasta FinOps. KPIs operativos, costo por aplicación, riesgo y calidad — vinculados a las entidades del grafo.',
+      'cmdb.f4.title': 'Implementa el framework',
+      'cmdb.f4.desc': 'Cada principio, concepto y capa de Clara/EA se traduce en entidades, relaciones y gobernanza dentro de la herramienta.',
+      'cmdb.cta1': 'Conoce la herramienta →', 'cmdb.cta2': 'Solicitar demostración',
+      'cases.eyebrow': 'Casos de Uso', 'cases.title': 'Aplicación en el sector financiero',
+      'cases.lead': 'ClaraEA nació de la práctica en entornos de alta complejidad regulatoria, operativa y tecnológica. Los primeros casos publicados detallan la aplicación en grandes instituciones financieras.',
+      'case.tag': 'Sector Financiero',
+      'case.title': 'Alineación entre estrategia, procesos y tecnología en una institución financiera de gran porte',
+      'case.desc': 'Cómo la aplicación del framework permitió mapear interdependencias entre áreas de negocio y sistemas, reduciendo redundancias y acelerando la entrega de iniciativas estratégicas.',
+      'case.cta': 'Ver caso completo →',
+      'case.stat': 'años de aplicación continua del método en entorno bancario',
+      'news.eyebrow': 'Mantente al día',
+      'news.title': 'Actualizaciones sobre el framework y la herramienta',
+      'news.lead': 'Suscríbete para acompañar nuevos casos, artículos sobre el framework y actualizaciones del EA/CMDB. Para demostración o consultoría, escribe directamente.',
+      'news.placeholder': 'tu@email.com', 'news.button': 'Suscribirse',
+      'footer.tagline': 'Arquitectura empresarial que conecta estrategia, negocio y tecnología.',
+      'footer.h1': 'Framework', 'footer.h2': 'Herramienta', 'footer.h3': 'Acerca',
+      'footer.l1': 'Capas', 'footer.l2': 'Metodología', 'footer.l3': 'Artefactos',
+      'footer.l4': 'EA/CMDB', 'footer.l5': 'Casos', 'footer.l6': 'Comparativo',
+      'footer.l7': 'Autor', 'footer.l8': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. Todos los derechos reservados.',
+      'footer.lang': 'PT · EN · ES'
+    }
+  };
+
+  // ============ LAYER DETAILS ============
+  const layerDetails = {
+    pt: {
+      strategy: { cat: 'Arquitetura de Negócios', title: 'Direcionadores Estratégicos', desc: 'A camada estratégica define para onde a organização vai. Aqui residem os objetivos de longo prazo, as escolhas de mercado e os indicadores que orientam a tomada de decisão executiva.', items: ['Mapa estratégico', 'OKRs e métricas de negócio', 'Modelo de negócios canvas', 'Visão de portfólio'] },
+      culture: { cat: 'Arquitetura de Negócios', title: 'Missão, Visão, Valores', desc: 'Os direcionadores de cultura traduzem o propósito da organização e orientam comportamentos. Não são frases na parede — são critérios de decisão e contratação.', items: ['Declaração de missão', 'Princípios e valores operacionais', 'Códigos de conduta', 'Narrativa institucional'] },
+      structure: { cat: 'Arquitetura de Negócios', title: 'Estrutura, Papéis e Responsabilidades', desc: 'A organização das pessoas — hierarquias, áreas, papéis e suas interdependências. A Lei de Conway começa aqui: a forma como times se organizam reflete-se na arquitetura dos sistemas.', items: ['Organograma e modelo operacional', 'Matriz RACI', 'Definição de papéis', 'Modelo de governança'] },
+      metrics: { cat: 'Arquitetura de Negócios', title: 'Métricas de Gestão e Controle', desc: 'O que se mede, se faz. Esta camada define os indicadores que conectam estratégia à operação — financeiros, operacionais, de risco e de experiência do cliente.', items: ['Painéis executivos', 'KPIs por área', 'Métricas de risco e compliance', 'NPS e indicadores de cliente'] },
+      processes: { cat: 'Arquitetura de Negócios', title: 'Políticas, Processos e Procedimentos', desc: 'Como o trabalho realmente acontece. Processos bem desenhados são pré-requisito para automação consistente e para a transformação digital sustentável.', items: ['Mapeamento de processos (BPMN)', 'Manuais de políticas', 'SLAs internos', 'Procedimentos operacionais'] },
+      channels: { cat: 'Arquitetura de Negócios', title: 'Canais de Distribuição e Atendimento', desc: 'Como a organização chega ao cliente — agências, digital, parceiros, atendimento. Esta camada conecta diretamente arquitetura de negócio à experiência percebida.', items: ['Mapa de canais', 'Jornada do cliente', 'Modelos de atendimento', 'Estratégia omnichannel'] },
+      products: { cat: 'Arquitetura de Negócios', title: 'Produtos e Serviços', desc: 'O catálogo do que a organização entrega. Inclui linhas de produto, serviços associados, ciclo de vida e relação com sistemas que os suportam.', items: ['Catálogo de produtos', 'Ciclo de vida de produto', 'Relação produto-sistema', 'Estratégia de portfólio'] },
+      market: { cat: 'Arquitetura de Negócios', title: 'Mercado, Segmento e Nicho', desc: 'O contexto externo: onde a organização compete, quais clientes serve e como se posiciona frente a concorrentes e regulação.', items: ['Análise de mercado', 'Segmentação de clientes', 'Posicionamento competitivo', 'Mapeamento regulatório'] },
+      solutions: { cat: 'Arquitetura de Tecnologia', title: 'Arquitetura de Soluções', desc: 'Os sistemas e aplicações que sustentam o negócio. Inclui aplicações core, integrações, APIs e o desenho de soluções específicas para iniciativas estratégicas.', items: ['Catálogo de aplicações', 'Padrões de integração', 'API strategy', 'Diagramas de solução'] },
+      data: { cat: 'Arquitetura de Tecnologia', title: 'Arquitetura de Dados', desc: 'O ativo informacional da organização. Modelos, fluxos, qualidade, governança e a relação entre dados e decisões de negócio.', items: ['Modelo de dados corporativo', 'Catálogo de dados', 'Linhagem (lineage)', 'Governança e qualidade'] },
+      technology: { cat: 'Arquitetura de Tecnologia', title: 'Arquitetura de Tecnologia', desc: 'Padrões, plataformas e escolhas tecnológicas. Decide o que é estratégico, o que é commodity e o que é legado a ser substituído.', items: ['Stack corporativo', 'Padrões e referência', 'Roadmap de modernização', 'Avaliação de fornecedores'] },
+      infra: { cat: 'Arquitetura de Tecnologia', title: 'Infraestrutura', desc: 'A base computacional — nuvem, data centers, redes, observabilidade. Sustenta tudo que está acima e define limites de escala, custo e disponibilidade.', items: ['Estratégia cloud / on-prem', 'Topologia de rede', 'Observabilidade', 'FinOps e custo'] },
+      security: { cat: 'Arquitetura de Tecnologia', title: 'Segurança da Informação', desc: 'Camada transversal que protege todas as outras. Cibersegurança, compliance regulatório, gestão de acessos e resposta a incidentes.', items: ['Modelo de ameaças', 'Gestão de identidade e acesso', 'Resposta a incidentes', 'Compliance regulatório'] }
+    },
+    en: {
+      strategy: { cat: 'Business Architecture', title: 'Strategic Drivers', desc: 'The strategic layer defines where the organization is going. Here reside the long-term objectives, market choices, and indicators that guide executive decision-making.', items: ['Strategy map', 'OKRs and business metrics', 'Business model canvas', 'Portfolio vision'] },
+      culture: { cat: 'Business Architecture', title: 'Mission, Vision, Values', desc: 'Cultural drivers translate the purpose of the organization and guide behavior. They are not phrases on the wall — they are decision and hiring criteria.', items: ['Mission statement', 'Operating principles and values', 'Codes of conduct', 'Institutional narrative'] },
+      structure: { cat: 'Business Architecture', title: 'Structure, Roles and Responsibilities', desc: "The organization of people — hierarchies, areas, roles, and their interdependencies. Conway's Law starts here: the way teams organize is reflected in system architecture.", items: ['Org chart and operating model', 'RACI matrix', 'Role definition', 'Governance model'] },
+      metrics: { cat: 'Business Architecture', title: 'Management and Control Metrics', desc: 'What gets measured gets done. This layer defines the indicators that connect strategy to operations — financial, operational, risk, and customer experience.', items: ['Executive dashboards', 'KPIs by area', 'Risk and compliance metrics', 'NPS and customer indicators'] },
+      processes: { cat: 'Business Architecture', title: 'Policies, Processes and Procedures', desc: 'How work actually happens. Well-designed processes are a prerequisite for consistent automation and sustainable digital transformation.', items: ['Process mapping (BPMN)', 'Policy manuals', 'Internal SLAs', 'Operational procedures'] },
+      channels: { cat: 'Business Architecture', title: 'Distribution and Service Channels', desc: 'How the organization reaches the customer — branches, digital, partners, service. This layer directly connects business architecture to perceived experience.', items: ['Channel map', 'Customer journey', 'Service models', 'Omnichannel strategy'] },
+      products: { cat: 'Business Architecture', title: 'Products and Services', desc: 'The catalog of what the organization delivers. Includes product lines, associated services, lifecycle, and relationship with the systems supporting them.', items: ['Product catalog', 'Product lifecycle', 'Product-system mapping', 'Portfolio strategy'] },
+      market: { cat: 'Business Architecture', title: 'Market, Segment and Niche', desc: 'The external context: where the organization competes, which customers it serves, and how it positions itself against competitors and regulation.', items: ['Market analysis', 'Customer segmentation', 'Competitive positioning', 'Regulatory mapping'] },
+      solutions: { cat: 'Technology Architecture', title: 'Solutions Architecture', desc: 'The systems and applications that sustain the business. Includes core applications, integrations, APIs, and the design of specific solutions for strategic initiatives.', items: ['Application catalog', 'Integration patterns', 'API strategy', 'Solution diagrams'] },
+      data: { cat: 'Technology Architecture', title: 'Data Architecture', desc: 'The informational asset of the organization. Models, flows, quality, governance, and the relationship between data and business decisions.', items: ['Enterprise data model', 'Data catalog', 'Data lineage', 'Governance and quality'] },
+      technology: { cat: 'Technology Architecture', title: 'Technology Architecture', desc: 'Standards, platforms, and technology choices. Decides what is strategic, what is commodity, and what is legacy to be replaced.', items: ['Enterprise stack', 'Standards and references', 'Modernization roadmap', 'Vendor assessment'] },
+      infra: { cat: 'Technology Architecture', title: 'Infrastructure', desc: 'The computational base — cloud, data centers, networks, observability. Supports everything above and defines limits of scale, cost, and availability.', items: ['Cloud / on-prem strategy', 'Network topology', 'Observability', 'FinOps and cost'] },
+      security: { cat: 'Technology Architecture', title: 'Information Security', desc: 'A cross-cutting layer that protects all the others. Cybersecurity, regulatory compliance, access management, and incident response.', items: ['Threat model', 'Identity and access management', 'Incident response', 'Regulatory compliance'] }
+    },
+    es: {
+      strategy: { cat: 'Arquitectura de Negocio', title: 'Direccionadores Estratégicos', desc: 'La capa estratégica define hacia dónde va la organización. Aquí residen los objetivos de largo plazo, las elecciones de mercado y los indicadores que orientan la toma de decisión ejecutiva.', items: ['Mapa estratégico', 'OKRs y métricas de negocio', 'Business model canvas', 'Visión de portafolio'] },
+      culture: { cat: 'Arquitectura de Negocio', title: 'Misión, Visión, Valores', desc: 'Los direccionadores culturales traducen el propósito de la organización y orientan comportamientos. No son frases en la pared — son criterios de decisión y contratación.', items: ['Declaración de misión', 'Principios y valores operativos', 'Códigos de conducta', 'Narrativa institucional'] },
+      structure: { cat: 'Arquitectura de Negocio', title: 'Estructura, Roles y Responsabilidades', desc: 'La organización de las personas — jerarquías, áreas, roles y sus interdependencias. La Ley de Conway empieza aquí: la forma en que se organizan los equipos se refleja en la arquitectura de los sistemas.', items: ['Organigrama y modelo operativo', 'Matriz RACI', 'Definición de roles', 'Modelo de gobernanza'] },
+      metrics: { cat: 'Arquitectura de Negocio', title: 'Métricas de Gestión y Control', desc: 'Lo que se mide, se hace. Esta capa define los indicadores que conectan estrategia con operación — financieros, operativos, de riesgo y de experiencia del cliente.', items: ['Tableros ejecutivos', 'KPIs por área', 'Métricas de riesgo y compliance', 'NPS e indicadores de cliente'] },
+      processes: { cat: 'Arquitectura de Negocio', title: 'Políticas, Procesos y Procedimientos', desc: 'Cómo realmente sucede el trabajo. Procesos bien diseñados son requisito previo para automatización consistente y transformación digital sostenible.', items: ['Mapeo de procesos (BPMN)', 'Manuales de políticas', 'SLAs internos', 'Procedimientos operativos'] },
+      channels: { cat: 'Arquitectura de Negocio', title: 'Canales de Distribución y Atención', desc: 'Cómo la organización llega al cliente — sucursales, digital, socios, atención. Esta capa conecta directamente la arquitectura de negocio con la experiencia percibida.', items: ['Mapa de canales', 'Customer journey', 'Modelos de atención', 'Estrategia omnicanal'] },
+      products: { cat: 'Arquitectura de Negocio', title: 'Productos y Servicios', desc: 'El catálogo de lo que la organización entrega. Incluye líneas de producto, servicios asociados, ciclo de vida y relación con los sistemas que los soportan.', items: ['Catálogo de productos', 'Ciclo de vida de producto', 'Relación producto-sistema', 'Estrategia de portafolio'] },
+      market: { cat: 'Arquitectura de Negocio', title: 'Mercado, Segmento y Nicho', desc: 'El contexto externo: dónde compite la organización, qué clientes atiende y cómo se posiciona frente a competidores y regulación.', items: ['Análisis de mercado', 'Segmentación de clientes', 'Posicionamiento competitivo', 'Mapeo regulatorio'] },
+      solutions: { cat: 'Arquitectura de Tecnología', title: 'Arquitectura de Soluciones', desc: 'Los sistemas y aplicaciones que sustentan el negocio. Incluye aplicaciones core, integraciones, APIs y el diseño de soluciones específicas para iniciativas estratégicas.', items: ['Catálogo de aplicaciones', 'Patrones de integración', 'Estrategia de APIs', 'Diagramas de solución'] },
+      data: { cat: 'Arquitectura de Tecnología', title: 'Arquitectura de Datos', desc: 'El activo informacional de la organización. Modelos, flujos, calidad, gobernanza y la relación entre datos y decisiones de negocio.', items: ['Modelo de datos corporativo', 'Catálogo de datos', 'Linaje de datos', 'Gobernanza y calidad'] },
+      technology: { cat: 'Arquitectura de Tecnología', title: 'Arquitectura de Tecnología', desc: 'Estándares, plataformas y elecciones tecnológicas. Decide qué es estratégico, qué es commodity y qué es legado a ser reemplazado.', items: ['Stack corporativo', 'Estándares y referencias', 'Roadmap de modernización', 'Evaluación de proveedores'] },
+      infra: { cat: 'Arquitectura de Tecnología', title: 'Infraestructura', desc: 'La base computacional — nube, data centers, redes, observabilidad. Sustenta todo lo que está arriba y define límites de escala, costo y disponibilidad.', items: ['Estrategia cloud / on-prem', 'Topología de red', 'Observabilidad', 'FinOps y costo'] },
+      security: { cat: 'Arquitectura de Tecnología', title: 'Seguridad de la Información', desc: 'Capa transversal que protege a todas las demás. Ciberseguridad, compliance regulatorio, gestión de accesos y respuesta a incidentes.', items: ['Modelo de amenazas', 'Gestión de identidad y acceso', 'Respuesta a incidentes', 'Compliance regulatorio'] }
+    }
+  };
+
+  let currentLang = 'pt';
+  let currentLayer = 'strategy';
+
+  function applyTranslations(lang) {
+    currentLang = lang;
+    document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : lang);
+    document.documentElement.setAttribute('data-lang', lang);
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const attr = el.getAttribute('data-i18n-attr');
+      const val = translations[lang][key];
+      if (val !== undefined) {
+        if (attr) el.setAttribute(attr, val);
+        else el.innerHTML = val;
+      }
+    });
+
+    // re-render layer detail with current selection
+    renderLayer(currentLayer);
+
+    // update active button
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+
+  function renderLayer(key) {
+    currentLayer = key;
+    const data = layerDetails[currentLang][key];
+    if (!data) return;
+    const detail = document.getElementById('layerDetail');
+    detail.querySelector('.layer-cat').textContent = data.cat;
+    document.getElementById('layerTitle').textContent = data.title;
+    document.getElementById('layerDesc').textContent = data.desc;
+    const ul = document.getElementById('layerArtifacts');
+    ul.innerHTML = data.items.map(i => `<li>${i}</li>`).join('');
+
+    document.querySelectorAll('.layer').forEach(l => {
+      l.classList.toggle('active', l.dataset.layer === key);
+    });
+  }
+
+  // Lang switch buttons
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
+  });
+
+  // Layer click
+  document.querySelectorAll('.layer').forEach(layer => {
+    layer.addEventListener('click', () => renderLayer(layer.dataset.layer));
+  });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
