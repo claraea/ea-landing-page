@@ -91,14 +91,14 @@
           <div class="sd-arrow" data-i18n="strategic.arrow" aria-hidden="true">↓ orientam toda a estrutura abaixo</div>
         </div>
         <div class="layer-group-label" data-i18n="framework.business">Arquitetura de Negócios</div>
-        <div class="layer active" data-layer="strategy"><span data-i18n="layer.strategy">Direcionadores Estratégicos</span><span class="num">I</span></div>
-        <div class="layer" data-layer="culture"><span data-i18n="layer.culture">Missão, Visão, Valores</span><span class="num">II</span></div>
-        <div class="layer" data-layer="structure"><span data-i18n="layer.structure">Estrutura, Papéis e Responsabilidades</span><span class="num">III</span></div>
-        <div class="layer" data-layer="metrics"><span data-i18n="layer.metrics">Métricas de Gestão e Controle</span><span class="num">IV</span></div>
-        <div class="layer" data-layer="processes"><span data-i18n="layer.processes">Políticas, Processos e Procedimentos</span><span class="num">V</span></div>
-        <div class="layer" data-layer="channels"><span data-i18n="layer.channels">Canais de Distribuição e Atendimento</span><span class="num">VI</span></div>
-        <div class="layer" data-layer="products"><span data-i18n="layer.products">Produtos e Serviços</span><span class="num">VII</span></div>
-        <div class="layer" data-layer="market"><span data-i18n="layer.market">Mercado, Segmento e Nicho</span><span class="num">VIII</span></div>
+        <div class="layer active" data-layer="market"><span data-i18n="layer.market">Mercado, Segmento e Nicho</span><span class="num">I</span></div>
+        <div class="layer" data-layer="brand"><span data-i18n="layer.brand">Marca</span><span class="num">II</span></div>
+        <div class="layer" data-layer="channels"><span data-i18n="layer.channels">Canais de Distribuição e Atendimento</span><span class="num">III</span></div>
+        <div class="layer" data-layer="products"><span data-i18n="layer.products">Produtos e Serviços</span><span class="num">IV</span></div>
+        <div class="layer" data-layer="legalVehicles"><span data-i18n="layer.legalVehicles">Veículos Legais</span><span class="num">V</span></div>
+        <div class="layer" data-layer="processes"><span data-i18n="layer.processes">Políticas, Normas e Procedimentos</span><span class="num">VI</span></div>
+        <div class="layer" data-layer="structure"><span data-i18n="layer.structure">Estrutura, Papéis e Responsabilidades</span><span class="num">VII</span></div>
+        <div class="layer" data-layer="metrics"><span data-i18n="layer.metrics">Métricas de Gestão e Controle</span><span class="num">VIII</span></div>
 
         <div class="layer-group-label" data-i18n="framework.tech">Arquitetura de Tecnologia</div>
         <div class="layer" data-layer="solutions"><span data-i18n="layer.solutions">Arquitetura de Soluções</span><span class="num">IX</span></div>
@@ -110,13 +110,13 @@
 
       <div class="layer-detail" id="layerDetail">
         <p class="layer-cat" data-i18n="layerDetail.cat">Arquitetura de Negócios</p>
-        <h3 id="layerTitle">Direcionadores Estratégicos</h3>
-        <p id="layerDesc">A camada estratégica define para onde a organização vai. Aqui residem os objetivos de longo prazo, as escolhas de mercado e os indicadores que orientam a tomada de decisão executiva.</p>
+        <h3 id="layerTitle">Mercado, Segmento e Nicho</h3>
+        <p id="layerDesc">O contexto externo: onde a organização compete, quais clientes serve e como se posiciona frente a concorrentes e à regulação. Define o terreno sobre o qual todas as demais camadas se desenham.</p>
         <ul id="layerArtifacts">
-          <li>Mapa estratégico</li>
-          <li>OKRs e métricas de negócio</li>
-          <li>Modelo de negócios canvas</li>
-          <li>Visão de portfólio</li>
+          <li>Análise de mercado</li>
+          <li>Segmentação de clientes</li>
+          <li>Posicionamento competitivo</li>
+          <li>Mapeamento regulatório</li>
         </ul>
       </div>
     </div>
@@ -434,10 +434,11 @@
       'strategic.title': 'Acima da arquitetura corporativa',
       'strategic.mission': 'Missão', 'strategic.vision': 'Visão', 'strategic.values': 'Valores',
       'strategic.arrow': '↓ orientam toda a estrutura abaixo',
-      'layer.strategy': 'Direcionadores Estratégicos', 'layer.culture': 'Missão, Visão, Valores',
+      'layer.market': 'Mercado, Segmento e Nicho', 'layer.brand': 'Marca',
+      'layer.channels': 'Canais de Distribuição e Atendimento', 'layer.products': 'Produtos e Serviços',
+      'layer.legalVehicles': 'Veículos Legais',
+      'layer.processes': 'Políticas, Normas e Procedimentos',
       'layer.structure': 'Estrutura, Papéis e Responsabilidades', 'layer.metrics': 'Métricas de Gestão e Controle',
-      'layer.processes': 'Políticas, Processos e Procedimentos', 'layer.channels': 'Canais de Distribuição e Atendimento',
-      'layer.products': 'Produtos e Serviços', 'layer.market': 'Mercado, Segmento e Nicho',
       'layer.solutions': 'Arquitetura de Soluções', 'layer.data': 'Arquitetura de Dados',
       'layer.technology': 'Arquitetura de Tecnologia', 'layer.infra': 'Infraestrutura',
       'layer.security': 'Segurança da Informação',
@@ -491,10 +492,11 @@
       'strategic.title': 'Above the enterprise architecture',
       'strategic.mission': 'Mission', 'strategic.vision': 'Vision', 'strategic.values': 'Values',
       'strategic.arrow': '↓ guide the entire structure below',
-      'layer.strategy': 'Strategic Drivers', 'layer.culture': 'Mission, Vision, Values',
+      'layer.market': 'Market, Segment and Niche', 'layer.brand': 'Brand',
+      'layer.channels': 'Distribution and Service Channels', 'layer.products': 'Products and Services',
+      'layer.legalVehicles': 'Legal Entities',
+      'layer.processes': 'Policies, Norms and Procedures',
       'layer.structure': 'Structure, Roles and Responsibilities', 'layer.metrics': 'Management and Control Metrics',
-      'layer.processes': 'Policies, Processes and Procedures', 'layer.channels': 'Distribution and Service Channels',
-      'layer.products': 'Products and Services', 'layer.market': 'Market, Segment and Niche',
       'layer.solutions': 'Solutions Architecture', 'layer.data': 'Data Architecture',
       'layer.technology': 'Technology Architecture', 'layer.infra': 'Infrastructure',
       'layer.security': 'Information Security',
@@ -548,10 +550,11 @@
       'strategic.title': 'Por encima de la arquitectura empresarial',
       'strategic.mission': 'Misión', 'strategic.vision': 'Visión', 'strategic.values': 'Valores',
       'strategic.arrow': '↓ orientan toda la estructura debajo',
-      'layer.strategy': 'Direccionadores Estratégicos', 'layer.culture': 'Misión, Visión, Valores',
+      'layer.market': 'Mercado, Segmento y Nicho', 'layer.brand': 'Marca',
+      'layer.channels': 'Canales de Distribución y Atención', 'layer.products': 'Productos y Servicios',
+      'layer.legalVehicles': 'Vehículos Legales',
+      'layer.processes': 'Políticas, Normas y Procedimientos',
       'layer.structure': 'Estructura, Roles y Responsabilidades', 'layer.metrics': 'Métricas de Gestión y Control',
-      'layer.processes': 'Políticas, Procesos y Procedimientos', 'layer.channels': 'Canales de Distribución y Atención',
-      'layer.products': 'Productos y Servicios', 'layer.market': 'Mercado, Segmento y Nicho',
       'layer.solutions': 'Arquitectura de Soluciones', 'layer.data': 'Arquitectura de Datos',
       'layer.technology': 'Arquitectura de Tecnología', 'layer.infra': 'Infraestructura',
       'layer.security': 'Seguridad de la Información',
@@ -592,14 +595,14 @@
   // ============ LAYER DETAILS ============
   const layerDetails = {
     pt: {
-      strategy: { cat: 'Arquitetura de Negócios', title: 'Direcionadores Estratégicos', desc: 'A camada estratégica define para onde a organização vai. Aqui residem os objetivos de longo prazo, as escolhas de mercado e os indicadores que orientam a tomada de decisão executiva.', items: ['Mapa estratégico', 'OKRs e métricas de negócio', 'Modelo de negócios canvas', 'Visão de portfólio'] },
-      culture: { cat: 'Arquitetura de Negócios', title: 'Missão, Visão, Valores', desc: 'Os direcionadores de cultura traduzem o propósito da organização e orientam comportamentos. Não são frases na parede — são critérios de decisão e contratação.', items: ['Declaração de missão', 'Princípios e valores operacionais', 'Códigos de conduta', 'Narrativa institucional'] },
-      structure: { cat: 'Arquitetura de Negócios', title: 'Estrutura, Papéis e Responsabilidades', desc: 'A organização das pessoas — hierarquias, áreas, papéis e suas interdependências. A Lei de Conway começa aqui: a forma como times se organizam reflete-se na arquitetura dos sistemas.', items: ['Organograma e modelo operacional', 'Matriz RACI', 'Definição de papéis', 'Modelo de governança'] },
-      metrics: { cat: 'Arquitetura de Negócios', title: 'Métricas de Gestão e Controle', desc: 'O que se mede, se faz. Esta camada define os indicadores que conectam estratégia à operação — financeiros, operacionais, de risco e de experiência do cliente.', items: ['Painéis executivos', 'KPIs por área', 'Métricas de risco e compliance', 'NPS e indicadores de cliente'] },
-      processes: { cat: 'Arquitetura de Negócios', title: 'Políticas, Processos e Procedimentos', desc: 'Como o trabalho realmente acontece. Processos bem desenhados são pré-requisito para automação consistente e para a transformação digital sustentável.', items: ['Mapeamento de processos (BPMN)', 'Manuais de políticas', 'SLAs internos', 'Procedimentos operacionais'] },
-      channels: { cat: 'Arquitetura de Negócios', title: 'Canais de Distribuição e Atendimento', desc: 'Como a organização chega ao cliente — agências, digital, parceiros, atendimento. Esta camada conecta diretamente arquitetura de negócio à experiência percebida.', items: ['Mapa de canais', 'Jornada do cliente', 'Modelos de atendimento', 'Estratégia omnichannel'] },
-      products: { cat: 'Arquitetura de Negócios', title: 'Produtos e Serviços', desc: 'O catálogo do que a organização entrega. Inclui linhas de produto, serviços associados, ciclo de vida e relação com sistemas que os suportam.', items: ['Catálogo de produtos', 'Ciclo de vida de produto', 'Relação produto-sistema', 'Estratégia de portfólio'] },
-      market: { cat: 'Arquitetura de Negócios', title: 'Mercado, Segmento e Nicho', desc: 'O contexto externo: onde a organização compete, quais clientes serve e como se posiciona frente a concorrentes e regulação.', items: ['Análise de mercado', 'Segmentação de clientes', 'Posicionamento competitivo', 'Mapeamento regulatório'] },
+      market: { cat: 'Arquitetura de Negócios', title: 'Mercado, Segmento e Nicho', desc: 'O contexto externo: onde a organização compete, quais clientes serve e como se posiciona frente a concorrentes e regulação. Define o terreno sobre o qual todas as camadas abaixo se desenham.', items: ['Análise de mercado', 'Segmentação de clientes', 'Posicionamento competitivo', 'Mapeamento regulatório'] },
+      brand: { cat: 'Arquitetura de Negócios', title: 'Marca', desc: 'A identidade pública da organização — promessa, percepção e atributos que diferenciam frente ao mercado. A marca traduz a estratégia em significado para o cliente e orienta as escolhas de canal, produto e atendimento.', items: ['Plataforma de marca', 'Arquitetura de marca (master / sub-brands)', 'Manual de identidade', 'Promessa de valor'] },
+      channels: { cat: 'Arquitetura de Negócios', title: 'Canais de Distribuição e Atendimento', desc: 'Como a marca chega ao cliente — agências, digital, parceiros, atendimento. Esta camada materializa a marca em pontos de contato e define a jornada do cliente.', items: ['Mapa de canais', 'Jornada do cliente', 'Modelos de atendimento', 'Estratégia omnichannel'] },
+      products: { cat: 'Arquitetura de Negócios', title: 'Produtos e Serviços', desc: 'O catálogo do que a organização entrega através dos canais. Inclui linhas de produto, serviços associados, ciclo de vida e relação com sistemas que os suportam.', items: ['Catálogo de produtos', 'Ciclo de vida de produto', 'Relação produto-sistema', 'Estratégia de portfólio'] },
+      legalVehicles: { cat: 'Arquitetura de Negócios', title: 'Veículos Legais', desc: 'As pessoas jurídicas, contratos sociais, jurisdições e modelos fiscais que sustentam a operação dos produtos. Em organizações multi-empresa (holdings, M&A) esta camada explicita qual entidade legal opera o quê.', items: ['Mapa de pessoas jurídicas', 'Estrutura societária', 'Jurisdições e regimes fiscais', 'Acordos intercompanhia'] },
+      processes: { cat: 'Arquitetura de Negócios', title: 'Políticas, Normas e Procedimentos', desc: 'O conjunto de regras que rege a operação dos veículos legais — políticas corporativas, normas regulatórias e procedimentos operacionais. Pré-requisito para automação consistente.', items: ['Manuais de políticas', 'Normas regulatórias aplicáveis', 'Procedimentos operacionais', 'Mapeamento de processos (BPMN)'] },
+      structure: { cat: 'Arquitetura de Negócios', title: 'Estrutura, Papéis e Responsabilidades', desc: 'A organização das pessoas que executam as políticas — hierarquias, áreas, papéis e suas interdependências. A Lei de Conway começa aqui: a forma como times se organizam reflete-se na arquitetura dos sistemas.', items: ['Organograma e modelo operacional', 'Matriz RACI', 'Definição de papéis', 'Modelo de governança'] },
+      metrics: { cat: 'Arquitetura de Negócios', title: 'Métricas de Gestão e Controle', desc: 'O que se mede, se faz. Camada final do negócio: indicadores financeiros, operacionais, de risco e de experiência do cliente que medem a coerência de todas as camadas acima.', items: ['Painéis executivos', 'KPIs por área', 'Métricas de risco e compliance', 'NPS e indicadores de cliente'] },
       solutions: { cat: 'Arquitetura de Tecnologia', title: 'Arquitetura de Soluções', desc: 'Os sistemas e aplicações que sustentam o negócio. Inclui aplicações core, integrações, APIs e o desenho de soluções específicas para iniciativas estratégicas.', items: ['Catálogo de aplicações', 'Padrões de integração', 'API strategy', 'Diagramas de solução'] },
       data: { cat: 'Arquitetura de Tecnologia', title: 'Arquitetura de Dados', desc: 'O ativo informacional da organização. Modelos, fluxos, qualidade, governança e a relação entre dados e decisões de negócio.', items: ['Modelo de dados corporativo', 'Catálogo de dados', 'Linhagem (lineage)', 'Governança e qualidade'] },
       technology: { cat: 'Arquitetura de Tecnologia', title: 'Arquitetura de Tecnologia', desc: 'Padrões, plataformas e escolhas tecnológicas. Decide o que é estratégico, o que é commodity e o que é legado a ser substituído.', items: ['Stack corporativo', 'Padrões e referência', 'Roadmap de modernização', 'Avaliação de fornecedores'] },
@@ -607,14 +610,14 @@
       security: { cat: 'Arquitetura de Tecnologia', title: 'Segurança da Informação', desc: 'Camada transversal que protege todas as outras. Cibersegurança, compliance regulatório, gestão de acessos e resposta a incidentes.', items: ['Modelo de ameaças', 'Gestão de identidade e acesso', 'Resposta a incidentes', 'Compliance regulatório'] }
     },
     en: {
-      strategy: { cat: 'Business Architecture', title: 'Strategic Drivers', desc: 'The strategic layer defines where the organization is going. Here reside the long-term objectives, market choices, and indicators that guide executive decision-making.', items: ['Strategy map', 'OKRs and business metrics', 'Business model canvas', 'Portfolio vision'] },
-      culture: { cat: 'Business Architecture', title: 'Mission, Vision, Values', desc: 'Cultural drivers translate the purpose of the organization and guide behavior. They are not phrases on the wall — they are decision and hiring criteria.', items: ['Mission statement', 'Operating principles and values', 'Codes of conduct', 'Institutional narrative'] },
-      structure: { cat: 'Business Architecture', title: 'Structure, Roles and Responsibilities', desc: "The organization of people — hierarchies, areas, roles, and their interdependencies. Conway's Law starts here: the way teams organize is reflected in system architecture.", items: ['Org chart and operating model', 'RACI matrix', 'Role definition', 'Governance model'] },
-      metrics: { cat: 'Business Architecture', title: 'Management and Control Metrics', desc: 'What gets measured gets done. This layer defines the indicators that connect strategy to operations — financial, operational, risk, and customer experience.', items: ['Executive dashboards', 'KPIs by area', 'Risk and compliance metrics', 'NPS and customer indicators'] },
-      processes: { cat: 'Business Architecture', title: 'Policies, Processes and Procedures', desc: 'How work actually happens. Well-designed processes are a prerequisite for consistent automation and sustainable digital transformation.', items: ['Process mapping (BPMN)', 'Policy manuals', 'Internal SLAs', 'Operational procedures'] },
-      channels: { cat: 'Business Architecture', title: 'Distribution and Service Channels', desc: 'How the organization reaches the customer — branches, digital, partners, service. This layer directly connects business architecture to perceived experience.', items: ['Channel map', 'Customer journey', 'Service models', 'Omnichannel strategy'] },
-      products: { cat: 'Business Architecture', title: 'Products and Services', desc: 'The catalog of what the organization delivers. Includes product lines, associated services, lifecycle, and relationship with the systems supporting them.', items: ['Product catalog', 'Product lifecycle', 'Product-system mapping', 'Portfolio strategy'] },
-      market: { cat: 'Business Architecture', title: 'Market, Segment and Niche', desc: 'The external context: where the organization competes, which customers it serves, and how it positions itself against competitors and regulation.', items: ['Market analysis', 'Customer segmentation', 'Competitive positioning', 'Regulatory mapping'] },
+      market: { cat: 'Business Architecture', title: 'Market, Segment and Niche', desc: 'The external context: where the organization competes, which customers it serves, and how it positions itself against competitors and regulation. It defines the terrain on which every layer below is drawn.', items: ['Market analysis', 'Customer segmentation', 'Competitive positioning', 'Regulatory mapping'] },
+      brand: { cat: 'Business Architecture', title: 'Brand', desc: 'The public identity of the organization — promise, perception, and attributes that differentiate it in the market. Brand translates strategy into meaning for the customer and guides choices of channel, product and service.', items: ['Brand platform', 'Brand architecture (master / sub-brands)', 'Identity manual', 'Value promise'] },
+      channels: { cat: 'Business Architecture', title: 'Distribution and Service Channels', desc: 'How the brand reaches the customer — branches, digital, partners, service. This layer materializes the brand in touchpoints and defines the customer journey.', items: ['Channel map', 'Customer journey', 'Service models', 'Omnichannel strategy'] },
+      products: { cat: 'Business Architecture', title: 'Products and Services', desc: 'The catalog of what the organization delivers through its channels. Includes product lines, associated services, lifecycle, and relationship with the systems supporting them.', items: ['Product catalog', 'Product lifecycle', 'Product-system mapping', 'Portfolio strategy'] },
+      legalVehicles: { cat: 'Business Architecture', title: 'Legal Entities', desc: 'The legal entities, articles of incorporation, jurisdictions, and tax models that sustain product operations. In multi-company organizations (holdings, M&A) this layer makes explicit which legal entity operates what.', items: ['Legal entity map', 'Corporate structure', 'Jurisdictions and tax regimes', 'Intercompany agreements'] },
+      processes: { cat: 'Business Architecture', title: 'Policies, Norms and Procedures', desc: 'The body of rules that governs the operation of the legal entities — corporate policies, regulatory norms and operational procedures. A prerequisite for consistent automation.', items: ['Policy manuals', 'Applicable regulatory norms', 'Operational procedures', 'Process mapping (BPMN)'] },
+      structure: { cat: 'Business Architecture', title: 'Structure, Roles and Responsibilities', desc: "The organization of the people who execute the policies — hierarchies, areas, roles, and their interdependencies. Conway's Law starts here: the way teams organize is reflected in system architecture.", items: ['Org chart and operating model', 'RACI matrix', 'Role definition', 'Governance model'] },
+      metrics: { cat: 'Business Architecture', title: 'Management and Control Metrics', desc: 'What gets measured gets done. The final business layer: financial, operational, risk, and customer experience indicators that measure the coherence of every layer above.', items: ['Executive dashboards', 'KPIs by area', 'Risk and compliance metrics', 'NPS and customer indicators'] },
       solutions: { cat: 'Technology Architecture', title: 'Solutions Architecture', desc: 'The systems and applications that sustain the business. Includes core applications, integrations, APIs, and the design of specific solutions for strategic initiatives.', items: ['Application catalog', 'Integration patterns', 'API strategy', 'Solution diagrams'] },
       data: { cat: 'Technology Architecture', title: 'Data Architecture', desc: 'The informational asset of the organization. Models, flows, quality, governance, and the relationship between data and business decisions.', items: ['Enterprise data model', 'Data catalog', 'Data lineage', 'Governance and quality'] },
       technology: { cat: 'Technology Architecture', title: 'Technology Architecture', desc: 'Standards, platforms, and technology choices. Decides what is strategic, what is commodity, and what is legacy to be replaced.', items: ['Enterprise stack', 'Standards and references', 'Modernization roadmap', 'Vendor assessment'] },
@@ -622,14 +625,14 @@
       security: { cat: 'Technology Architecture', title: 'Information Security', desc: 'A cross-cutting layer that protects all the others. Cybersecurity, regulatory compliance, access management, and incident response.', items: ['Threat model', 'Identity and access management', 'Incident response', 'Regulatory compliance'] }
     },
     es: {
-      strategy: { cat: 'Arquitectura de Negocio', title: 'Direccionadores Estratégicos', desc: 'La capa estratégica define hacia dónde va la organización. Aquí residen los objetivos de largo plazo, las elecciones de mercado y los indicadores que orientan la toma de decisión ejecutiva.', items: ['Mapa estratégico', 'OKRs y métricas de negocio', 'Business model canvas', 'Visión de portafolio'] },
-      culture: { cat: 'Arquitectura de Negocio', title: 'Misión, Visión, Valores', desc: 'Los direccionadores culturales traducen el propósito de la organización y orientan comportamientos. No son frases en la pared — son criterios de decisión y contratación.', items: ['Declaración de misión', 'Principios y valores operativos', 'Códigos de conducta', 'Narrativa institucional'] },
-      structure: { cat: 'Arquitectura de Negocio', title: 'Estructura, Roles y Responsabilidades', desc: 'La organización de las personas — jerarquías, áreas, roles y sus interdependencias. La Ley de Conway empieza aquí: la forma en que se organizan los equipos se refleja en la arquitectura de los sistemas.', items: ['Organigrama y modelo operativo', 'Matriz RACI', 'Definición de roles', 'Modelo de gobernanza'] },
-      metrics: { cat: 'Arquitectura de Negocio', title: 'Métricas de Gestión y Control', desc: 'Lo que se mide, se hace. Esta capa define los indicadores que conectan estrategia con operación — financieros, operativos, de riesgo y de experiencia del cliente.', items: ['Tableros ejecutivos', 'KPIs por área', 'Métricas de riesgo y compliance', 'NPS e indicadores de cliente'] },
-      processes: { cat: 'Arquitectura de Negocio', title: 'Políticas, Procesos y Procedimientos', desc: 'Cómo realmente sucede el trabajo. Procesos bien diseñados son requisito previo para automatización consistente y transformación digital sostenible.', items: ['Mapeo de procesos (BPMN)', 'Manuales de políticas', 'SLAs internos', 'Procedimientos operativos'] },
-      channels: { cat: 'Arquitectura de Negocio', title: 'Canales de Distribución y Atención', desc: 'Cómo la organización llega al cliente — sucursales, digital, socios, atención. Esta capa conecta directamente la arquitectura de negocio con la experiencia percibida.', items: ['Mapa de canales', 'Customer journey', 'Modelos de atención', 'Estrategia omnicanal'] },
-      products: { cat: 'Arquitectura de Negocio', title: 'Productos y Servicios', desc: 'El catálogo de lo que la organización entrega. Incluye líneas de producto, servicios asociados, ciclo de vida y relación con los sistemas que los soportan.', items: ['Catálogo de productos', 'Ciclo de vida de producto', 'Relación producto-sistema', 'Estrategia de portafolio'] },
-      market: { cat: 'Arquitectura de Negocio', title: 'Mercado, Segmento y Nicho', desc: 'El contexto externo: dónde compite la organización, qué clientes atiende y cómo se posiciona frente a competidores y regulación.', items: ['Análisis de mercado', 'Segmentación de clientes', 'Posicionamiento competitivo', 'Mapeo regulatorio'] },
+      market: { cat: 'Arquitectura de Negocio', title: 'Mercado, Segmento y Nicho', desc: 'El contexto externo: dónde compite la organización, qué clientes atiende y cómo se posiciona frente a competidores y regulación. Define el terreno sobre el cual se dibujan todas las capas siguientes.', items: ['Análisis de mercado', 'Segmentación de clientes', 'Posicionamiento competitivo', 'Mapeo regulatorio'] },
+      brand: { cat: 'Arquitectura de Negocio', title: 'Marca', desc: 'La identidad pública de la organización — promesa, percepción y atributos que la diferencian en el mercado. La marca traduce la estrategia en significado para el cliente y orienta las elecciones de canal, producto y atención.', items: ['Plataforma de marca', 'Arquitectura de marca (master / sub-marcas)', 'Manual de identidad', 'Promesa de valor'] },
+      channels: { cat: 'Arquitectura de Negocio', title: 'Canales de Distribución y Atención', desc: 'Cómo la marca llega al cliente — sucursales, digital, socios, atención. Esta capa materializa la marca en puntos de contacto y define el customer journey.', items: ['Mapa de canales', 'Customer journey', 'Modelos de atención', 'Estrategia omnicanal'] },
+      products: { cat: 'Arquitectura de Negocio', title: 'Productos y Servicios', desc: 'El catálogo de lo que la organización entrega a través de sus canales. Incluye líneas de producto, servicios asociados, ciclo de vida y relación con los sistemas que los soportan.', items: ['Catálogo de productos', 'Ciclo de vida de producto', 'Relación producto-sistema', 'Estrategia de portafolio'] },
+      legalVehicles: { cat: 'Arquitectura de Negocio', title: 'Vehículos Legales', desc: 'Las personas jurídicas, contratos sociales, jurisdicciones y modelos fiscales que sustentan la operación de los productos. En organizaciones multi-empresa (holdings, M&A) esta capa explicita qué entidad legal opera qué.', items: ['Mapa de personas jurídicas', 'Estructura societaria', 'Jurisdicciones y regímenes fiscales', 'Acuerdos intercompañía'] },
+      processes: { cat: 'Arquitectura de Negocio', title: 'Políticas, Normas y Procedimientos', desc: 'El conjunto de reglas que rige la operación de los vehículos legales — políticas corporativas, normas regulatorias y procedimientos operativos. Requisito previo para automatización consistente.', items: ['Manuales de políticas', 'Normas regulatorias aplicables', 'Procedimientos operativos', 'Mapeo de procesos (BPMN)'] },
+      structure: { cat: 'Arquitectura de Negocio', title: 'Estructura, Roles y Responsabilidades', desc: 'La organización de las personas que ejecutan las políticas — jerarquías, áreas, roles y sus interdependencias. La Ley de Conway empieza aquí: la forma en que se organizan los equipos se refleja en la arquitectura de los sistemas.', items: ['Organigrama y modelo operativo', 'Matriz RACI', 'Definición de roles', 'Modelo de gobernanza'] },
+      metrics: { cat: 'Arquitectura de Negocio', title: 'Métricas de Gestión y Control', desc: 'Lo que se mide, se hace. Capa final del negocio: indicadores financieros, operativos, de riesgo y de experiencia del cliente que miden la coherencia de todas las capas anteriores.', items: ['Tableros ejecutivos', 'KPIs por área', 'Métricas de riesgo y compliance', 'NPS e indicadores de cliente'] },
       solutions: { cat: 'Arquitectura de Tecnología', title: 'Arquitectura de Soluciones', desc: 'Los sistemas y aplicaciones que sustentan el negocio. Incluye aplicaciones core, integraciones, APIs y el diseño de soluciones específicas para iniciativas estratégicas.', items: ['Catálogo de aplicaciones', 'Patrones de integración', 'Estrategia de APIs', 'Diagramas de solución'] },
       data: { cat: 'Arquitectura de Tecnología', title: 'Arquitectura de Datos', desc: 'El activo informacional de la organización. Modelos, flujos, calidad, gobernanza y la relación entre datos y decisiones de negocio.', items: ['Modelo de datos corporativo', 'Catálogo de datos', 'Linaje de datos', 'Gobernanza y calidad'] },
       technology: { cat: 'Arquitectura de Tecnología', title: 'Arquitectura de Tecnología', desc: 'Estándares, plataformas y elecciones tecnológicas. Decide qué es estratégico, qué es commodity y qué es legado a ser reemplazado.', items: ['Stack corporativo', 'Estándares y referencias', 'Roadmap de modernización', 'Evaluación de proveedores'] },
@@ -639,7 +642,7 @@
   };
 
   let currentLang = 'pt';
-  let currentLayer = 'strategy';
+  let currentLayer = 'market';
 
   function applyTranslations(lang) {
     currentLang = lang;
