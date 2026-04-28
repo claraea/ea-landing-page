@@ -77,3 +77,10 @@ __pycache__/
 *.bak
 *.orig
 *.rej
+
+# ---- artefatos gerados por build-i18n.py -----------------------------------
+# /en/ e /es/ são pré-renderizados pelo workflow GitHub Actions a cada push.
+# Localmente, rodar `python3 build-i18n.py` regenera para preview.
+/en/
+/es/
+/_site/

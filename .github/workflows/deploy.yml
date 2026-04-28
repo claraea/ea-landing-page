@@ -1,0 +1,63 @@
+name: Build & Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run i18n build (gera /en/ e /es/ a partir do PT)
+        run: python3 build-i18n.py
+
+      - name: Stage site for deployment
+        run: |
+          mkdir -p _site/assets _site/en _site/es
+          cp index.html ClaraEA-CMDB.html ClaraEA-Autor.html _site/
+          cp -r assets/. _site/assets/
+          cp -r en/. _site/en/
+          cp -r es/. _site/es/
+          cp .nojekyll CNAME sitemap.xml robots.txt _site/
+          [ -f README.md ] && cp README.md _site/ || true
+          echo "---staged tree---"
+          ls -la _site/
+          echo "---/en/---"
+          ls -la _site/en/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
