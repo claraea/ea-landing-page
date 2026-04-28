@@ -749,6 +749,57 @@ section {
 }
 .timeline-event { font-size: 15px; color: var(--ink-primary); }
 
+/* Book preview card — bloco discreto no fim da Trajetória anunciando o livro */
+.book-preview-card {
+  margin-top: 56px;
+  background: var(--bg-primary);
+  border-left: 3px solid var(--accent-gold);
+  padding: 36px 40px;
+  max-width: 880px;
+}
+.book-preview-card .book-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 14px;
+}
+.book-preview-card .book-title-line {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 36px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  color: var(--ink-primary);
+}
+.book-preview-card .book-subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink-muted);
+  margin-bottom: 20px;
+}
+.book-preview-card .book-lead {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-primary);
+  margin-bottom: 18px;
+  max-width: 60ch;
+}
+.book-preview-card .book-year {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+@media (max-width: 560px) {
+  .book-preview-card { padding: 28px 24px; }
+}
+
 /* ============ NEWSLETTER ============ */
 .newsletter {
   background: var(--surface-dark);
