@@ -591,6 +591,16 @@ section {
   margin-bottom: 20px;
 }
 
+.case-cta-soon {
+  display: inline-block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-muted);
+  letter-spacing: 0.02em;
+  padding: 8px 0;
+}
+
 .case-stat { text-align: center; padding: 24px; border-left: 1px solid var(--rule); }
 .case-stat .figure {
   font-family: var(--serif);
