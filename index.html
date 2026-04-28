@@ -233,20 +233,45 @@
 <section id="casos" style="background: var(--bg-elevated);">
   <div class="container reveal">
     <p class="section-eyebrow" data-i18n="cases.eyebrow">Casos de Uso</p>
-    <h2 class="section-title" data-i18n="cases.title">Aplicação no mercado financeiro</h2>
-    <p class="section-lead" data-i18n="cases.lead">O ClaraEA nasceu da prática em ambientes de alta complexidade regulatória, operacional e tecnológica. Os primeiros casos publicados detalham aplicação em instituições financeiras de grande porte.</p>
+    <h2 class="section-title" data-i18n="cases.title">Aplicações em ambientes complexos</h2>
+    <p class="section-lead" data-i18n="cases.lead">Clara/EA nasceu e amadureceu em projetos de grande magnitude — instituições financeiras tradicionais, novos entrantes, varejo multinacional, greenfields, seguradoras e organizações de dados e analytics. Cada caso a seguir endereça uma classe distinta de problema arquitetural.</p>
 
-    <div class="case-card">
-      <div>
-        <p class="case-tag" data-i18n="case.tag">Setor Financeiro</p>
-        <h3 data-i18n="case.title">Alinhamento entre estratégia, processos e tecnologia em uma instituição de grande porte</h3>
-        <p style="color: var(--ink-muted); margin-bottom: 24px;" data-i18n="case.desc">Como a aplicação do framework permitiu mapear interdependências entre áreas de negócio e sistemas, reduzindo redundâncias e acelerando a entrega de iniciativas estratégicas.</p>
-        <span class="case-cta-soon" data-i18n="case.cta">Detalhes em breve · em redação</span>
-      </div>
-      <div class="case-stat">
-        <div class="figure">17</div>
-        <div class="desc" data-i18n="case.stat">anos de aplicação contínua do método em ambiente bancário</div>
-      </div>
+    <div class="cases-grid">
+      <article class="case-item case-item--featured">
+        <p class="case-tag" data-i18n="case1.tag">Instituição Financeira · Tradicional</p>
+        <h3 data-i18n="case1.title">A origem do framework: alinhar tecnologia à estratégia em tempos de transformação digital</h3>
+        <p data-i18n="case1.desc">Ambiente bancário de alta complexidade com múltiplos projetos estratégicos e transformacionais simultâneos. A necessidade contínua de adequar a arquitetura tecnológica às mudanças de estratégia revelou os limites das práticas tradicionais de Arquitetura Corporativa — especialmente na profundidade com que tratavam a arquitetura de negócios. Os primeiros insights que viriam a estruturar o Clara/EA nasceram aqui: a percepção de que o framework precisava endereçar o negócio com o mesmo rigor metodológico reservado à tecnologia.</p>
+      </article>
+
+      <article class="case-item">
+        <p class="case-tag" data-i18n="case2.tag">Indústria Financeira · Open Finance & APIs</p>
+        <h3 data-i18n="case2.title">Arquitetura aberta orientada a APIs frente a novos entrantes</h3>
+        <p data-i18n="case2.desc">Pressão competitiva de fintechs e exigências regulatórias de Open Finance redesenharam a arquitetura de produtos e serviços. Clara/EA aplicado para mapear como produtos passariam a ser acionáveis tanto interna quanto externamente, sob uma camada API-first — preservando coerência da experiência do cliente (UX/UI) e integrando-se ao ecossistema Open Finance.</p>
+      </article>
+
+      <article class="case-item">
+        <p class="case-tag" data-i18n="case3.tag">Varejo Internacional · Pós-M&amp;A</p>
+        <h3 data-i18n="case3.title">Modernização e otimização de portfólio em ambiente multinacional pós-fusão</h3>
+        <p data-i18n="case3.desc">Empresa de varejo com presença internacional, formada a partir de sucessivas fusões e aquisições. O resultado era um ambiente complexo, redundante e operacionalmente caro. Clara/EA aplicado para mapear capacidades sobrepostas entre marcas e geografias, racionalizar o portfólio de aplicações e desenhar o roadmap de modernização com critérios objetivos de consolidação.</p>
+      </article>
+
+      <article class="case-item">
+        <p class="case-tag" data-i18n="case4.tag">Greenfield · Nova Instituição Financeira</p>
+        <h3 data-i18n="case4.title">Arquitetura como pilar de sustentação para escalar do zero</h3>
+        <p data-i18n="case4.desc">Construção de instituição financeira a partir de uma página em branco. Diferente do uso defensivo do framework — mapear o que já existe — aqui Clara/EA serviu de planta arquitetural para o crescimento orgânico. As 13 camadas, hierarquias e relações foram definidas desde o início, permitindo expansão acelerada sem dívida arquitetural acumulada nos primeiros anos.</p>
+      </article>
+
+      <article class="case-item">
+        <p class="case-tag" data-i18n="case5.tag">Seguros · Planejamento Estratégico</p>
+        <h3 data-i18n="case5.title">Mapeamento de negócio e roadmap trianual de transformação</h3>
+        <p data-i18n="case5.desc">Apoio ao planejamento estratégico de uma seguradora. Clara/EA aplicado como instrumento de diagnóstico: mapear o negócio em suas oito camadas (de Mercado a Métricas), identificar lacunas e dívidas estruturais, e traduzir o resultado em roadmap trianual de iniciativas — priorizadas pela contribuição a cada camada e pelo impacto sobre o negócio.</p>
+      </article>
+
+      <article class="case-item">
+        <p class="case-tag" data-i18n="case6.tag">Dados &amp; Inteligência Analítica</p>
+        <h3 data-i18n="case6.title">Construção da estratégia em organização de dados e analytics</h3>
+        <p data-i18n="case6.desc">Aplicação em organização cuja proposição de valor é dados e inteligência analítica. Clara/EA atuou na construção da própria estratégia — usando as camadas superiores da pirâmide (Mercado, Marca, Canais, Produtos) para mapear a oferta analítica, articular o posicionamento competitivo e desenhar o portfólio de produtos de dados de forma coesa, antes de descer para a arquitetura técnica que sustenta tudo.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -454,13 +479,26 @@
       'cmdb.f4.title': 'Implementa o framework',
       'cmdb.f4.desc': 'Cada princípio, conceito e camada do Clara/EA é traduzido em entidades, relações e governança dentro da ferramenta.',
       'cmdb.cta1': 'Conheça a ferramenta →', 'cmdb.cta2': 'Solicitar demonstração',
-      'cases.eyebrow': 'Casos de Uso', 'cases.title': 'Aplicação no mercado financeiro',
-      'cases.lead': 'O ClaraEA nasceu da prática em ambientes de alta complexidade regulatória, operacional e tecnológica. Os primeiros casos publicados detalham aplicação em instituições financeiras de grande porte.',
-      'case.tag': 'Setor Financeiro',
-      'case.title': 'Alinhamento entre estratégia, processos e tecnologia em uma instituição de grande porte',
-      'case.desc': 'Como a aplicação do framework permitiu mapear interdependências entre áreas de negócio e sistemas, reduzindo redundâncias e acelerando a entrega de iniciativas estratégicas.',
-      'case.cta': 'Detalhes em breve · em redação',
-      'case.stat': 'anos de aplicação contínua do método em ambiente bancário',
+      'cases.eyebrow': 'Casos de Uso', 'cases.title': 'Aplicações em ambientes complexos',
+      'cases.lead': 'Clara/EA nasceu e amadureceu em projetos de grande magnitude — instituições financeiras tradicionais, novos entrantes, varejo multinacional, greenfields, seguradoras e organizações de dados e analytics. Cada caso a seguir endereça uma classe distinta de problema arquitetural.',
+      'case1.tag': 'Instituição Financeira · Tradicional',
+      'case1.title': 'A origem do framework: alinhar tecnologia à estratégia em tempos de transformação digital',
+      'case1.desc': 'Ambiente bancário de alta complexidade com múltiplos projetos estratégicos e transformacionais simultâneos. A necessidade contínua de adequar a arquitetura tecnológica às mudanças de estratégia revelou os limites das práticas tradicionais de Arquitetura Corporativa — especialmente na profundidade com que tratavam a arquitetura de negócios. Os primeiros insights que viriam a estruturar o Clara/EA nasceram aqui: a percepção de que o framework precisava endereçar o negócio com o mesmo rigor metodológico reservado à tecnologia.',
+      'case2.tag': 'Indústria Financeira · Open Finance & APIs',
+      'case2.title': 'Arquitetura aberta orientada a APIs frente a novos entrantes',
+      'case2.desc': 'Pressão competitiva de fintechs e exigências regulatórias de Open Finance redesenharam a arquitetura de produtos e serviços. Clara/EA aplicado para mapear como produtos passariam a ser acionáveis tanto interna quanto externamente, sob uma camada API-first — preservando coerência da experiência do cliente (UX/UI) e integrando-se ao ecossistema Open Finance.',
+      'case3.tag': 'Varejo Internacional · Pós-M&A',
+      'case3.title': 'Modernização e otimização de portfólio em ambiente multinacional pós-fusão',
+      'case3.desc': 'Empresa de varejo com presença internacional, formada a partir de sucessivas fusões e aquisições. O resultado era um ambiente complexo, redundante e operacionalmente caro. Clara/EA aplicado para mapear capacidades sobrepostas entre marcas e geografias, racionalizar o portfólio de aplicações e desenhar o roadmap de modernização com critérios objetivos de consolidação.',
+      'case4.tag': 'Greenfield · Nova Instituição Financeira',
+      'case4.title': 'Arquitetura como pilar de sustentação para escalar do zero',
+      'case4.desc': 'Construção de instituição financeira a partir de uma página em branco. Diferente do uso defensivo do framework — mapear o que já existe — aqui Clara/EA serviu de planta arquitetural para o crescimento orgânico. As 13 camadas, hierarquias e relações foram definidas desde o início, permitindo expansão acelerada sem dívida arquitetural acumulada nos primeiros anos.',
+      'case5.tag': 'Seguros · Planejamento Estratégico',
+      'case5.title': 'Mapeamento de negócio e roadmap trianual de transformação',
+      'case5.desc': 'Apoio ao planejamento estratégico de uma seguradora. Clara/EA aplicado como instrumento de diagnóstico: mapear o negócio em suas oito camadas (de Mercado a Métricas), identificar lacunas e dívidas estruturais, e traduzir o resultado em roadmap trianual de iniciativas — priorizadas pela contribuição a cada camada e pelo impacto sobre o negócio.',
+      'case6.tag': 'Dados & Inteligência Analítica',
+      'case6.title': 'Construção da estratégia em organização de dados e analytics',
+      'case6.desc': 'Aplicação em organização cuja proposição de valor é dados e inteligência analítica. Clara/EA atuou na construção da própria estratégia — usando as camadas superiores da pirâmide (Mercado, Marca, Canais, Produtos) para mapear a oferta analítica, articular o posicionamento competitivo e desenhar o portfólio de produtos de dados de forma coesa, antes de descer para a arquitetura técnica que sustenta tudo.',
       'news.eyebrow': 'Acompanhe',
       'news.title': 'Atualizações sobre o framework e a ferramenta',
       'news.lead': 'Cadastre-se para acompanhar novos casos, artigos sobre o framework e atualizações do EA/CMDB. Para demonstração ou consultoria, escreva diretamente.',
@@ -512,13 +550,26 @@
       'cmdb.f4.title': 'Implements the framework',
       'cmdb.f4.desc': 'Every principle, concept, and layer of Clara/EA is translated into entities, relationships, and governance within the tool.',
       'cmdb.cta1': 'Explore the tool →', 'cmdb.cta2': 'Request a demo',
-      'cases.eyebrow': 'Use Cases', 'cases.title': 'Application in financial services',
-      'cases.lead': 'ClaraEA was born from practice in environments of high regulatory, operational, and technological complexity. The first published cases detail application in large financial institutions.',
-      'case.tag': 'Financial Services',
-      'case.title': 'Alignment of strategy, processes, and technology in a large financial institution',
-      'case.desc': 'How applying the framework made it possible to map interdependencies between business areas and systems, reducing redundancies and accelerating the delivery of strategic initiatives.',
-      'case.cta': 'Full case coming soon · in writing',
-      'case.stat': 'years of continuous application of the method in banking environments',
+      'cases.eyebrow': 'Use Cases', 'cases.title': 'Applications in complex environments',
+      'cases.lead': 'Clara/EA was born and matured in large-scale projects — traditional financial institutions, new market entrants, multinational retail, greenfields, insurers, and data/analytics organizations. Each case below addresses a distinct class of architectural problem.',
+      'case1.tag': 'Financial Institution · Traditional',
+      'case1.title': 'The origin of the framework: aligning technology to strategy in times of digital transformation',
+      'case1.desc': 'A high-complexity banking environment with multiple strategic and transformational projects running in parallel. The continuous need to adapt the technology architecture to shifting strategy revealed the limits of traditional Enterprise Architecture practices — particularly in how shallowly they treated business architecture. The first insights that would shape Clara/EA were born here: the recognition that the framework had to address the business with the same methodological rigor reserved for technology.',
+      'case2.tag': 'Financial Industry · Open Finance & APIs',
+      'case2.title': 'Open, API-driven architecture facing new market entrants',
+      'case2.desc': 'Competitive pressure from fintechs and regulatory demands of Open Finance reshaped the architecture of products and services. Clara/EA was applied to map how products would become invocable both internally and externally under an API-first layer — preserving coherence of customer experience (UX/UI) and integrating with the Open Finance ecosystem.',
+      'case3.tag': 'International Retail · Post-M&A',
+      'case3.title': 'Portfolio modernization and rationalization in a post-merger multinational',
+      'case3.desc': 'International retail company formed through successive mergers and acquisitions. The result was a complex, redundant, operationally expensive environment. Clara/EA was applied to map overlapping capabilities across brands and geographies, rationalize the application portfolio, and design a modernization roadmap with objective consolidation criteria.',
+      'case4.tag': 'Greenfield · New Financial Institution',
+      'case4.title': 'Architecture as a foundation pillar to scale from zero',
+      'case4.desc': 'Building a financial institution from a blank page. Unlike the defensive use of the framework — mapping what already exists — here Clara/EA served as architectural blueprint for organic growth. The 13 layers, hierarchies, and relationships were defined from day one, enabling accelerated expansion without architectural debt accumulating in the early years.',
+      'case5.tag': 'Insurance · Strategic Planning',
+      'case5.title': 'Business mapping and three-year transformation roadmap',
+      'case5.desc': 'Support to the strategic planning of an insurance company. Clara/EA applied as a diagnostic instrument: mapping the business across its eight layers (from Market to Metrics), identifying structural gaps and debt, and translating the result into a three-year roadmap of initiatives — prioritized by their contribution to each layer and impact on the business.',
+      'case6.tag': 'Data & Analytics Intelligence',
+      'case6.title': 'Building the strategy itself in a data and analytics organization',
+      'case6.desc': 'Application in an organization whose value proposition is data and analytical intelligence. Clara/EA was used to build the strategy itself — applying the upper layers of the pyramid (Market, Brand, Channels, Products) to map the analytical offering, articulate competitive positioning, and design a coherent portfolio of data products before descending to the technology architecture that supports it.',
       'news.eyebrow': 'Stay updated',
       'news.title': 'Updates on the framework and the tool',
       'news.lead': 'Subscribe to follow new cases, articles on the framework, and EA/CMDB updates. For demos or consulting, write directly.',
@@ -570,13 +621,26 @@
       'cmdb.f4.title': 'Implementa el framework',
       'cmdb.f4.desc': 'Cada principio, concepto y capa de Clara/EA se traduce en entidades, relaciones y gobernanza dentro de la herramienta.',
       'cmdb.cta1': 'Conoce la herramienta →', 'cmdb.cta2': 'Solicitar demostración',
-      'cases.eyebrow': 'Casos de Uso', 'cases.title': 'Aplicación en el sector financiero',
-      'cases.lead': 'ClaraEA nació de la práctica en entornos de alta complejidad regulatoria, operativa y tecnológica. Los primeros casos publicados detallan la aplicación en grandes instituciones financieras.',
-      'case.tag': 'Sector Financiero',
-      'case.title': 'Alineación entre estrategia, procesos y tecnología en una institución financiera de gran porte',
-      'case.desc': 'Cómo la aplicación del framework permitió mapear interdependencias entre áreas de negocio y sistemas, reduciendo redundancias y acelerando la entrega de iniciativas estratégicas.',
-      'case.cta': 'Detalles próximamente · en redacción',
-      'case.stat': 'años de aplicación continua del método en entorno bancario',
+      'cases.eyebrow': 'Casos de Uso', 'cases.title': 'Aplicaciones en entornos complejos',
+      'cases.lead': 'Clara/EA nació y maduró en proyectos de gran magnitud — instituciones financieras tradicionales, nuevos entrantes, retail multinacional, greenfields, aseguradoras y organizaciones de datos y analytics. Cada caso a continuación aborda una clase distinta de problema arquitectónico.',
+      'case1.tag': 'Institución Financiera · Tradicional',
+      'case1.title': 'El origen del framework: alinear tecnología a estrategia en tiempos de transformación digital',
+      'case1.desc': 'Entorno bancario de alta complejidad con múltiples proyectos estratégicos y transformacionales simultáneos. La necesidad continua de adecuar la arquitectura tecnológica a los cambios de estrategia reveló los límites de las prácticas tradicionales de Arquitectura Empresarial — especialmente en la profundidad con que trataban la arquitectura de negocio. Los primeros insights que estructurarían Clara/EA nacieron aquí: la percepción de que el framework debía abordar el negocio con el mismo rigor metodológico reservado a la tecnología.',
+      'case2.tag': 'Industria Financiera · Open Finance & APIs',
+      'case2.title': 'Arquitectura abierta orientada a APIs frente a nuevos entrantes',
+      'case2.desc': 'La presión competitiva de fintechs y las exigencias regulatorias de Open Finance rediseñaron la arquitectura de productos y servicios. Clara/EA aplicado para mapear cómo los productos pasarían a ser invocables tanto interna como externamente, bajo una capa API-first — preservando la coherencia de la experiencia del cliente (UX/UI) e integrándose al ecosistema Open Finance.',
+      'case3.tag': 'Retail Internacional · Post-M&A',
+      'case3.title': 'Modernización y optimización de portafolio en entorno multinacional post-fusión',
+      'case3.desc': 'Empresa de retail con presencia internacional, formada por sucesivas fusiones y adquisiciones. El resultado era un entorno complejo, redundante y operativamente costoso. Clara/EA aplicado para mapear capacidades superpuestas entre marcas y geografías, racionalizar el portafolio de aplicaciones y diseñar el roadmap de modernización con criterios objetivos de consolidación.',
+      'case4.tag': 'Greenfield · Nueva Institución Financiera',
+      'case4.title': 'Arquitectura como pilar de sustentación para escalar desde cero',
+      'case4.desc': 'Construcción de una institución financiera desde una página en blanco. A diferencia del uso defensivo del framework — mapear lo que ya existe — aquí Clara/EA sirvió de plano arquitectónico para el crecimiento orgánico. Las 13 capas, jerarquías y relaciones fueron definidas desde el inicio, permitiendo expansión acelerada sin deuda arquitectónica acumulada en los primeros años.',
+      'case5.tag': 'Seguros · Planificación Estratégica',
+      'case5.title': 'Mapeo de negocio y roadmap trianual de transformación',
+      'case5.desc': 'Apoyo a la planificación estratégica de una aseguradora. Clara/EA aplicado como instrumento de diagnóstico: mapear el negocio en sus ocho capas (de Mercado a Métricas), identificar brechas y deudas estructurales, y traducir el resultado en un roadmap trianual de iniciativas — priorizadas por su contribución a cada capa y por el impacto sobre el negocio.',
+      'case6.tag': 'Datos & Inteligencia Analítica',
+      'case6.title': 'Construcción de la estrategia en organización de datos y analytics',
+      'case6.desc': 'Aplicación en una organización cuya propuesta de valor son datos e inteligencia analítica. Clara/EA actuó en la construcción de la propia estrategia — usando las capas superiores de la pirámide (Mercado, Marca, Canales, Productos) para mapear la oferta analítica, articular el posicionamiento competitivo y diseñar el portafolio de productos de datos de forma coherente, antes de descender a la arquitectura técnica que lo sustenta.',
       'news.eyebrow': 'Mantente al día',
       'news.title': 'Actualizaciones sobre el framework y la herramienta',
       'news.lead': 'Suscríbete para acompañar nuevos casos, artículos sobre el framework y actualizaciones del EA/CMDB. Para demostración o consultoría, escribe directamente.',
