@@ -638,6 +638,35 @@ section {
   letter-spacing: -0.03em;
 }
 
+/* Foto real do autor — tom sépia/dourado compatível com a paleta do site.
+   Mantém o gradiente navy ao fundo (visível como vinheta) e camada sépia
+   sobre a imagem. As iniciais ficam ocultas quando há imagem carregada;
+   se o <img> falhar (onerror), a classe --fallback restaura as iniciais. */
+.author-photo--with-image .initials { display: none; }
+.author-photo--with-image.author-photo--fallback .initials { display: block; }
+
+.author-photo--with-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  filter: sepia(0.55) saturate(0.9) brightness(0.96) contrast(1.02) hue-rotate(-6deg);
+  mix-blend-mode: normal;
+}
+
+/* Vinheta dourada sutil sobre a imagem — costura com --accent-gold */
+.author-photo--with-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 80% at 50% 30%, transparent 55%, rgba(27,45,79,0.18) 100%),
+    linear-gradient(180deg, rgba(184,148,94,0.04) 0%, rgba(27,45,79,0.10) 100%);
+  pointer-events: none;
+}
+
 .author-bio p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; }
 
 .timeline { margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 32px; }
