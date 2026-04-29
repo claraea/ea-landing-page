@@ -147,6 +147,16 @@ header {
 .btn-outline { background: transparent; color: var(--brand-deep); border-color: var(--brand-deep); }
 .btn-outline:hover { background: var(--brand-deep); color: #fff; }
 
+.btn-sm {
+  padding: 7px 16px;
+  font-size: 13px;
+}
+
+/* Botão Entrar no header — acessa a plataforma EA/CMDB */
+.btn-login {
+  white-space: nowrap;
+}
+
 /* ============ HERO ============ */
 .hero {
   padding: 120px 0 140px;
