@@ -400,7 +400,14 @@
     <p class="section-eyebrow" data-i18n="news.eyebrow">Acompanhe</p>
     <h2 data-i18n="news.title">Atualizações sobre o framework e a ferramenta</h2>
     <p data-i18n="news.lead">Cadastre-se para acompanhar novos casos, artigos sobre o framework e atualizações do EA/CMDB. Para demonstração ou consultoria, escreva diretamente.</p>
-    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Inscrição registrada (demo).');">
+    <form class="newsletter-form" onsubmit="event.preventDefault();
+      var email = this.elements[0].value.trim();
+      if (!email) return;
+      var dict = (typeof translations !== 'undefined' && translations[currentLang]) ? translations[currentLang] : {};
+      var subject = encodeURIComponent(dict['news.mailto.subject'] || 'Inscrição · Clara/EA');
+      var template = dict['news.mailto.body'] || 'Olá,\n\nGostaria de receber atualizações do framework Clara/EA e do EA/CMDB.\n\nMeu e-mail: {email}\n\n— enviado pelo site claraea.com.br';
+      var body = encodeURIComponent(template.replace('{email}', email));
+      window.location.href = 'mailto:contato@claraea.com.br?subject=' + subject + '&body=' + body;">
       <input type="email" placeholder="seu@email.com" data-i18n-attr="placeholder" data-i18n="news.placeholder" required>
       <button type="submit" data-i18n="news.button">Inscrever</button>
     </form>
@@ -435,7 +442,7 @@
           <li><a href="ClaraEA-Autor.html" data-i18n="footer.l7">Autor</a></li>
           <li><a href="#casos" data-i18n="footer.l5">Casos</a></li>
           <li><a href="https://www.linkedin.com/in/maclara/" target="_blank" rel="noopener" data-i18n="footer.linkedin">LinkedIn</a></li>
-          <li><a href="mailto:contato@claraea.com">contato@claraea.com</a></li>
+          <li><a href="mailto:contato@claraea.com.br">contato@claraea.com.br</a></li>
         </ul>
       </div>
     </div>
@@ -634,6 +641,8 @@
       'news.title': 'Atualizações sobre o framework e a ferramenta',
       'news.lead': 'Cadastre-se para acompanhar novos casos, artigos sobre o framework e atualizações do EA/CMDB. Para demonstração ou consultoria, escreva diretamente.',
       'news.placeholder': 'seu@email.com', 'news.button': 'Inscrever',
+      'news.mailto.subject': 'Inscrição · Clara/EA',
+      'news.mailto.body': 'Olá,\n\nGostaria de receber atualizações do framework Clara/EA e do EA/CMDB.\n\nMeu e-mail: {email}\n\n— enviado pelo site claraea.com.br',
       'footer.tagline': 'Arquitetura corporativa que conecta estratégia, negócios e tecnologia.',
       'footer.h1': 'Framework', 'footer.h2': 'Ferramenta', 'footer.h3': 'Sobre',
       'footer.l1': 'Camadas', 'footer.l2': 'Manifesto',
@@ -718,6 +727,8 @@
       'news.title': 'Updates on the framework and the tool',
       'news.lead': 'Subscribe to follow new cases, articles on the framework, and EA/CMDB updates. For demos or consulting, write directly.',
       'news.placeholder': 'your@email.com', 'news.button': 'Subscribe',
+      'news.mailto.subject': 'Subscription · Clara/EA',
+      'news.mailto.body': 'Hello,\n\nI would like to receive updates on the Clara/EA framework and EA/CMDB.\n\nMy email: {email}\n\n— sent from claraea.com.br',
       'footer.tagline': 'Enterprise architecture that connects strategy, business, and technology.',
       'footer.h1': 'Framework', 'footer.h2': 'Tool', 'footer.h3': 'About',
       'footer.l1': 'Layers', 'footer.l2': 'Manifesto',
@@ -802,6 +813,8 @@
       'news.title': 'Actualizaciones sobre el framework y la herramienta',
       'news.lead': 'Suscríbete para acompañar nuevos casos, artículos sobre el framework y actualizaciones del EA/CMDB. Para demostración o consultoría, escribe directamente.',
       'news.placeholder': 'tu@email.com', 'news.button': 'Suscribirse',
+      'news.mailto.subject': 'Suscripción · Clara/EA',
+      'news.mailto.body': 'Hola,\n\nMe gustaría recibir actualizaciones del framework Clara/EA y del EA/CMDB.\n\nMi correo: {email}\n\n— enviado desde claraea.com.br',
       'footer.tagline': 'Arquitectura empresarial que conecta estrategia, negocio y tecnología.',
       'footer.h1': 'Framework', 'footer.h2': 'Herramienta', 'footer.h3': 'Acerca',
       'footer.l1': 'Capas', 'footer.l2': 'Manifiesto',
