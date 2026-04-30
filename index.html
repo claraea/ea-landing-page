@@ -93,6 +93,7 @@
     <a href="./" class="logo">Clara<span>/</span>EA</a>
     <nav>
       <ul class="nav-links">
+        <li><a href="#conceito" data-i18n="nav.concept">Conceito</a></li>
         <li><a href="#framework" data-i18n="nav.framework">Framework</a></li>
         <li><a href="ClaraEA-CMDB.html" data-i18n="nav.cmdb">EA/CMDB</a></li>
         <li><a href="#casos" data-i18n="nav.cases">Casos</a></li>
@@ -141,6 +142,47 @@
         <p class="section-lead" data-i18n="manifesto.p2">A maneira como uma organização se estrutura — seus processos, sua tomada de decisão, sua arquitetura tecnológica — condiciona diretamente os resultados que ela alcança. Estruturas fragmentadas produzem sistemas fragmentados. Estruturas alinhadas produzem soluções coerentes e escaláveis.</p>
         <blockquote class="pullquote" data-i18n="manifesto.quote">"A estrutura organizacional influencia diretamente a arquitetura do software que a empresa desenvolve."<cite data-i18n="manifesto.cite">Lei de Conway, 1968</cite></blockquote>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEITO -->
+<section id="conceito">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="concept.eyebrow">O Conceito</p>
+    <h2 class="section-title" data-i18n="concept.title">Cinco pilares para ler o framework</h2>
+    <p class="section-lead" data-i18n="concept.lead">Antes da pirâmide das 13 camadas, cinco ideias dão a chave de leitura do Clara/EA — e explicam por que ele é diferente de outros frameworks de Arquitetura Corporativa.</p>
+
+    <div class="concept-grid">
+      <article class="concept-card">
+        <span class="num">I</span>
+        <h3 data-i18n="concept.c1.title">Universalidade</h3>
+        <p data-i18n="concept.c1.desc">Aplicável a qualquer empresa, qualquer porte. Da startup ao conglomerado, a Arquitetura Corporativa traz visão estruturada do todo — pré-requisito para gestão estratégica e operacional.</p>
+      </article>
+
+      <article class="concept-card">
+        <span class="num">II</span>
+        <h3 data-i18n="concept.c2.title">Hierarquia recursiva</h3>
+        <p data-i18n="concept.c2.desc">Camadas hierárquicas e interdependentes. Cada camada se decompõe em sub-camadas; cada sub-camada contém entidades, processos e relacionamentos — que também se hierarquizam.</p>
+      </article>
+
+      <article class="concept-card">
+        <span class="num">III</span>
+        <h3 data-i18n="concept.c3.title">Domínios</h3>
+        <p data-i18n="concept.c3.desc">Dentro de cada camada, entidades se agrupam em domínios por semelhança — de atributos, de processos ou de relacionamentos. O domínio é o recorte que torna a camada navegável.</p>
+      </article>
+
+      <article class="concept-card">
+        <span class="num">IV</span>
+        <h3 data-i18n="concept.c4.title">Materialização</h3>
+        <p data-i18n="concept.c4.desc">Tudo o que sustenta a empresa — negócio e tecnologia — é tangibilizado em uma base multidimensional: o EA/CMDB. Não vive em slides; vive em grafo consultável e integrado à gestão.</p>
+      </article>
+
+      <article class="concept-card concept-card--featured">
+        <span class="num">V</span>
+        <h3 data-i18n="concept.c5.title">Evolução</h3>
+        <p data-i18n="concept.c5.desc">Modelo evolutivo e adaptativo. O Clara/EA não impõe um estado-alvo rígido: identifica, mapeia e desenvolve continuamente o que sustenta a empresa, integrando-se à gestão real e gerando métricas que alimentam a estratégia.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -517,7 +559,7 @@
   // ============ TRANSLATIONS ============
   const translations = {
     pt: {
-      'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contato', 'nav.login': 'Entrar',
+      'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contato', 'nav.login': 'Entrar', 'nav.concept': 'Conceito',
       'hero.eyebrow': 'Arquitetura Corporativa',
       'hero.quote': 'A Arquitetura condiciona o comportamento.',
       'hero.subtitle': 'ClaraEA é o framework prático que integra arquitetura de negócios e arquitetura de tecnologia. Fruto de décadas de experiência no setor de tecnologia e mercado financeiro.',
@@ -527,6 +569,19 @@
       'manifesto.p2': 'A maneira como uma organização se estrutura — seus processos, sua tomada de decisão, sua arquitetura tecnológica — condiciona diretamente os resultados que ela alcança. Estruturas fragmentadas produzem sistemas fragmentados. Estruturas alinhadas produzem soluções coerentes e escaláveis.',
       'manifesto.quote': '"A estrutura organizacional influencia diretamente a arquitetura do software que a empresa desenvolve."',
       'manifesto.cite': 'Lei de Conway, 1968',
+      'concept.eyebrow': 'O Conceito',
+      'concept.title': 'Cinco pilares para ler o framework',
+      'concept.lead': 'Antes da pirâmide das 13 camadas, cinco ideias dão a chave de leitura do Clara/EA — e explicam por que ele é diferente de outros frameworks de Arquitetura Corporativa.',
+      'concept.c1.title': 'Universalidade',
+      'concept.c1.desc': 'Aplicável a qualquer empresa, qualquer porte. Da startup ao conglomerado, a Arquitetura Corporativa traz visão estruturada do todo — pré-requisito para gestão estratégica e operacional.',
+      'concept.c2.title': 'Hierarquia recursiva',
+      'concept.c2.desc': 'Camadas hierárquicas e interdependentes. Cada camada se decompõe em sub-camadas; cada sub-camada contém entidades, processos e relacionamentos — que também se hierarquizam.',
+      'concept.c3.title': 'Domínios',
+      'concept.c3.desc': 'Dentro de cada camada, entidades se agrupam em domínios por semelhança — de atributos, de processos ou de relacionamentos. O domínio é o recorte que torna a camada navegável.',
+      'concept.c4.title': 'Materialização',
+      'concept.c4.desc': 'Tudo o que sustenta a empresa — negócio e tecnologia — é tangibilizado em uma base multidimensional: o EA/CMDB. Não vive em slides; vive em grafo consultável e integrado à gestão.',
+      'concept.c5.title': 'Evolução',
+      'concept.c5.desc': 'Modelo evolutivo e adaptativo. O Clara/EA não impõe um estado-alvo rígido: identifica, mapeia e desenvolve continuamente o que sustenta a empresa, integrando-se à gestão real e gerando métricas que alimentam a estratégia.',
       'framework.eyebrow': 'O Framework', 'framework.title': 'Camadas que conectam negócio e tecnologia',
       'framework.lead': 'O ClaraEA estrutura a organização em camadas hierárquicas e interdependentes — da estratégia à implementação. Clique em cada camada para ver detalhes.',
       'framework.business': 'Arquitetura de Negócios', 'framework.tech': 'Arquitetura de Tecnologia',
@@ -588,7 +643,7 @@
       'footer.lang': 'PT · EN · ES'
     },
     en: {
-      'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Cases', 'nav.contact': 'Contact', 'nav.login': 'Sign in',
+      'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Cases', 'nav.contact': 'Contact', 'nav.login': 'Sign in', 'nav.concept': 'Concept',
       'hero.eyebrow': 'Enterprise Architecture',
       'hero.quote': 'Architecture shapes behavior.',
       'hero.subtitle': 'ClaraEA is the practical framework that integrates business architecture and technology architecture. Built on decades of experience across technology and financial services.',
@@ -598,6 +653,19 @@
       'manifesto.p2': 'The way an organization is structured — its processes, decision-making, technological architecture — directly conditions the results it achieves. Fragmented structures produce fragmented systems. Aligned structures produce coherent, scalable solutions.',
       'manifesto.quote': '"Organizations design systems that mirror their own communication structure."',
       'manifesto.cite': "Conway's Law, 1968",
+      'concept.eyebrow': 'The Concept',
+      'concept.title': 'Five pillars for reading the framework',
+      'concept.lead': 'Before the pyramid of 13 layers, five ideas provide the key to reading Clara/EA — and explain why it differs from other Enterprise Architecture frameworks.',
+      'concept.c1.title': 'Universality',
+      'concept.c1.desc': 'Applicable to any company, of any size. From startup to conglomerate, Enterprise Architecture provides a structured view of the whole — a prerequisite for strategic and operational management.',
+      'concept.c2.title': 'Recursive hierarchy',
+      'concept.c2.desc': 'Hierarchical, interdependent layers. Each layer breaks down into sub-layers; each sub-layer contains entities, processes and relationships — which themselves form hierarchies.',
+      'concept.c3.title': 'Domains',
+      'concept.c3.desc': 'Within each layer, entities group into domains by similarity — of attributes, processes or relationships. The domain is the cut that makes the layer navigable.',
+      'concept.c4.title': 'Materialization',
+      'concept.c4.desc': 'Everything that sustains the company — business and technology — is materialized in a multidimensional database: EA/CMDB. It does not live in slides; it lives in a queryable graph integrated into management.',
+      'concept.c5.title': 'Evolution',
+      'concept.c5.desc': 'An evolutionary, adaptive model. Clara/EA does not impose a rigid target state: it continuously identifies, maps and develops what sustains the company, integrating with real management and generating metrics that feed strategy.',
       'framework.eyebrow': 'The Framework', 'framework.title': 'Layers connecting business and technology',
       'framework.lead': 'ClaraEA structures the organization into hierarchical, interdependent layers — from strategy to implementation. Click any layer to see details.',
       'framework.business': 'Business Architecture', 'framework.tech': 'Technology Architecture',
@@ -659,7 +727,7 @@
       'footer.lang': 'PT · EN · ES'
     },
     es: {
-      'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contacto', 'nav.login': 'Iniciar sesión',
+      'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contacto', 'nav.login': 'Iniciar sesión', 'nav.concept': 'Concepto',
       'hero.eyebrow': 'Arquitectura Empresarial',
       'hero.quote': 'La Arquitectura condiciona el comportamiento.',
       'hero.subtitle': 'ClaraEA es el framework práctico que integra arquitectura de negocio y arquitectura de tecnología. Fruto de décadas de experiencia en tecnología y mercado financiero.',
@@ -669,6 +737,19 @@
       'manifesto.p2': 'La forma en que se estructura una organización — sus procesos, su toma de decisiones, su arquitectura tecnológica — condiciona directamente los resultados que alcanza. Estructuras fragmentadas producen sistemas fragmentados. Estructuras alineadas producen soluciones coherentes y escalables.',
       'manifesto.quote': '"La estructura organizacional influye directamente en la arquitectura del software que la empresa desarrolla."',
       'manifesto.cite': 'Ley de Conway, 1968',
+      'concept.eyebrow': 'El Concepto',
+      'concept.title': 'Cinco pilares para leer el framework',
+      'concept.lead': 'Antes de la pirámide de 13 capas, cinco ideas dan la clave de lectura de Clara/EA — y explican por qué se diferencia de otros frameworks de Arquitectura Empresarial.',
+      'concept.c1.title': 'Universalidad',
+      'concept.c1.desc': 'Aplicable a cualquier empresa, de cualquier porte. De la startup al conglomerado, la Arquitectura Empresarial aporta una visión estructurada del todo — requisito previo para la gestión estratégica y operativa.',
+      'concept.c2.title': 'Jerarquía recursiva',
+      'concept.c2.desc': 'Capas jerárquicas e interdependientes. Cada capa se descompone en sub-capas; cada sub-capa contiene entidades, procesos y relaciones — que también se jerarquizan.',
+      'concept.c3.title': 'Dominios',
+      'concept.c3.desc': 'Dentro de cada capa, las entidades se agrupan en dominios por semejanza — de atributos, procesos o relaciones. El dominio es el recorte que hace navegable la capa.',
+      'concept.c4.title': 'Materialización',
+      'concept.c4.desc': 'Todo lo que sustenta a la empresa — negocio y tecnología — se materializa en una base multidimensional: el EA/CMDB. No vive en diapositivas; vive en un grafo consultable e integrado a la gestión.',
+      'concept.c5.title': 'Evolución',
+      'concept.c5.desc': 'Modelo evolutivo y adaptativo. Clara/EA no impone un estado-objetivo rígido: identifica, mapea y desarrolla continuamente lo que sustenta a la empresa, integrándose a la gestión real y generando métricas que alimentan la estrategia.',
       'framework.eyebrow': 'El Framework', 'framework.title': 'Capas que conectan negocio y tecnología',
       'framework.lead': 'ClaraEA estructura la organización en capas jerárquicas e interdependientes — desde la estrategia hasta la implementación. Haz clic en cada capa para ver detalles.',
       'framework.business': 'Arquitectura de Negocio', 'framework.tech': 'Arquitectura de Tecnología',
