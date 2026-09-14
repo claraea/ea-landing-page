@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nubank sob o método Clara/EA — Caso de Mercado</title>
+<meta name="description" content="Arquitetura de negócios do conglomerado Nu Holdings mapeada nas oito camadas do Clara/EA por IA agêntica, exclusivamente a partir de divulgação pública — 75 domínios, 465 entidades e rastreabilidade fonte a fonte.">
+<meta name="author" content="Marcelo Andrade Clara">
+<link rel="canonical" href="https://www.claraea.com.br/casos/nubank.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#1B2D4F">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Clara/EA">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.claraea.com.br/casos/nubank.html">
+<meta property="og:title" content="Nubank sob o método Clara/EA">
+<meta property="og:description" content="Arquitetura de negócios do conglomerado Nu Holdings mapeada nas oito camadas do Clara/EA por IA agêntica, a partir de divulgação pública — 75 domínios, 465 entidades, rastreabilidade fonte a fonte.">
+<meta property="og:image" content="https://www.claraea.com.br/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clara/EA · Framework de Arquitetura Corporativa">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nubank sob o método Clara/EA">
+<meta name="twitter:description" content="Arquitetura de negócios mapeada nas oito camadas do Clara/EA por IA agêntica, a partir de divulgação pública.">
+<meta name="twitter:image" content="https://www.claraea.com.br/assets/og-card.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<!-- Structured data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "Nubank sob o método Clara/EA",
+  "description": "Arquitetura de negócios do conglomerado Nu Holdings mapeada nas oito camadas do Clara/EA por IA agêntica, exclusivamente a partir de divulgação pública.",
+  "url": "https://www.claraea.com.br/casos/nubank.html",
+  "inLanguage": "pt-BR",
+  "datePublished": "2026-09-14",
+  "author": { "@id": "https://www.claraea.com.br/#person" },
+  "publisher": { "@type": "Organization", "name": "Clara/EA", "url": "https://www.claraea.com.br/" },
+  "about": { "@type": "Organization", "name": "Nu Holdings Ltd." },
+  "isPartOf": { "@type": "WebSite", "name": "Clara/EA", "url": "https://www.claraea.com.br/" }
+}
+</script>
+
+<style>
+  /* ---------- tokens do documento (derivados do design system do site) ---------- */
+  .case-doc{
+    --doc-ink-2:#3A3A3A;
+    --doc-rule-strong:#C4BDAE;
+    --doc-surface-2:#FAF8F3;
+    --doc-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --doc-ok:#1F6B4A;
+    --doc-warn:#8A6210;
+    --doc-stop:#8F2B2B;
+    font-size:15px;
+    line-height:1.55;
+  }
+  .case-doc code{font-family:var(--doc-mono);font-size:.92em;background:var(--doc-surface-2);padding:1px 5px;border:1px solid var(--rule)}
+  .case-doc h1,.case-doc h2,.case-doc h3,.case-doc h4{text-wrap:balance}
+
+  /* ---------- hero ---------- */
+  .case-hero{padding:96px 0 56px;border-top:none}
+  .case-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:end}
+  .case-hero .section-title{font-size:clamp(36px,5vw,58px);max-width:18ch;margin-bottom:24px}
+  .case-hero .section-lead{margin-bottom:0}
+  .case-meta{
+    font-family:var(--doc-mono);
+    font-size:12px;
+    line-height:2;
+    color:var(--ink-muted);
+    border-left:2px solid var(--accent-gold);
+    padding-left:18px;
+    white-space:nowrap;
+  }
+  .case-meta b{color:var(--ink-primary);font-weight:500}
+
+  /* ---------- como foi produzido ---------- */
+  .case-how{padding:72px 0}
+  .case-how-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px 64px;align-items:start}
+  .case-how p{font-size:16px;line-height:1.7;color:var(--doc-ink-2);margin-bottom:16px;max-width:60ch}
+  .case-how p:last-child{margin-bottom:0}
+  .case-how-steps{list-style:none;counter-reset:step}
+  .case-how-steps li{
+    counter-increment:step;
+    display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;
+    padding:18px 0;border-top:1px solid var(--rule);
+    font-size:15px;line-height:1.6;color:var(--doc-ink-2);
+  }
+  .case-how-steps li:last-child{border-bottom:1px solid var(--rule)}
+  .case-how-steps li::before{
+    content:counter(step,decimal-leading-zero);
+    font-family:var(--doc-mono);font-size:12px;color:var(--accent-gold);font-weight:600;padding-top:3px;
+  }
+  .case-how-steps b{color:var(--ink-primary);font-weight:600}
+
+  /* ---------- premissas do método ---------- */
+  .case-method{padding:0 0 72px;border-top:none}
+  .method{
+    display:grid;grid-template-columns:1fr;gap:1px;
+    background:var(--rule);border:1px solid var(--rule);
+  }
+  .method > div{background:var(--bg-elevated);padding:20px 22px}
+  @media (min-width:620px){ .method{grid-template-columns:repeat(2,1fr)} }
+  @media (min-width:980px){ .method{grid-template-columns:repeat(3,1fr)} }
+  .method h3{
+    font-family:var(--doc-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-gold);margin-bottom:8px;font-weight:600;
+  }
+  .method p{margin:0;font-size:14px;color:var(--doc-ink-2);line-height:1.55}
+
+  /* ---------- escopo (stack) ---------- */
+  .case-stack{padding:0 0 64px;border-top:none}
+  .section-label{
+    font-family:var(--doc-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-muted);margin:0 0 14px;
+  }
+  .stack{display:flex;flex-direction:column;gap:3px}
+  .stack-row{
+    display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:center;
+    padding:10px 16px;background:var(--bg-elevated);border:1px solid var(--rule);font-size:14px;
+  }
+  .stack-row a{color:var(--ink-primary);text-decoration:none}
+  .stack-row a:hover{color:var(--brand-deep);text-decoration:underline;text-decoration-color:var(--accent-gold)}
+  .stack-row.out{opacity:.55;background:transparent;border-style:dashed}
+  .stack-row.head{
+    background:transparent;border:none;padding-block:12px 2px;
+    font-family:var(--doc-mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--accent-gold);grid-template-columns:1fr;
+  }
+  .stack-num{font-family:var(--doc-mono);font-size:12px;color:var(--brand-deep);font-weight:600}
+  .stack-count{font-family:var(--doc-mono);font-size:11.5px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+
+  /* ---------- toolbar ---------- */
+  .toolbar{
+    position:sticky;top:73px;z-index:20;
+    background:rgba(245,242,236,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:12px 0;
+  }
+  .toolbar .container{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+  #q{
+    flex:1 1 240px;min-width:0;font:inherit;font-size:14px;padding:9px 12px;
+    background:var(--bg-elevated);border:1px solid var(--doc-rule-strong);color:var(--ink-primary);border-radius:2px;
+  }
+  #q:focus{outline:2px solid var(--brand-deep);outline-offset:1px}
+  .navpills{display:flex;flex-wrap:wrap;gap:4px}
+  .navpills a{
+    font-family:var(--doc-mono);font-size:11.5px;text-decoration:none;padding:5px 9px;
+    border:1px solid var(--doc-rule-strong);color:var(--doc-ink-2);border-radius:2px;
+  }
+  .navpills a:hover{border-color:var(--brand-deep);color:var(--brand-deep)}
+  .navpills a:focus-visible{outline:2px solid var(--brand-deep);outline-offset:1px}
+  #hits{font-family:var(--doc-mono);font-size:11.5px;color:var(--ink-muted)}
+
+  /* ---------- camadas ---------- */
+  .case-layers{padding:0 0 40px;border-top:none}
+  .cl-layer{padding:56px 0 0;border-top:1px solid var(--rule)}
+  .cl-layer:first-of-type{border-top:none;padding-top:40px}
+  .cl-layer-head{display:flex;gap:20px;align-items:baseline;flex-wrap:wrap}
+  .cl-layer-numeral{
+    font-family:var(--serif);font-size:44px;font-weight:600;color:var(--accent-gold);
+    line-height:1;font-variant-numeric:tabular-nums;
+  }
+  .cl-layer h2{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;letter-spacing:-.01em}
+  .cl-layer-purpose{margin:14px 0 0;color:var(--doc-ink-2);max-width:76ch;font-size:15px;line-height:1.65}
+  .domains{margin-top:28px;display:flex;flex-direction:column;gap:22px;min-width:0}
+  .domains > *{min-width:0}
+  .domain{padding:0;border:1px solid var(--rule);background:var(--bg-elevated)}
+  .domain-head{
+    display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;
+    padding:14px 18px;border-bottom:1px solid var(--rule);background:var(--doc-surface-2);
+  }
+  .domain-code{font-family:var(--doc-mono);font-size:11.5px;font-weight:600;color:var(--accent-gold);letter-spacing:.04em}
+  .domain-name{font-weight:600;font-size:15px;color:var(--ink-primary)}
+  .domain-note{font-size:12.5px;color:var(--ink-muted);flex:1 1 100%;margin:0;line-height:1.45}
+  .srcchips{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+  .srcchip{
+    font-family:var(--doc-mono);font-size:10px;letter-spacing:.04em;text-decoration:none;
+    color:var(--brand-deep);border:1px solid var(--doc-rule-strong);border-radius:2px;padding:1px 5px;
+    background:var(--bg-elevated);white-space:nowrap;
+  }
+  .srcchip:hover{border-color:var(--brand-deep)}
+  .srcchip:focus-visible{outline:2px solid var(--brand-deep);outline-offset:1px}
+  .ents{list-style:none;margin:0;padding:0}
+  .ent{
+    display:grid;grid-template-columns:70px minmax(150px,1fr) minmax(0,2.2fr);gap:4px 16px;
+    padding:9px 18px;border-top:1px solid var(--rule);align-items:baseline;
+  }
+  .ent:first-child{border-top:none}
+  .ent-code{font-family:var(--doc-mono);font-size:11px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+  .ent-name{font-weight:500;font-size:14px;line-height:1.4;color:var(--ink-primary);overflow-wrap:anywhere}
+  .ent-desc{font-size:13.2px;color:var(--doc-ink-2);line-height:1.45;overflow-wrap:anywhere}
+  .tag{
+    display:inline-block;font-family:var(--doc-mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    padding:1px 6px;border:1px solid currentColor;border-radius:2px;margin-left:8px;vertical-align:1px;white-space:nowrap;
+  }
+  .t-ok{color:var(--doc-ok)}
+  .t-trans{color:var(--brand-deep)}
+  .t-nd{color:var(--ink-muted)}
+  .t-sec{color:var(--doc-warn)}
+  .t-open{color:var(--doc-open)}
+  .t-stop{color:var(--doc-stop)}
+
+  /* ---------- ressalvas e referência cruzada ---------- */
+  .case-notes{padding:64px 0 96px;border-top:3px solid var(--accent-gold)}
+  .case-notes h2{font-family:var(--serif);font-size:28px;font-weight:600;margin-bottom:14px}
+  .case-notes h3{font-size:14px;margin:30px 0 10px;font-weight:600;color:var(--ink-primary)}
+  .case-notes ul{margin:0;padding-left:20px;color:var(--doc-ink-2);font-size:14px}
+  .case-notes li{margin-bottom:7px;line-height:1.55}
+  .case-notes p{color:var(--doc-ink-2);font-size:14.5px;max-width:80ch;line-height:1.65}
+  .xref{margin-top:14px;overflow-x:auto}
+  table.xr{border-collapse:collapse;width:100%;min-width:720px;font-size:12.8px}
+  table.xr th{
+    text-align:left;font-family:var(--doc-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-muted);font-weight:500;border-bottom:1px solid var(--doc-rule-strong);padding:0 14px 8px 0;vertical-align:bottom;
+  }
+  table.xr td{border-bottom:1px solid var(--rule);padding:10px 14px 10px 0;vertical-align:top;color:var(--doc-ink-2)}
+  table.xr tr:target td{background:#F3EBDD}
+  .xr-id{font-family:var(--doc-mono);font-size:11.5px;font-weight:600;color:var(--accent-gold);white-space:nowrap}
+  .xr-title{color:var(--ink-primary);font-weight:500}
+  .xr-title a{color:inherit;text-decoration-color:var(--doc-rule-strong)}
+  .xr-meta{display:block;font-size:11.5px;color:var(--ink-muted);margin-top:3px}
+  .xr-doms{font-family:var(--doc-mono);font-size:11px;line-height:1.9;color:var(--ink-muted)}
+  .xr-doms a{text-decoration:none;color:var(--doc-ink-2);border-bottom:1px solid var(--doc-rule-strong)}
+  .xr-doms a:hover{color:var(--brand-deep);border-color:var(--brand-deep)}
+  .xr-n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+  .colophon{
+    margin-top:44px;padding-top:18px;border-top:1px solid var(--rule);
+    font-family:var(--doc-mono);font-size:11px;color:var(--ink-muted);line-height:1.9;
+  }
+
+  /* ---------- cta ---------- */
+  .case-cta{padding:72px 0;background:var(--bg-elevated)}
+  .case-cta .section-lead{margin-bottom:28px}
+  .case-cta-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+  .hidden{display:none !important}
+
+  @media (max-width:980px){
+    .case-hero-grid{grid-template-columns:1fr}
+    .case-how-grid{grid-template-columns:1fr;gap:32px}
+    .case-meta{white-space:normal}
+  }
+  @media (max-width:760px){
+    .case-hero{padding:64px 0 40px}
+    .ent{grid-template-columns:56px minmax(0,1fr)}
+    .ent-desc{grid-column:1 / -1;padding-left:0}
+    .ent-code{font-size:10px}
+    .stack-row{grid-template-columns:48px minmax(0,1fr)}
+    .stack-count{grid-column:2;justify-self:start}
+    .toolbar{top:0}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="case-doc">
+
+<header>
+  <div class="container nav">
+    <a href="/" class="logo">Clara<span>/</span>EA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/#framework">Framework</a></li>
+        <li><a href="/ClaraEA-CMDB.html">EA/CMDB</a></li>
+        <li><a href="/#casos-mercado" class="current">Casos</a></li>
+        <li><a href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="https://cmdb-app-shell.onrender.com" class="btn btn-outline btn-sm btn-login">Entrar</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="case-hero">
+  <div class="container">
+    <div class="case-hero-grid">
+      <div>
+        <p class="section-eyebrow">Caso de Mercado · IA Agêntica · Camadas 0–VIII</p>
+        <h1 class="section-title">Nubank sob o método Clara/EA</h1>
+        <p class="section-lead">Mapeamento das oito camadas de arquitetura de negócios do conglomerado Nu Holdings, mais os direcionadores estratégicos, com as entidades de cada camada agrupadas internamente por domínios. Construído exclusivamente a partir de divulgação pública, com rastreabilidade domínio a domínio: cada bloco indica no cabeçalho os códigos das fontes que o sustentam, e a <a href="#xref">referência cruzada no rodapé</a> percorre o caminho inverso, de cada fonte para todos os domínios que dela derivam.</p>
+      </div>
+      <div class="case-meta">
+        Framework <b>Clara/EA</b><br>
+        Sujeito <b>Nu Holdings Ltd.</b> (Cayman)<br>
+        Líder prudencial <b>Nu Pagamentos S.A.</b><br>
+        Data-base <b>30/06/2026</b> (2T26)<br>
+        Societário <b>31/12/2025</b> (20-F FY2025)<br>
+        Elaborado <b>14/09/2026</b><br>
+        Escopo <b>9 camadas · 75 domínios · 465 entidades</b><br>
+        Fontes <b>17 rastreadas</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FOI PRODUZIDO -->
+<section class="case-how">
+  <div class="container">
+    <div class="case-how-grid">
+      <div>
+        <p class="section-eyebrow">Como este caso foi produzido</p>
+        <h2 class="section-title" style="font-size: clamp(28px,3.4vw,40px);">O framework como instrução para agentes de IA</h2>
+        <p>Este documento não foi escrito à mão nem a partir de acesso privilegiado. Foi produzido por um agente de IA (Claude, via Claude Code) que recebeu o Clara/EA — princípios, camadas e regra de agrupamento por domínios — como método de trabalho, e a divulgação pública da Nu Holdings como único material de entrada.</p>
+        <p>O resultado demonstra uma propriedade do framework que importa mais do que o retrato de uma instituição: por ser universal, recursivo e explícito sobre o que cada camada contém, o Clara/EA funciona como especificação operável por agentes. O mesmo processo pode ser aplicado a qualquer organização com divulgação suficiente — ou, dentro de uma empresa, às suas fontes internas, alimentando diretamente o <a href="/ClaraEA-CMDB.html">EA/CMDB</a>.</p>
+      </div>
+      <ol class="case-how-steps">
+        <li><span><b>Instrução.</b> O agente recebe o manifesto, os cinco princípios e a definição das treze camadas do Clara/EA como método — não como tema.</span></li>
+        <li><span><b>Apuração.</b> Coleta orientada em fontes primárias: Form 20-F e exhibits, releases e demonstrações trimestrais (6-K), Pilar 3, demonstrações da Nu Financeira, autorizações de CNBV, SFC e OCC, normas BACEN/CMN e portais de RI e de produto.</span></li>
+        <li><span><b>Instanciação.</b> Cada camada é povoada com entidades reais; dentro da camada, o agente agrupa por semelhança de atributo, processo ou relacionamento (princípio III), sem reproduzir organograma.</span></li>
+        <li><span><b>Rastreabilidade.</b> Todo domínio carrega os códigos das fontes que o sustentam; a tabela final percorre o caminho inverso. Fontes secundárias ficam isoladas para sinalizar carência de confirmação primária.</span></li>
+        <li><span><b>Marcadores de estado e de evidência.</b> Cada entidade pode receber um marcador que separa o estado do fato — confirmado, em transição, encerrado — da qualidade da evidência que o sustenta — fonte secundária, não divulgado, em aberto (princípio V). Dado oficial e conferido não recebe marca.</span></li>
+        <li><span><b>Revisão editorial.</b> Ressalvas, limites de escopo e pontos que exigem verificação antes de uso externo são declarados abertamente no rodapé do documento.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- PREMISSAS DO MÉTODO -->
+<section class="case-method">
+  <div class="container">
+    <p class="section-label">Premissas do método aplicadas</p>
+    <div class="method" aria-label="Premissas do método">
+    <div>
+      <h3>I · Universalidade</h3>
+      <p>O mesmo conjunto de camadas descreve uma startup e um conglomerado. Aqui ele é instanciado num grupo de 139 milhões de clientes cujo conglomerado prudencial é liderado por uma instituição de pagamento, não por um banco.</p>
+    </div>
+    <div>
+      <h3>II · Hierarquia recursiva</h3>
+      <p>Cada camada se decompõe em domínios e estes em entidades. A codificação <code>V.08.03</code> lê-se camada V, domínio 08, entidade 03.</p>
+    </div>
+    <div>
+      <h3>III · Domínios</h3>
+      <p>Dentro de cada camada as entidades foram agrupadas por semelhança de atributo, processo ou relacionamento — não pela estrutura de reporte do banco.</p>
+    </div>
+    <div>
+      <h3>IV · Materialização</h3>
+      <p>Este documento é a projeção legível de um grafo: cada entidade é nó, cada domínio é um agrupamento e as camadas ligam negócio a tecnologia.</p>
+    </div>
+    <div>
+      <h3>V · Evolução</h3>
+      <p>O marcador separa o estado do fato da qualidade da evidência. <span class="tag t-ok">confirmado</span> <span class="tag t-trans">em transição</span> <span class="tag t-stop">encerrado</span> descrevem o fato; <span class="tag t-sec">fonte secundária</span> <span class="tag t-nd">não divulgado</span> <span class="tag t-open">em aberto</span> descrevem o que o sustenta. Dado oficial e conferido não recebe marca.</p>
+    </div>
+    <div>
+      <h3>Lei de Conway</h3>
+      <p>A premissa-raiz: estrutura condiciona resultado. Aqui a camada de canais tem um único elemento — o app —, e é essa ausência de rede que explica um custo de servir de US$ 1,00 por cliente ao mês.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCOPO -->
+<section class="case-stack">
+  <div class="container">
+    <p class="section-label">Escopo — as nove camadas mapeadas</p>
+    <div class="stack" id="stack"></div>
+  </div>
+</section>
+
+<!-- FILTRO -->
+<div class="toolbar">
+  <div class="container">
+    <input id="q" type="search" placeholder="Filtrar entidades, domínios e camadas…" aria-label="Filtrar entidades">
+    <span id="hits"></span>
+    <nav class="navpills" id="navpills" aria-label="Ir para camada"></nav>
+  </div>
+</div>
+
+<!-- CAMADAS -->
+<section class="case-layers">
+  <div class="container">
+    <main id="layers"></main>
+  </div>
+</section>
+
+<!-- RESSALVAS E RASTREABILIDADE -->
+<section class="case-notes" id="xref">
+  <div class="container">
+    <h2>Ressalvas e rastreabilidade</h2>
+    <p>Todo modelo de arquitetura feito de fora tem fronteira de evidência. Estas são as deste.</p>
+
+    <h3>Limites de escopo</h3>
+    <ul>
+      <li>O escopo é <strong>exclusivamente a arquitetura de negócios</strong>. As camadas IX a XIII ficaram de fora por decisão de escopo; o que existe publicamente sobre tecnologia foi alocado na camada VII.</li>
+      <li>Os direcionadores estratégicos (camada 0) foram reconstruídos a partir de teses e metas divulgadas. A companhia <strong>não publica guidance numérico</strong> de receita, lucro, ROE ou clientes, e a redação oficial de propósito e valores não foi confirmada em fonte primária.</li>
+      <li>O agrupamento em domínios é uma escolha analítica, derivada do princípio III do framework.</li>
+      <li>A base societária é o <strong>Exhibit 8.1 do Form 20-F FY2025</strong> — 44 subsidiárias em 12 jurisdições —, que <strong>não divulga percentual de participação</strong>. Onde este mapa indica percentual, a fonte é outra e está anotada.</li>
+    </ul>
+
+    <h3>Pontos que exigem verificação antes de uso externo</h3>
+    <ul>
+      <li><strong>Licença bancária no Brasil — conflito em aberto</strong>. Duas reportagens de 2026 apontam aquisições diferentes para obter a licença: o Banco Caixa Geral Brasil (jun/2026) e o Banco Porto Real de Investimentos (jul/2026). Não foi possível reconciliar se são operações distintas, se uma substituiu a outra ou se uma das reportagens está incorreta. Nenhuma estava concluída na data desta apuração.</li>
+      <li><strong>Receita por geografia não fecha</strong>. Os valores de Brasil, México e outros países atribuídos ao 20-F FY2025 somam ~US$ 12,1 bi contra uma receita total de US$ 15,8 bi. Provavelmente é um recorte parcial. Reconciliar na nota de segmentos antes de usar.</li>
+      <li><strong>Receita de 2025 diverge entre fontes</strong>: US$ 15,8 bi (+37%) no 20-F contra US$ 16,3 bi (+45%) no release. A diferença é provavelmente base reportada contra base neutra de câmbio, mas isso não foi confirmado.</li>
+      <li><strong>Enquadramento no segmento prudencial (S1–S5)</strong> não foi encontrado em nenhuma fonte pública. O porte sugere S2, mas isso é inferência e não deve ser usado como fato.</li>
+      <li><strong>BDR</strong>: o programa Nível III patrocinado (NUBR33) foi descontinuado em ago/2023. O que negocia hoje é um BDR Nível I não patrocinado. Confirmar ticker e status antes de citar.</li>
+      <li><strong>Basileia, CET1, LCR e NSFR atuais</strong> não constam dos releases em dólar. Os índices citados são de set/2025, via relatório de rating. Os anexos do Pilar 3 em XLSX são a fonte correta e não puderam ser baixados.</li>
+      <li><strong>Headcount e NPS</strong> não são divulgados pela companhia em nenhum documento consultado.</li>
+      <li><strong>NuPay, marketplace e Nubank+</strong>: houve divergência entre apurações sobre se seguem ativos. O que este mapa registra é a leitura das páginas de produto, com a ressalva anotada em cada entidade.</li>
+      <li><strong>Função atual de Edward Wible</strong>, co-fundador, não foi confirmada. Ele não consta da diretoria nem do Conselho em 2026.</li>
+    </ul>
+
+    <h3>Referência cruzada — rastreabilidade de conteúdo</h3>
+    <p>Cada domínio das oito camadas carrega, no próprio cabeçalho, o código das fontes que o sustentam; o código leva a esta tabela. Aqui o caminho é o inverso: de cada fonte para todos os domínios que dela derivam. Fontes secundárias estão isoladas em <strong>S17</strong> — onde ela aparece sozinha, o conteúdo carece de confirmação primária.</p>
+    <div class="xref">
+      <table class="xr">
+        <thead>
+          <tr>
+            <th>Cód.</th>
+            <th>Fonte, natureza e data-base</th>
+            <th>Domínios rastreados</th>
+            <th class="xr-n">Qtd.</th>
+          </tr>
+        </thead>
+        <tbody id="xrefbody"></tbody>
+      </table>
+    </div>
+
+        <p class="colophon">
+      Mapeamento Clara/EA conduzido por Marcelo Clara com apoio de IA agêntica (Claude Code) · 14 de setembro de 2026<br>
+      Documento analítico independente, construído sobre divulgação pública. Não é material da Nu Holdings Ltd. nem endossado por ela.<br>
+      Números financeiros com data-base 30/06/2026; composição societária com data-base 31/12/2025, atualizada onde eventos de 2026 alteraram o desenho.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="case-cta">
+  <div class="container">
+    <p class="section-eyebrow">Próximo passo</p>
+    <h2 class="section-title" style="font-size: clamp(28px,3.4vw,40px);">A mesma leitura, aplicada à sua organização</h2>
+    <p class="section-lead">O que aqui foi feito de fora, com divulgação pública, pode ser feito de dentro — com fontes internas, entidades verificadas e o resultado materializado no EA/CMDB. Para uma demonstração ou uma conversa sobre o método, escreva diretamente.</p>
+    <div class="case-cta-actions">
+      <a href="mailto:contato@claraea.com.br" class="btn btn-primary">contato@claraea.com.br</a>
+      <a href="/#casos-mercado" class="btn btn-outline">Voltar aos casos</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="logo">Clara<span>/</span>EA</a>
+        <p class="footer-tagline">Arquitetura corporativa que conecta estratégia, negócios e tecnologia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Framework</h4>
+        <ul>
+          <li><a href="/#framework">Camadas</a></li>
+          <li><a href="/#manifesto">Manifesto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ferramenta</h4>
+        <ul>
+          <li><a href="/ClaraEA-CMDB.html">EA/CMDB</a></li>
+          <li><a href="/ClaraEA-CMDB.html#compare">Comparativo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sobre</h4>
+        <ul>
+          <li><a href="/ClaraEA-Autor.html">Autor</a></li>
+          <li><a href="/#casos-mercado">Casos</a></li>
+          <li><a href="https://www.linkedin.com/in/maclara/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:contato@claraea.com.br">contato@claraea.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Marcelo Andrade Clara. Todos os direitos reservados.</div>
+      <div>Documento em português</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const STACK = [
+  {h:"Direcionadores estratégicos"},
+  {n:"0", t:"Missão, Visão e Valores", id:"c0", inn:true},
+  {h:"Arquitetura de negócios — escopo deste documento"},
+  {n:"I", t:"Mercado, Segmento e Nicho", id:"c1", inn:true},
+  {n:"II", t:"Marca", id:"c2", inn:true},
+  {n:"III", t:"Canais de Distribuição e Atendimento", id:"c3", inn:true},
+  {n:"IV", t:"Produtos e Serviços", id:"c4", inn:true},
+  {n:"V", t:"Veículos Legais", id:"c5", inn:true},
+  {n:"VI", t:"Políticas, Normas e Procedimentos", id:"c6", inn:true},
+  {n:"VII", t:"Estrutura, Papéis e Responsabilidades", id:"c7", inn:true},
+  {n:"VIII", t:"Métricas de Gestão e Controle", id:"c8", inn:true},
+  {h:"Arquitetura de tecnologia"},
+  {n:"IX–XIII", t:"Soluções, Dados, Tecnologia, Infraestrutura e Segurança da Informação", note:"fora do escopo"}
+];
+
+const SOURCES = [
+ {id:"S1", t:"Clara/EA — framework, manifesto e princípios", meta:"Método · claraea.com.br · consultado em 12/09/2026", u:"https://www.claraea.com.br/", method:true},
+ {id:"S2", t:"Form 20-F FY2025 e Exhibits 8.1, 11.1 e 97.1", meta:"SEC · protocolado 08/04/2026 · data-base 31/12/2025", u:"https://www.sec.gov/Archives/edgar/data/1691493/000129281426002166/nuform20f_2025.htm"},
+ {id:"S3", t:"Release de resultados do 2T26", meta:"Nu Holdings · divulgado 13/08/2026 · data-base 30/06/2026", u:"https://www.sec.gov/Archives/edgar/data/1691493/000129281426004222/nupr2q26_6k.htm"},
+ {id:"S4", t:"Demonstrações financeiras intermediárias do 2T26", meta:"6-K · data-base 30/06/2026", u:"https://www.sec.gov/Archives/edgar/data/1691493/000129281426004225/nufs2q26_6k.htm"},
+ {id:"S5", t:"Release e demonstrações do 4T25 e do exercício de 2025", meta:"Nu Holdings · divulgado 25/02/2026", u:"https://www.sec.gov/Archives/edgar/data/1691493/000129281426000499/nufs4q25_6k.htm"},
+ {id:"S6", t:"Relatório Pilar 3 — Estrutura de Gerenciamento de Riscos e Capital", meta:"Nubank · data-base 31/12/2025 · anexos trimestrais até o 2T26", u:"https://cdn.nubank.com.br/compliance-irm/pilar3-relatorio-da-estrutura-de-gerenciamento-de-riscos-e-capital-2025.pdf"},
+ {id:"S7", t:"Demonstrações financeiras da Nu Financeira S.A. — SCFI", meta:"data-base 31/12/2025", u:"https://cdn.nubank.com.br/p4rc/docs/demonstracoes-financeiras-nu-financeira-31-12-2025.pdf"},
+ {id:"S8", t:"Governança — Conselho, comitês e diretoria", meta:"nu.com/investors · consultado em 14/09/2026", u:"https://nu.com/en/investors/governance/board-of-directors/"},
+ {id:"S9", t:"Portal de transparência, ética, compliance e ESG", meta:"nubank.com.br · consultado em 14/09/2026", u:"https://nubank.com.br/etica-compliance-esg"},
+ {id:"S10", t:"Sites de produto do Brasil, México e Colômbia", meta:"nubank.com.br, nubank.com.mx, nu.com.co · consultados em 14/09/2026", u:"https://nubank.com.br/"},
+ {id:"S11", t:"Autorizações da CNBV — licença bancária no México", meta:"organização em 23/05/2025 · início de operações em 10/07/2026", u:"https://blog.nu.com.mx/nubank/nubank-banco-mexico/"},
+ {id:"S12", t:"Autorização da Superintendencia Financiera de Colombia", meta:"compañía de financiamiento · 03/01/2024", u:"https://blog.nu.com.co/nu-colombia-compania-de-financiamiento/"},
+ {id:"S13", t:"OCC — pedido e aprovação condicional do charter bancário nos EUA", meta:"pedido em 30/09/2025 · aprovação condicional em 27–29/01/2026", u:"https://occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/nubank-national-association.pdf"},
+ {id:"S14", t:"Resoluções Conjuntas BACEN/CMN 16 e 17/2025 e demais normas", meta:"publicadas em 02/12/2025 · vigência a partir de 01/12/2025", u:"https://normativos.bcb.gov.br/"},
+ {id:"S15", t:"Moody's Local Brasil — rating da Nu Financeira", meta:"comunicado de 26/01/2026 · indicadores com data-base set/2025", u:"https://moodyslocal.com.br/wp-content/uploads/2026/01/ComunicadodeAcaodeRating_Nubank_Jan26_MLBR.pdf"},
+ {id:"S16", t:"Teleconferência de resultados do 2T26", meta:"transcrição · 13/08/2026", u:"https://www.investing.com/news/transcripts/earnings-call-transcript-nubank-tops-1-billion-in-q2-2026-net-income-93CH-4859540"},
+ {id:"S17", t:"Imprensa especializada e fontes secundárias", meta:"Fonte secundária — usada só onde não há fonte primária acessível; datas citadas na entidade", u:"https://international.nubank.com.br/", weak:true}
+];
+
+const SRCMAP = {
+ "0.01":["S16","S11","S13"], "0.02":["S10","S16"], "0.03":["S3","S16"], "0.04":["S9"], "0.05":["S2","S14","S17"],
+ "I.01":["S2","S3"], "I.02":["S10","S17"], "I.03":["S16","S3"], "I.04":["S10","S17"],
+ "I.05":["S3","S11","S12","S13"], "I.06":["S3","S10"], "I.07":["S6","S14","S2"], "I.08":["S17"],
+ "II.01":["S2","S10"], "II.02":["S10","S17"], "II.03":["S10"], "II.04":["S10","S17"],
+ "II.05":["S10","S11","S12"], "II.06":["S2","S7"], "II.07":["S2","S17"],
+ "III.01":["S2","S3"], "III.02":["S2","S3"], "III.03":["S10","S2"], "III.04":["S16","S17"],
+ "III.05":["S10","S2"], "III.06":["S10","S2"], "III.07":["S10","S2"], "III.08":["S10","S11"],
+ "IV.01":["S10","S3"], "IV.02":["S10","S3"], "IV.03":["S3","S10"], "IV.04":["S10","S2"],
+ "IV.05":["S10","S17"], "IV.06":["S10","S17"], "IV.07":["S10","S16"], "IV.08":["S10","S17"],
+ "IV.09":["S10","S11"], "IV.10":["S10","S12"],
+ "V.01":["S2","S17"], "V.02":["S6","S15","S7"], "V.03":["S2","S7"], "V.04":["S2"],
+ "V.05":["S14","S17"], "V.06":["S2","S11"], "V.07":["S2","S12"], "V.08":["S2","S13"],
+ "V.09":["S2"], "V.10":["S2","S17"], "V.11":["S7","S2"], "V.12":["S2"],
+ "VI.01":["S9","S2"], "VI.02":["S2","S8"], "VI.03":["S6"], "VI.04":["S9"],
+ "VI.05":["S9"], "VI.06":["S9"], "VI.07":["S6","S14"], "VI.08":["S2","S11","S13"],
+ "VII.01":["S8"], "VII.02":["S8","S6"], "VII.03":["S8"], "VII.04":["S8","S17"],
+ "VII.05":["S8","S17"], "VII.06":["S6"], "VII.07":["S2","S16","S17"], "VII.08":["S2"],
+ "VIII.01":["S3","S4","S5"], "VIII.02":["S3"], "VIII.03":["S3"], "VIII.04":["S3","S4"],
+ "VIII.05":["S15","S6"], "VIII.06":["S3"], "VIII.07":["S3"], "VIII.08":["S9","S2"], "VIII.09":["S16"]
+};
+
+const L = [
+{
+ id:"c0", num:"0", title:"Direcionadores Estratégicos",
+ purpose:"A companhia não publica guidance numérico — nem de receita, nem de lucro, nem de clientes. O que orienta a arquitetura é um conjunto de teses: replicar o modelo brasileiro em novos países, converter clientes de produto único em relacionamento principal, e ampliar o escopo do que um app financeiro entrega. A alavancagem operacional é o mecanismo que torna tudo isso possível — e o índice de eficiência de 19,5% é o placar.",
+ domains:[
+  {code:"0.01", name:"Tese de expansão geográfica", note:"Três países em operação, um quarto em constituição. O México é o caso de referência.", ents:[
+    ["Playbook replicável","A administração descreve o México seguindo o roteiro do Brasil, 'porém mais rápido'. ARPAC mexicano de US$ 12,3 contra US$ 5,6 do Brasil em nível comparável de penetração.","sec"],
+    ["México como banco","Licença de banco múltiplo autorizada em 23/05/2025 e início de operações autorizado em 10/07/2026, após 32 meses de processo."],
+    ["Investimento no México","US$ 4,2 bilhões declarados para o período de 2026 a 2030.","sec"],
+    ["Estados Unidos","Charter nacional pedido ao OCC em 30/09/2025 e aprovado condicionalmente em jan/2026. Gasto limitado a no máximo 100 bps do índice de eficiência.","sec"],
+    ["Colômbia","Descrita na teleconferência do 2T26 como significativamente acima do esperado, sem métricas específicas.","sec"]
+  ]},
+  {code:"0.02", name:"Tese de escopo de produto", note:"Sair do cartão de crédito para o relacionamento financeiro completo — e depois para além do financeiro.", ents:[
+    ["Média de produtos por cliente","4 produtos por cliente ativo em 31/12/2025."],
+    ["Crédito com garantia como vetor","Consignado público, privado e antecipação de FGTS. Carteira com garantia de US$ 3,1 bi, +30% a/a."],
+    ["Serviços não financeiros","NuCel em telefonia e Nu Viagens — o app como plataforma, não como banco."],
+    ["Alta e média renda","Croma lançado em 28/07/2026 para o segmento intermediário, com o Ultravioleta reposicionado de cashback para ecossistema de viagens e pontos."],
+    ["PME como fronteira","Movimento declarado de sair do foco em MEI rumo a micro e pequenas empresas.","sec"]
+  ]},
+  {code:"0.03", name:"Ambição de eficiência e alavancagem operacional", note:"O único guidance efetivamente divulgado é de eficiência e margem — não de resultado.", ents:[
+    ["Índice de eficiência","Média esperada de ~20% para o ano cheio de 2026. Realizado de 19,5% no 2T26.","sec"],
+    ["NIM ajustado ao risco","Manutenção em torno de 12,4% declarada pelo CFO como horizonte previsível.","sec"],
+    ["Alavancagem operacional","Objetivo declarado de mantê-la enquanto escala nos três mercados principais."],
+    ["Custo de servir","US$ 1,00 por cliente ativo ao mês no 2T26, contra US$ 0,80 no 4T25 — alta atribuída a novos produtos e geografias."]
+  ]},
+  {code:"0.04", name:"Compromissos ASG e de inclusão", note:"", ents:[
+    ["Política Global de ESG e PRSAC","Documentos públicos, com PRSAC no padrão da Res. CMN 4.945."],
+    ["Relatórios GRSAC","Publicados para 2022, 2023, 2024 e 2025."],
+    ["Lista de Exclusão","Setores vedados ao relacionamento, publicada."],
+    ["Inclusão financeira","20,7 milhões de brasileiros obtiveram o primeiro cartão de crédito com a companhia em cinco anos; 35% das primeiras contas bancárias e 52% dos primeiros cartões do país.","sec"],
+    ["Metas ASG quantitativas","Não localizadas — a área de relatórios do RI retornou vazia e o índice ESG internacional está bloqueado.","nd"]
+  ]},
+  {code:"0.05", name:"Direcionadores de controle e estrutura", note:"", ents:[
+    ["Controle por voto múltiplo","Ações Class B com 20 votos cada representam 21,06% do capital e ~84% dos votos. David Vélez controla ~75% do poder de voto.","sec"],
+    ["Holding em Cayman, listada na NYSE","Nu Holdings Ltd., commission file 001-41129, ticker NU."],
+    ["Adequação regulatória de nome","As Resoluções Conjuntas 16 e 17/2025 vedaram o uso do termo 'bank' sem autorização bancária. A resposta declarada foi obter a licença, mantendo marca e identidade visual inalteradas."],
+    ["Programa de recompra","US$ 1,0 bilhão anunciado em junho de 2026.","sec"],
+    ["Ausência de guidance numérico","A companhia não divulga projeções formais de receita, lucro, ROE ou clientes."]
+  ]}
+ ]
+},
+{
+ id:"c1", num:"I", title:"Mercado, Segmento e Nicho",
+ purpose:"A camada tem uma particularidade que a distingue de todos os casos comparáveis: a segmentação de clientes não é por renda declarada, e sim por principalidade — quanto da vida financeira do cliente passa pelo app. Os tiers de produto que existem foram criados depois, para capturar faixas que o modelo gratuito não monetizava.",
+ domains:[
+  {code:"I.01", name:"Segmentos de reporte", note:"Reporte por geografia, não por linha de produto. Atenção: os valores por país não somam a receita total.", ents:[
+    ["Brasil","US$ 11.038,3 mi de receita atribuída no FY2025."],
+    ["México","US$ 808,1 mi."],
+    ["Outros países","US$ 237,3 mi."],
+    ["Inconsistência de soma","Os três valores somam ~US$ 12,1 bi contra receita total de US$ 15,8 bi. Provável recorte parcial — reconciliar na nota de segmentos.","open"],
+    ["Composição do lucro bruto","Por fonte, não por segmento: crédito 41%, float 34%, tarifas 25% no 2T26."]
+  ]},
+  {code:"I.02", name:"Segmentos de cliente — tiers de relacionamento", note:"Três tiers no Brasil. Os critérios são de gasto e patrimônio, nunca de renda declarada.", ents:[
+    ["Nubank (padrão)","Gratuito, marca-mãe, sem mínimo."],
+    ["Nubank Croma","Lançado em 28/07/2026. Grátis com gasto acima de R$ 4 mil/mês ou R$ 30 mil guardados; senão R$ 39/mês. Mastercard Platinum, cashback até 0,8%, Caixinha Turbo a 120% do CDI.","sec"],
+    ["Nubank Ultravioleta","R$ 89/mês, isento com gasto acima de R$ 8 mil/mês ou R$ 50 mil investidos. Mastercard Black metálico, 1,25% de cashback ou 2,2 pontos por dólar, IOF zero, Priority Pass. ~1 milhão de clientes.","sec"],
+    ["Posicionamento declarado do Croma","A direção afirma que Croma não é degrau rumo ao Ultravioleta — são grupos diferentes com necessidades distintas, não níveis de uma escada.","sec"],
+    ["Público-alvo do Croma","Chamado de 'Super Core', estimado em mais de 12 milhões de brasileiros.","sec"],
+    ["Nubank+","Programa de assinatura de benefícios lançado em 2024. Apurações divergem sobre se segue ativo em 2026.","open"]
+  ]},
+  {code:"I.03", name:"Principalidade como eixo de segmentação", note:"O conceito que substitui a faixa de renda — e que tem consequência direta no risco de crédito.", ents:[
+    ["Relacionamento bancário principal","Mais de 60% dos clientes no Brasil usam a companhia como relacionamento financeiro principal."],
+    ["Efeito sobre inadimplência","Clientes com principalidade têm inadimplência de aproximadamente metade da média da carteira."],
+    ["Taxa de atividade","83,5% global no 2T26; Brasil acima de 86% pela primeira vez."],
+    ["Contraponto declarado","Dos clientes brasileiros, apenas ~30% concentram suas finanças na plataforma — o espaço que o Croma busca ocupar.","sec"],
+    ["Churn líquido mensal","0,1% em 2025, contra 0,2% em 2024."]
+  ]},
+  {code:"I.04", name:"Pessoa jurídica", note:"", ents:[
+    ["Nu Empresas","6,8 milhões de clientes PJ no Brasil no 2T26 — a companhia se declara a maior instituição financeira do país nesse critério."],
+    ["Penetração","Atinge cerca de um terço do mercado de CNPJs.","sec"],
+    ["Cartões PJ","2 milhões emitidos — um a cada três clientes PJ.","sec"],
+    ["Movimento de segmento","De MEI para micro e pequenas empresas.","sec"]
+  ]},
+  {code:"I.05", name:"Mercados geográficos", note:"Posição em 30/06/2026.", ents:[
+    ["Brasil","~118 milhões de clientes — 62% da população adulta. Depósitos de US$ 36,4 bi."],
+    ["México","15,8 milhões de clientes — 16,5% da população adulta. Depósitos de US$ 5,7 bi. Banco múltiplo desde jul/2026."],
+    ["Colômbia","Mais de 5 milhões de clientes. Depósitos de US$ 3,3 bi. Compañía de financiamiento desde jan/2024."],
+    ["Estados Unidos","Banco em constituição. Hubs planejados em Miami, Bay Area, Norte da Virgínia e Research Triangle.","trans"],
+    ["Presença societária adicional","Entidades na Argentina, Peru, Uruguai, Suíça, Liechtenstein, Cayman e Canadá — sem operação de varejo declarada."],
+    ["África do Sul e Filipinas","Exposição indireta via participação minoritária no Tyme Group, que não usa a marca do grupo."]
+  ]},
+  {code:"I.06", name:"Mercados de produto adjacentes", note:"A trajetória de saída do cartão de crédito, produto fundador.", ents:[
+    ["Cartão de crédito","Carteira de US$ 26 bi no 2T26 — 66% da carteira total."],
+    ["Conta e depósitos","US$ 45,3 bi de depósitos totais, custo de 88% do interbancário."],
+    ["Crédito sem garantia","US$ 10,3 bi, +45% a/a."],
+    ["Crédito com garantia","US$ 3,1 bi, +30% a/a — consignado público, privado e FGTS."],
+    ["Investimentos","Corretora própria; 36,2 milhões de clientes em investimentos e 6,6 milhões em cripto.","sec"],
+    ["Seguros","Atuação como corretora e estipulante, com seguradora parceira. Prêmios e apólices não divulgados.","nd"],
+    ["Telefonia","NuCel, MVNO sobre a rede da Claro. 1 milhão de clientes em 19/06/2026.","sec"],
+    ["Viagens","Nu Viagens, exclusivo do Ultravioleta."],
+    ["Marketplace","Receita por GMV, com parcerias de varejo. GMV não divulgado.","nd"],
+    ["Conta global e cripto","Nu Global lançado em 10/09/2026, com stablecoins e cartão metal nos EUA em parceria com um banco licenciado.","trans"],
+    ["Adquirência","Tap-to-pay no app PJ. Maquininha própria não confirmada.","open"]
+  ]},
+  {code:"I.07", name:"Ambiente regulatório", note:"Três reguladores bancários nacionais, um quarto em constituição, e um regime brasileiro que não é o de um banco.", ents:[
+    ["BACEN e CMN","Conglomerado prudencial liderado por instituição de pagamento — classificação Tipo 3, não a de um conglomerado bancário."],
+    ["Segmento prudencial S1–S5","Não localizado em nenhuma fonte pública. O porte sugere S2, mas isso é inferência.","open"],
+    ["Res. CMN 4.557/2017","Estrutura de gerenciamento de riscos e capital, com RAS e CRO independente."],
+    ["Res. BCB 200/2022","Apuração de PR, Nível I e Capital Principal — citada expressamente no Pilar 3."],
+    ["Res. Conjuntas 16 e 17/2025","Vedação ao uso do termo 'banco' sem autorização. Vigência em 01/12/2025, adaptação em 120 dias."],
+    ["Res. CMN 4.945 e Res. BCB 139","PRSAC e relatório GRSAC — ambos publicados."],
+    ["Res. CMN 4.860","Ouvidoria, com procedimentos publicados."],
+    ["Res. BCB 520/2025","Regime de prestadoras de serviços de ativos virtuais, aplicável à oferta de cripto."],
+    ["CVM","Nu Investimentos S.A. — CTVM."],
+    ["SUSEP","Nu Corretora de Seguros."],
+    ["CNBV, Banxico e IPAB","México, desde a conversão em banco múltiplo. Cobertura de depósitos elevada de 25 mil para 400 mil UDIs."],
+    ["Superintendencia Financiera de Colombia","Compañía de financiamiento; depósitos cobertos pelo Fogafín."],
+    ["SEC, NYSE e SOX","Emissor privado estrangeiro. Certificações SOX 302 e 906 como exhibits do 20-F."],
+    ["OCC, Federal Reserve e FDIC","Charter nacional com aprovação condicional do OCC; Fed e FDIC pendentes.","open"],
+    ["Pix, Open Finance e LGPD","Regimes transversais; métricas de Open Finance não divulgadas.","nd"]
+  ]},
+  {code:"I.08", name:"Cenário competitivo", note:"A companhia não publica lista de concorrentes; as participações abaixo são estimativas de casa de análise, não dados do regulador nem da empresa.", ents:[
+    ["Share por faixa de renda no Brasil","Estimativa de casa de análise em cartão e crédito pessoal: ~27% até 3 salários mínimos, ~14% de 3 a 10, menos de 5% na alta renda.","sec"],
+    ["Trajetória","A faixa de 3 a 10 salários mínimos teria subido de ~8% em 2023 para ~14% em 2026.","sec"],
+    ["Pool de lucro","7% do pool de lucro do mercado de massa no Brasil.","sec"],
+    ["Incumbentes","Itaú, Bradesco, Santander, Banco do Brasil e Caixa."],
+    ["Entrantes digitais","Mercado Pago, Inter, C6 Bank, PicPay, PagBank e Stone."],
+    ["México","3ª maior instituição por número de clientes e maior emissor de novos cartões de crédito do país.","sec"],
+    ["Colômbia","Entre as cinco instituições com maiores volumes de depósitos.","sec"]
+  ]}
+ ]
+},
+{
+ id:"c2", num:"II", title:"Marca",
+ purpose:"Arquitetura monolítica: quase tudo é 'Nu' ou 'Nubank' seguido de um substantivo. Não há marcas independentes herdadas de aquisição — todas as empresas compradas foram absorvidas sem preservar identidade, inclusive a Easynvest, que tinha meio século de história. A única exceção é uma participação minoritária no exterior, que não usa a marca.",
+ domains:[
+  {code:"II.01", name:"Marca-mãe e corporativa", note:"", ents:[
+    ["Nu Holdings Ltd.","Holding listada na NYSE sob o ticker NU."],
+    ["Nubank","Marca-mãe de consumo no Brasil."],
+    ["Nu","Marca-mãe internacional e prefixo de endosso em praticamente todo o portfólio."]
+  ]},
+  {code:"II.02", name:"Tiers de relacionamento", note:"", ents:[
+    ["Nubank Ultravioleta","Alta renda. Ativa e reposicionada: o cashback a 200% do CDI foi encerrado em ago/2025 e a assinatura de streaming em mai/2026, com migração para ecossistema de viagens e pontos.","trans"],
+    ["Nubank Croma","Renda intermediária. Lançada em 28/07/2026."],
+    ["Nubank+","Assinatura de benefícios. Status em 2026 divergente entre apurações.","open"]
+  ]},
+  {code:"II.03", name:"Marcas de produto financeiro", note:"", ents:[
+    ["Conta / NuConta","A nomenclatura atual nos canais é simplesmente 'Conta'. Uso corrente da marca NuConta não confirmado.","open"],
+    ["Caixinhas / Money Boxes","Reservas e objetivos. Ativa, com variante Caixinha Turbo."],
+    ["Nu Empresas","PJ, MEI e PME. Marca atual do antigo Nubank PJ.","trans"],
+    ["Nubank Cripto","28 criptoativos, operados sob o regime de prestadora de serviços de ativos virtuais."],
+    ["Nu Global","Conta global com stablecoins e cartão metal. Lançada em 10/09/2026.","trans"],
+    ["Nu Asset","Gestão de recursos. Consta nos canais oficiais."],
+    ["Nubank Seguros","Oferta de vida, celular, transações, empréstimo e residencial. Entidade é corretora, não seguradora."],
+    ["NuPay","Checkout em e-commerce, aceito em mais de 200 apps e sites. Apurações divergiram sobre o status atual.","sec"],
+    ["NuTag","Tag de pedágio, incluída sem mensalidade no Croma."]
+  ]},
+  {code:"II.04", name:"Marcas de serviço não financeiro", note:"O domínio que mais distingue este portfólio de um banco — e que não existe nos casos comparáveis.", ents:[
+    ["NuCel","Telefonia móvel, MVNO sobre a rede da Claro. Lançada em 2024/2025; 1 milhão de clientes em jun/2026.","sec"],
+    ["Nu Viagens / NuTravel","Passagens e hotéis dentro do app, exclusivo do Ultravioleta.","sec"],
+    ["Marketplace / Shopping","Comércio dentro do app, com receita por GMV.","sec"],
+    ["NuScore","Ferramenta de planejamento financeiro lançada em 2025.","sec"]
+  ]},
+  {code:"II.05", name:"Marcas por país", note:"", ents:[
+    ["Nu México","Ativa. Banco múltiplo desde jul/2026."],
+    ["Cuenta Nu","Conta no México e na Colômbia."],
+    ["Cajitas","Equivalente das Caixinhas no México e na Colômbia."],
+    ["Nu Colombia","Ativa. Produtos: tarjeta de crédito, cuenta de ahorros, CDT e préstamos."],
+    ["Tarjeta Garantizada Nu","Cartão com garantia para construção de crédito, no México."],
+    ["Nubank, N.A.","Marca do banco em constituição nos EUA.","trans"]
+  ]},
+  {code:"II.06", name:"Marcas regulatórias", note:"Entidades que funcionam como marcas perante o regulador, não perante o consumidor.", ents:[
+    ["Nu Pagamentos S.A. — Instituição de Pagamento","Líder do conglomerado prudencial. CNPJ 18.236.120/0001-58."],
+    ["Nu Financeira S.A. — SCFI","Sociedade de crédito, financiamento e investimento."],
+    ["Nu Investimentos S.A. — CTVM","Corretora. CNPJ 62.169.875/0001-79."],
+    ["Nubank, S.A. Institución de Banca Múltiple","Razão social do banco mexicano."],
+    ["Nu Colombia Compañía de Financiamiento S.A.","Entidade colombiana."]
+  ]},
+  {code:"II.07", name:"Marcas absorvidas e encerradas", note:"Nenhuma aquisição preservou identidade própria — padrão oposto ao dos conglomerados bancários comparáveis.", ents:[
+    ["Easynvest","Corretora fundada em 1968, adquirida em 2020. Virou 'Easynvest by Nubank' em 2021 e depois Nu Invest. Marca extinta.","stop"],
+    ["Nu Invest","Denominação intermediária da corretora. Ausente dos canais oficiais em 2026; a entidade foi renomeada Nu Investimentos. Comunicado formal de descontinuação não localizado.","open"],
+    ["Nubank PJ","Migrada para Nu Empresas.","stop"],
+    ["Akala","SOFIPO mexicana adquirida em 2022 — base da operação no México, absorvida sem marca.","stop"],
+    ["Hyperplane","Startup de IA adquirida em 2024; tecnologia absorvida no modelo proprietário do grupo.","stop"],
+    ["Olivia AI","Adquirida em 2021; entidades ainda constam da lista de subsidiárias, sem marca de consumo."],
+    ["Cognitect e Plataformatec","Aquisições de time de engenharia em 2020, sem marca de consumo.","stop"],
+    ["Spin Pay e Jurídico Certo","Aquisições anunciadas; estrutura jurídica atual não confirmada.","open"],
+    ["NUBR33","Programa de BDR Nível III patrocinado, descontinuado em ago/2023 e substituído por BDR Nível I não patrocinado.","stop"]
+  ]}
+ ]
+},
+{
+ id:"c3", num:"III", title:"Canais de Distribuição e Atendimento",
+ purpose:"A camada mais enxuta dos quatro conglomerados mapeados: um app, sem agências, sem correspondentes próprios, sem rede de assessores. A ausência de estrutura física é o que sustenta um custo de servir de US$ 1,00 por cliente ao mês — e a IA já responde por mais de 60% das conversas de atendimento no Brasil.",
+ domains:[
+  {code:"III.01", name:"Modelo 100% digital", note:"O 20-F descreve a operação como mobile-first e cloud-based, sem rede de agências.", ents:[
+    ["App proprietário","Canal único de entrega de produto, nos três países."],
+    ["Ausência de rede física própria","Sem agências, quiosques ou lojas. O único componente físico é rede de terceiros para saque e depósito."],
+    ["Custo de servir","US$ 1,00 por cliente ativo ao mês no 2T26."],
+    ["Índice de eficiência","19,5% no 2T26; 17,6% no 1T26; 19,9% no 4T25."],
+    ["Produtos por cliente","Média de 4 por cliente ativo."]
+  ]},
+  {code:"III.02", name:"Aquisição de clientes", note:"", ents:[
+    ["Crescimento orgânico","O 20-F afirma que parte significativa dos clientes foi adquirida organicamente, por boca a boca ou indicação direta não paga, sem despesa direta de marketing."],
+    ["Marketing tático","Uso declarado para awareness de produtos novos."],
+    ["Adições líquidas","17 milhões em 2025; ~4 milhões no 2T26."],
+    ["Custo de aquisição (CAC)","Não divulgado em nenhum documento de 2025–2026.","nd"]
+  ]},
+  {code:"III.03", name:"Atendimento", note:"", ents:[
+    ["Chat no app","Canal primário, 24/7, com especialistas internos."],
+    ["Telefone — Brasil","4020 0185 nas capitais e 0800 591 2117 nas demais localidades. Canal em Libras."],
+    ["Ouvidoria","0800 887 0463, dias úteis das 8h às 18h."],
+    ["Plataformas específicas","'Me Roubaram' para celular roubado e canal de denúncia de golpes."],
+    ["Atendimento do Ultravioleta","Chat, e-mail e telefone dedicados."],
+    ["México","Chat 24/7, telefone próprio e unidade especializada de atenção ao usuário."],
+    ["WhatsApp como canal de atendimento","Não consta da página oficial de contatos. Há integração de pagamentos, que é coisa distinta.","open"],
+    ["NPS","Não divulgado numericamente. O 20-F faz apenas afirmação qualitativa.","nd"]
+  ]},
+  {code:"III.04", name:"IA como camada de canal", note:"O traço mais distintivo da camada: a IA deixou de ser ferramenta de apoio e virou o canal.", ents:[
+    ["Cobertura do atendimento","Mais de 60% das conversas de suporte no Brasil, com avaliação do cliente igual ou superior à do atendimento humano."],
+    ["Modelo proprietário","Modelo de fundação próprio, em produção em cartões no Brasil e no México e em crédito sem garantia no Brasil; em teste para PME e cartões na Colômbia."],
+    ["Evolução declarada","A geração mais recente teria quadruplicado o comprimento de contexto e a velocidade de inferência, reduzindo custo de produção.","sec"],
+    ["Parceria de modelos externos","Copiloto de call center e assistente de atendimento anunciados em mar/2025, com resolução de 55% das consultas de primeiro nível e redução de 70% no tempo de resposta em mais de 2 milhões de conversas por mês.","sec"]
+  ]},
+  {code:"III.05", name:"Canais abertos e de pagamento", note:"", ents:[
+    ["Pix","Integração completa, incluindo Pix parcelado, por texto e por áudio."],
+    ["Pix com IA","Mais de 10 milhões de usuários ativos mensais, divulgado no 4T25.","sec"],
+    ["Open Finance","Atuação declarada no 20-F, sem métricas divulgadas.","nd"],
+    ["CoDi e DiMo","Meios de pagamento instantâneo no México, citados no 20-F."],
+    ["Bre-B","Pagamentos instantâneos na Colômbia.","sec"],
+    ["Carteiras digitais","Google Pay, Apple Pay e Samsung Pay."]
+  ]},
+  {code:"III.06", name:"Canais B2B e de comércio", note:"", ents:[
+    ["NuPay","Checkout em e-commerce, aceito em mais de 200 apps e sites, com parceiros de mobilidade, alimentação, farmácia, eletrônicos e ingressos. Não funciona em loja física.","sec"],
+    ["Marketplace no app","Receita por GMV, com parcerias de varejo. GMV não divulgado.","nd"],
+    ["Tap-to-pay","Celular como maquininha, dentro do Nu Empresas."],
+    ["APIs abertas e banking as a service","Não localizada oferta a terceiros em fonte oficial.","open"]
+  ]},
+  {code:"III.07", name:"Rede física de terceiros", note:"Único elo físico da arquitetura — e terceirizado em todos os países.", ents:[
+    ["Brasil","Saque em caixas eletrônicos de rede parceira; conta PJ cobra R$ 6,50 por saque, e Croma e Ultravioleta têm saques ilimitados gratuitos. O operador da rede não é nomeado nos canais oficiais.","nd"],
+    ["México","Mais de 30.000 pontos de cash-in e cash-out em 2025, incluindo redes de supermercado e autosserviço."],
+    ["Colômbia","Rede de saque e depósito não detalhada em fonte oficial.","nd"],
+    ["Correspondentes bancários próprios","Não confirmados.","open"]
+  ]},
+  {code:"III.08", name:"Canais por país", note:"", ents:[
+    ["Brasil","App Nubank e nubank.com.br, com experiências distintas para Nu, Croma, Ultravioleta e Nu Empresas."],
+    ["México","App Nu e nubank.com.mx. Depósitos cobertos pelo IPAB até 400.000 UDIs."],
+    ["Colômbia","App Nu e nu.com.co, com transferências instantâneas e Cajitas."],
+    ["Estados Unidos","Nu Global opera em parceria com banco licenciado enquanto o charter próprio não é concluído.","trans"]
+  ]}
+ ]
+},
+{
+ id:"c4", num:"IV", title:"Produtos e Serviços",
+ purpose:"O catálogo tem duas zonas: a financeira, que converge para o de um banco de varejo completo, e a não financeira — telefonia, viagens, comércio — que nenhum dos conglomerados comparáveis oferece. O cartão de crédito, produto fundador, ainda é 66% da carteira de crédito.",
+ domains:[
+  {code:"IV.01", name:"Cartões", note:"Carteira de cartão de crédito de US$ 26 bi no 2T26, +35% a/a.", ents:[
+    ["Cartão de crédito Nu","Mastercard, sem anuidade. Brasil, México e Colômbia."],
+    ["Cartão de débito","Vinculado à conta, nos três países."],
+    ["Cartão virtual","Compras online, Brasil."],
+    ["Ultravioleta","Mastercard Black metálico, cashback ou pontos, Priority Pass. Volume de compras +41% a/a."],
+    ["Croma","Mastercard Platinum, 0,8% de cashback e 5% em assinaturas digitais.","sec"],
+    ["Cartão para menores de 18","Lançado em 2025, Brasil.","sec"],
+    ["Tarjeta Garantizada Nu","Cartão com garantia para construção de crédito, México."],
+    ["Cartão Nu Empresas","Débito ou débito e crédito, sem anuidade."],
+    ["Volume de compras","US$ 41,6 bi no 4T25 e US$ 141,8 bi no exercício de 2025.","sec"]
+  ]},
+  {code:"IV.02", name:"Conta e depósitos", note:"Depósitos totais de US$ 45,3 bi no 2T26, +18% a/a.", ents:[
+    ["Conta do Nubank","Rende 100% do CDI com liquidez diária após 30 dias; RDB coberto pelo FGC."],
+    ["Caixinhas","Reservas por objetivo, lançadas em 2022; variante Turbo a 115%–120% do CDI."],
+    ["Portabilidade de salário","Até 10 dias úteis."],
+    ["Conta PJ","Conta de pagamento sem mensalidade, com Pix grátis."],
+    ["Cuenta Nu — México","Rendimento diário, Cajitas com taxas escalonadas, cartão de débito Mastercard Gold, garantia IPAB."],
+    ["Cuenta de Ahorros Nu — Colômbia","Transferências instantâneas, PSE, pagamento de contas, recargas e Cajitas."],
+    ["Custo de captação","88% do interbancário, queda de 3 p.p. a/a."],
+    ["Distribuição dos depósitos","Brasil US$ 36,4 bi, México US$ 5,7 bi, Colômbia US$ 3,3 bi."]
+  ]},
+  {code:"IV.03", name:"Crédito", note:"Carteira total de US$ 39,4 bi no 2T26, +37% a/a.", ents:[
+    ["Empréstimo pessoal","Desde 2019, nos três países."],
+    ["Consignado INSS","A partir de 1,75% ao mês.","sec"],
+    ["Consignado público","A partir de 1,59% ao mês, com convênios federais, estaduais, municipais e militares.","sec"],
+    ["Consignado CLT","Débito em folha, até 72 meses."],
+    ["Antecipação do saque-aniversário do FGTS","Até 5 parcelas."],
+    ["Parcelamento no cartão","Boletos, compras individuais e transferências Pix podem ser financiados."],
+    ["Capital de Giro","Primeira linha de crédito para PMEs."],
+    ["Crédito com garantia de veículo, imóvel ou investimento","Não listado nas páginas oficiais de empréstimo.","open"],
+    ["Qualidade da carteira","NPL de 15 a 90 dias em 4,8% e acima de 90 dias em 6,9% no 2T26."]
+  ]},
+  {code:"IV.04", name:"Investimentos", note:"", ents:[
+    ["Plataforma de investimentos","Operada pela corretora própria, ex-Easynvest."],
+    ["Renda fixa","CDB, Tesouro Direto, LCI e LCA."],
+    ["Fundos e renda variável","Fundos de investimento, ações, ETFs, FIIs e BDRs."],
+    ["Nu Asset","Gestora do grupo. AUM não divulgado.","nd"],
+    ["Cripto","28 criptoativos, sem cobertura do FGC."],
+    ["Base de clientes","36,2 milhões em investimentos e 6,6 milhões em cripto.","sec"],
+    ["CDT Nu","Certificado de depósito a prazo, Colômbia."]
+  ]},
+  {code:"IV.05", name:"Seguros", note:"A companhia atua como corretora e estipulante, não como seguradora — a apólice é emitida por parceiro.", ents:[
+    ["Nu Seguro Vida",""],
+    ["Nu Seguro Celular","Com cobertura internacional."],
+    ["Nu Seguro Empréstimo","Prestamista."],
+    ["Pix Protegido",""],
+    ["Nu Seguro Lar","Residencial."],
+    ["Seguro viagem","Em parceria, dentro do Nu Viagens.","sec"],
+    ["Número de apólices e prêmios","Não divulgados.","nd"],
+    ["Seguro pet","Não confirmado no portfólio.","open"]
+  ]},
+  {code:"IV.06", name:"Serviços não financeiros", note:"O domínio sem equivalente nos conglomerados bancários comparáveis.", ents:[
+    ["NuCel","Planos a partir de R$ 45, sem fidelidade, eSIM ou chip entregue sem custo, WhatsApp e app ilimitados.","sec"],
+    ["Nu Viagens","Passagens e hotéis com 9 pontos por dólar ou 5% de cashback, garantia de preço, proteção de queda de preço e eSIM gratuito em mais de 150 países. Exclusivo Ultravioleta.","sec"],
+    ["Marketplace no app","Comércio com parcerias de varejo.","sec"],
+    ["NuTag","Tag de pedágio."],
+    ["NuScore","Ferramenta de planejamento financeiro.","sec"]
+  ]},
+  {code:"IV.07", name:"Pessoa jurídica — Nu Empresas", note:"", ents:[
+    ["Conta PJ","Conta de pagamento, sem mensalidade."],
+    ["Cartão Nu Empresas","Com a função de pagar boletos e Pix no crédito."],
+    ["Capital de Giro",""],
+    ["Soluções de cobrança","Boleto, Pix e cartão centralizados."],
+    ["Central de Impostos MEI",""],
+    ["Antecipação de recebíveis",""],
+    ["Tap-to-pay","Celular como maquininha."],
+    ["PEAC com garantia do BNDES","Participação declarada.","sec"],
+    ["Maquininha própria e folha de pagamento","Não confirmadas no portfólio.","open"]
+  ]},
+  {code:"IV.08", name:"Global e ativos digitais", note:"", ents:[
+    ["Nu Global","Lançado em 10/09/2026: transferências em USDC e EURC, negociação de Bitcoin e Ethereum, cartão de débito metal nos EUA, rendimento de até 4,50% a.a. e transferências para mais de 35 países.","sec"],
+    ["Conta Global do Ultravioleta","Spread zero e conversão instantânea em mais de 40 moedas.","sec"],
+    ["Nubank Cripto","28 criptoativos sob o regime de prestadora de serviços de ativos virtuais."],
+    ["Custódia de ativos digitais","Prevista entre os produtos do banco em constituição nos EUA.","open"]
+  ]},
+  {code:"IV.09", name:"México", note:"O portfólio que a licença bancária destravou.", ents:[
+    ["Cuenta Nu","Conta com rendimento e Cajitas."],
+    ["Tarjeta de Crédito Nu","6,6 milhões de clientes de cartão.","sec"],
+    ["Préstamos Personales",""],
+    ["Cuenta nómina","Conta salário — produto explicitamente desbloqueado pela licença bancária.","trans"],
+    ["Cobertura de depósitos","Elevada de 25.000 para 400.000 UDIs com a conversão em banco."],
+    ["Loan-to-deposit","35% no 2T26 — o único divulgado por país."]
+  ]},
+  {code:"IV.10", name:"Colômbia", note:"", ents:[
+    ["Tarjeta de Crédito Nu","Mais de 800 mil usuários já em set/2023.","sec"],
+    ["Cuenta de Ahorros Nu","Habilitada pela licença de compañía de financiamiento em jan/2024."],
+    ["Cajitas",""],
+    ["CDT Nu","Certificado de depósito a prazo."],
+    ["Préstamos Nu e Nu Ligero",""],
+    ["Cobertura Fogafín","Depósitos garantidos."]
+  ]}
+ ]
+},
+{
+ id:"c5", num:"V", title:"Veículos Legais",
+ purpose:"Quarenta e quatro subsidiárias em doze jurisdições — e o dado mais revelador é qual entidade lidera: o conglomerado prudencial brasileiro é encabeçado por uma instituição de pagamento, não por um banco. É a classificação Tipo 3 do BACEN, e é exatamente o que a mudança regulatória de dezembro de 2025 colocou em questão.",
+ domains:[
+  {code:"V.01", name:"Topo e controle", note:"Posição em 31/12/2025, salvo indicação.", ents:[
+    ["Nu Holdings Ltd.","Holding constituída nas Ilhas Cayman, sede operacional em São Paulo. NYSE: NU. Commission file 001-41129."],
+    ["Ações Class A","3.833.072.934 — 1 voto cada, 78,94% do capital."],
+    ["Ações Class B","1.022.600.698 — 20 votos cada, 21,06% do capital e ~84% dos votos.","sec"],
+    ["David Vélez","Fundador e titular do controle; ~75% do poder de voto.","sec"],
+    ["Rua California Ltd.","Veículo identificado no acordo de acionistas celebrado na abertura de capital.","sec"],
+    ["Co-fundadores titulares de Class B","David Vélez, Cristina Junqueira e Edward Wible, ou afiliadas e cessionários permitidos."],
+    ["Repartição atual das Class B","Não confirmada — a tabela de acionistas relevantes do 20-F não pôde ser extraída.","open"],
+    ["Berkshire Hathaway","Posição zerada desde o 1T2025, após vendas iniciadas no 3T2024.","sec"],
+    ["Sequoia, Tencent, DST Global e SoftBank","Participações atuais não confirmadas.","open"],
+    ["BDR no Brasil","O programa Nível III patrocinado foi descontinuado em ago/2023, com conversão para Nível I não patrocinado. Ticker e status em 2026 não confirmados.","open"]
+  ]},
+  {code:"V.02", name:"Conglomerado prudencial", note:"Classificação Tipo 3 do BACEN: liderado por instituição de pagamento e integrado por instituições financeiras.", ents:[
+    ["Nu Pagamentos S.A. — Instituição de Pagamento","Instituição líder. CNPJ 18.236.120/0001-58."],
+    ["Nu Financeira S.A. — SCFI","Capital social de R$ 5,30 bi em 31/12/2025. Carteira de crédito de R$ 167,0 bi em set/2025."],
+    ["Nu Investimentos S.A. — CTVM","100% da Nu Financeira. Valor contábil do investimento: R$ 4,71 bi."],
+    ["Nu Distribuidora de Títulos e Valores Mobiliários","Citada como integrante em documentos de 2024, mas ausente da lista de subsidiárias do 20-F FY2025. Provável incorporação.","open"],
+    ["Lista oficial e exaustiva","Nem o Pilar 3 nem as demonstrações trazem a relação completa nominada.","nd"],
+    ["Rating","Nu Financeira com AAA.br e perspectiva estável, reafirmado em 26/01/2026."]
+  ]},
+  {code:"V.03", name:"Subsidiárias reguladas no Brasil", note:"O Exhibit 8.1 não divulga percentual de participação em nenhuma entidade.", ents:[
+    ["Nu Pagamentos S.A.","Instituição de pagamento; também prestadora de serviços de ativos virtuais. BACEN."],
+    ["Nu Financeira S.A. — SCFI","Crédito, financiamento e investimento. BACEN."],
+    ["Nu Investimentos S.A. — CTVM","Corretora. BACEN e CVM."],
+    ["Nu Asset Management Ltda.","Gestão de recursos. CVM."],
+    ["Nu Corretora de Seguros Ltda.","Corretagem. SUSEP."],
+    ["Nu Crypto Ltda.","Ativos digitais. BACEN, sob o regime em implantação."],
+    ["NuPay for Business Instituição de Pagamento Ltda.","Instituição de pagamento para soluções B2B. BACEN."],
+    ["Olivia AI do Brasil — Instituição de Pagamento Ltda.","Instituição de pagamento remanescente da aquisição de 2021. BACEN."],
+    ["Provu Serviços de Administração e Correspondente Bancário S.A.","Correspondente bancário. Nova no exercício de 2025.","trans"],
+    ["Vérios Gestão de Recursos Ltda.","Gestão de recursos. CVM."]
+  ]},
+  {code:"V.04", name:"Subsidiárias não financeiras no Brasil", note:"", ents:[
+    ["NuCommerce Ltda.","Marketplace e comércio."],
+    ["Nu Canais Ltda.","Canais de distribuição."],
+    ["Nu Brasil Serviços Ltda.","Serviços corporativos."],
+    ["Nu Brasil Tecnologia Ltda.","Tecnologia."],
+    ["Nu Brasil Holding Financeira Ltda.","Holding financeira. Nova no exercício de 2025.","trans"],
+    ["Olivia AI do Brasil Participações Ltda.","Holding da aquisição."],
+    ["Entidade de telecomunicações","Nenhuma consta da lista. O NuCel opera provavelmente como MVNO sobre contrato, sem pessoa jurídica licenciada própria.","open"]
+  ]},
+  {code:"V.05", name:"Licença bancária no Brasil", note:"O movimento societário mais relevante em curso — e o de evidência mais conflitante de todo este mapa.", ents:[
+    ["Situação vigente","Três autorizações separadas: instituição de pagamento, financeira e corretora. Sem licença de banco múltiplo."],
+    ["Gatilho regulatório","Resoluções Conjuntas 16 e 17/2025, publicadas em 02/12/2025, vedam o uso do termo 'banco' sem autorização. Prazo de adaptação de 120 dias."],
+    ["Anúncio da companhia","Em 03/12/2025 declarou que obteria licença bancária em 2026, por pedido próprio ou por aquisição de instituição licenciada. Sem mudanças materiais de capital ou liquidez."],
+    ["Via reportada — Banco Caixa Geral Brasil","Proposta vinculante de ~€ 42 milhões noticiada em jun/2026, com conclusão prevista para 2027.","open"],
+    ["Via reportada — Banco Porto Real de Investimentos","Compra de licença noticiada em 20/07/2026, valor não divulgado.","open"],
+    ["Conflito não reconciliado","Não foi possível determinar se são operações distintas, se uma substituiu a outra, ou se uma das reportagens está incorreta. Nenhuma concluída na data desta apuração.","open"]
+  ]},
+  {code:"V.06", name:"México", note:"Conversão de SOFIPO em banco múltiplo, concluída em 32 meses.", ents:[
+    ["Nubank, S.A. Institución de Banca Múltiple","Ex-Nu México Financiera S.A. de C.V., S.F.P. CNBV, Banxico e IPAB."],
+    ["Autorização de constituição","Publicada no Diário Oficial em 23/05/2025, com capital de MXN 14,205 bi."],
+    ["Autorização de início de operações","Emitida pela CNBV em 10/07/2026, com 30 dias para completar a transformação."],
+    ["Nu BN México, S.A. de C.V.","Holding e serviços."],
+    ["Nu BN Servicios México e Nu BN Tecnologia","Serviços e tecnologia."],
+    ["Nu MX LLC","Veículo de investimento sediado nos EUA."],
+    ["Carteira de crédito","MXN 32,971 bi em mar/2026 — entre as 25 maiores instituições do país.","sec"]
+  ]},
+  {code:"V.07", name:"Colômbia", note:"", ents:[
+    ["Nu Colombia Compañía de Financiamiento S.A.","Captação de poupança, cartão de crédito e crédito. Superintendencia Financiera de Colombia."],
+    ["Aprovação da SFC","03/01/2024 — habilitou contas de poupança, antes restrita a cartão de crédito."],
+    ["Nu Global Colombia S.A.S. e Nu Servicios Global S.A.S.","Serviços e tecnologia. Novas no exercício de 2025.","trans"],
+    ["Capitalização acumulada","Mais de COP 2 trilhões investidos no país.","sec"],
+    ["Pedido de licença bancária plena","Não localizado.","open"]
+  ]},
+  {code:"V.08", name:"Estados Unidos", note:"Banco em constituição, com aprovação condicional e duas aprovações pendentes.", ents:[
+    ["Nubank, National Association","Banco nacional proposto. OCC."],
+    ["Helen OT LLC","Subsidiária direta da holding, veículo do charter bancário."],
+    ["Nu North America, Inc. e Nu United States LLC","Entidades norte-americanas."],
+    ["Nu 1-A a Nu 3-B, LLC","Seis veículos estruturados. Finalidade não divulgada.","nd"],
+    ["Cronologia","Pedido em 30/09/2025; aprovação condicional do OCC em 27–29/01/2026, após 121 dias."],
+    ["Condições","Capitalização integral em 12 meses e abertura em 18 meses, com aprovações pendentes do Federal Reserve e da FDIC.","open"],
+    ["Liderança","Cristina Junqueira como CEO da operação nos EUA e Roberto Campos Neto como chairman do conselho.","sec"]
+  ]},
+  {code:"V.09", name:"Outras jurisdições", note:"Entidades sem operação de varejo declarada.", ents:[
+    ["Argentina","Nu Global Argentina S.A."],
+    ["Peru","Nu Global Peru S.A.C."],
+    ["Uruguai","Nuplat S.A., Nu Tecnologia S.A. e Nu Uruguay Investments S.A. — hub tecnológico e veículo de investimento."],
+    ["Suíça","Nu Global AG."],
+    ["Liechtenstein","Nu Global EEA AG e Nu Global EEA Holdings AG — novas em 2025, provável porta de entrada no Espaço Econômico Europeu.","trans"],
+    ["Ilhas Cayman","Nu Cayman Investments Ltd. — nova em 2025."],
+    ["Canadá","Nu Group Partnership — nova em 2025."],
+    ["Crescimento do perímetro","De 37 subsidiárias em 10 jurisdições em 2024 para 44 em 12 jurisdições em 2025."]
+  ]},
+  {code:"V.10", name:"Participações e aquisições", note:"", ents:[
+    ["Tyme Group","Banco digital com operações na África do Sul e nas Filipinas. Aporte de US$ 150 milhões em rodada de US$ 250 milhões, anunciado em dez/2024. Participação minoritária, percentual não divulgado.","nd"],
+    ["Investimentos em coligadas","Valor contábil de US$ 98,7 milhões em 31/12/2025; participação no prejuízo de US$ 3,7 milhões em 2025. Coligadas não nomeadas na nota acessível.","open"],
+    ["Hyperplane","Startup de IA adquirida em 2024, absorvida sem entidade autônoma."],
+    ["Cognitect, Plataformatec, Spin Pay e Jurídico Certo","Aquisições anunciadas publicamente; nenhuma figura como pessoa jurídica autônoma na lista de subsidiárias.","open"],
+    ["Creditas","Nenhuma evidência de participação foi encontrada.","open"]
+  ]},
+  {code:"V.11", name:"Veículos estruturados", note:"", ents:[
+    ["Internet — FIP Multiestratégia","Fundo de investimento em participações consolidado, listado como subsidiária. CVM."],
+    ["Securitização de recebíveis","Cessões com retenção substancial de riscos e benefícios, com contrapartida em debêntures lastreadas. Saldo de R$ 5,04 bi em 31/12/2025."],
+    ["Letras Financeiras","Emitidas pela Nu Financeira, até a 18ª emissão."],
+    ["Fundos de investimento consolidados","As demonstrações declaram a consolidação, mas não nomeiam os fundos.","nd"],
+    ["FIDC, securitizadora ou SPE próprios","Nenhuma entidade dessas naturezas foi identificada nas fontes consultadas.","open"]
+  ]},
+  {code:"V.12", name:"Entidade sem fins lucrativos", note:"", ents:[
+    ["Instituto NU","Consta pela primeira vez da lista de subsidiárias no exercício de 2025.","trans"],
+    ["Natureza jurídica, CNPJ e objeto","Não confirmados — a página institucional retornou erro.","open"]
+  ]}
+ ]
+},
+{
+ id:"c6", num:"VI", title:"Políticas, Normas e Procedimentos",
+ purpose:"A camada normativa reflete a dupla natureza do emissor: os documentos exigidos pela SEC estão publicados como exhibits do relatório anual — insider trading e clawback inclusive —, enquanto várias políticas exigidas pela regulação brasileira são referenciadas mas não publicadas em versão autônoma. A página de RI que as reuniria carrega dinamicamente e não pôde ser lida.",
+ domains:[
+  {code:"VI.01", name:"Conduta e integridade", note:"", ents:[
+    ["Código de Conduta","Documento público em português, inglês e espanhol.","ok"],
+    ["Política de Compliance","PDF público.","ok"],
+    ["Programa Global de PLD e CFT","Documento autônomo público, com página dedicada.","ok"],
+    ["Procedimento de Recepção e Tratamento de Denúncias","PDF público.","ok"],
+    ["Canal de denúncias","Canal externo ativo, em português e inglês.","ok"],
+    ["Código de Conduta do Fornecedor","PDF público.","ok"],
+    ["Política Anticorrupção","Citada na política de governança; PDF autônomo não localizado.","open"],
+    ["Whistleblowing Policy","A política, distinta do procedimento publicado, não foi localizada.","open"]
+  ]},
+  {code:"VI.02", name:"Governança societária", note:"O bloco mais bem documentado — porque a exigência é da SEC, não do BACEN.", ents:[
+    ["Política Global de Governança Corporativa","Versão 2, adotada em fev/2025. Define comitês, avaliação de independência, Lead Independent Director, sessões executivas e autoavaliação do Conselho.","ok"],
+    ["Insider Trading Policy","Pública como exhibit do 20-F. Versão 9.0, revisada em jan/2026: janelas de negociação, black-outs, corretoras designadas, vedação a hedge e planos 10b5-1.","ok"],
+    ["Compensation Clawback Policy","Pública como exhibit do 20-F. Vigente desde 02/10/2023, revisada em 24/02/2026. Alcança CEO, CFO, Chief Growth Officer, CRO e CTO.","ok"],
+    ["Política de Transações com Partes Relacionadas","Citada como competência do Audit and Risk Committee; PDF público não localizado.","open"],
+    ["Política de Divulgação","Não localizada.","open"],
+    ["Política de Remuneração","Não localizada como documento autônomo.","open"],
+    ["Charters dos comitês","Não extraídos — a página de documentos de governança carrega dinamicamente.","open"]
+  ]},
+  {code:"VI.03", name:"Risco e capital", note:"", ents:[
+    ["Relatório Pilar 3","Publicado anualmente, com anexos trimestrais padronizados até o 2T26.","ok"],
+    ["RAS — Risk Appetite Statement","Aprovado pelo Conselho, conforme descrito no Pilar 3."],
+    ["Riscos geridos formalmente","Crédito e contraparte, mercado, IRRBB, liquidez, operacional, tecnologia e cibersegurança, modelo, compliance, reputacional, socioambiental e climático, e risco país."],
+    ["Política de Gestão de Riscos","Estrutura descrita no Pilar 3; a política em si não é publicada.","open"],
+    ["Política de Gestão de Capital","Idem — gestão sob a Res. BCB 200/2022, sem documento autônomo.","open"],
+    ["Política de Crédito","Não localizada.","open"],
+    ["Política de Continuidade de Negócios","Não localizada.","open"]
+  ]},
+  {code:"VI.04", name:"Segurança e privacidade", note:"", ents:[
+    ["Política de Privacidade","Página pública no portal de transparência.","ok"],
+    ["Política de Segurança (consumidor)","Página pública.","ok"],
+    ["Política de Segurança da Informação e Cibernética","A exigida pela Res. CMN 4.893 não foi localizada — a política publicada é voltada ao consumidor, não é o documento regulatório.","open"],
+    ["SCR e Dados Abertos","Páginas públicas de transparência regulatória.","ok"]
+  ]},
+  {code:"VI.05", name:"Socioambiental e climático", note:"", ents:[
+    ["Política Global de ESG","PDF público.","ok"],
+    ["PRSAC","Política de Responsabilidade Social, Ambiental e Climática, em português e inglês. Padrão Res. CMN 4.945.","ok"],
+    ["Relatórios GRSAC","Publicados para 2022, 2023, 2024 e 2025.","ok"],
+    ["Lista de Exclusão","Setores vedados ao relacionamento.","ok"],
+    ["Política de Direitos Humanos","Não localizada como documento autônomo.","open"]
+  ]},
+  {code:"VI.06", name:"Relacionamento com clientes", note:"", ents:[
+    ["Procedimentos de Ouvidoria","PDF público, conforme a Res. CMN 4.860.","ok"],
+    ["Canal de denúncias externo","Ativo, com procedimento formal publicado.","ok"]
+  ]},
+  {code:"VI.07", name:"Arcabouço regulatório brasileiro", note:"", ents:[
+    ["Res. CMN 4.557/2017","Gerenciamento de riscos e capital, RAS e CRO independente."],
+    ["Res. BCB 200/2022","Requerimentos mínimos de PR, Nível I e Capital Principal — citada expressamente no Pilar 3."],
+    ["Circular BCB 3.930","Anexos padronizados de divulgação, publicados trimestralmente."],
+    ["Res. CMN 4.945 e Res. BCB 139","PRSAC e relatório GRSAC."],
+    ["Res. CMN 4.860","Ouvidoria."],
+    ["Res. CMN 4.893","Segurança cibernética e nuvem — aplicável, política não publicada.","open"],
+    ["Res. CMN 4.966/2021","Nova contabilidade de instrumentos financeiros, vigente desde 01/01/2025. Menção explícita em documento público não confirmada.","open"],
+    ["Res. Conjuntas 16 e 17/2025","Vedação ao uso do termo 'banco' sem autorização."],
+    ["Res. BCB 520/2025","Prestadoras de serviços de ativos virtuais."],
+    ["Regras de instituição de pagamento, Pix, Open Finance e LGPD",""],
+    ["Agenda BC#","Citada nominalmente no 20-F como vetor regulatório."]
+  ]},
+  {code:"VI.08", name:"Arcabouço regulatório internacional", note:"", ents:[
+    ["SEC e NYSE","Emissor privado estrangeiro; Form 20-F e 6-K; estrutura dual class."],
+    ["SOX","Certificações 302 e 906 como exhibits do relatório anual."],
+    ["Rule 10D-1 e padrões de listagem da NYSE","Base da clawback policy."],
+    ["Ley de Instituciones de Crédito e normas do Banxico","México, desde a conversão em banco múltiplo."],
+    ["Decretos 1692/2020 e 1297/2022","Pagamentos eletrônicos e open finance na Colômbia, citados no 20-F."],
+    ["OCC, Federal Reserve e FDIC","Regime do charter bancário nos EUA, com duas aprovações pendentes.","open"]
+  ]}
+ ]
+},
+{
+ id:"c7", num:"VII", title:"Estrutura, Papéis e Responsabilidades",
+ purpose:"Três comitês de Conselho, não sete — e nenhum comitê de risco separado: risco e auditoria são o mesmo órgão. A diretoria tem uma marca própria do grupo: cargos globais por função, não por país, com uma única CEO para toda a América Latina e a co-fundadora acumulando crescimento global e a operação americana.",
+ domains:[
+  {code:"VII.01", name:"Conselho de Administração", note:"Nove membros, mandatos de um ano. O Conselho declara maioria de independentes.", ents:[
+    ["Chairman e CEO","David Vélez, fundador — acumula as duas funções."],
+    ["Lead Independent Director","Anita Sands, desde out/2022. Integra Audit & Risk e Nominating & Governance."],
+    ["Rogério Paulo Calderón Peres","Independente. Preside o Audit and Risk Committee."],
+    ["Jacqueline Dawn Reses","Independente. Preside o Compensation and People Committee."],
+    ["Luis Alberto Moreno","Preside o Nominating and Corporate Governance Committee."],
+    ["Douglas Mauro Leone","Compensation & People e Nominating & Governance."],
+    ["David Marcus","Compensation & People."],
+    ["Thuan Quang Pham","Audit & Risk."],
+    ["Diego Piacentini","Ingressou em abr/2026. Nominating & Governance."],
+    ["Classificação individual de independência","O site rotula explicitamente como independentes apenas Sands, Reses e Calderón.","open"]
+  ]},
+  {code:"VII.02", name:"Comitês", note:"Três comitês no Conselho da holding, mais um comitê consultivo no nível do conglomerado brasileiro.", ents:[
+    ["Audit and Risk Committee","Calderón preside. Supervisiona auditor independente, auditoria interna, gestão de riscos e transações com partes relacionadas — não há comitê de risco separado."],
+    ["Compensation and People Committee","Reses preside. Remuneração executiva, sucessão, diversidade e inclusão."],
+    ["Nominating and Corporate Governance Committee","Moreno preside. Indicação de conselheiros, governança, autoavaliação e sucessão do CEO."],
+    ["Comitê de Riscos do conglomerado brasileiro","Não estatutário e consultivo, com três membros — dois independentes e o CEO da Nu Pagamentos."],
+    ["Fóruns técnicos","Risco de crédito, riscos operacionais, ALM, risco de TI, compliance, sustentabilidade e teste de estresse."]
+  ]},
+  {code:"VII.03", name:"Diretoria executiva", note:"Cargos globais por função, com uma CEO regional para toda a América Latina.", ents:[
+    ["Fundador e CEO","David Vélez."],
+    ["Co-fundadora, Chief Growth Officer e CEO nos EUA","Cristina Junqueira."],
+    ["Chief Financial Officer","Rob Livingston, desde 13/07/2026. Veio da Visa.","sec"],
+    ["CEO para a América Latina","Livia Martines Chanes."],
+    ["Chief Technology Officer","Eric Young."],
+    ["Chief Product Officer","Carl Rivera, nomeado em mai/2026.","sec"],
+    ["Chief Design Officer","Ethan Eismann."],
+    ["Chief Risk Officer","Henrique Fragelli."],
+    ["Chief Human Resources Officer","Suzana Kubric."],
+    ["Executive Vice-Chairman e Global Head of Public Policy","Roberto de Oliveira Campos Neto."],
+    ["General Counsel, Chief Compliance Officer e head de auditoria interna","Não constam da lista pública de diretoria.","nd"],
+    ["Diretoria estatutária brasileira","Relação nominal, incluindo diretor de PLD/FT, de risco e ouvidor, não localizada em fonte pública.","nd"]
+  ]},
+  {code:"VII.04", name:"Fundadores", note:"", ents:[
+    ["David Vélez","Fundador, chairman e CEO global. Absorveu as atribuições operacionais após a saída do COO em mai/2025.","sec"],
+    ["Cristina Junqueira","Co-fundadora. Foi CEO do Brasil, acumulou Chief Growth Officer desde 2022 e hoje também lidera a operação americana."],
+    ["Edward Wible","Co-fundador. Foi CTO por cerca de oito anos. Não consta da diretoria nem do Conselho em 2026; função atual não confirmada.","open"]
+  ]},
+  {code:"VII.05", name:"Mudanças executivas de 2025 e 2026", note:"", ents:[
+    ["Saída do President e COO","Youssef Lahrech deixou os cargos em mai/2025, após cerca de seis anos; as funções foram absorvidas pelo CEO.","sec"],
+    ["Entrada no Conselho","Diego Piacentini em abr/2026."],
+    ["Nomeação do Chief Product Officer","Carl Rivera em mai/2026.","sec"],
+    ["Sucessão do CFO","Anunciada em 01/06/2026 e efetiva em 13/07/2026. O CFO anterior, no cargo desde 2019, passou a Special Advisor da diretoria e do Audit and Risk Committee.","sec"],
+    ["Declaração da companhia","A transição planejada não altera o modelo operacional, o apetite a risco ou a estratégia de longo prazo."],
+    ["Troca de CTO","Não foi localizado comunicado nem data da transição para o CTO atual.","open"]
+  ]},
+  {code:"VII.06", name:"Linhas de defesa e controle", note:"", ents:[
+    ["Primeira linha","Unidades de negócio e suporte, que gerenciam riscos conforme políticas e limites aprovados."],
+    ["Segunda linha","Gestão de riscos, controles internos e compliance, assegurando aderência ao apetite a risco."],
+    ["Terceira linha","Auditoria interna, com avaliação periódica e independente."],
+    ["Conselho de Administração","Responsável por diretrizes, aprovação de políticas e definição do apetite a risco via RAS."],
+    ["CRO","Assegura monitoramento independente de segunda linha, com segregação declarada em relação às áreas de negócio."],
+    ["Ouvidoria","Estrutura obrigatória no Brasil, com procedimentos publicados."]
+  ]},
+  {code:"VII.07", name:"Tecnologia e inteligência artificial", note:"A ponte para as camadas IX a XIII, fora de escopo aqui — mas o único dos quatro conglomerados mapeados em que a IA já é canal de atendimento em produção e em escala.", ents:[
+    ["Plataforma proprietária","Núcleo bancário próprio, cloud-based, construído em Clojure."],
+    ["Modelo de fundação proprietário","Derivado da tecnologia adquirida em 2024; treinado na ordem de trilhões de tokens sobre histórico transacional de mais de 100 milhões de clientes.","sec"],
+    ["Aplicação em produção","Mais de 60% das conversas de atendimento no Brasil; underwriting de cartão no Brasil e no México e de crédito sem garantia no Brasil."],
+    ["Motor de crédito e modelos","Mais de 60 algoritmos de machine learning e motor de crédito proprietário, citados no 20-F."],
+    ["Parceria de modelos externos","Copiloto de call center e assistente anunciados em mar/2025, envolvendo mais de 5.000 colaboradores.","sec"],
+    ["Provedor de nuvem","Não nomeado nas seções acessíveis do 20-F.","open"],
+    ["Número de engenheiros","Não divulgado.","nd"]
+  ]},
+  {code:"VII.08", name:"Força de trabalho", note:"", ents:[
+    ["Headcount total e por país","Não divulgado em nenhum documento consultado.","nd"],
+    ["Incentivos em ações","Cerca de 88% dos colaboradores ativos receberam incentivos baseados em ações em 2025."],
+    ["Diversidade declarada","Força de trabalho com mais de 50 nacionalidades."]
+  ]}
+ ]
+},
+{
+ id:"c8", num:"VIII", title:"Métricas de Gestão e Controle",
+ purpose:"O painel tem duas métricas que nenhum dos conglomerados bancários comparáveis reporta — ARPAC e custo de servir —, e é o cruzamento delas que explica o modelo: receita de US$ 17,10 por cliente ao mês contra US$ 1,00 de custo. Em contrapartida, capital, liquidez e NPS não aparecem nos releases em dólar.",
+ domains:[
+  {code:"VIII.01", name:"Resultado", note:"Data-base 30/06/2026, salvo indicação.", ents:[
+    ["Receita total — 2T26","US$ 5.875,7 mi, +39% a/a."],
+    ["Lucro líquido — 2T26","US$ 1.061,1 mi, +49% a/a e +17% t/t — primeiro trimestre acima de US$ 1 bilhão."],
+    ["Lucro bruto — 2T26","US$ 2.441,1 mi, +43% a/a."],
+    ["Receita líquida de juros — 2T26","US$ 3,7 bi, +9% t/t."],
+    ["EPS — 2T26","US$ 0,2183 básico e US$ 0,2162 diluído."],
+    ["Resultado do 1S26","Lucro líquido de US$ 1.932,5 mi e EPS diluído de US$ 0,3936."],
+    ["Exercício de 2025","Receita de US$ 15.774,7 mi (+37%) e lucro líquido de US$ 2.871,7 mi (+45%). O release da companhia cita US$ 16,3 bi (+45%) de receita — divergência não reconciliada.","open"]
+  ]},
+  {code:"VIII.02", name:"Rentabilidade e eficiência", note:"", ents:[
+    ["ROE","33% no 2T26 e no exercício de 2025."],
+    ["Margem financeira líquida (NIM)","22,9% no 2T26, alta de 180 bps."],
+    ["NIM ajustado ao risco","12,4% no 2T26, alta de 290 bps sobre os 9,5% do 1T26."],
+    ["Índice de eficiência","19,5% no 2T26, contra 17,6% no 1T26 e 21,3% no 2T25."],
+    ["Composição do lucro bruto","Crédito 41%, float 34%, tarifas 25%."]
+  ]},
+  {code:"VIII.03", name:"Crédito", note:"", ents:[
+    ["Carteira total","US$ 39,4 bi, +37% a/a e +5% t/t."],
+    ["Cartão de crédito","US$ 26 bi — 66% da carteira."],
+    ["Crédito sem garantia","US$ 10,3 bi, +45% a/a."],
+    ["Crédito com garantia","US$ 3,1 bi, +30% a/a."],
+    ["NPL de 15 a 90 dias","4,8%, queda de 16 bps."],
+    ["NPL acima de 90 dias","6,9%, alta de 35 bps."],
+    ["Custo do risco","US$ 1,69 bi no 2T26, queda de 9% t/t."]
+  ]},
+  {code:"VIII.04", name:"Funding e balanço", note:"", ents:[
+    ["Depósitos totais","US$ 45,3 bi, +18% a/a."],
+    ["Custo dos depósitos","88% do interbancário."],
+    ["Loan-to-deposit do México","35% — o único divulgado por país."],
+    ["Ativo total","US$ 82.753,4 mi."],
+    ["Patrimônio líquido","US$ 13.251,7 mi."],
+    ["Loan-to-deposit consolidado","Não divulgado no release.","nd"]
+  ]},
+  {code:"VIII.05", name:"Capital e liquidez", note:"Não constam dos releases em dólar. Os índices abaixo são de set/2025, via relatório de rating.", ents:[
+    ["Índice de Basileia","14,6% em set/2025, queda de 1,2 p.p. a/a.","sec"],
+    ["Capital Nível I","13,0% em set/2025, queda de 1,5 p.p. a/a.","sec"],
+    ["Ativos problemáticos","8,1% da carteira, com cobertura de provisões de 184,3%.","sec"],
+    ["Loan-to-deposit do conglomerado brasileiro","46% em set/2025.","sec"],
+    ["Índice de liquidez","52,0% de ativos líquidos sobre ativos tangíveis.","sec"],
+    ["Funding total","R$ 230,1 bi em set/2025, com depósitos representando ~90%.","sec"],
+    ["CET1, LCR e NSFR atuais","Constam apenas dos anexos do Pilar 3 em planilha, que não puderam ser baixados.","nd"]
+  ]},
+  {code:"VIII.06", name:"Escala e clientes", note:"", ents:[
+    ["Clientes totais","138,9 milhões no 2T26, com ~4 milhões de adições líquidas no trimestre."],
+    ["Brasil","~118 milhões — 62% da população adulta."],
+    ["México","15,8 milhões — 16,5% da população adulta."],
+    ["Colômbia","Mais de 5 milhões."],
+    ["Taxa de atividade","83,5% global; Brasil acima de 86%."],
+    ["Relacionamento principal","Mais de 60% dos clientes no Brasil."],
+    ["Volume de compras","US$ 141,8 bi no exercício de 2025.","sec"]
+  ]},
+  {code:"VIII.07", name:"Economia unitária", note:"O par de métricas que define o modelo — e que os conglomerados bancários comparáveis não reportam.", ents:[
+    ["ARPAC mensal","US$ 17,10 no 2T26, contra US$ 15 no 4T25 e US$ 12,2 no 2T25."],
+    ["Custo de servir mensal","US$ 1,00 no 2T26, contra US$ 0,80 no 4T25 — alta de 25%."],
+    ["ARPAC de coorte madura","US$ 30,8 após 96 meses de relacionamento.","sec"],
+    ["ARPAC por país","US$ 12,3 no México no 2T26, contra US$ 5,6 do Brasil em nível comparável de penetração.","sec"],
+    ["Churn líquido mensal","0,1% em 2025."]
+  ]},
+  {code:"VIII.08", name:"Indicadores não financeiros", note:"", ents:[
+    ["NPS","Não divulgado numericamente em nenhum documento consultado.","nd"],
+    ["Ranking de reclamações do BACEN","Posição não apurada — a página do ranking é renderizada dinamicamente.","open"],
+    ["Metas ASG quantitativas","Não localizadas.","nd"],
+    ["Inclusão financeira","20,7 milhões de brasileiros com o primeiro cartão de crédito em cinco anos; 35% das primeiras contas bancárias e 52% dos primeiros cartões do país.","sec"]
+  ]},
+  {code:"VIII.09", name:"Guidance", note:"A companhia não divulga projeções numéricas formais de receita, lucro, ROE ou clientes.", ents:[
+    ["Índice de eficiência","Média esperada de ~20% para o ano cheio de 2026 — realizado de 19,5% no 2T26.","sec"],
+    ["NIM ajustado ao risco","Manutenção em torno de 12,4% no horizonte previsível.","sec"],
+    ["Alavancagem operacional","Objetivo declarado de mantê-la durante a escala nos três mercados."],
+    ["México","A licença bancária destrava folha de pagamento, seguro de depósito maior e portfólio ampliado.","sec"],
+    ["Ausência de guidance numérico","Confirmada — nenhuma projeção formal de resultado é publicada."]
+  ]}
+ ]
+},
+];
+
+/* ---------- render ---------- */
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const TAGTXT = {ok:"confirmado", trans:"em transição", nd:"não divulgado", sec:"fonte secundária", open:"em aberto", stop:"encerrado"};
+
+function pad(n){return String(n).padStart(2,"0")}
+
+let totalEnts = 0;
+const counts = {};
+const XREF = {};
+
+const layersEl = document.getElementById("layers");
+layersEl.innerHTML = L.map(layer => {
+  let n = 0;
+  const doms = layer.domains.map(d => {
+    const ents = d.ents.map((e,i) => {
+      n++;
+      const [name, desc, tag] = e;
+      const tagHtml = tag ? `<span class="tag t-${tag}">${TAGTXT[tag]}</span>` : "";
+      return `<li class="ent"><span class="ent-code">${layer.num}.${d.code.split(".")[1]}.${pad(i+1)}</span><span class="ent-name">${esc(name)}${tagHtml}</span><span class="ent-desc">${esc(desc||"")}</span></li>`;
+    }).join("");
+    const srcs = SRCMAP[d.code] || [];
+    srcs.forEach(s => { (XREF[s] = XREF[s] || []).push({code:d.code, name:d.name, layer:layer.id}); });
+    const chips = srcs.length
+      ? `<span class="srcchips">${srcs.map(s=>`<a class="srcchip" href="#${s.toLowerCase()}" title="Fonte ${s}">${s}</a>`).join("")}</span>`
+      : "";
+    return `<section class="domain" id="d-${d.code.replace(/\./g,"-")}"><div class="domain-head"><span class="domain-code">${esc(d.code)}</span><span class="domain-name">${esc(d.name)}</span>${chips}${d.note?`<p class="domain-note">${esc(d.note)}</p>`:""}</div><ul class="ents">${ents}</ul></section>`;
+  }).join("");
+  counts[layer.id] = n;
+  totalEnts += n;
+  return `<section class="cl-layer" id="${layer.id}">
+    <div class="cl-layer-head"><span class="cl-layer-numeral">${layer.num}</span><h2>${esc(layer.title)}</h2></div>
+    <p class="cl-layer-purpose">${esc(layer.purpose)}</p>
+    <div class="domains">${doms}</div>
+  </section>`;
+}).join("");
+
+document.getElementById("stack").innerHTML = STACK.map(r => {
+  if (r.h) return `<div class="stack-row head">${esc(r.h)}</div>`;
+  const c = r.id ? counts[r.id] : null;
+  const right = c!=null ? `${c} entidades` : (r.note || "");
+  const inner = `<span class="stack-num">${r.n}</span><span>${r.id?`<a href="#${r.id}" style="text-decoration:none">${esc(r.t)}</a>`:esc(r.t)}</span><span class="stack-count">${esc(right)}</span>`;
+  return `<div class="stack-row${r.inn?"":" out"}">${inner}</div>`;
+}).join("");
+
+/* ---------- tabela de referência cruzada ---------- */
+document.getElementById("xrefbody").innerHTML = SOURCES.map(s => {
+  const doms = (XREF[s.id] || []);
+  const list = doms.length
+    ? doms.map(d => `<a href="#d-${d.code.replace(/\./g,"-")}" title="${esc(d.name)}">${esc(d.code)}</a>`).join(" · ")
+    : (s.method ? "Método — princípios, camadas e regra de agrupamento por domínios aplicados em todo o documento" : "—");
+  return `<tr id="${s.id.toLowerCase()}">
+    <td class="xr-id">${s.id}</td>
+    <td><span class="xr-title"><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></span><span class="xr-meta">${esc(s.meta)}</span></td>
+    <td class="xr-doms">${list}</td>
+    <td class="xr-n">${doms.length ? doms.length : (s.method ? "todos" : "0")}</td>
+  </tr>`;
+}).join("");
+
+document.getElementById("navpills").innerHTML = L.map(l =>
+  `<a href="#${l.id}">${l.num}</a>`).join("");
+
+/* ---------- filter ---------- */
+const q = document.getElementById("q");
+const hits = document.getElementById("hits");
+const allEnts = [...document.querySelectorAll(".ent")];
+const allDoms = [...document.querySelectorAll(".domain")];
+const allLayers = [...document.querySelectorAll(".cl-layer")];
+
+function baseline(){ hits.textContent = `${totalEnts} entidades · ${allDoms.length} domínios · 9 camadas`; }
+baseline();
+
+q.addEventListener("input", () => {
+  const t = q.value.trim().toLowerCase();
+  if (!t){
+    allEnts.forEach(e=>e.classList.remove("hidden"));
+    allDoms.forEach(e=>e.classList.remove("hidden"));
+    allLayers.forEach(e=>e.classList.remove("hidden"));
+    baseline();
+    return;
+  }
+  let found = 0;
+  allDoms.forEach(dom => {
+    const domText = dom.querySelector(".domain-head").textContent.toLowerCase();
+    const domMatch = domText.includes(t);
+    let visible = 0;
+    dom.querySelectorAll(".ent").forEach(ent => {
+      const show = domMatch || ent.textContent.toLowerCase().includes(t);
+      ent.classList.toggle("hidden", !show);
+      if (show) visible++;
+    });
+    dom.classList.toggle("hidden", visible === 0);
+    found += visible;
+  });
+  allLayers.forEach(layer => {
+    const any = [...layer.querySelectorAll(".domain")].some(d => !d.classList.contains("hidden"));
+    layer.classList.toggle("hidden", !any);
+  });
+  hits.textContent = `${found} ${found===1?"entidade":"entidades"}`;
+});
+</script>
+</body>
+</html>
