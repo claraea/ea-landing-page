@@ -18,7 +18,8 @@ index.html              # home (era ClaraEA-Mockup.html)
 ClaraEA-CMDB.html       # página da ferramenta EA/CMDB
 ClaraEA-Autor.html      # página do autor
 casos/
-  itau-unibanco.html    # caso de mercado (IA agêntica) — só PT, fora do build i18n
+  itau-unibanco.html    # casos de mercado (IA agêntica) — só PT, fora do build i18n
+  bradesco.html
 assets/
   styles.css            # CSS compartilhado entre as três páginas
   cubes.svg             # ilustração modular auxiliar

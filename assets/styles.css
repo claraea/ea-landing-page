@@ -733,6 +733,7 @@ section {
   .case-item--featured h3 { font-size: 26px; }
 }
 
+.case-card + .case-card { margin-top: 28px; }
 .case-card .case-desc { font-size: 16px; line-height: 1.7; color: var(--ink-muted); margin-bottom: 28px; max-width: 52ch; }
 .case-card .case-cta-soon { display: block; margin-top: 16px; }
 .case-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 0; }
