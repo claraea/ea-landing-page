@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVC Corp sob o método Clara/EA — Caso de Mercado</title>
+<meta name="description" content="Arquitetura de negócios da CVC Corp mapeada nas oito camadas do Clara/EA por IA agêntica, exclusivamente a partir de divulgação pública — 74 domínios, 463 entidades e rastreabilidade fonte a fonte. Primeiro caso fora do setor financeiro.">
+<meta name="author" content="Marcelo Andrade Clara">
+<link rel="canonical" href="https://www.claraea.com.br/casos/cvc.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#1B2D4F">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Clara/EA">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.claraea.com.br/casos/cvc.html">
+<meta property="og:title" content="CVC Corp sob o método Clara/EA">
+<meta property="og:description" content="Arquitetura de negócios da CVC Corp mapeada nas oito camadas do Clara/EA por IA agêntica, a partir de divulgação pública — 74 domínios, 463 entidades, rastreabilidade fonte a fonte.">
+<meta property="og:image" content="https://www.claraea.com.br/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clara/EA · Framework de Arquitetura Corporativa">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CVC Corp sob o método Clara/EA">
+<meta name="twitter:description" content="Arquitetura de negócios mapeada nas oito camadas do Clara/EA por IA agêntica, a partir de divulgação pública.">
+<meta name="twitter:image" content="https://www.claraea.com.br/assets/og-card.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<!-- Structured data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "CVC Corp sob o método Clara/EA",
+  "description": "Arquitetura de negócios da CVC Corp mapeada nas oito camadas do Clara/EA por IA agêntica, exclusivamente a partir de divulgação pública.",
+  "url": "https://www.claraea.com.br/casos/cvc.html",
+  "inLanguage": "pt-BR",
+  "datePublished": "2026-09-14",
+  "author": { "@id": "https://www.claraea.com.br/#person" },
+  "publisher": { "@type": "Organization", "name": "Clara/EA", "url": "https://www.claraea.com.br/" },
+  "about": { "@type": "Organization", "name": "CVC Brasil Operadora e Agência de Viagens S.A." },
+  "isPartOf": { "@type": "WebSite", "name": "Clara/EA", "url": "https://www.claraea.com.br/" }
+}
+</script>
+
+<style>
+  /* ---------- tokens do documento (derivados do design system do site) ---------- */
+  .case-doc{
+    --doc-ink-2:#3A3A3A;
+    --doc-rule-strong:#C4BDAE;
+    --doc-surface-2:#FAF8F3;
+    --doc-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --doc-ok:#1F6B4A;
+    --doc-warn:#8A6210;
+    --doc-stop:#8F2B2B;
+    font-size:15px;
+    line-height:1.55;
+  }
+  .case-doc code{font-family:var(--doc-mono);font-size:.92em;background:var(--doc-surface-2);padding:1px 5px;border:1px solid var(--rule)}
+  .case-doc h1,.case-doc h2,.case-doc h3,.case-doc h4{text-wrap:balance}
+
+  /* ---------- hero ---------- */
+  .case-hero{padding:96px 0 56px;border-top:none}
+  .case-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:end}
+  .case-hero .section-title{font-size:clamp(36px,5vw,58px);max-width:18ch;margin-bottom:24px}
+  .case-hero .section-lead{margin-bottom:0}
+  .case-meta{
+    font-family:var(--doc-mono);
+    font-size:12px;
+    line-height:2;
+    color:var(--ink-muted);
+    border-left:2px solid var(--accent-gold);
+    padding-left:18px;
+    white-space:nowrap;
+  }
+  .case-meta b{color:var(--ink-primary);font-weight:500}
+
+  /* ---------- como foi produzido ---------- */
+  .case-how{padding:72px 0}
+  .case-how-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px 64px;align-items:start}
+  .case-how p{font-size:16px;line-height:1.7;color:var(--doc-ink-2);margin-bottom:16px;max-width:60ch}
+  .case-how p:last-child{margin-bottom:0}
+  .case-how-steps{list-style:none;counter-reset:step}
+  .case-how-steps li{
+    counter-increment:step;
+    display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;
+    padding:18px 0;border-top:1px solid var(--rule);
+    font-size:15px;line-height:1.6;color:var(--doc-ink-2);
+  }
+  .case-how-steps li:last-child{border-bottom:1px solid var(--rule)}
+  .case-how-steps li::before{
+    content:counter(step,decimal-leading-zero);
+    font-family:var(--doc-mono);font-size:12px;color:var(--accent-gold);font-weight:600;padding-top:3px;
+  }
+  .case-how-steps b{color:var(--ink-primary);font-weight:600}
+
+  /* ---------- premissas do método ---------- */
+  .case-method{padding:0 0 72px;border-top:none}
+  .method{
+    display:grid;grid-template-columns:1fr;gap:1px;
+    background:var(--rule);border:1px solid var(--rule);
+  }
+  .method > div{background:var(--bg-elevated);padding:20px 22px}
+  @media (min-width:620px){ .method{grid-template-columns:repeat(2,1fr)} }
+  @media (min-width:980px){ .method{grid-template-columns:repeat(3,1fr)} }
+  .method h3{
+    font-family:var(--doc-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-gold);margin-bottom:8px;font-weight:600;
+  }
+  .method p{margin:0;font-size:14px;color:var(--doc-ink-2);line-height:1.55}
+
+  /* ---------- escopo (stack) ---------- */
+  .case-stack{padding:0 0 64px;border-top:none}
+  .section-label{
+    font-family:var(--doc-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-muted);margin:0 0 14px;
+  }
+  .stack{display:flex;flex-direction:column;gap:3px}
+  .stack-row{
+    display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:center;
+    padding:10px 16px;background:var(--bg-elevated);border:1px solid var(--rule);font-size:14px;
+  }
+  .stack-row a{color:var(--ink-primary);text-decoration:none}
+  .stack-row a:hover{color:var(--brand-deep);text-decoration:underline;text-decoration-color:var(--accent-gold)}
+  .stack-row.out{opacity:.55;background:transparent;border-style:dashed}
+  .stack-row.head{
+    background:transparent;border:none;padding-block:12px 2px;
+    font-family:var(--doc-mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--accent-gold);grid-template-columns:1fr;
+  }
+  .stack-num{font-family:var(--doc-mono);font-size:12px;color:var(--brand-deep);font-weight:600}
+  .stack-count{font-family:var(--doc-mono);font-size:11.5px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+
+  /* ---------- toolbar ---------- */
+  .toolbar{
+    position:sticky;top:73px;z-index:20;
+    background:rgba(245,242,236,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:12px 0;
+  }
+  .toolbar .container{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+  #q{
+    flex:1 1 240px;min-width:0;font:inherit;font-size:14px;padding:9px 12px;
+    background:var(--bg-elevated);border:1px solid var(--doc-rule-strong);color:var(--ink-primary);border-radius:2px;
+  }
+  #q:focus{outline:2px solid var(--brand-deep);outline-offset:1px}
+  .navpills{display:flex;flex-wrap:wrap;gap:4px}
+  .navpills a{
+    font-family:var(--doc-mono);font-size:11.5px;text-decoration:none;padding:5px 9px;
+    border:1px solid var(--doc-rule-strong);color:var(--doc-ink-2);border-radius:2px;
+  }
+  .navpills a:hover{border-color:var(--brand-deep);color:var(--brand-deep)}
+  .navpills a:focus-visible{outline:2px solid var(--brand-deep);outline-offset:1px}
+  #hits{font-family:var(--doc-mono);font-size:11.5px;color:var(--ink-muted)}
+
+  /* ---------- camadas ---------- */
+  .case-layers{padding:0 0 40px;border-top:none}
+  .cl-layer{padding:56px 0 0;border-top:1px solid var(--rule)}
+  .cl-layer:first-of-type{border-top:none;padding-top:40px}
+  .cl-layer-head{display:flex;gap:20px;align-items:baseline;flex-wrap:wrap}
+  .cl-layer-numeral{
+    font-family:var(--serif);font-size:44px;font-weight:600;color:var(--accent-gold);
+    line-height:1;font-variant-numeric:tabular-nums;
+  }
+  .cl-layer h2{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;letter-spacing:-.01em}
+  .cl-layer-purpose{margin:14px 0 0;color:var(--doc-ink-2);max-width:76ch;font-size:15px;line-height:1.65}
+  .domains{margin-top:28px;display:flex;flex-direction:column;gap:22px;min-width:0}
+  .domains > *{min-width:0}
+  .domain{padding:0;border:1px solid var(--rule);background:var(--bg-elevated)}
+  .domain-head{
+    display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;
+    padding:14px 18px;border-bottom:1px solid var(--rule);background:var(--doc-surface-2);
+  }
+  .domain-code{font-family:var(--doc-mono);font-size:11.5px;font-weight:600;color:var(--accent-gold);letter-spacing:.04em}
+  .domain-name{font-weight:600;font-size:15px;color:var(--ink-primary)}
+  .domain-note{font-size:12.5px;color:var(--ink-muted);flex:1 1 100%;margin:0;line-height:1.45}
+  .srcchips{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+  .srcchip{
+    font-family:var(--doc-mono);font-size:10px;letter-spacing:.04em;text-decoration:none;
+    color:var(--brand-deep);border:1px solid var(--doc-rule-strong);border-radius:2px;padding:1px 5px;
+    background:var(--bg-elevated);white-space:nowrap;
+  }
+  .srcchip:hover{border-color:var(--brand-deep)}
+  .srcchip:focus-visible{outline:2px solid var(--brand-deep);outline-offset:1px}
+  .ents{list-style:none;margin:0;padding:0}
+  .ent{
+    display:grid;grid-template-columns:70px minmax(150px,1fr) minmax(0,2.2fr);gap:4px 16px;
+    padding:9px 18px;border-top:1px solid var(--rule);align-items:baseline;
+  }
+  .ent:first-child{border-top:none}
+  .ent-code{font-family:var(--doc-mono);font-size:11px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+  .ent-name{font-weight:500;font-size:14px;line-height:1.4;color:var(--ink-primary);overflow-wrap:anywhere}
+  .ent-desc{font-size:13.2px;color:var(--doc-ink-2);line-height:1.45;overflow-wrap:anywhere}
+  .tag{
+    display:inline-block;font-family:var(--doc-mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    padding:1px 6px;border:1px solid currentColor;border-radius:2px;margin-left:8px;vertical-align:1px;white-space:nowrap;
+  }
+  .t-ok{color:var(--doc-ok)}
+  .t-trans{color:var(--brand-deep)}
+  .t-nd{color:var(--ink-muted)}
+  .t-sec{color:var(--doc-warn)}
+  .t-open{color:var(--doc-open)}
+  .t-stop{color:var(--doc-stop)}
+
+  /* ---------- ressalvas e referência cruzada ---------- */
+  .case-notes{padding:64px 0 96px;border-top:3px solid var(--accent-gold)}
+  .case-notes h2{font-family:var(--serif);font-size:28px;font-weight:600;margin-bottom:14px}
+  .case-notes h3{font-size:14px;margin:30px 0 10px;font-weight:600;color:var(--ink-primary)}
+  .case-notes ul{margin:0;padding-left:20px;color:var(--doc-ink-2);font-size:14px}
+  .case-notes li{margin-bottom:7px;line-height:1.55}
+  .case-notes p{color:var(--doc-ink-2);font-size:14.5px;max-width:80ch;line-height:1.65}
+  .xref{margin-top:14px;overflow-x:auto}
+  table.xr{border-collapse:collapse;width:100%;min-width:720px;font-size:12.8px}
+  table.xr th{
+    text-align:left;font-family:var(--doc-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-muted);font-weight:500;border-bottom:1px solid var(--doc-rule-strong);padding:0 14px 8px 0;vertical-align:bottom;
+  }
+  table.xr td{border-bottom:1px solid var(--rule);padding:10px 14px 10px 0;vertical-align:top;color:var(--doc-ink-2)}
+  table.xr tr:target td{background:#F3EBDD}
+  .xr-id{font-family:var(--doc-mono);font-size:11.5px;font-weight:600;color:var(--accent-gold);white-space:nowrap}
+  .xr-title{color:var(--ink-primary);font-weight:500}
+  .xr-title a{color:inherit;text-decoration-color:var(--doc-rule-strong)}
+  .xr-meta{display:block;font-size:11.5px;color:var(--ink-muted);margin-top:3px}
+  .xr-doms{font-family:var(--doc-mono);font-size:11px;line-height:1.9;color:var(--ink-muted)}
+  .xr-doms a{text-decoration:none;color:var(--doc-ink-2);border-bottom:1px solid var(--doc-rule-strong)}
+  .xr-doms a:hover{color:var(--brand-deep);border-color:var(--brand-deep)}
+  .xr-n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+  .colophon{
+    margin-top:44px;padding-top:18px;border-top:1px solid var(--rule);
+    font-family:var(--doc-mono);font-size:11px;color:var(--ink-muted);line-height:1.9;
+  }
+
+  /* ---------- cta ---------- */
+  .case-cta{padding:72px 0;background:var(--bg-elevated)}
+  .case-cta .section-lead{margin-bottom:28px}
+  .case-cta-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+  .hidden{display:none !important}
+
+  @media (max-width:980px){
+    .case-hero-grid{grid-template-columns:1fr}
+    .case-how-grid{grid-template-columns:1fr;gap:32px}
+    .case-meta{white-space:normal}
+  }
+  @media (max-width:760px){
+    .case-hero{padding:64px 0 40px}
+    .ent{grid-template-columns:56px minmax(0,1fr)}
+    .ent-desc{grid-column:1 / -1;padding-left:0}
+    .ent-code{font-size:10px}
+    .stack-row{grid-template-columns:48px minmax(0,1fr)}
+    .stack-count{grid-column:2;justify-self:start}
+    .toolbar{top:0}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="case-doc">
+
+<header>
+  <div class="container nav">
+    <a href="/" class="logo">Clara<span>/</span>EA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/#framework">Framework</a></li>
+        <li><a href="/ClaraEA-CMDB.html">EA/CMDB</a></li>
+        <li><a href="/#casos-mercado" class="current">Casos</a></li>
+        <li><a href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="https://cmdb-app-shell.onrender.com" class="btn btn-outline btn-sm btn-login">Entrar</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="case-hero">
+  <div class="container">
+    <div class="case-hero-grid">
+      <div>
+        <p class="section-eyebrow">Caso de Mercado · IA Agêntica · Camadas 0–VIII</p>
+        <h1 class="section-title">CVC Corp sob o método Clara/EA</h1>
+        <p class="section-lead">Mapeamento das oito camadas de arquitetura de negócios da CVC Corp, mais os direcionadores estratégicos, com as entidades de cada camada agrupadas internamente por domínios. Construído exclusivamente a partir de divulgação pública, com rastreabilidade domínio a domínio: cada bloco indica no cabeçalho os códigos das fontes que o sustentam, e a <a href="#xref">referência cruzada no rodapé</a> percorre o caminho inverso, de cada fonte para todos os domínios que dela derivam.</p>
+      </div>
+      <div class="case-meta">
+        Framework <b>Clara/EA</b><br>
+        Sujeito <b>CVC Brasil Operadora e Agência de Viagens S.A.</b><br>
+        CNPJ <b>10.760.260/0001-19</b> · B3 <b>CVCB3</b><br>
+        Data-base <b>30/06/2026</b> (2T26)<br>
+        Societário <b>31/12/2025</b> (FR 2026)<br>
+        Elaborado <b>14/09/2026</b><br>
+        Escopo <b>9 camadas · 74 domínios · 463 entidades</b><br>
+        Fontes <b>17 rastreadas</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FOI PRODUZIDO -->
+<section class="case-how">
+  <div class="container">
+    <div class="case-how-grid">
+      <div>
+        <p class="section-eyebrow">Como este caso foi produzido</p>
+        <h2 class="section-title" style="font-size: clamp(28px,3.4vw,40px);">O framework como instrução para agentes de IA</h2>
+        <p>Este documento não foi escrito à mão nem a partir de acesso privilegiado. Foi produzido por um agente de IA (Claude, via Claude Code) que recebeu o Clara/EA — princípios, camadas e regra de agrupamento por domínios — como método de trabalho, e a divulgação pública da CVC Corp como único material de entrada.</p>
+        <p>O resultado demonstra uma propriedade do framework que importa mais do que o retrato de uma instituição: por ser universal, recursivo e explícito sobre o que cada camada contém, o Clara/EA funciona como especificação operável por agentes. O mesmo processo pode ser aplicado a qualquer organização com divulgação suficiente — ou, dentro de uma empresa, às suas fontes internas, alimentando diretamente o <a href="/ClaraEA-CMDB.html">EA/CMDB</a>.</p>
+      </div>
+      <ol class="case-how-steps">
+        <li><span><b>Instrução.</b> O agente recebe o manifesto, os cinco princípios e a definição das treze camadas do Clara/EA como método — não como tema.</span></li>
+        <li><span><b>Apuração.</b> Coleta orientada em fontes primárias: Formulário de Referência, releases de resultados, demonstrações financeiras, manual da AGO, acordo de acionistas, políticas corporativas, Relatório de Sustentabilidade e portais de RI, de marcas e de franquia.</span></li>
+        <li><span><b>Instanciação.</b> Cada camada é povoada com entidades reais; dentro da camada, o agente agrupa por semelhança de atributo, processo ou relacionamento (princípio III), sem reproduzir organograma.</span></li>
+        <li><span><b>Rastreabilidade.</b> Todo domínio carrega os códigos das fontes que o sustentam; a tabela final percorre o caminho inverso. Fontes secundárias ficam isoladas para sinalizar carência de confirmação primária.</span></li>
+        <li><span><b>Marcadores de estado e de evidência.</b> Cada entidade pode receber um marcador que separa o estado do fato — confirmado, em transição, encerrado — da qualidade da evidência que o sustenta — fonte secundária, não divulgado, em aberto (princípio V). Dado oficial e conferido não recebe marca.</span></li>
+        <li><span><b>Revisão editorial.</b> Ressalvas, limites de escopo e pontos que exigem verificação antes de uso externo são declarados abertamente no rodapé do documento.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- PREMISSAS DO MÉTODO -->
+<section class="case-method">
+  <div class="container">
+    <p class="section-label">Premissas do método aplicadas</p>
+    <div class="method" aria-label="Premissas do método">
+    <div>
+      <h3>I · Universalidade</h3>
+      <p>O mesmo conjunto de camadas descreve uma startup e um conglomerado. Este é o primeiro caso fora do setor financeiro — sem conglomerado prudencial, sem BACEN, com o regulador setorial no lugar do bancário.</p>
+    </div>
+    <div>
+      <h3>II · Hierarquia recursiva</h3>
+      <p>Cada camada se decompõe em domínios e estes em entidades. A codificação <code>V.08.03</code> lê-se camada V, domínio 08, entidade 03.</p>
+    </div>
+    <div>
+      <h3>III · Domínios</h3>
+      <p>Dentro de cada camada as entidades foram agrupadas por semelhança de atributo, processo ou relacionamento — não pela estrutura de reporte do banco.</p>
+    </div>
+    <div>
+      <h3>IV · Materialização</h3>
+      <p>Este documento é a projeção legível de um grafo: cada entidade é nó, cada domínio é um agrupamento e as camadas ligam negócio a tecnologia.</p>
+    </div>
+    <div>
+      <h3>V · Evolução</h3>
+      <p>O marcador separa o estado do fato da qualidade da evidência. <span class="tag t-ok">confirmado</span> <span class="tag t-trans">em transição</span> <span class="tag t-stop">encerrado</span> descrevem o fato; <span class="tag t-sec">fonte secundária</span> <span class="tag t-nd">não divulgado</span> <span class="tag t-open">em aberto</span> descrevem o que o sustenta. Dado oficial e conferido não recebe marca.</p>
+    </div>
+    <div>
+      <h3>Lei de Conway</h3>
+      <p>A premissa-raiz: estrutura condiciona resultado. Aqui 99,6% da rede pertence a terceiros — 1.620 das 1.627 lojas são franquias, e a companhia não cobra taxa nem royalties.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCOPO -->
+<section class="case-stack">
+  <div class="container">
+    <p class="section-label">Escopo — as nove camadas mapeadas</p>
+    <div class="stack" id="stack"></div>
+  </div>
+</section>
+
+<!-- FILTRO -->
+<div class="toolbar">
+  <div class="container">
+    <input id="q" type="search" placeholder="Filtrar entidades, domínios e camadas…" aria-label="Filtrar entidades">
+    <span id="hits"></span>
+    <nav class="navpills" id="navpills" aria-label="Ir para camada"></nav>
+  </div>
+</div>
+
+<!-- CAMADAS -->
+<section class="case-layers">
+  <div class="container">
+    <main id="layers"></main>
+  </div>
+</section>
+
+<!-- RESSALVAS E RASTREABILIDADE -->
+<section class="case-notes" id="xref">
+  <div class="container">
+    <h2>Ressalvas e rastreabilidade</h2>
+    <p>Todo modelo de arquitetura feito de fora tem fronteira de evidência. Estas são as deste.</p>
+
+    <h3>Limites de escopo</h3>
+    <ul>
+      <li>O escopo é <strong>exclusivamente a arquitetura de negócios</strong>. As camadas IX a XIII ficaram de fora por decisão de escopo; o que existe publicamente sobre tecnologia foi alocado na camada VII.</li>
+      <li>Este é o primeiro sujeito <strong>não financeiro</strong> da série. Não há conglomerado prudencial, índice de Basileia nem supervisão do BACEN — a camada VII perde o modelo de linhas de defesa formalizado e a camada VI troca as resoluções do CMN pelo regime setorial de turismo e pelo Novo Mercado.</li>
+      <li>Os direcionadores estratégicos (camada 0) foram reconstruídos a partir do plano de turnaround e dos pilares divulgados. A companhia <strong>não publica guidance numérico</strong> e a redação oficial de missão e valores não foi confirmada em fonte primária.</li>
+      <li>O agrupamento em domínios é uma escolha analítica, derivada do princípio III do framework.</li>
+    </ul>
+
+    <h3>Pontos que exigem verificação antes de uso externo</h3>
+    <ul>
+      <li><strong>Take rate de 2025 diverge entre apurações</strong>: 8,7%, 9,3% e 9,8% aparecem em fontes distintas. A razão entre receita líquida (R$ 1.442,9 mi) e reservas (R$ 16.756,5 mi) dá <strong>8,6%</strong>, consistente apenas com a primeira. Reconferir antes de montar série.</li>
+      <li><strong>Receita líquida de 2025</strong>: R$ 1.442,9 mi no release contra R$ 1.488,5 mi no Formulário de Referência. Perímetros provavelmente distintos, não reconciliados.</li>
+      <li><strong>Quinta cadeira do Conselho</strong>: a página de RI lista um nome que coincide com o do CFO, o que aparenta erro de renderização, e não reflete a eleição e a posterior renúncia de um conselheiro em 2026. A composição publicada parece desatualizada.</li>
+      <li><strong>Independência do vice-presidente do Conselho</strong>: a página de RI o classifica como independente, embora ele seja ligado ao maior acionista. Verificar o enquadramento formal.</li>
+      <li><strong>Reservas confirmadas não são receita</strong>. Os R$ 16,8 bi de 2025 são volume bruto intermediado; a receita contábil é a comissão. Vários veículos de imprensa trocam os dois termos.</li>
+      <li><strong>Status das operações da Argentina</strong>: há reportagem de avaliação de venda e desmentido público da companhia, sem fato relevante. Nada concretizado na data desta apuração.</li>
+      <li><strong>Rumor de aquisição por concorrente</strong>: noticiado em maio de 2026 e negado por comunicado ao mercado. Nenhuma OPA ou operação foi formalizada.</li>
+      <li><strong>Políticas corporativas</strong>: o repositório oficial de estatutos e políticas ficou inacessível na apuração. Várias políticas citadas em relatórios não puderam ser localizadas como documento autônomo — ausência de acesso, não prova de inexistência.</li>
+      <li><strong>Itens 4.4 a 4.7 do Formulário de Referência</strong>, que detalham processos relevantes, não puderam ser extraídos. Passivos fiscais individualizados e arbitragens não foram confirmados nem descartados.</li>
+      <li><strong>Instituto CVC</strong>: existe e mantém site próprio, mas natureza jurídica, CNPJ e vínculo societário não foram confirmados.</li>
+    </ul>
+
+    <h3>Referência cruzada — rastreabilidade de conteúdo</h3>
+    <p>Cada domínio das oito camadas carrega, no próprio cabeçalho, o código das fontes que o sustentam; o código leva a esta tabela. Aqui o caminho é o inverso: de cada fonte para todos os domínios que dela derivam. Fontes secundárias estão isoladas em <strong>S17</strong> — onde ela aparece sozinha, o conteúdo carece de confirmação primária.</p>
+    <div class="xref">
+      <table class="xr">
+        <thead>
+          <tr>
+            <th>Cód.</th>
+            <th>Fonte, natureza e data-base</th>
+            <th>Domínios rastreados</th>
+            <th class="xr-n">Qtd.</th>
+          </tr>
+        </thead>
+        <tbody id="xrefbody"></tbody>
+      </table>
+    </div>
+
+        <p class="colophon">
+      Mapeamento Clara/EA conduzido por Marcelo Clara com apoio de IA agêntica (Claude Code) · 14 de setembro de 2026<br>
+      Documento analítico independente, construído sobre divulgação pública. Não é material da CVC Corp nem endossado por ela.<br>
+      Números financeiros com data-base 30/06/2026; composição societária com data-base 31/12/2025, atualizada onde eventos de 2026 alteraram o desenho.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="case-cta">
+  <div class="container">
+    <p class="section-eyebrow">Próximo passo</p>
+    <h2 class="section-title" style="font-size: clamp(28px,3.4vw,40px);">A mesma leitura, aplicada à sua organização</h2>
+    <p class="section-lead">O que aqui foi feito de fora, com divulgação pública, pode ser feito de dentro — com fontes internas, entidades verificadas e o resultado materializado no EA/CMDB. Para uma demonstração ou uma conversa sobre o método, escreva diretamente.</p>
+    <div class="case-cta-actions">
+      <a href="mailto:contato@claraea.com.br" class="btn btn-primary">contato@claraea.com.br</a>
+      <a href="/#casos-mercado" class="btn btn-outline">Voltar aos casos</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="logo">Clara<span>/</span>EA</a>
+        <p class="footer-tagline">Arquitetura corporativa que conecta estratégia, negócios e tecnologia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Framework</h4>
+        <ul>
+          <li><a href="/#framework">Camadas</a></li>
+          <li><a href="/#manifesto">Manifesto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ferramenta</h4>
+        <ul>
+          <li><a href="/ClaraEA-CMDB.html">EA/CMDB</a></li>
+          <li><a href="/ClaraEA-CMDB.html#compare">Comparativo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sobre</h4>
+        <ul>
+          <li><a href="/ClaraEA-Autor.html">Autor</a></li>
+          <li><a href="/#casos-mercado">Casos</a></li>
+          <li><a href="https://www.linkedin.com/in/maclara/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:contato@claraea.com.br">contato@claraea.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Marcelo Andrade Clara. Todos os direitos reservados.</div>
+      <div>Documento em português</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const STACK = [
+  {h:"Direcionadores estratégicos"},
+  {n:"0", t:"Missão, Visão e Valores", id:"c0", inn:true},
+  {h:"Arquitetura de negócios — escopo deste documento"},
+  {n:"I", t:"Mercado, Segmento e Nicho", id:"c1", inn:true},
+  {n:"II", t:"Marca", id:"c2", inn:true},
+  {n:"III", t:"Canais de Distribuição e Atendimento", id:"c3", inn:true},
+  {n:"IV", t:"Produtos e Serviços", id:"c4", inn:true},
+  {n:"V", t:"Veículos Legais", id:"c5", inn:true},
+  {n:"VI", t:"Políticas, Normas e Procedimentos", id:"c6", inn:true},
+  {n:"VII", t:"Estrutura, Papéis e Responsabilidades", id:"c7", inn:true},
+  {n:"VIII", t:"Métricas de Gestão e Controle", id:"c8", inn:true},
+  {h:"Arquitetura de tecnologia"},
+  {n:"IX–XIII", t:"Soluções, Dados, Tecnologia, Infraestrutura e Segurança da Informação", note:"fora do escopo"}
+];
+
+const SOURCES = [
+ {id:"S1", t:"Clara/EA — framework, manifesto e princípios", meta:"Método · claraea.com.br · consultado em 12/09/2026", u:"https://www.claraea.com.br/", method:true},
+ {id:"S2", t:"Formulário de Referência 2026", meta:"CVM · protocolado 29/05/2026 · data-base 31/12/2025", u:"https://www.cvccorp.com.br/wp-content/uploads/2026/05/158235_023310_29052026110555.pdf"},
+ {id:"S3", t:"Earnings Release do 2T26", meta:"CVC Corp · divulgado 12/08/2026 · data-base 30/06/2026", u:"https://www.cvccorp.com.br/wp-content/uploads/2026/08/Earnings-Release-2Q26-EN-1.pdf"},
+ {id:"S4", t:"Release e Apresentação do 4T25 e do exercício de 2025", meta:"CVC Corp · divulgado em março de 2026", u:"https://www.cvccorp.com.br/wp-content/uploads/2026/04/2025-12-31-Apresentacao-de-Resultados-4T25-2.pdf"},
+ {id:"S5", t:"Release de Resultados do 1T26", meta:"CVC Corp · data-base 31/03/2026", u:"https://www.cvccorp.com.br/wp-content/uploads/2026/05/Release-de-Resultados-1T26_PORT-1.pdf"},
+ {id:"S6", t:"Demonstrações financeiras e notas de consolidação", meta:"DF 2T26 e exercícios de 2022 a 2024", u:"https://www.cvccorp.com.br/wp-content/uploads/2026/08/DF-CVC-2T2026-EN.pdf"},
+ {id:"S7", t:"Manual e Proposta da Administração — AGO de 22/04/2026", meta:"CVC Corp · publicado 20/03/2026", u:"https://www.cvccorp.com.br/wp-content/uploads/2026/04/2026-03-20-Manual-e-Proposta-da-Administracao-AGO-22.04.2026-as-09h-2.pdf"},
+ {id:"S8", t:"Fato Relevante e comunicados sobre o acordo de acionistas", meta:"acordo de 02/04/2026 · divulgado 10/04/2026 · eficaz 05/05/2026", u:"https://www.cvccorp.com.br/wp-content/uploads/2026/05/Comunicado-ao-Mercado-Eleicao-Conselheiro-e-entrada-em-vigor-de-acordo-de-acionistas.pdf"},
+ {id:"S9", t:"Composição Acionária", meta:"CVC Corp RI · posição de agosto de 2026", u:"https://www.cvccorp.com.br/en/ir/ownership-structure/"},
+ {id:"S10", t:"Governança — Conselho, comitês e diretoria", meta:"CVC Corp RI · consultado em 14/09/2026", u:"https://www.cvccorp.com.br/en/ir/board-of-directors-councils-and-committees/"},
+ {id:"S11", t:"Políticas corporativas publicadas", meta:"Remuneração (19/02/2026), Indicação (03/02/2026), Alçadas e Privacidade de RI", u:"https://www.cvccorp.com.br/wp-content/uploads/2026/05/Politica-de-Indicacao-do-CA-Comites-e-Diretorias.VF_.pdf"},
+ {id:"S12", t:"Relatório de Sustentabilidade 2024", meta:"3º relatório · publicado em outubro de 2025", u:"https://cdn-sites-assets.mziq.com/wp-content/uploads/sites/1169/2025/10/relatorio-de-sustentabilidade-2024-cvccorp.pdf"},
+ {id:"S13", t:"Página de marcas, sites de produto e de franquia", meta:"cvccorp.com.br/marcas, cvc.com.br, franquias.cvc.com.br, b2b.cvccorp.com.br · consultados em 14/09/2026", u:"https://www.cvccorp.com.br/en/marcas/"},
+ {id:"S14", t:"7ª emissão de debêntures e reperfilamento da dívida", meta:"aprovada em 04/09/2026 · até R$ 450 milhões", u:"https://www.panrotas.com.br/mercado/operadoras/2026/09/cvc-corp-anuncia-renegociacao-de-dividas-e-reducao-de-custo-financeiro_231748.html"},
+ {id:"S15", t:"Arcabouço regulatório setorial e de mercado de capitais", meta:"Novo Mercado da B3, Res. CVM 44, 80, 81 e 193, Lei 11.771/2008, Cadastur, ANAC, IATA/BSP, CDC e LGPD", u:"https://www.gov.br/turismo/pt-br"},
+ {id:"S16", t:"Indicadores públicos de relacionamento com o consumidor", meta:"Reclame Aqui e consumidor.gov.br · consultados em 14/09/2026", u:"https://www.reclameaqui.com.br/empresa/cvc-turismo/"},
+ {id:"S17", t:"Imprensa especializada e fontes secundárias", meta:"Fonte secundária — usada só onde não há fonte primária acessível; datas citadas na entidade", u:"https://www.panrotas.com.br/", weak:true}
+];
+
+const SRCMAP = {
+ "0.01":["S4","S17"], "0.02":["S17","S3"], "0.03":["S3","S13","S17"], "0.04":["S12"], "0.05":["S8","S9","S14"],
+ "I.01":["S3","S4","S2"], "I.02":["S2","S13","S17"], "I.03":["S13","S17"], "I.04":["S2","S3","S6"],
+ "I.05":["S13","S2"], "I.06":["S2","S17"], "I.07":["S15","S2"], "I.08":["S17"],
+ "II.01":["S13","S2"], "II.02":["S13"], "II.03":["S13","S17"], "II.04":["S13","S17"],
+ "II.05":["S13","S6"], "II.06":["S13","S17"], "II.07":["S6","S17"],
+ "III.01":["S3","S2"], "III.02":["S13","S2"], "III.03":["S2","S17"], "III.04":["S3","S13"],
+ "III.05":["S3","S17"], "III.06":["S13","S17"], "III.07":["S13","S17"], "III.08":["S2","S13"], "III.09":["S2","S17"],
+ "IV.01":["S2","S3"], "IV.02":["S2","S13"], "IV.03":["S2","S13"], "IV.04":["S2","S13"],
+ "IV.05":["S13"], "IV.06":["S13","S3"], "IV.07":["S2","S13","S17"], "IV.08":["S13","S17"],
+ "IV.09":["S13","S17"], "IV.10":["S2","S17"],
+ "V.01":["S7","S9","S2"], "V.02":["S9","S17"], "V.03":["S8","S7","S17"], "V.04":["S6","S2"],
+ "V.05":["S6","S2"], "V.06":["S6","S17"], "V.07":["S3","S14","S6"], "V.08":["S6","S3"],
+ "V.09":["S12","S17"], "V.10":["S6","S17"],
+ "VI.01":["S11"], "VI.02":["S12","S2"], "VI.03":["S12","S2"], "VI.04":["S15","S7"],
+ "VI.05":["S15"], "VI.06":["S15","S16"], "VI.07":["S6","S15"],
+ "VII.01":["S10","S17"], "VII.02":["S10","S2"], "VII.03":["S10"], "VII.04":["S17"],
+ "VII.05":["S17"], "VII.06":["S2","S12"], "VII.07":["S17","S2"], "VII.08":["S12","S17"],
+ "VIII.01":["S3","S4","S5"], "VIII.02":["S3","S4"], "VIII.03":["S3","S2"], "VIII.04":["S3","S4"],
+ "VIII.05":["S3","S4"], "VIII.06":["S3","S14"], "VIII.07":["S6"], "VIII.08":["S16","S12"],
+ "VIII.09":["S12"], "VIII.10":["S3","S17"]
+};
+
+const L = [
+{
+ id:"c0", num:"0", title:"Direcionadores Estratégicos",
+ purpose:"Os direcionadores da CVC Corp são os de uma empresa saindo de uma crise. O turnaround iniciado em 2023 levou o EBITDA de R$ 88 milhões para R$ 458,6 milhões em dois anos, e o ciclo seguinte, aberto com a troca de comando em janeiro de 2026, trocou a lógica de expansão de rede pela de rentabilizar as lojas que já existem. A companhia não publica guidance numérico.",
+ domains:[
+  {code:"0.01", name:"Ciclo de turnaround (2023–2025)", note:"Três pilares declarados: modelo figital, produtos exclusivos e retomada da expansão de franquias.", ents:[
+    ["Recuperação do EBITDA","De R$ 88 mi em 2023 para R$ 340 mi em 2024 e R$ 458,6 mi em 2025.","sec"],
+    ["Reversão da geração de caixa","De −R$ 600 mi em 2023 para +R$ 180 mi em 2024 e +R$ 412,8 mi em 2025.","sec"],
+    ["Expansão de rede","495 novas lojas em dois anos e oito meses; 196 aberturas só em 2025.","sec"],
+    ["Novo formato de loja","Redução de ~150 m² para 15–25 m², viabilizando cidades a partir de 20 mil habitantes — potencial declarado de 3.500 municípios adicionais.","sec"],
+    ["Produtos exclusivos","De 10% para 22% das vendas nacionais ao longo de 2025.","sec"]
+  ]},
+  {code:"0.02", name:"Novo ciclo (2026) — cinco pilares", note:"Apresentados na Convenção de março de 2026 pelo CEO empossado em 15/01/2026.", ents:[
+    ["Cliente no centro","","sec"],
+    ["Transformação digital e inteligência artificial","","sec"],
+    ["Rentabilidade e saúde financeira","Aceleração da desalavancagem.","sec"],
+    ["Globalização","Expansão do B2B para Índia, China, Japão e México.","sec"],
+    ["Pessoas e cultura","","sec"],
+    ["Virada de expansão para same-store sales","Foco declarado em rentabilizar as ~1,6 mil lojas existentes em vez de abrir novas.","sec"],
+    ["Comitês semanais de rentabilidade","Separados para B2C e B2B.","sec"]
+  ]},
+  {code:"0.03", name:"Ambição de canal e escala", note:"", ents:[
+    ["Modelo figital","De 44% das vendas no 1T25 para ~55% no 2T26."],
+    ["Reconstrução de site e app","Prevista para o 3T26, sob o conceito declarado de 'AI First'.","open"],
+    ["Canal porta a porta","Piloto em 2025 com 20 a 40 consultores; meta declarada de mais de 10 mil consultores em 2026 e ~20% das vendas em 2027.","sec"],
+    ["Conversão de agências em franquias","30 contratos assinados até outubro de 2025, com meta de 60 no ano.","sec"],
+    ["Distribuição em metabuscadores","Anunciada para Google Flights e Skyscanner em março de 2026; implementação não confirmada.","open"],
+    ["Lacunas de portfólio declaradas","O CEO afirmou em julho de 2026 que faltam dois ambientes à companhia — luxo e TMC —, com plano de lançar uma TMC como plataforma digital em cinco anos.","sec"]
+  ]},
+  {code:"0.04", name:"Compromissos ASG", note:"Framework de quatro pilares — Reduzir, Regenerar, Respeitar e Reeducar —, endereçando 11 dos 17 ODS.", ents:[
+    ["20% de pessoas negras em liderança até 2030","Realizado de 29,5% de diversidade na liderança em 2024, contra 29,1% em 2023.","sec"],
+    ["50% do quadro composto por grupos diversos até 2030","Realizado de 43,4% em 2024, contra 40,7% em 2023."],
+    ["Selo Prata do Programa Brasileiro GHG Protocol","Concedido em 2023, pelo primeiro inventário de carbono com ano-base 2022."],
+    ["Metas quantitativas de emissões ou clima","Não divulgadas.","nd"],
+    ["Relatório de Sustentabilidade 2025","Não localizado — o mais recente publicamente disponível é o de 2024.","nd"],
+    ["Obrigação prospectiva","A Res. CVM 193/2023 torna obrigatório o relato no padrão IFRS S1 e S2 para exercícios iniciados a partir de 2026.","trans"]
+  ]},
+  {code:"0.05", name:"Direcionadores de governança e capital", note:"", ents:[
+    ["Ausência de controlador definido","Declaração reiterada no Formulário de Referência desde o 1T2015."],
+    ["Bloco de controle por acordo","Acordo de acionistas de 02/04/2026 reúne ~35,5% do capital na assinatura, reduzidos a ~28,2% após agosto de 2026.","trans"],
+    ["Proteção à dispersão acionária","Cláusula aprovada em 08/01/2025 exige OPA acima de 25%; dispensa específica concedida ao bloco em 06/05/2026, com a cláusula mantida para os demais."],
+    ["Desalavancagem","De 0,9x para 0,5x de dívida líquida sobre EBITDA em doze meses."],
+    ["Sem novo aporte de capital","Administração declarou, na teleconferência do 2T26, não haver captação planejada para os meses seguintes.","sec"],
+    ["Economia da reestruturação","Mais de R$ 80 milhões projetados para 2026, antes de custos de rescisão.","sec"]
+  ]}
+ ]
+},
+{
+ id:"c1", num:"I", title:"Mercado, Segmento e Nicho",
+ purpose:"Primeiro sujeito não financeiro da série, e a camada mostra a diferença de imediato: só dois segmentos reportados, ambos geográficos, e uma métrica de volume — reservas confirmadas — que não é receita. Os R$ 16,8 bilhões de 2025 são o valor intermediado; a receita contábil é a comissão sobre ele, R$ 1,44 bilhão.",
+ domains:[
+  {code:"I.01", name:"Segmentos de reporte", note:"Apenas dois segmentos, ambos geográficos. Não há segmento contábil de corporativo — ele está embutido no B2B brasileiro.", ents:[
+    ["Brasil","Reservas de R$ 3.287,4 mi no 2T26, +4,1% a/a. Receita líquida de R$ 269,7 mi e EBITDA ajustado de R$ 82,6 mi, com margem de 30,6%."],
+    ["Argentina","Reservas de R$ 804,6 mi no 2T26, −13,0% reportado e +0,3% em moeda constante. EBITDA ajustado de R$ 2,3 mi, queda de 82,8%."],
+    ["Desdobramento gerencial B2B e B2C","No Brasil, B2B de R$ 1.830,3 mi e B2C de R$ 1.457,0 mi no 2T26 — o B2B já é maior."],
+    ["Peso relativo","Brasil 78% e Argentina 22% das reservas de 2025."],
+    ["Reservas não são receita","Métrica operacional gerencial de volume bruto intermediado. A receita contábil é a comissão, apresentada em base líquida."]
+  ]},
+  {code:"I.02", name:"Segmentos de cliente", note:"", ents:[
+    ["Lazer B2C","Atendido pela rede de lojas CVC e pelos canais digitais. 1.388 lojas de lazer no 2T26."],
+    ["Lazer B2B — agências parceiras","~8.300 agências multimarcas no Brasil, conforme o Formulário de Referência."],
+    ["Corporativo","Atendido indiretamente, via marcas B2B. Não há segmento contábil nem TMC própria."],
+    ["Intercâmbio","Rede dedicada de 55 lojas."],
+    ["Alto luxo B2B","Marca lançada em fevereiro de 2026, sob a estrutura de uma operadora existente.","trans"],
+    ["Argentina B2C e B2B","Operação omnicanal de varejo e operadora atacadista para agentes independentes."],
+    ["Eventos e incentivos","Não identificada marca ou unidade dedicada.","nd"],
+    ["Base de clientes","~12 milhões, desconsiderando lojas multimarcas. Outro documento cita 18 milhões de clientes contactáveis no Brasil.","sec"]
+  ]},
+  {code:"I.03", name:"Nichos e verticais", note:"", ents:[
+    ["Interiorização","Corte mínimo de população para franquia reduzido de 100 mil para ~20 mil habitantes. 65% das aberturas do 4T25 fora de capitais.","sec"],
+    ["Consolidação aérea","Maior consolidadora aérea do Brasil, com mais de 60 companhias e ~3 milhões de bilhetes projetados para 2025.","sec"],
+    ["Distribuição hoteleira B2B","Portfólio de mais de 500 mil hotéis distribuído a agências.","sec"],
+    ["Grupos","Projeção de mais de 150 mil passageiros embarcados em grupos em 2026.","sec"],
+    ["Aluguel de temporada","Operação de casas e concierge em Orlando, nos Estados Unidos."],
+    ["Distribuição via API","Unidade de negócio independente desde setembro de 2025, com meta declarada de 80% da receita vinda do mercado externo.","sec"]
+  ]},
+  {code:"I.04", name:"Mercados geográficos", note:"", ents:[
+    ["Brasil","639 municípios em 26 estados e no Distrito Federal em dez/2025; 631 em mar/2026. Distribuição: Sudeste 51%, Sul 19%, Nordeste 16%, Centro-Oeste 10%, Norte 4%."],
+    ["Argentina","184 lojas no 2T26, concentradas em Buenos Aires, Rosário e centros comerciais."],
+    ["Estados Unidos","Duas entidades de serviços turísticos e aluguel de temporada."],
+    ["Uruguai e Portugal","Entidades consolidadas até 31/12/2024, sem operação de varejo detalhada.","open"],
+    ["México e Colômbia","Pessoas jurídicas ainda consolidadas, mas a operação da marca foi encerrada em dezembro de 2020. O Formulário de Referência ainda as descreve como atuantes.","stop"],
+    ["Chile, Peru e Bolívia","Nenhuma entidade localizada em qualquer nota de consolidação ou Formulário de Referência.","open"]
+  ]},
+  {code:"I.05", name:"Mercados de produto adjacentes", note:"", ents:[
+    ["Operadora de turismo","Núcleo do negócio."],
+    ["Agência de viagens no varejo","Rede franqueada."],
+    ["Consolidação aérea","Braço B2B."],
+    ["Hotelaria própria","Não existe — o modelo é asset-light, de intermediação e distribuição."],
+    ["Gestão de viagens corporativas","Atendimento parcial via marcas B2B; sem TMC dedicada.","open"],
+    ["Intercâmbio","Marca dedicada com mais de 60 anos."],
+    ["Seguro viagem","Distribuído em parceria com seguradora."],
+    ["Crédito e consórcio de viagem","Marketplace de crédito próprio e consórcio operado por administradora parceira autorizada pelo BACEN."],
+    ["Câmbio","Serviço complementar listado; parceiro não divulgado e a companhia não é instituição autorizada.","nd"],
+    ["Fidelidade","Programa próprio com versão gratuita e paga; mecânica vigente em 2026 não confirmada.","open"]
+  ]},
+  {code:"I.06", name:"Dinâmica de mercado e sazonalidade", note:"O contexto externo de 2026 é o que explica a reversão de resultado apesar da melhora operacional.", ents:[
+    ["Mercado brasileiro de turismo","R$ 185,2 bi faturados de janeiro a outubro de 2025 — recorde histórico."],
+    ["Operadoras de turismo","R$ 23,9 bi em 2025, o maior valor da série."],
+    ["Viagens corporativas","R$ 11,6 bi de janeiro a outubro de 2025, com projeção de R$ 14,3 bi para 2026.","sec"],
+    ["Sazonalidade declarada","51% da receita no segundo semestre. Distribuição trimestral de 25%, 23%, 26% e 25%."],
+    ["Reconhecimento de receita B2C","Só ocorre no embarque do passageiro, o que descola reserva confirmada de receita contábil."],
+    ["Choque de oferta aérea em 2026","Alta de 52,4% no preço do bilhete e mais de 6.000 voos retirados da malha."],
+    ["Choque geopolítico","Conflito no Oriente Médio gerou ~R$ 109 milhões em cancelamentos no Brasil e na Argentina.","sec"],
+    ["Participação de mercado própria","Não divulgada pela companhia em nenhum documento.","nd"]
+  ]},
+  {code:"I.07", name:"Ambiente regulatório", note:"Onde um banco tem BACEN e Basileia, aqui há o regulador setorial de turismo, o regime de consumo e o Novo Mercado.", ents:[
+    ["CVM e B3","Companhia aberta categoria A, registro 023310, listada no Novo Mercado desde a abertura de capital."],
+    ["Regulamento do Novo Mercado","Ações ordinárias únicas, tag along de 100%, free float mínimo de 25%, comitê de auditoria estatutário e auditoria interna obrigatórios."],
+    ["Res. CVM 44/2021","Divulgação de ato ou fato relevante e vedações à negociação."],
+    ["Res. CVM 80/2022 e 81/2022","Registro de emissores, Formulário de Referência, assembleias e voto a distância."],
+    ["Res. CVM 193/2023","Relato de sustentabilidade no padrão ISSB, obrigatório a partir dos exercícios iniciados em 2026.","trans"],
+    ["Lei 11.771/2008 e Decreto 7.381/2010","Política Nacional de Turismo; define agências e operadoras."],
+    ["Lei 14.978/2024","Modernizou o marco setorial e revogou a Lei 12.974/2014.","sec"],
+    ["Cadastur","Cadastro obrigatório junto ao Ministério do Turismo."],
+    ["ANAC","Resolução 400/2016 — condições gerais de transporte aéreo, com repercussão direta no pós-venda."],
+    ["IATA e BSP Brasil","Acreditação de agências e consolidadoras; relevante para o braço de consolidação aérea.","open"],
+    ["Código de Defesa do Consumidor","Eixo crítico dado o volume de reclamações sobre reembolso e pacotes."],
+    ["LGPD e ANPD","Área de proteção de dados dentro da estrutura de Legal e Compliance."],
+    ["CADE","Aprovações obtidas nas aquisições de 2015 e 2017; fator relevante em qualquer consolidação futura do setor."],
+    ["Argentina","Decreto 70/2023 desregulamentou o setor de viagens; Decreto 216/2025 aprofundou a simplificação.","sec"]
+  ]},
+  {code:"I.08", name:"Cenário competitivo", note:"Nem o Formulário de Referência de 2025 nem o de 2026 nomeiam concorrentes — usam linguagem genérica. O mapa abaixo vem de fontes de mercado.", ents:[
+    ["Plataformas digitais","Decolar/Despegar, adquirida pela Prosus por US$ 1,7 bi com aprovação do CADE em abril de 2025 — reforço competitivo relevante.","sec"],
+    ["Plataformas de milhas","123Milhas e MaxMilhas, em recuperação judicial.","sec"],
+    ["OTAs globais","Booking e Expedia."],
+    ["Verticais de companhias aéreas","Latam Travel, Azul Viagens e Gol/Smiles Viagens."],
+    ["Gestão de viagens corporativas","Flytour Business Travel, Copastur e Argo."],
+    ["Operadoras B2B","Personal Travel e demais atacadistas independentes."],
+    ["Luxo","Teresa Perez Tours e Queensberry, citados como concorrentes diretos da nova marca de luxo.","sec"],
+    ["Varejo independente","Agências multimarcas — simultaneamente concorrentes e canal, e alvo da estratégia de conversão em franquia."],
+    ["Posição relativa","2ª maior empresa de turismo do Brasil no ranking setorial, com R$ 16,7 bi projetados para 2025.","sec"]
+  ]}
+ ]
+},
+{
+ id:"c2", num:"II", title:"Marca",
+ purpose:"Nove marcas no portfólio oficial, e a arquitetura é mista por necessidade: a marca-mãe cobre o varejo de lazer, enquanto o B2B opera com marcas herdadas de aquisições que foram preservadas porque o agente de viagens as reconhece. É o oposto do que se vê num banco, onde a marca-mãe costuma absorver tudo.",
+ domains:[
+  {code:"II.01", name:"Marca-mãe e institucional", note:"", ents:[
+    ["CVC Corp","Marca institucional do grupo, usada em relações com investidores e no portal B2B. Não é a razão social."],
+    ["CVC Viagens","Marca-mãe operacional do varejo de lazer. Maior operadora da América Latina."]
+  ]},
+  {code:"II.02", name:"Marcas B2C no Brasil", note:"", ents:[
+    ["CVC","Rede de lojas e canais digitais de lazer. 1.388 lojas no 2T26."],
+    ["Experimento","Intercâmbio e educação internacional. Mais de 60 anos; 55 lojas."],
+    ["Submarino Viagens","A pessoa jurídica segue no grupo e recebeu a incorporação de outra entidade em maio de 2025, mas a marca não consta da lista oficial de nove marcas nem dos releases recentes.","open"]
+  ]},
+  {code:"II.03", name:"Marcas B2B no Brasil", note:"O bloco onde estão as marcas herdadas de aquisição — preservadas por reconhecimento do canal, não por acaso.", ents:[
+    ["Rextur Advance","Consolidação aérea. Mais de 60 companhias, 6.000 agências e mais de 45 mil logins ativos na plataforma Reserva Fácil.","sec"],
+    ["Trend Viagens","Distribuição de hotelaria e terrestre. Mais de 500 mil hotéis, 33 anos de operação, suporte trilíngue."],
+    ["Visual Turismo","Operadora sob medida. Designada operadora oficial para agentes de viagens em agosto de 2026; rede declarada de 13 mil agências.","sec"],
+    ["Conectaas","Distribuição via API, lançada no 2S25 e transformada em unidade independente. Mais de 8.000 acordos exclusivos.","trans"],
+    ["Esferatur","Empresa incorporada em abril de 2025. A marca ainda aparece no portal B2B, mas saiu da lista oficial.","stop"],
+    ["CVC Multimarcas","Sendo absorvida pela Visual Turismo, com transição gradual anunciada em agosto de 2026.","stop"]
+  ]},
+  {code:"II.04", name:"Marcas de luxo e nicho", note:"", ents:[
+    ["Biblos Brasil","Alto luxo B2B, lançada em fevereiro de 2026 sob a estrutura da operadora sob medida.","trans"],
+    ["Visual Turismo Prime","Linha premium da operadora sob medida.","sec"]
+  ]},
+  {code:"II.05", name:"Marcas internacionais", note:"", ents:[
+    ["Almundo","B2C omnicanal na Argentina. 184 lojas. Marca independente."],
+    ["Ola Viagens","Operadora atacadista B2B na Argentina, para mais de 2.000 agências independentes. Mais de 30 anos."],
+    ["Biblos","Luxo e corporativo na Argentina. Mais de 40 anos; membro da rede internacional Virtuoso."],
+    ["VHC — Vacation Homes Collection","Aluguel de temporada e concierge em Orlando.","sec"]
+  ]},
+  {code:"II.06", name:"Marcas de fidelidade e serviço", note:"", ents:[
+    ["Clube CVC","Programa gratuito de pontos, sem expiração, com resgate integral ou combinado.","sec"],
+    ["Clube CVC Super","Versão paga, com 1.000 pontos mensais automáticos e ofertas antecipadas.","sec"],
+    ["Cartão CVC Itaucard Visa Platinum","Co-branded, com parcelamento estendido em compras da rede.","sec"],
+    ["CVC Me Leva","Produto de eventos regionais."],
+    ["Viagem Programada","Consórcio operado por administradora parceira, com cartas a partir de R$ 2.500.","sec"],
+    ["Mecânica vigente do programa de fidelidade","As fontes disponíveis são de 2021 e 2022; base de membros e regras atuais não confirmadas.","open"]
+  ]},
+  {code:"II.07", name:"Marcas encerradas e absorvidas", note:"Registradas porque o princípio V exige que o modelo guarde o movimento. Aqui a entidade legal quase sempre sobrevive à marca.", ents:[
+    ["Avantrip","Fundida na Almundo em 12/08/2024; domínio redirecionado. A pessoa jurídica permanece consolidada.","stop"],
+    ["Almundo Brasil, México e Colômbia","Operações encerradas em dezembro de 2020. A PJ brasileira foi incorporada em maio de 2025; as demais seguem consolidadas.","stop"],
+    ["Duotur","Grupo incorporado; apenas a marca Rextur Advance sobreviveu.","stop"],
+    ["Viatrix","Detentora do Experimento, incorporada. A marca adquirida foi preservada.","stop"],
+    ["Bibam","Holding argentina detentora de Avantrip e Biblos, adquirida integralmente em 2021. Nunca foi marca comercial."],
+    ["Avia, RCA, Weekend e Casa do Cliente","Nenhuma evidência de vínculo com o grupo em qualquer fonte consultada.","open"],
+    ["CVC Empresas","Não confirmada como marca ativa em 2025–2026.","open"]
+  ]}
+ ]
+},
+{
+ id:"c3", num:"III", title:"Canais de Distribuição e Atendimento",
+ purpose:"A camada mais distintiva da série inteira: 1.620 das 1.627 lojas são franquias, e a franqueadora não cobra taxa de franquia nem royalties. A remuneração vem do spread sobre o produto vendido — o que significa que o canal só gera receita se vender, e que a expansão da rede não custa capital à companhia.",
+ domains:[
+  {code:"III.01", name:"Rede de lojas", note:"Posição em 30/06/2026. O recorde histórico foi 1.646 lojas em 31/12/2025 — houve retração líquida em 2026.", ents:[
+    ["Total consolidado","1.627 lojas — 1.620 franqueadas e 7 próprias."],
+    ["Brasil","1.443 lojas — 1.437 franqueadas e 6 próprias."],
+    ["— CVC lazer","1.388 lojas, sendo 1.384 franqueadas."],
+    ["— Experimento","55 lojas, sendo 53 franqueadas."],
+    ["Argentina","184 lojas, sendo 183 franqueadas."],
+    ["Inversão do saldo em 2026","24 aberturas contra 43 fechamentos no 1S26, revertendo as 196 aberturas de 2025."],
+    ["Participação das próprias","0,4% da rede — usadas como laboratório e flagship, não como canal de escala."]
+  ]},
+  {code:"III.02", name:"Modelo de franquia", note:"O mecanismo econômico que sustenta toda a camada.", ents:[
+    ["Taxa de franquia","Zero. A franqueadora declara textualmente não cobrar."],
+    ["Royalties","Zero. A remuneração vem do spread sobre o produto vendido."],
+    ["Formato quiosque","A partir de R$ 59 mil a R$ 65 mil; 9 m² e dois pontos de atendimento.","sec"],
+    ["Formato light","A partir de R$ 65 mil a R$ 70 mil; loja de rua."],
+    ["Formato modular","A partir de R$ 80 mil; indoor e outdoor."],
+    ["Formato padrão","A partir de R$ 110 mil a R$ 140 mil; foco em shopping, mínimo de 25 m²."],
+    ["Payback estimado","24 a 48 meses, declarado pela franqueadora.","sec"],
+    ["Prazo contratual","10 anos de direito de exploração da unidade."],
+    ["Sem estoque","O franqueado não compra inventário — modelo asset-light também para ele."],
+    ["Faturamento médio por loja","Não divulgado em nenhuma fonte oficial.","nd"]
+  ]},
+  {code:"III.03", name:"Rede de agências parceiras", note:"O canal que hoje vende mais que a rede própria de lojas. Atenção: as contagens abaixo medem coisas diferentes e não devem ser somadas.", ents:[
+    ["Agências multimarcas credenciadas","~8.300 no Brasil, conforme o Formulário de Referência — a cifra mais confiável."],
+    ["Agências na plataforma de consolidação aérea","Mais de 6.000, com mais de 45 mil logins ativos.","sec"],
+    ["Rede declarada pela operadora sob medida","13 mil agências.","sec"],
+    ["Agentes atendidos","14 mil, número da página institucional com data-base do 3T23.","open"],
+    ["Clientes globais","Agências e plataformas estrangeiras saltaram de ~1% para 9,0% das vendas B2B em dois anos."],
+    ["Programa de conversão em franquia","O canal parceiro é também o pipeline de expansão da rede própria."]
+  ]},
+  {code:"III.04", name:"Canais digitais", note:"", ents:[
+    ["Site e app de consumidor","Reconstrução completa prevista para o 3T26.","open"],
+    ["Assistente de IA no atendimento","1,3 milhão de interações, cobertura de 100% das lojas para atendimento fora do horário comercial, +150% em conversão de leads.","sec"],
+    ["Plataformas B2B","Reserva Fácil para aéreo, plataforma de hotelaria e distribuição via API."],
+    ["Investimento em tecnologia","R$ 121,8 milhões em 2025, alta de 40,5% sobre 2024."],
+    ["Metabuscadores","Anunciada distribuição em Google Flights e Skyscanner; implementação não confirmada.","open"]
+  ]},
+  {code:"III.05", name:"Modelo figital", note:"O conceito que integra loja e digital — e a métrica que a companhia usa para provar que a rede física não é passivo.", ents:[
+    ["Participação nas vendas","44% no 1T25, ~45% no 3T25 e ~55% no 2T26."],
+    ["Origem digital das vendas em loja","56% das vendas de loja originadas em canais digitais.","sec"],
+    ["Lógica declarada","O cliente inicia online e conclui na loja, ou o inverso — a loja como ponto de conversão, não de descoberta."]
+  ]},
+  {code:"III.06", name:"Canais remotos e porta a porta", note:"", ents:[
+    ["Televendas","0800 049 8790."],
+    ["Central de atendimento pós-venda","11 3003 9282."],
+    ["Centro de Controle de Operações","Responsável pela gestão operacional e por incidentes."],
+    ["Consultores porta a porta","Autônomos vinculados a uma franquia, com comissão de 40% a 50% da receita gerada para a loja. Cada consultor cobre de 1 a 4 municípios.","sec"],
+    ["Escala do canal porta a porta","Piloto em 2025 com 20 a 40 consultores em 10 municípios; meta de mais de 10 mil em 2026.","sec"],
+    ["WhatsApp como canal oficial","Não listado na central de ajuda.","open"]
+  ]},
+  {code:"III.07", name:"Canais B2B e distribuição via API", note:"", ents:[
+    ["Distribuição plug and play","Unidade independente desde setembro de 2025, com mais de 8.000 acordos exclusivos."],
+    ["Meta de receita externa","80% da receita vinda do mercado externo.","sec"],
+    ["Expansão internacional do B2B","Índia, China, Japão e México.","sec"],
+    ["Tabela de comissionamento","Não pública.","nd"]
+  ]},
+  {code:"III.08", name:"Canais de terceiros e fornecedores", note:"Numa operadora, o fornecedor é também canal — e a concentração é uma alavanca de margem.", ents:[
+    ["Companhias aéreas","Mais de 60 na plataforma de consolidação. A companhia se declara a maior contratante de transporte aéreo da América Latina."],
+    ["Hotéis preferenciais","80,3% das vendas nacionais no 2T26, contra 70% no 1T25."],
+    ["Cruzeiros","Parcerias com as principais armadoras."],
+    ["Bancos e meios de pagamento","Cartão co-branded, financiamento bancário, carteiras digitais e saque-aniversário do FGTS."],
+    ["Consórcio","Administradora parceira autorizada pelo BACEN."],
+    ["Seguro viagem e assistência","Seguradora parceira."],
+    ["Parques e ingressos","Inclui operadores internacionais."],
+    ["Inteligência de mercado hoteleiro","Parceria com entidade setorial renovada em julho de 2026.","sec"]
+  ]},
+  {code:"III.09", name:"Canais corporativos", note:"", ents:[
+    ["Atendimento corporativo indireto","Via marcas B2B — a consolidadora aérea tem 60% do mix corporativo.","sec"],
+    ["Foco declarado","Pequenas e médias empresas."],
+    ["TMC própria","Não existe. É plano declarado para os próximos cinco anos.","open"],
+    ["Self-booking, relatórios e compliance de viagem","Módulos próprios não divulgados.","nd"]
+  ]}
+ ]
+},
+{
+ id:"c4", num:"IV", title:"Produtos e Serviços",
+ purpose:"O catálogo é o de um intermediário: a companhia declara não possuir aviões, hotéis ou navios. O que ela monta é a combinação — e a margem vem de negociar o inventário de terceiros em condições que uma agência isolada não consegue. Dois domínios fogem disso: crédito e fidelidade, onde a CVC constrói produto próprio.",
+ domains:[
+  {code:"IV.01", name:"Pacotes de viagem", note:"", ents:[
+    ["Pacotes nacionais e internacionais","Com e sem aéreo, lazer e negócios."],
+    ["Produtos exclusivos","Negociados diretamente, com margem superior. De 10% para 22% das vendas nacionais em 2025, estabilizados em ~20% no 2T26."],
+    ["Concentração em preferenciais","80,3% das vendas nacionais em fornecedores preferenciais."],
+    ["Portfólio calibrado por margem","Critério declarado: margem, demanda e retorno sobre investimento."],
+    ["CVC Me Leva","Eventos regionais."]
+  ]},
+  {code:"IV.02", name:"Aéreo", note:"", ents:[
+    ["Aéreo doméstico e internacional","Avulso e em pacote."],
+    ["Consolidação B2B","Mais de 60 companhias; mix de 55% internacional e 45% doméstico, 60% corporativo e 40% lazer.","sec"],
+    ["Voos fretados","Charter para destinos nacionais de lazer."],
+    ["Volume de bilhetes","~3 milhões projetados para 2025 pela consolidadora.","sec"],
+    ["Exposição ao choque de oferta","Alta de 52,4% no preço do bilhete e mais de 6.000 voos retirados da malha em 2026."]
+  ]},
+  {code:"IV.03", name:"Hospedagem", note:"", ents:[
+    ["Hotéis, resorts e all inclusive","Nacional e internacional."],
+    ["Distribuição B2B","Mais de 500 mil hotéis no portfólio da operadora de hotelaria."],
+    ["Hotéis preferenciais","40% de participação nas vendas no 4T25."],
+    ["Aluguel de temporada","Casas e concierge em Orlando."],
+    ["Hotelaria própria","Não existe — o Formulário de Referência não descreve ativos hoteleiros."]
+  ]},
+  {code:"IV.04", name:"Cruzeiros e terrestre", note:"", ents:[
+    ["Cruzeiros marítimos","Nacionais e internacionais, com as principais armadoras."],
+    ["Aluguel de veículos",""],
+    ["Traslados e transfers","Em pacote e avulsos."],
+    ["Transporte terrestre e rodoviário",""],
+    ["Integração de cruzeiros","Plataforma de agenda integrada para o canal B2B.","sec"]
+  ]},
+  {code:"IV.05", name:"Experiências e serviços de viagem", note:"", ents:[
+    ["Ingressos de parques","Inclui operadores internacionais."],
+    ["Passeios e excursões",""],
+    ["Seguro viagem e assistência","Com seguradora parceira."],
+    ["Chip internacional","Conectividade."],
+    ["Assessoria de vistos",""],
+    ["Moedas estrangeiras","Serviço complementar; parceiro não divulgado.","nd"],
+    ["Cartão pré-pago de viagem","Existência de produto ativo não confirmada.","open"]
+  ]},
+  {code:"IV.06", name:"Intercâmbio", note:"", ents:[
+    ["Cursos de idiomas",""],
+    ["High school",""],
+    ["Au pair e voluntariado",""],
+    ["Rede dedicada","55 lojas."],
+    ["Elegibilidade ao consórcio","Programas de intercâmbio podem ser adquiridos via carta de crédito.","sec"]
+  ]},
+  {code:"IV.07", name:"Crédito e meios de pagamento", note:"Domínio onde a companhia sai da intermediação de viagem e monta produto financeiro — via marketplace, não em balanço próprio.", ents:[
+    ["Parcelamento próprio","Até 24x na central de financiamentos."],
+    ["Cartão co-branded","Parcelamento estendido em compras da rede, com benefícios de lounge e concierge.","sec"],
+    ["Financiamento bancário","Linha de banco parceiro."],
+    ["Saque-aniversário do FGTS","Como garantia de financiamento."],
+    ["Carteiras digitais e Pix","Incluindo arranjo exclusivo com uma fintech.","sec"],
+    ["Consórcio de viagem","Cartas a partir de R$ 2.500, em 24 ou 36 parcelas, com taxa administrativa fixa e saque de 100% do crédito após o 6º mês.","sec"],
+    ["Mudança de mix de pagamento","Cartão de crédito caiu de 75% para 60%; financiamento de terceiros subiu de 8% para 15%; pagamento à vista de 19% para 27%."],
+    ["Risco de crédito","Permanece nas instituições parceiras — a CVC não é instituição financeira e o BACEN regula os parceiros, não a companhia."]
+  ]},
+  {code:"IV.08", name:"Produtos B2B", note:"", ents:[
+    ["Consolidação aérea","Acesso ao inventário de mais de 60 companhias."],
+    ["Distribuição hoteleira","Mais de 500 mil hotéis, com suporte 24/7 trilíngue."],
+    ["Operadora sob medida","Itinerários personalizados, lua de mel e corporativo."],
+    ["Distribuição via API","Modelo plug and play para parceiros e plataformas."],
+    ["Operadora atacadista na Argentina","Suporte a agentes independentes."],
+    ["Integração entre as marcas B2B","Em implementação desde julho de 2026.","trans"]
+  ]},
+  {code:"IV.09", name:"Fidelidade", note:"", ents:[
+    ["Programa gratuito","Acúmulo de pontos sem expiração, com resgate integral ou combinado com dinheiro.","sec"],
+    ["Programa pago","Pontos mensais automáticos, descontos e ofertas antecipadas.","sec"],
+    ["Acúmulo via cartão","Portadores do co-branded acumulam pontos adicionais.","sec"],
+    ["Pagamento com pontos de terceiros","Aceito como meio de pagamento."],
+    ["Base de membros e mecânica atual","Não confirmadas para 2026.","open"]
+  ]},
+  {code:"IV.10", name:"Corporativo e eventos", note:"Os dois domínios mais rarefeitos do catálogo — e ambos reconhecidos pela própria administração como lacuna.", ents:[
+    ["Viagens corporativas","Atendimento a pequenas e médias empresas via marcas B2B."],
+    ["Grupos","Mais de 150 mil passageiros embarcados projetados para 2026.","sec"],
+    ["Eventos regionais","Produto dedicado dentro do portfólio."],
+    ["Unidade estruturada de eventos e incentivos","Não identificada.","nd"],
+    ["TMC","Reconhecida publicamente como lacuna pela administração em julho de 2026.","open"]
+  ]}
+ ]
+},
+{
+ id:"c5", num:"V", title:"Veículos Legais",
+ purpose:"Sem controlador definido desde 2015 e com capital disperso, esta camada gira em torno de um mecanismo que não existe em nenhum dos casos anteriores: uma cláusula de proteção à dispersão acionária, criada em 2025, dispensada em 2026 para um bloco específico — e o bloco encolhendo meses depois por uma crise na gestora de um dos signatários.",
+ domains:[
+  {code:"V.01", name:"Identificação e listagem", note:"", ents:[
+    ["Razão social","CVC Brasil Operadora e Agência de Viagens S.A. 'CVC Corp' é marca de grupo, não razão social."],
+    ["CNPJ e sede","10.760.260/0001-19; Rua Catequese 227, Santo André, São Paulo."],
+    ["Registro CVM","Categoria A, código 023310."],
+    ["Listagem","B3, ticker CVCB3, segmento Novo Mercado."],
+    ["Ações","525.591.097 ordinárias de classe única, das quais 4.801.226 em tesouraria."],
+    ["Free float","76,42% pelo critério da B3. Não confundir com a linha de 57,8% de 'outros acionistas' do quadro de RI, que exclui apenas os nominados acima de 5%."],
+    ["Capital social atualizado","Última cifra explicitamente confirmada é de 30/09/2024. Valor atual não republicado.","nd"]
+  ]},
+  {code:"V.02", name:"Estrutura acionária", note:"Posição de agosto de 2026, após a redução da participação de um dos blocos.", ents:[
+    ["GJP Fundo de Investimento em Ações","106.825.145 ações, 20,3%. Veículo ligado à família do fundador."],
+    ["Fundos Carbyne","41.866.803 ações, 7,9%. Órbita de uma gestora independente."],
+    ["Opportunity","40.902.915 ações, 7,8%."],
+    ["WHG Capital","27.165.767 ações, 5,2%."],
+    ["Pulverizado","304.029.241 ações, 57,8%."],
+    ["Ausência de controlador","Declarada no Formulário de Referência desde o 1T2015, nos termos do art. 116 da Lei 6.404/76."],
+    ["Controlador histórico","Um fundo de private equity deteve 63,6% em 2009, há muito desinvestido.","sec"],
+    ["Família Diniz e outros blocos citados","Nenhuma evidência pública de participação.","open"]
+  ]},
+  {code:"V.03", name:"Acordo de acionistas e proteção à dispersão", note:"A sequência societária mais relevante do período — e a que mais dividiu opiniões de governança.", ents:[
+    ["Cláusula de proteção à dispersão","Aprovada em AGE de 08/01/2025: quem ultrapassar 25% do capital deve lançar OPA para as demais ações."],
+    ["Acordo de acionistas","Celebrado em 02/04/2026, divulgado em 10/04/2026 e eficaz em 05/05/2026. Oito fundos mais uma pessoa física."],
+    ["Objeto do acordo","Exercício conjunto de voto, indicação de conselheiros, restrições à transferência e adesão de afiliadas."],
+    ["Geometria na assinatura","~35,5% do capital — 20,3% de um bloco e ~15,2% do outro."],
+    ["Regra de indicação","Com 2 a 6 conselheiros, um bloco indica 1 e o outro os demais; acima de 6, indica 2. O bloco menor mantém veto sobre saída do Novo Mercado e dissolução."],
+    ["Dispensa de OPA","Aprovada em AGE de 06/05/2026 para o grupo signatário. A cláusula permanece em vigor para todos os demais acionistas."],
+    ["Quórum da dispensa","23% a favor, 8,8% contra e 67,7% de abstenção — percentual que levou parte do mercado a qualificar o episódio como falha de governança."],
+    ["Encolhimento do bloco","Em agosto de 2026 os fundos de um dos signatários reduziram de ~15% para 7,97%, levando o bloco a ~28,2%. Leitura de mercado: necessidade de liquidez, não decisão estratégica.","sec"],
+    ["Situação do acordo após a redução","Não foi confirmado se houve aditamento ou rescisão.","open"]
+  ]},
+  {code:"V.04", name:"Controladas no Brasil", note:"Todas as participações identificadas são de 100%. Base: notas de consolidação até 31/12/2024.", ents:[
+    ["Submarino Viagens Ltda. / SV Viagens Ltda.","Agência e serviços turísticos online. PJ ativa; marca sem uso comercial atual."],
+    ["Visual Turismo Ltda.","Operadora B2B sob medida."],
+    ["Trend Viagens e Turismo S.A.","Distribuidora de hotelaria e terrestre; controla as entidades norte-americanas."],
+    ["Esferatur Passagens e Turismo S.A.","Consolidadora de passagens aéreas. Incorporada em abril de 2025.","stop"],
+    ["Almundo Brasil Viagens e Turismo Ltda.","Controlada indireta; incorporada em maio de 2025.","stop"],
+    ["TC World Viagens Ltda.","Serviços turísticos."],
+    ["VHC Brasil","Incorporada pela distribuidora de hotelaria em 30/09/2024.","stop"],
+    ["Rextur Advance, Experimento e Conectaas","Operam como marcas; não figuram como pessoas jurídicas autônomas nas notas de consolidação. Estrutura jurídica atual não confirmada.","open"],
+    ["RCA, Bibam, CVC Serviços e CVC Corporate","Não localizadas como pessoas jurídicas do grupo em nenhuma fonte.","open"]
+  ]},
+  {code:"V.05", name:"Entidades no exterior", note:"Base: nota de consolidação de 31/12/2024, a última lista completa acessível.", ents:[
+    ["CVC Turismo S.A.U. — Argentina","Holding das operações argentinas, controlada direta."],
+    ["Almundo.com S.R.L. — Argentina","OTA omnicanal."],
+    ["Ola S.A. — Argentina","Operadora atacadista B2B."],
+    ["Servicios de Viajes y Turismo Biblos S.A. — Argentina","Luxo e corporativo."],
+    ["Avantrip.com S.R.L. — Argentina","PJ ativa; marca absorvida pela Almundo em 2024.","stop"],
+    ["Santa Fe Investment Holding B.V. — Holanda","Holding intermediária das participações latino-americanas."],
+    ["Advenio S.A. — Uruguai","Serviços turísticos."],
+    ["TKT Mas Operadora S.A. — México e Almundo.com S.A.S. — Colômbia","PJs ainda consolidadas, com operação encerrada em 2020.","stop"],
+    ["Trend Travel LLC e VHC Hospitality LLC — Estados Unidos","Serviços turísticos e aluguel de temporada."],
+    ["CVC Portugal","Serviços turísticos, controlada direta."],
+    ["Chile, Peru e Bolívia","Nenhuma entidade localizada.","open"]
+  ]},
+  {code:"V.06", name:"Entidades incorporadas e dissolvidas", note:"", ents:[
+    ["Viatrix","Detentora do Experimento, adquirida em 2016 e incorporada."],
+    ["Grupo Duotur","51% em 2015 e 100% em 2017; incorporado. Incorporação não confirmada documentalmente.","open"],
+    ["Check In Participações / Grupo Trend","90% em 2017 e 10% em 2019; incorporado."],
+    ["Bibam","Holding argentina; 60,06% em 2018 e 100% em junho de 2021.","sec"],
+    ["São Paulo Real Estate S.A.R.L. — Luxemburgo","Dissolvida."],
+    ["Camden Enterprises LLC — Estados Unidos","Incorporada."]
+  ]},
+  {code:"V.07", name:"Estrutura de capital e dívida", note:"", ents:[
+    ["Abertura de capital","2014, no Novo Mercado; 33.841.600 ações e R$ 541,5 milhões."],
+    ["Emissão de 2022","52,3 milhões de ações e R$ 402,8 milhões."],
+    ["Follow-on de junho de 2023","166.666.666 ações e R$ 550,0 milhões, com demanda de ~5x a oferta."],
+    ["Bônus de subscrição de novembro de 2023","81.677.122 ações e R$ 226,2 milhões."],
+    ["Reestruturação de dívida de 2023","Acordo para reperfilar até R$ 900 milhões.","sec"],
+    ["Reperfilamento de outubro de 2024","Amortização extraordinária de ~R$ 160 milhões; vencimento final em 30/10/2028; taxa a CDI + 3,9%.","sec"],
+    ["Pré-pagamento de 2025","R$ 150 milhões do principal das debêntures.","sec"],
+    ["7ª emissão de debêntures","Aprovada em 04/09/2026, de até R$ 450 milhões, como oferta de troca das emissões anteriores. Custo de CDI + 4,50% para CDI + 3,90%; vencimentos alongados de 2026 e 2027 para 2029; economia estimada de R$ 110 a 115 milhões de caixa em doze meses.","trans"],
+    ["Sem aumento de capital desde 2023","Nenhum follow-on em 2024, 2025 ou 2026."]
+  ]},
+  {code:"V.08", name:"Veículos estruturados e antecipação de recebíveis", note:"A companhia não tem FIDC nem securitizadora própria — a antecipação é feita fora de estrutura de fundo.", ents:[
+    ["FIDC próprio","Nenhuma menção em notas explicativas de 2022 a 2026."],
+    ["Securitizadora cativa","Nenhuma identificada."],
+    ["Antecipação de recebíveis de cartão","Cessão junto a instituições financeiras e adquirentes, fora de estrutura de fundo. R$ 1.358,2 milhões em 30/06/2026."],
+    ["Trajetória da antecipação","R$ 998,6 mi em 2022, R$ 824,1 mi em 2023, R$ 1.116,0 mi em mar/2025 e R$ 1.282,6 mi em mar/2026."],
+    ["Custo","R$ 49,7 milhões de juros sobre antecipação no 2T26."],
+    ["Único veículo de captação estruturada","Debêntures, reguladas pela CVM."],
+    ["Hedge cambial","NDFs multi-moeda."]
+  ]},
+  {code:"V.09", name:"Entidade sem fins lucrativos", note:"", ents:[
+    ["Instituto CVC","Existe e mantém sítio próprio."],
+    ["Natureza jurídica, CNPJ e vínculo societário","Não confirmados. O instituto não é mencionado nas notas explicativas nem no Formulário de Referência.","open"],
+    ["Programas de sustentabilidade","Iniciativas corporativas, não entidades jurídicas."]
+  ]},
+  {code:"V.10", name:"Contingências e eventos societários", note:"", ents:[
+    ["Provisões para demandas judiciais","R$ 170,9 mi em dez/2023, reduzidas a R$ 81,7 mi em mar/2026 — queda consistente do estoque herdado da pandemia."],
+    ["Investigação nas subsidiárias argentinas","Apuração sobre práticas em desacordo com controles internos, conduzida com especialistas externos e concluída em 22/03/2024. Provisão de R$ 54,8 milhões."],
+    ["Contingências cíveis e tributárias correntes","R$ 11,3 milhões de itens não recorrentes no 1T26."],
+    ["Renúncia de conselheiro","Um conselheiro renunciou em 06/08/2026, após ser afastado da presidência da gestora a que está ligado. A cadeira permanece vaga."],
+    ["Rumor de aquisição por concorrente","Noticiado em 04/05/2026 e negado por comunicado ao mercado. Escopo alternativo reportado seria parcial, limitado à consolidadora aérea e à Argentina.","open"],
+    ["Passivos fiscais individualizados e arbitragens","Itens 4.4 a 4.7 do Formulário de Referência não puderam ser extraídos; não confirmados nem descartados.","open"]
+  ]}
+ ]
+},
+{
+ id:"c6", num:"VI", title:"Políticas, Normas e Procedimentos",
+ purpose:"Fora do setor financeiro, a camada normativa muda de natureza: no lugar de dezenas de resoluções do CMN, o que molda a operação é o Regulamento do Novo Mercado, o Código de Defesa do Consumidor e o regime setorial de turismo. O efeito prático é um conjunto de políticas corporativas bem menor — e, neste caso, em boa parte não localizável publicamente.",
+ domains:[
+  {code:"VI.01", name:"Políticas publicadas", note:"Documentos autônomos efetivamente localizados em acesso aberto.", ents:[
+    ["Política Corporativa de Remuneração dos Executivos","Publicada em 19/02/2026.","ok"],
+    ["Política Corporativa de Indicação de Membros do Conselho, Comitês, Vice-Presidência e Diretoria","Publicada em 03/02/2026.","ok"],
+    ["Política Corporativa de Alçadas","","ok"],
+    ["Política de Privacidade de Relações com Investidores","","ok"],
+    ["Política de Privacidade ao consumidor","Com política de cookies e termos de uso.","ok"]
+  ]},
+  {code:"VI.02", name:"Políticas citadas sem documento público localizado", note:"O repositório oficial de estatutos e políticas ficou inacessível na apuração. Ausência de acesso, não prova de inexistência.", ents:[
+    ["Código de Conduta e Ética","Páginas institucionais descritivas existem; o PDF não foi localizado.","open"],
+    ["Política Corporativa de Gestão de Riscos","Citada no Relatório de Sustentabilidade e no Formulário de Referência.","open"],
+    ["Política de Transações com Partes Relacionadas","Citada; PDF não localizado.","open"],
+    ["Política de Sustentabilidade","Citada; PDF não localizado.","open"],
+    ["Programa de Integridade e Compliance","Citado na seção 5.3 do Formulário de Referência.","open"],
+    ["Política de Divulgação e de Negociação de Valores Mobiliários","Obrigatória pela Res. CVM 44/2021; não localizada.","open"],
+    ["Política Anticorrupção autônoma","Não localizada.","open"],
+    ["Política de Dividendos autônoma","Não localizada. Existe covenant contratual limitando dividendos a 25% ao ano, o que é cláusula de debênture, não política.","open"],
+    ["Política de Segurança da Informação","Não localizada.","open"],
+    ["Regimentos internos do Conselho e dos comitês","Não localizados em acesso aberto.","open"]
+  ]},
+  {code:"VI.03", name:"Integridade e canal de ética", note:"", ents:[
+    ["Canal de Ética","Operado por terceiro independente, 24/7, anônimo e confidencial, com protocolo por relato.","ok"],
+    ["Cobertura internacional","Linhas dedicadas para Brasil, Argentina e Estados Unidos."],
+    ["Fluxo de tratamento","Triagem pelo operador externo e encaminhamento à Comissão de Ética, composta por gestores estratégicos."],
+    ["Conselho Executivo de Governança e Compliance","Implantado em 2020."],
+    ["Número de denúncias recebidas","Não divulgado.","nd"]
+  ]},
+  {code:"VI.04", name:"Regime de mercado de capitais", note:"", ents:[
+    ["Regulamento do Novo Mercado","Ações ordinárias únicas, tag along de 100%, free float mínimo de 25%, comitê de auditoria estatutário e auditoria interna obrigatórios."],
+    ["Lei 6.404/1976","Lei das Sociedades por Ações."],
+    ["Res. CVM 44/2021","Fato relevante e vedações à negociação."],
+    ["Res. CVM 80/2022","Registro de emissores e Formulário de Referência."],
+    ["Res. CVM 81/2022","Assembleias e voto a distância."],
+    ["Res. CVM 193/2023","Relato de sustentabilidade no padrão ISSB, obrigatório a partir de 2026.","trans"],
+    ["Cláusula de proteção à dispersão","Estatutária, com dispensa específica concedida em 2026."]
+  ]},
+  {code:"VI.05", name:"Regime setorial de turismo", note:"O bloco que substitui, aqui, o arcabouço prudencial dos casos financeiros.", ents:[
+    ["Lei 11.771/2008 e Decreto 7.381/2010","Política Nacional de Turismo; define agências e operadoras."],
+    ["Lei 14.978/2024","Modernização do marco setorial.","sec"],
+    ["Cadastur","Cadastro obrigatório junto ao Ministério do Turismo."],
+    ["ANAC — Resolução 400/2016","Condições gerais de transporte aéreo: remarcação, reembolso, bagagem e assistência."],
+    ["IATA e BSP Brasil","Acreditação de agências e consolidadoras; aplicação concreta não confirmada em documento da companhia.","open"],
+    ["Argentina — Decretos 70/2023 e 216/2025","Desregulamentação e simplificação do setor de viagens.","sec"]
+  ]},
+  {code:"VI.06", name:"Consumidor e dados", note:"", ents:[
+    ["Código de Defesa do Consumidor","Eixo crítico da operação, dado o volume de reclamações sobre reembolso e pacotes."],
+    ["Decreto 7.962/2013","Comércio eletrônico."],
+    ["LGPD e ANPD","Área de proteção de dados dentro da estrutura de Legal e Compliance."],
+    ["Processo no Ministério da Justiça","Apuração de queixas envolvendo a companhia e outras plataformas do setor. Data e desfecho não apurados.","open"],
+    ["Ouvidoria formal autônoma","Não localizada como estrutura distinta do canal de ética e do atendimento ao consumidor.","open"]
+  ]},
+  {code:"VI.07", name:"Normas contábeis", note:"O ponto técnico que define como a receita aparece — e que explica a distância entre R$ 16,8 bi e R$ 1,44 bi.", ents:[
+    ["CPC 47 / IFRS 15","Receita de contrato com cliente, com o teste de principal contra agente."],
+    ["Apresentação em base líquida","A companhia declara não possuir aviões, hotéis ou navios, atuando apenas na aproximação entre cliente e fornecedor — e apresenta receita líquida de intermediação."],
+    ["Take rate","Razão entre receita líquida e reservas confirmadas."],
+    ["CPC 06 (R2) / IFRS 16","Arrendamentos — relevante pela rede de lojas."],
+    ["CPC 48 / IFRS 9","Instrumentos financeiros — cessão de recebíveis e derivativos cambiais."],
+    ["Segregação principal contra agente por linha de produto","Não detalhada explicitamente nas demonstrações consultadas.","open"]
+  ]}
+ ]
+},
+{
+ id:"c7", num:"VII", title:"Estrutura, Papéis e Responsabilidades",
+ purpose:"Quatro CEOs em sete anos, um conselho de cinco cadeiras com uma vaga aberta desde agosto de 2026, e uma reestruturação em maio que eliminou três vice-presidências e cerca de cem posições. A camada registra uma companhia que ainda está ajustando a própria forma — e que, sem obrigação prudencial, não formaliza publicamente o modelo de linhas de defesa.",
+ domains:[
+  {code:"VII.01", name:"Conselho de Administração", note:"Cinco cadeiras estatutárias, uma vaga. A composição publicada pelo RI aparenta estar desatualizada.", ents:[
+    ["Presidente","Mateus Affonso Bandeira, eleito em 30/08/2023, mandato até a AGO de 2027."],
+    ["Vice-Presidente","Gustavo Baptista Paulus. Classificado como independente pela página de RI, embora ligado ao maior acionista."],
+    ["Conselheiro","Flavio Uchoa Teles de Menezes, eleito em 30/08/2023."],
+    ["Conselheiro","Felipe Pontes Gondim, eleito em 07/07/2024."],
+    ["Quinta cadeira","Vaga desde 06/08/2026, após a renúncia do conselheiro eleito em maio do mesmo ano. A página de RI lista um nome que coincide com o do CFO, aparente erro de renderização.","open"],
+    ["Composição declarada","Maioria independente."]
+  ]},
+  {code:"VII.02", name:"Comitês", note:"Um comitê estatutário. A página de RI menciona três comitês de assessoramento, mas detalha apenas um.", ents:[
+    ["Comitê Estatutário de Auditoria, Riscos e Finanças","Único estatutário e permanente. Coordenador desde 15/05/2024, com mandato até a AGO de 2028."],
+    ["Riscos dentro do comitê de auditoria","Não há comitê de riscos separado — é a mesma instância."],
+    ["Comissão de Ética","Existe, não estatutária, composta por gestores estratégicos. Nomes não divulgados."],
+    ["Conselho Executivo de Governança e Compliance","Existe desde 2020; composição não divulgada.","nd"],
+    ["Comitês de Pessoas, Estratégia e Sustentabilidade","Não localizados como comitês autônomos.","open"],
+    ["Identificação dos outros dois comitês de assessoramento","Não divulgada.","open"]
+  ]},
+  {code:"VII.03", name:"Diretoria estatutária", note:"Apenas três cargos estatutários — estrutura enxuta em comparação com os casos financeiros.", ents:[
+    ["Diretor Presidente","Fabio Mader Cintrão, eleito em 15/01/2026."],
+    ["Diretor Financeiro e de Relações com Investidores","Felipe Gomes, eleito em 04/01/2024."],
+    ["Diretora de Governança e Compliance","Karin Regina da Rocha Demarques Cruz, eleita em 04/06/2024."],
+    ["Mandatos","Todos até a primeira reunião do Conselho após a AGO de 2028."]
+  ]},
+  {code:"VII.04", name:"Estrutura executiva", note:"Desenho pós-reestruturação de maio de 2026: nove reportes diretos ao CEO, com vice-presidências unificadas.", ents:[
+    ["Pessoas e Gestão","Renata Giannotti.","sec"],
+    ["Vendas","Emerson Belan — B2C e B2B unificados.","sec"],
+    ["Tecnologia e Digital","Bob Rossato, contratado em março de 2026; as duas vice-presidências foram unificadas em maio.","sec"],
+    ["Finanças, RI e centro de serviços","Felipe Gomes.","sec"],
+    ["Operações e Clientes","Fábio Belém.","sec"],
+    ["Produtos","Três diretorias — nacionais, internacionais e aéreos.","sec"],
+    ["Operações Argentina","Diego Garcia.","sec"],
+    ["Cargos absorvidos","Jurídico opera dentro de Legal e Compliance, sob a diretoria estatutária de Governança; Comercial foi absorvido pela vice-presidência de Vendas."]
+  ]},
+  {code:"VII.05", name:"Sucessão de comando", note:"Quatro CEOs entre 2019 e 2026 — o traço que mais distingue esta camada dos casos comparáveis.", ents:[
+    ["2019–2020","Primeiro CEO do período, em meio à crise institucional e financeira; cerca de um ano no cargo.","sec"],
+    ["2020–2023","Ciclo da pandemia: reestruturação profunda, corte de custos e revisão do modelo de negócio.","sec"],
+    ["Agosto de 2023 a janeiro de 2026","Ciclo do turnaround, iniciado junto com o aporte de capital.","sec"],
+    ["Desde 15/01/2026","Executivo promovido internamente, com cerca de 15 anos de casa. Sucessão antecipada.","sec"],
+    ["Reestruturação de maio de 2026","~100 desligamentos, incluindo vice-presidentes e diretores; três vice-presidências eliminadas. Racional declarado: choque externo, não problema estrutural.","sec"]
+  ]},
+  {code:"VII.06", name:"Controles e auditoria", note:"", ents:[
+    ["Auditoria Interna","Criada em 2020; reporta diretamente ao Comitê Estatutário de Auditoria, Riscos e Finanças."],
+    ["Controles Internos","Criados em 2020, com o objetivo declarado de mitigar riscos de compliance."],
+    ["Chief Governance and Compliance Officer","Cargo criado em 2021, hoje estatutário."],
+    ["Estrutura de Legal e Compliance","Abrange compliance, proteção de dados, direito do consumidor e direito empresarial."],
+    ["Modelo formal de três linhas de defesa","A estrutura existe funcionalmente, mas a companhia não a nomeia publicamente como tal — diferença direta em relação aos casos sob supervisão do BACEN.","open"]
+  ]},
+  {code:"VII.07", name:"Tecnologia", note:"A ponte para as camadas IX a XIII, fora de escopo aqui. É a frente em que a companhia mais comunicou movimento em 2026.", ents:[
+    ["Migração de núcleo","Substituição de um sistema legado com cerca de 25 anos por nova plataforma. Justificativa declarada: custo de propriedade e dificuldade de contratar especialistas.","sec"],
+    ["Programa AI First","Inteligência artificial integrada da concepção ao deploy dos projetos.","sec"],
+    ["Hub interno de LLMs","Plataforma que agrega múltiplos modelos, para dar acesso a todas as áreas sem depender do time de tecnologia. Apresentada em agosto de 2026.","sec"],
+    ["AI First Agile Engineering","Programa lançado em setembro de 2026, com distribuição de licenças de assistente de código a todos os profissionais de TI e reestruturação em squads enxutos.","sec"],
+    ["Investimento","R$ 121,8 milhões em 2025, alta de 40,5%."],
+    ["Provedor de nuvem vigente","Não confirmado para 2025–2026.","open"],
+    ["Número de profissionais de tecnologia","Não divulgado.","nd"]
+  ]},
+  {code:"VII.08", name:"Força de trabalho", note:"", ents:[
+    ["Colaboradores no Brasil","2.087 em 2024; ~2.100 após a reestruturação de maio de 2026.","sec"],
+    ["Composição","63% mulheres; 32,1% pretos e pardos; 8,4% com 50 anos ou mais."],
+    ["Diversidade na liderança","29,5% em 2024, contra 29,1% em 2023."],
+    ["Quadro consolidado incluindo a Argentina","Não divulgado.","nd"],
+    ["Relação com a rede","Os cerca de 2.100 colaboradores operam uma rede de 1.627 lojas que não lhes pertence — a maior parte da força de vendas é de terceiros."]
+  ]}
+ ]
+},
+{
+ id:"c8", num:"VIII", title:"Métricas de Gestão e Controle",
+ purpose:"O painel é o de uma intermediadora: volume bruto, take rate e rede, antes de qualquer linha de resultado. E conta uma história em duas partes — 2025 foi o melhor ano do turnaround, com margem recorde; 2026 reverteu o resultado por choque externo, mesmo com a operação brasileira melhorando margem e cortando despesa.",
+ domains:[
+  {code:"VIII.01", name:"Volume — reservas confirmadas", note:"Métrica operacional de volume bruto intermediado, não de receita.", ents:[
+    ["Consolidado — 2025","R$ 16.756,5 milhões, +16% sobre 2024."],
+    ["Consolidado — 2T26","R$ 4.092,0 milhões, +0,2% a/a."],
+    ["Consolidado — 1S26","R$ 8.369,2 milhões, +2,0% a/a."],
+    ["Brasil — 2T26","R$ 3.287,4 milhões, +4,1% a/a. B2B de R$ 1.830,3 mi e B2C de R$ 1.457,0 mi."],
+    ["Argentina — 2T26","R$ 804,6 milhões, −13,0% reportado e +0,3% em moeda constante."],
+    ["Crescimento ex-choques","+4,1% no 2T26 e +9,3% no 1T26, excluídos os efeitos do conflito no Oriente Médio.","sec"]
+  ]},
+  {code:"VIII.02", name:"Take rate", note:"Ponto de divergência entre fontes — ver a ressalva no rodapé.", ents:[
+    ["Consolidado — 2T26","8,2%, queda de 0,8 p.p. a/a. A administração indicou o patamar como sustentável.","sec"],
+    ["Brasil — 2T26","8,6%, queda de 1,0 p.p. B2C de 11,8% e B2B de 6,4%."],
+    ["Argentina — 2T26","6,3%, queda de 0,3 p.p."],
+    ["Consolidado — 2025","8,7% conforme o release. Outras apurações citam 9,3% e 9,8%; a razão entre receita líquida e reservas dá 8,6%.","open"],
+    ["Efeito de mix","O crescimento do B2B, de take rate estruturalmente menor, pressiona o consolidado para baixo."]
+  ]},
+  {code:"VIII.03", name:"Rede", note:"", ents:[
+    ["Total — 2T26","1.627 lojas."],
+    ["Recorde histórico","1.646 lojas em 31/12/2025."],
+    ["Aberturas e fechamentos — 1S26","24 aberturas contra 43 fechamentos."],
+    ["Aberturas — 2025","196 no ano, sendo 160 no Brasil e 36 na Argentina."],
+    ["Cobertura","631 municípios em março de 2026."],
+    ["Agências parceiras","~8.300 multimarcas no Brasil."]
+  ]},
+  {code:"VIII.04", name:"Resultado", note:"", ents:[
+    ["Receita líquida — 2025","R$ 1.442,9 milhões, +7,6%. O Formulário de Referência registra R$ 1.488,5 milhões, perímetro não reconciliado.","open"],
+    ["Receita líquida — 2T26","R$ 319,5 milhões, −6,5% a/a."],
+    ["EBITDA ajustado — 2025","R$ 458,6 milhões, +17,8%, com margem recorde de 31,8%."],
+    ["EBITDA ajustado — 2T26","R$ 84,9 milhões, −8,1% a/a, com margem de 26,6%."],
+    ["EBITDA Brasil — 2T26","R$ 82,6 milhões, +4,7%, com margem de 30,6% — a maior já registrada para baixa temporada."],
+    ["EBITDA Argentina — 2T26","R$ 2,3 milhões, queda de 82,8%."],
+    ["Resultado líquido ajustado — 2025","Lucro de R$ 67,0 milhões, alta de 105,4%."],
+    ["Resultado líquido ajustado — 1S26","Prejuízo de R$ 114,4 milhões, contra lucro de R$ 8,1 milhões no 1S25."],
+    ["Lucro bruto","Não divulgado como linha destacada.","nd"]
+  ]},
+  {code:"VIII.05", name:"Eficiência e despesas", note:"", ents:[
+    ["Despesas operacionais — 2025","R$ 940,8 milhões, queda de 6,1%."],
+    ["G&A Brasil — 2T26","R$ 133,4 milhões, queda de 10,1% a/a."],
+    ["G&A Argentina — 2T26","R$ 45,2 milhões, alta de 2,9% reportada e 15% em moeda constante."],
+    ["Eficiência estrutural","A relação entre G&A e receita líquida no Brasil caiu 30,1 p.p. entre 2023 e 2025."],
+    ["Despesas de vendas sobre reservas","1,7% em 2025, contra 1,8% em 2024."],
+    ["Economia da reestruturação","Mais de R$ 80 milhões projetados para 2026.","sec"]
+  ]},
+  {code:"VIII.06", name:"Endividamento e caixa", note:"", ents:[
+    ["Dívida bruta — 2T26","R$ 400,5 milhões, redução de R$ 250,3 milhões em doze meses."],
+    ["Dívida líquida — 2T26","R$ 215,0 milhões, contra R$ 396,3 milhões no 2T25."],
+    ["Caixa — 2T26","R$ 175,8 milhões."],
+    ["Alavancagem","0,5x EBITDA nos últimos doze meses, contra 0,9x um ano antes. Era 0,2x no 4T25."],
+    ["Recebíveis descontados","R$ 1.358,2 milhões — mais de três vezes a dívida bruta."],
+    ["Ciclo de capital de giro","10,2 dias no 2T26, contra 7,9 dias no 4T25."],
+    ["Geração de caixa operacional","+R$ 60,2 milhões no 2T26; R$ 412,8 milhões em 2025."],
+    ["Alongamento de setembro de 2026","Vencimentos deslocados de outubro de 2026 e abril de 2027 para março e setembro de 2029.","trans"]
+  ]},
+  {code:"VIII.07", name:"Covenants", note:"Aplicáveis às emissões de debêntures. Confirmados nas demonstrações do 2T26.", ents:[
+    ["Distribuição de dividendos","Limitada a 25% ao ano."],
+    ["Investimento","Limitado a R$ 125 milhões por ano."],
+    ["Alavancagem","Dívida líquida menos recebíveis sobre EBITDA, máximo de 2,5x, aferido trimestralmente a partir de março de 2026."],
+    ["Status em 30/06/2026","Em conformidade, conforme declarado nas demonstrações.","ok"]
+  ]},
+  {code:"VIII.08", name:"Cliente", note:"Sem NPS divulgado, os indicadores públicos de relacionamento vêm de plataformas externas.", ents:[
+    ["NPS","Não divulgado em release, relatório de sustentabilidade ou Formulário de Referência.","nd"],
+    ["Reputação em plataforma de reclamação","Nota 8,4 de 10, com selo do nível máximo mantido de junho a agosto de 2026."],
+    ["Volume de reclamações","2.063 em seis meses, com 98,7% de índice de resposta e 90,1% de solução."],
+    ["Percepção do consumidor","75,7% declaram que voltariam a fazer negócio; nota média de 7,4."],
+    ["Principal motivo de reclamação","Reembolso de pacote, com 15,83%; questões relacionadas a pacotes somam 39,25%."],
+    ["Indicadores do consumidor.gov.br","Não extraídos — a página carrega os índices dinamicamente.","nd"],
+    ["Base de clientes","~12 milhões, desconsiderando lojas multimarcas."]
+  ]},
+  {code:"VIII.09", name:"Sustentabilidade", note:"", ents:[
+    ["Representatividade de grupos diversos","43,4% em 2024, contra 40,7% em 2023; meta de 50% até 2030."],
+    ["Diversidade na liderança","29,5% em 2024; meta de 20% de pessoas negras em liderança até 2030."],
+    ["Mulheres no quadro","63%."],
+    ["Inventário de carbono","Selo Prata do Programa Brasileiro GHG Protocol em 2023, com ano-base 2022."],
+    ["Lojas no novo padrão de sustentabilidade","568 unidades.","sec"],
+    ["Metas de emissões","Inexistentes ou não divulgadas.","nd"]
+  ]},
+  {code:"VIII.10", name:"Guidance", note:"", ents:[
+    ["Guidance formal para 2026","Não divulgado. Confirmado na teleconferência do 2T26."],
+    ["Take rate","8,2% indicado como patamar sustentável.","sec"],
+    ["Economia de custos","Mais de R$ 80 milhões em 2026, decorrente da reestruturação.","sec"],
+    ["Desempenho recente","Julho de 2026 foi o melhor mês de vendas em dois anos, excluída a Black Friday.","sec"],
+    ["Posição de caixa","Declarada confortável até o fim de 2026 e início de 2027, sem captação planejada.","sec"],
+    ["Foco operacional","Same-store sales em vez de expansão acelerada da rede.","sec"]
+  ]}
+ ]
+},
+];
+
+/* ---------- render ---------- */
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const TAGTXT = {ok:"confirmado", trans:"em transição", nd:"não divulgado", sec:"fonte secundária", open:"em aberto", stop:"encerrado"};
+
+function pad(n){return String(n).padStart(2,"0")}
+
+let totalEnts = 0;
+const counts = {};
+const XREF = {};
+
+const layersEl = document.getElementById("layers");
+layersEl.innerHTML = L.map(layer => {
+  let n = 0;
+  const doms = layer.domains.map(d => {
+    const ents = d.ents.map((e,i) => {
+      n++;
+      const [name, desc, tag] = e;
+      const tagHtml = tag ? `<span class="tag t-${tag}">${TAGTXT[tag]}</span>` : "";
+      return `<li class="ent"><span class="ent-code">${layer.num}.${d.code.split(".")[1]}.${pad(i+1)}</span><span class="ent-name">${esc(name)}${tagHtml}</span><span class="ent-desc">${esc(desc||"")}</span></li>`;
+    }).join("");
+    const srcs = SRCMAP[d.code] || [];
+    srcs.forEach(s => { (XREF[s] = XREF[s] || []).push({code:d.code, name:d.name, layer:layer.id}); });
+    const chips = srcs.length
+      ? `<span class="srcchips">${srcs.map(s=>`<a class="srcchip" href="#${s.toLowerCase()}" title="Fonte ${s}">${s}</a>`).join("")}</span>`
+      : "";
+    return `<section class="domain" id="d-${d.code.replace(/\./g,"-")}"><div class="domain-head"><span class="domain-code">${esc(d.code)}</span><span class="domain-name">${esc(d.name)}</span>${chips}${d.note?`<p class="domain-note">${esc(d.note)}</p>`:""}</div><ul class="ents">${ents}</ul></section>`;
+  }).join("");
+  counts[layer.id] = n;
+  totalEnts += n;
+  return `<section class="cl-layer" id="${layer.id}">
+    <div class="cl-layer-head"><span class="cl-layer-numeral">${layer.num}</span><h2>${esc(layer.title)}</h2></div>
+    <p class="cl-layer-purpose">${esc(layer.purpose)}</p>
+    <div class="domains">${doms}</div>
+  </section>`;
+}).join("");
+
+document.getElementById("stack").innerHTML = STACK.map(r => {
+  if (r.h) return `<div class="stack-row head">${esc(r.h)}</div>`;
+  const c = r.id ? counts[r.id] : null;
+  const right = c!=null ? `${c} entidades` : (r.note || "");
+  const inner = `<span class="stack-num">${r.n}</span><span>${r.id?`<a href="#${r.id}" style="text-decoration:none">${esc(r.t)}</a>`:esc(r.t)}</span><span class="stack-count">${esc(right)}</span>`;
+  return `<div class="stack-row${r.inn?"":" out"}">${inner}</div>`;
+}).join("");
+
+/* ---------- tabela de referência cruzada ---------- */
+document.getElementById("xrefbody").innerHTML = SOURCES.map(s => {
+  const doms = (XREF[s.id] || []);
+  const list = doms.length
+    ? doms.map(d => `<a href="#d-${d.code.replace(/\./g,"-")}" title="${esc(d.name)}">${esc(d.code)}</a>`).join(" · ")
+    : (s.method ? "Método — princípios, camadas e regra de agrupamento por domínios aplicados em todo o documento" : "—");
+  return `<tr id="${s.id.toLowerCase()}">
+    <td class="xr-id">${s.id}</td>
+    <td><span class="xr-title"><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></span><span class="xr-meta">${esc(s.meta)}</span></td>
+    <td class="xr-doms">${list}</td>
+    <td class="xr-n">${doms.length ? doms.length : (s.method ? "todos" : "0")}</td>
+  </tr>`;
+}).join("");
+
+document.getElementById("navpills").innerHTML = L.map(l =>
+  `<a href="#${l.id}">${l.num}</a>`).join("");
+
+/* ---------- filter ---------- */
+const q = document.getElementById("q");
+const hits = document.getElementById("hits");
+const allEnts = [...document.querySelectorAll(".ent")];
+const allDoms = [...document.querySelectorAll(".domain")];
+const allLayers = [...document.querySelectorAll(".cl-layer")];
+
+function baseline(){ hits.textContent = `${totalEnts} entidades · ${allDoms.length} domínios · 9 camadas`; }
+baseline();
+
+q.addEventListener("input", () => {
+  const t = q.value.trim().toLowerCase();
+  if (!t){
+    allEnts.forEach(e=>e.classList.remove("hidden"));
+    allDoms.forEach(e=>e.classList.remove("hidden"));
+    allLayers.forEach(e=>e.classList.remove("hidden"));
+    baseline();
+    return;
+  }
+  let found = 0;
+  allDoms.forEach(dom => {
+    const domText = dom.querySelector(".domain-head").textContent.toLowerCase();
+    const domMatch = domText.includes(t);
+    let visible = 0;
+    dom.querySelectorAll(".ent").forEach(ent => {
+      const show = domMatch || ent.textContent.toLowerCase().includes(t);
+      ent.classList.toggle("hidden", !show);
+      if (show) visible++;
+    });
+    dom.classList.toggle("hidden", visible === 0);
+    found += visible;
+  });
+  allLayers.forEach(layer => {
+    const any = [...layer.querySelectorAll(".domain")].some(d => !d.classList.contains("hidden"));
+    layer.classList.toggle("hidden", !any);
+  });
+  hits.textContent = `${found} ${found===1?"entidade":"entidades"}`;
+});
+</script>
+</body>
+</html>

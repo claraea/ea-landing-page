@@ -22,6 +22,7 @@ casos/
   bradesco.html
   xp.html
   nubank.html
+  cvc.html
 assets/
   styles.css            # CSS compartilhado entre as três páginas
   cubes.svg             # ilustração modular auxiliar
