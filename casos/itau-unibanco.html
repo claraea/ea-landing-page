@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itaú Unibanco sob o método Clara/EA — Caso de Mercado</title>
+<meta name="description" content="Arquitetura de negócios do conglomerado Itaú Unibanco mapeada nas oito camadas do Clara/EA por IA agêntica, exclusivamente a partir de divulgação pública — 83 domínios, 472 entidades e rastreabilidade fonte a fonte.">
+<meta name="author" content="Marcelo Andrade Clara">
+<link rel="canonical" href="https://www.claraea.com.br/casos/itau-unibanco.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#1B2D4F">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Clara/EA">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.claraea.com.br/casos/itau-unibanco.html">
+<meta property="og:title" content="Itaú Unibanco sob o método Clara/EA">
+<meta property="og:description" content="Arquitetura de negócios do conglomerado mapeada nas oito camadas do Clara/EA por IA agêntica, a partir de divulgação pública — 83 domínios, 472 entidades, rastreabilidade fonte a fonte.">
+<meta property="og:image" content="https://www.claraea.com.br/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clara/EA · Framework de Arquitetura Corporativa">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Itaú Unibanco sob o método Clara/EA">
+<meta name="twitter:description" content="Arquitetura de negócios mapeada nas oito camadas do Clara/EA por IA agêntica, a partir de divulgação pública.">
+<meta name="twitter:image" content="https://www.claraea.com.br/assets/og-card.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<!-- Structured data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "Itaú Unibanco sob o método Clara/EA",
+  "description": "Arquitetura de negócios do conglomerado Itaú Unibanco mapeada nas oito camadas do Clara/EA por IA agêntica, exclusivamente a partir de divulgação pública.",
+  "url": "https://www.claraea.com.br/casos/itau-unibanco.html",
+  "inLanguage": "pt-BR",
+  "datePublished": "2026-09-12",
+  "author": { "@id": "https://www.claraea.com.br/#person" },
+  "publisher": { "@type": "Organization", "name": "Clara/EA", "url": "https://www.claraea.com.br/" },
+  "about": { "@type": "Organization", "name": "Itaú Unibanco Holding S.A." },
+  "isPartOf": { "@type": "WebSite", "name": "Clara/EA", "url": "https://www.claraea.com.br/" }
+}
+</script>
+
+<style>
+  /* ---------- tokens do documento (derivados do design system do site) ---------- */
+  .case-doc{
+    --doc-ink-2:#3A3A3A;
+    --doc-rule-strong:#C4BDAE;
+    --doc-surface-2:#FAF8F3;
+    --doc-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --doc-ok:#1F6B4A;
+    --doc-warn:#8A6210;
+    --doc-stop:#8F2B2B;
+    font-size:15px;
+    line-height:1.55;
+  }
+  .case-doc code{font-family:var(--doc-mono);font-size:.92em;background:var(--doc-surface-2);padding:1px 5px;border:1px solid var(--rule)}
+  .case-doc h1,.case-doc h2,.case-doc h3,.case-doc h4{text-wrap:balance}
+
+  /* ---------- hero ---------- */
+  .case-hero{padding:96px 0 56px;border-top:none}
+  .case-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:end}
+  .case-hero .section-title{font-size:clamp(36px,5vw,58px);max-width:18ch;margin-bottom:24px}
+  .case-hero .section-lead{margin-bottom:0}
+  .case-meta{
+    font-family:var(--doc-mono);
+    font-size:12px;
+    line-height:2;
+    color:var(--ink-muted);
+    border-left:2px solid var(--accent-gold);
+    padding-left:18px;
+    white-space:nowrap;
+  }
+  .case-meta b{color:var(--ink-primary);font-weight:500}
+
+  /* ---------- como foi produzido ---------- */
+  .case-how{padding:72px 0}
+  .case-how-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px 64px;align-items:start}
+  .case-how p{font-size:16px;line-height:1.7;color:var(--doc-ink-2);margin-bottom:16px;max-width:60ch}
+  .case-how p:last-child{margin-bottom:0}
+  .case-how-steps{list-style:none;counter-reset:step}
+  .case-how-steps li{
+    counter-increment:step;
+    display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;
+    padding:18px 0;border-top:1px solid var(--rule);
+    font-size:15px;line-height:1.6;color:var(--doc-ink-2);
+  }
+  .case-how-steps li:last-child{border-bottom:1px solid var(--rule)}
+  .case-how-steps li::before{
+    content:counter(step,decimal-leading-zero);
+    font-family:var(--doc-mono);font-size:12px;color:var(--accent-gold);font-weight:600;padding-top:3px;
+  }
+  .case-how-steps b{color:var(--ink-primary);font-weight:600}
+
+  /* ---------- premissas do método ---------- */
+  .case-method{padding:0 0 72px;border-top:none}
+  .method{
+    display:grid;grid-template-columns:1fr;gap:1px;
+    background:var(--rule);border:1px solid var(--rule);
+  }
+  .method > div{background:var(--bg-elevated);padding:20px 22px}
+  @media (min-width:620px){ .method{grid-template-columns:repeat(2,1fr)} }
+  @media (min-width:980px){ .method{grid-template-columns:repeat(3,1fr)} }
+  .method h3{
+    font-family:var(--doc-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-gold);margin-bottom:8px;font-weight:600;
+  }
+  .method p{margin:0;font-size:14px;color:var(--doc-ink-2);line-height:1.55}
+
+  /* ---------- escopo (stack) ---------- */
+  .case-stack{padding:0 0 64px;border-top:none}
+  .section-label{
+    font-family:var(--doc-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-muted);margin:0 0 14px;
+  }
+  .stack{display:flex;flex-direction:column;gap:3px}
+  .stack-row{
+    display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:center;
+    padding:10px 16px;background:var(--bg-elevated);border:1px solid var(--rule);font-size:14px;
+  }
+  .stack-row a{color:var(--ink-primary);text-decoration:none}
+  .stack-row a:hover{color:var(--brand-deep);text-decoration:underline;text-decoration-color:var(--accent-gold)}
+  .stack-row.out{opacity:.55;background:transparent;border-style:dashed}
+  .stack-row.head{
+    background:transparent;border:none;padding-block:12px 2px;
+    font-family:var(--doc-mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--accent-gold);grid-template-columns:1fr;
+  }
+  .stack-num{font-family:var(--doc-mono);font-size:12px;color:var(--brand-deep);font-weight:600}
+  .stack-count{font-family:var(--doc-mono);font-size:11.5px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+
+  /* ---------- toolbar ---------- */
+  .toolbar{
+    position:sticky;top:73px;z-index:20;
+    background:rgba(245,242,236,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:12px 0;
+  }
+  .toolbar .container{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+  #q{
+    flex:1 1 240px;min-width:0;font:inherit;font-size:14px;padding:9px 12px;
+    background:var(--bg-elevated);border:1px solid var(--doc-rule-strong);color:var(--ink-primary);border-radius:2px;
+  }
+  #q:focus{outline:2px solid var(--brand-deep);outline-offset:1px}
+  .navpills{display:flex;flex-wrap:wrap;gap:4px}
+  .navpills a{
+    font-family:var(--doc-mono);font-size:11.5px;text-decoration:none;padding:5px 9px;
+    border:1px solid var(--doc-rule-strong);color:var(--doc-ink-2);border-radius:2px;
+  }
+  .navpills a:hover{border-color:var(--brand-deep);color:var(--brand-deep)}
+  .navpills a:focus-visible{outline:2px solid var(--brand-deep);outline-offset:1px}
+  #hits{font-family:var(--doc-mono);font-size:11.5px;color:var(--ink-muted)}
+
+  /* ---------- camadas ---------- */
+  .case-layers{padding:0 0 40px;border-top:none}
+  .cl-layer{padding:56px 0 0;border-top:1px solid var(--rule)}
+  .cl-layer:first-of-type{border-top:none;padding-top:40px}
+  .cl-layer-head{display:flex;gap:20px;align-items:baseline;flex-wrap:wrap}
+  .cl-layer-numeral{
+    font-family:var(--serif);font-size:44px;font-weight:600;color:var(--accent-gold);
+    line-height:1;font-variant-numeric:tabular-nums;
+  }
+  .cl-layer h2{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;letter-spacing:-.01em}
+  .cl-layer-purpose{margin:14px 0 0;color:var(--doc-ink-2);max-width:76ch;font-size:15px;line-height:1.65}
+  .domains{margin-top:28px;display:flex;flex-direction:column;gap:22px;min-width:0}
+  .domains > *{min-width:0}
+  .domain{padding:0;border:1px solid var(--rule);background:var(--bg-elevated)}
+  .domain-head{
+    display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;
+    padding:14px 18px;border-bottom:1px solid var(--rule);background:var(--doc-surface-2);
+  }
+  .domain-code{font-family:var(--doc-mono);font-size:11.5px;font-weight:600;color:var(--accent-gold);letter-spacing:.04em}
+  .domain-name{font-weight:600;font-size:15px;color:var(--ink-primary)}
+  .domain-note{font-size:12.5px;color:var(--ink-muted);flex:1 1 100%;margin:0;line-height:1.45}
+  .srcchips{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+  .srcchip{
+    font-family:var(--doc-mono);font-size:10px;letter-spacing:.04em;text-decoration:none;
+    color:var(--brand-deep);border:1px solid var(--doc-rule-strong);border-radius:2px;padding:1px 5px;
+    background:var(--bg-elevated);white-space:nowrap;
+  }
+  .srcchip:hover{border-color:var(--brand-deep)}
+  .srcchip:focus-visible{outline:2px solid var(--brand-deep);outline-offset:1px}
+  .ents{list-style:none;margin:0;padding:0}
+  .ent{
+    display:grid;grid-template-columns:70px minmax(150px,1fr) minmax(0,2.2fr);gap:4px 16px;
+    padding:9px 18px;border-top:1px solid var(--rule);align-items:baseline;
+  }
+  .ent:first-child{border-top:none}
+  .ent-code{font-family:var(--doc-mono);font-size:11px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+  .ent-name{font-weight:500;font-size:14px;line-height:1.4;color:var(--ink-primary);overflow-wrap:anywhere}
+  .ent-desc{font-size:13.2px;color:var(--doc-ink-2);line-height:1.45;overflow-wrap:anywhere}
+  .tag{
+    display:inline-block;font-family:var(--doc-mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    padding:1px 6px;border:1px solid currentColor;border-radius:2px;margin-left:8px;vertical-align:1px;white-space:nowrap;
+  }
+  .t-ok{color:var(--doc-ok)}
+  .t-warn{color:var(--doc-warn)}
+  .t-stop{color:var(--doc-stop)}
+  .t-info{color:var(--brand-deep)}
+
+  /* ---------- ressalvas e referência cruzada ---------- */
+  .case-notes{padding:64px 0 96px;border-top:3px solid var(--accent-gold)}
+  .case-notes h2{font-family:var(--serif);font-size:28px;font-weight:600;margin-bottom:14px}
+  .case-notes h3{font-size:14px;margin:30px 0 10px;font-weight:600;color:var(--ink-primary)}
+  .case-notes ul{margin:0;padding-left:20px;color:var(--doc-ink-2);font-size:14px}
+  .case-notes li{margin-bottom:7px;line-height:1.55}
+  .case-notes p{color:var(--doc-ink-2);font-size:14.5px;max-width:80ch;line-height:1.65}
+  .xref{margin-top:14px;overflow-x:auto}
+  table.xr{border-collapse:collapse;width:100%;min-width:720px;font-size:12.8px}
+  table.xr th{
+    text-align:left;font-family:var(--doc-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-muted);font-weight:500;border-bottom:1px solid var(--doc-rule-strong);padding:0 14px 8px 0;vertical-align:bottom;
+  }
+  table.xr td{border-bottom:1px solid var(--rule);padding:10px 14px 10px 0;vertical-align:top;color:var(--doc-ink-2)}
+  table.xr tr:target td{background:#F3EBDD}
+  .xr-id{font-family:var(--doc-mono);font-size:11.5px;font-weight:600;color:var(--accent-gold);white-space:nowrap}
+  .xr-title{color:var(--ink-primary);font-weight:500}
+  .xr-title a{color:inherit;text-decoration-color:var(--doc-rule-strong)}
+  .xr-meta{display:block;font-size:11.5px;color:var(--ink-muted);margin-top:3px}
+  .xr-doms{font-family:var(--doc-mono);font-size:11px;line-height:1.9;color:var(--ink-muted)}
+  .xr-doms a{text-decoration:none;color:var(--doc-ink-2);border-bottom:1px solid var(--doc-rule-strong)}
+  .xr-doms a:hover{color:var(--brand-deep);border-color:var(--brand-deep)}
+  .xr-n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+  .colophon{
+    margin-top:44px;padding-top:18px;border-top:1px solid var(--rule);
+    font-family:var(--doc-mono);font-size:11px;color:var(--ink-muted);line-height:1.9;
+  }
+
+  /* ---------- cta ---------- */
+  .case-cta{padding:72px 0;background:var(--bg-elevated)}
+  .case-cta .section-lead{margin-bottom:28px}
+  .case-cta-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+  .hidden{display:none !important}
+
+  @media (max-width:980px){
+    .case-hero-grid{grid-template-columns:1fr}
+    .case-how-grid{grid-template-columns:1fr;gap:32px}
+    .case-meta{white-space:normal}
+  }
+  @media (max-width:760px){
+    .case-hero{padding:64px 0 40px}
+    .ent{grid-template-columns:56px minmax(0,1fr)}
+    .ent-desc{grid-column:1 / -1;padding-left:0}
+    .ent-code{font-size:10px}
+    .stack-row{grid-template-columns:48px minmax(0,1fr)}
+    .stack-count{grid-column:2;justify-self:start}
+    .toolbar{top:0}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="case-doc">
+
+<header>
+  <div class="container nav">
+    <a href="/" class="logo">Clara<span>/</span>EA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/#framework">Framework</a></li>
+        <li><a href="/ClaraEA-CMDB.html">EA/CMDB</a></li>
+        <li><a href="/#casos-mercado" class="current">Casos</a></li>
+        <li><a href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="https://cmdb-app-shell.onrender.com" class="btn btn-outline btn-sm btn-login">Entrar</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="case-hero">
+  <div class="container">
+    <div class="case-hero-grid">
+      <div>
+        <p class="section-eyebrow">Caso de Mercado · IA Agêntica · Camadas 0–VIII</p>
+        <h1 class="section-title">Itaú Unibanco sob o método Clara/EA</h1>
+        <p class="section-lead">Mapeamento das oito camadas de arquitetura de negócios do conglomerado Itaú Unibanco Holding S.A., mais os direcionadores estratégicos, com as entidades de cada camada agrupadas internamente por domínios. Construído exclusivamente a partir de divulgação pública, com rastreabilidade domínio a domínio: cada bloco indica no cabeçalho os códigos das fontes que o sustentam, e a <a href="#xref">referência cruzada no rodapé</a> percorre o caminho inverso, de cada fonte para todos os domínios que dela derivam.</p>
+      </div>
+      <div class="case-meta">
+        Framework <b>Clara/EA</b><br>
+        Sujeito <b>Itaú Unibanco Holding S.A.</b><br>
+        CNPJ <b>60.872.504/0001-23</b><br>
+        Data-base <b>30/06/2026</b> (2T26)<br>
+        Societário <b>31/12/2025</b> (Pilar 3 4T25)<br>
+        Elaborado <b>12/09/2026</b><br>
+        Escopo <b>9 camadas · 83 domínios · 472 entidades</b><br>
+        Fontes <b>16 rastreadas</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FOI PRODUZIDO -->
+<section class="case-how">
+  <div class="container">
+    <div class="case-how-grid">
+      <div>
+        <p class="section-eyebrow">Como este caso foi produzido</p>
+        <h2 class="section-title" style="font-size: clamp(28px,3.4vw,40px);">O framework como instrução para agentes de IA</h2>
+        <p>Este documento não foi escrito à mão nem a partir de acesso privilegiado. Foi produzido por um agente de IA (Claude, via Claude Code) que recebeu o Clara/EA — princípios, camadas e regra de agrupamento por domínios — como método de trabalho, e a divulgação pública do Itaú Unibanco como único material de entrada.</p>
+        <p>O resultado demonstra uma propriedade do framework que importa mais do que o retrato de um banco: por ser universal, recursivo e explícito sobre o que cada camada contém, o Clara/EA funciona como especificação operável por agentes. O mesmo processo pode ser aplicado a qualquer organização com divulgação suficiente — ou, dentro de uma empresa, às suas fontes internas, alimentando diretamente o <a href="/ClaraEA-CMDB.html">EA/CMDB</a>.</p>
+      </div>
+      <ol class="case-how-steps">
+        <li><span><b>Instrução.</b> O agente recebe o manifesto, os cinco princípios e a definição das treze camadas do Clara/EA como método — não como tema.</span></li>
+        <li><span><b>Apuração.</b> Coleta orientada em fontes primárias: Form 20-F, Formulário de Referência, Pilar 3, Análise Gerencial, comunicados ao mercado, portais de RI e de produto.</span></li>
+        <li><span><b>Instanciação.</b> Cada camada é povoada com entidades reais; dentro da camada, o agente agrupa por semelhança de atributo, processo ou relacionamento (princípio III), sem reproduzir organograma.</span></li>
+        <li><span><b>Rastreabilidade.</b> Todo domínio carrega os códigos das fontes que o sustentam; a tabela final percorre o caminho inverso. Fontes secundárias ficam isoladas para sinalizar carência de confirmação primária.</span></li>
+        <li><span><b>Marcadores de estado.</b> Entidades em transição ou encerradas recebem etiqueta (princípio V), para que o modelo registre movimento, não apenas retrato.</span></li>
+        <li><span><b>Revisão editorial.</b> Ressalvas, limites de escopo e pontos que exigem verificação antes de uso externo são declarados abertamente no rodapé do documento.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- PREMISSAS DO MÉTODO -->
+<section class="case-method">
+  <div class="container">
+    <p class="section-label">Premissas do método aplicadas</p>
+    <div class="method" aria-label="Premissas do método">
+      <div>
+        <h3>I · Universalidade</h3>
+        <p>O mesmo conjunto de camadas descreve uma startup e um conglomerado. Aqui ele é instanciado num conglomerado prudencial S1 com 18 países de presença.</p>
+      </div>
+      <div>
+        <h3>II · Hierarquia recursiva</h3>
+        <p>Cada camada se decompõe em domínios e estes em entidades. A codificação <code>V.08.03</code> lê-se camada V, domínio 08, entidade 03.</p>
+      </div>
+      <div>
+        <h3>III · Domínios</h3>
+        <p>Dentro de cada camada as entidades foram agrupadas por semelhança de atributo, processo ou relacionamento — não pela estrutura de reporte do banco.</p>
+      </div>
+      <div>
+        <h3>IV · Materialização</h3>
+        <p>Este documento é a projeção legível de um grafo: cada entidade é nó, cada domínio é um agrupamento e as camadas ligam negócio a tecnologia.</p>
+      </div>
+      <div>
+        <h3>V · Evolução</h3>
+        <p>Entidades trazem marcadores de estado — <span class="tag t-warn">verificar</span> e <span class="tag t-stop">encerrado</span> — para que o modelo registre movimento, não apenas retrato.</p>
+      </div>
+      <div>
+        <h3>Lei de Conway</h3>
+        <p>A premissa-raiz: estrutura condiciona resultado. As camadas VII e VIII são, por isso, as que melhor predizem a forma da arquitetura de sistemas do grupo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCOPO -->
+<section class="case-stack">
+  <div class="container">
+    <p class="section-label">Escopo — as nove camadas mapeadas</p>
+    <div class="stack" id="stack"></div>
+  </div>
+</section>
+
+<!-- FILTRO -->
+<div class="toolbar">
+  <div class="container">
+    <input id="q" type="search" placeholder="Filtrar entidades, domínios e camadas…" aria-label="Filtrar entidades">
+    <span id="hits"></span>
+    <nav class="navpills" id="navpills" aria-label="Ir para camada"></nav>
+  </div>
+</div>
+
+<!-- CAMADAS -->
+<section class="case-layers">
+  <div class="container">
+    <main id="layers"></main>
+  </div>
+</section>
+
+<!-- RESSALVAS E RASTREABILIDADE -->
+<section class="case-notes" id="xref">
+  <div class="container">
+    <h2>Ressalvas e rastreabilidade</h2>
+    <p>Todo modelo de arquitetura feito de fora tem fronteira de evidência. Estas são as deste.</p>
+
+    <h3>Limites de escopo</h3>
+    <ul>
+      <li>O escopo é <strong>exclusivamente a arquitetura de negócios</strong>. As camadas IX a XIII — soluções, dados, tecnologia, infraestrutura e segurança da informação — ficaram de fora por decisão de escopo, reforçada pela ausência de divulgação pública que permitisse instanciá-las com entidades reais. O que existe publicamente sobre tecnologia foi alocado na camada VII, como modelo de trabalho.</li>
+      <li>Os direcionadores estratégicos (camada 0) foram reconstruídos a partir de metas e compromissos divulgados. A redação oficial de propósito, visão e valores <strong>não foi confirmada em fonte primária</strong> nesta apuração e por isso não é citada literalmente.</li>
+      <li>O agrupamento em domínios é uma escolha analítica, derivada do princípio III do framework. Não reproduz nenhum organograma ou taxonomia interna do banco.</li>
+    </ul>
+
+    <h3>Pontos que exigem verificação antes de uso externo</h3>
+    <ul>
+      <li><strong>Banco Itaú BBA S.A. não existe mais como entidade legal autônoma</strong> — cisão total aprovada em AGE de 30/11/2023 e homologada pelo BACEN em 16/05/2024. "Itaú BBA" permanece como marca e segmento. Confirmar antes de qualquer uso societário.</li>
+      <li><strong>Composição do Conselho de Administração</strong>: a página de RI retornou apenas um copresidente na extração. Validar na ata da AGO mais recente.</li>
+      <li><strong>Participação residual em XP Inc.</strong>: ausente das listas do Pilar 3 4T25; última confirmação pública é de ~1,5% em ações Classe B (ago/2024). Confirmar na nota de investimentos.</li>
+      <li><strong>Ank Platform S.A. e FC Recovery S.A.U.</strong> (Argentina, 100%) seguem consolidadas apesar da venda da operação argentina ao Banco Macro em nov/2023. Finalidade atual não apurada.</li>
+      <li><strong>Escritórios em Madri, Dubai, Xangai e Hong Kong</strong>: sem confirmação em fontes de 2025–2026 e sem entidade legal correspondente. Tratados como não existentes neste mapa.</li>
+      <li><strong>Políticas corporativas</strong>: várias exigidas por norma (continuidade, nuvem, Res. 4.539/4.949, Ouvidoria, partes relacionadas, remuneração) não foram localizadas como documento público autônomo — a página "Regulamentos e Políticas" do RI retornou HTTP 403. Estão marcadas como não confirmadas.</li>
+      <li><strong>Total de colaboradores</strong>: 90.429 é o consolidado do 2T26 (Análise Gerencial). O número de 82.693 circulado em fev/2026 refere-se apenas ao Brasil e vem de fonte sindical.</li>
+    </ul>
+
+    <h3>Referência cruzada — rastreabilidade de conteúdo</h3>
+    <p>Cada domínio das oito camadas carrega, no próprio cabeçalho, o código das fontes que o sustentam; o código leva a esta tabela. Aqui o caminho é o inverso: de cada fonte para todos os domínios que dela derivam. Fontes secundárias estão isoladas em <strong>S15</strong> — onde ela aparece sozinha, o conteúdo carece de confirmação primária.</p>
+    <div class="xref">
+      <table class="xr">
+        <thead>
+          <tr>
+            <th>Cód.</th>
+            <th>Fonte, natureza e data-base</th>
+            <th>Domínios rastreados</th>
+            <th class="xr-n">Qtd.</th>
+          </tr>
+        </thead>
+        <tbody id="xrefbody"></tbody>
+      </table>
+    </div>
+
+    <p class="colophon">
+      Mapeamento Clara/EA conduzido por Marcelo Clara com apoio de IA agêntica (Claude Code) · 12 de setembro de 2026<br>
+      Documento analítico independente, construído sobre divulgação pública. Não é material do Itaú Unibanco Holding S.A. nem endossado por ele.<br>
+      Números financeiros com data-base 30/06/2026; composição societária com data-base 31/12/2025.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="case-cta">
+  <div class="container">
+    <p class="section-eyebrow">Próximo passo</p>
+    <h2 class="section-title" style="font-size: clamp(28px,3.4vw,40px);">A mesma leitura, aplicada à sua organização</h2>
+    <p class="section-lead">O que aqui foi feito de fora, com divulgação pública, pode ser feito de dentro — com fontes internas, entidades verificadas e o resultado materializado no EA/CMDB. Para uma demonstração ou uma conversa sobre o método, escreva diretamente.</p>
+    <div class="case-cta-actions">
+      <a href="mailto:contato@claraea.com.br" class="btn btn-primary">contato@claraea.com.br</a>
+      <a href="/#casos-mercado" class="btn btn-outline">Voltar aos casos</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="logo">Clara<span>/</span>EA</a>
+        <p class="footer-tagline">Arquitetura corporativa que conecta estratégia, negócios e tecnologia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Framework</h4>
+        <ul>
+          <li><a href="/#framework">Camadas</a></li>
+          <li><a href="/#manifesto">Manifesto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ferramenta</h4>
+        <ul>
+          <li><a href="/ClaraEA-CMDB.html">EA/CMDB</a></li>
+          <li><a href="/ClaraEA-CMDB.html#compare">Comparativo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sobre</h4>
+        <ul>
+          <li><a href="/ClaraEA-Autor.html">Autor</a></li>
+          <li><a href="/#casos-mercado">Casos</a></li>
+          <li><a href="https://www.linkedin.com/in/maclara/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:contato@claraea.com.br">contato@claraea.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Marcelo Andrade Clara. Todos os direitos reservados.</div>
+      <div>Documento em português</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const STACK = [
+  {h:"Direcionadores estratégicos"},
+  {n:"0", t:"Missão, Visão e Valores", id:"c0", inn:true},
+  {h:"Arquitetura de negócios — escopo deste documento"},
+  {n:"I", t:"Mercado, Segmento e Nicho", id:"c1", inn:true},
+  {n:"II", t:"Marca", id:"c2", inn:true},
+  {n:"III", t:"Canais de Distribuição e Atendimento", id:"c3", inn:true},
+  {n:"IV", t:"Produtos e Serviços", id:"c4", inn:true},
+  {n:"V", t:"Veículos Legais", id:"c5", inn:true},
+  {n:"VI", t:"Políticas, Normas e Procedimentos", id:"c6", inn:true},
+  {n:"VII", t:"Estrutura, Papéis e Responsabilidades", id:"c7", inn:true},
+  {n:"VIII", t:"Métricas de Gestão e Controle", id:"c8", inn:true},
+  {h:"Arquitetura de tecnologia"},
+  {n:"IX–XIII", t:"Soluções, Dados, Tecnologia, Infraestrutura e Segurança da Informação", note:"fora do escopo"}
+];
+
+/* ---------- registro de fontes ---------- */
+const SOURCES = [
+ {id:"S1", t:"Clara/EA — framework, manifesto e princípios", meta:"Método · claraea.com.br · consultado em 12/09/2026", u:"https://www.claraea.com.br/", method:true},
+ {id:"S2", t:"Form 20-F FY2025", meta:"SEC · protocolado 30/04/2026 · data-base 31/12/2025", u:"https://www.sec.gov/Archives/edgar/data/1132597/000113259726000132/itub-20251231.htm"},
+ {id:"S3", t:"Formulário de Referência 2025, versão 3", meta:"CVM/SEC · arquivado 06/08/2026 · data-base 31/12/2025", u:"https://www.sec.gov/Archives/edgar/data/1132597/000113259726000222/referenceform-iuhv32025.htm"},
+ {id:"S4", t:"Gerenciamento de Riscos e Capital — Pilar 3, 4T25", meta:"Itaú RI · data-base 31/12/2025", u:"https://filemanager-cdn.mziq.com/published/42787847-4cf6-4461-94a5-40ed237dca33/970c7455-195a-439f-aa33-e08321f5d8c1_gerenciamento_de_riscos_e_capital_pilar_3_4t25.pdf"},
+ {id:"S5", t:"Análise Gerencial da Operação — 2T26", meta:"Itaú RI · data-base 30/06/2026", u:"https://www.itau.com.br/relacoes-com-investidores/en/results-and-reports/results-center/"},
+ {id:"S6", t:"Análise Gerencial da Operação — 4T25", meta:"Itaú RI · data-base 31/12/2025", u:"https://filemanager-cdn.mziq.com/published/42787847-4cf6-4461-94a5-40ed237dca33/fb7d9580-424d-47aa-924e-8cf202975d59_itau_unibanco_holding_s.a..pdf"},
+ {id:"S7", t:"Comunicado ao Mercado — Resultado do 2º trimestre de 2026", meta:"Itaú RI · 05/08/2026", u:"https://www.itau.com.br/relacoes-com-investidores/en/results-and-reports/results-center/"},
+ {id:"S8", t:"Fato Relevante — Guidance 2026", meta:"04/02/2026, revisado em 05/08/2026", u:"https://www.prnewswire.com/news-releases/itau-unibanco---material-fact-guidance-2026-302679576.html"},
+ {id:"S9", t:"US Resolution Plan 165(d), Public Section", meta:"Federal Reserve e FDIC · jun/2025", u:"https://www.federalreserve.gov/supervisionreg/resolution-plans/itau-unibc-3g-20250701.pdf"},
+ {id:"S10", t:"Estrutura Administrativa", meta:"Itaú RI · consultado em 12/09/2026", u:"https://www.itau.com.br/relacoes-com-investidores/en/administrative-structure/"},
+ {id:"S11", t:"Políticas Corporativas — portal Integridade e Ética", meta:"Itaú RI · consultado em 12/09/2026", u:"https://www.itau.com.br/relacoes-com-investidores/integridade/en/corporate-policies/"},
+ {id:"S12", t:"Itaúsa — Composição Acionária", meta:"Itaúsa RI · posição 29/05/2026", u:"https://ri.itausa.com.br/en/corporate-governance/ownership-structure/"},
+ {id:"S13", t:"Itaú Day 2025 — comunicado e materiais", meta:"02/09/2025", u:"https://www.prnewswire.com/br/comunicados-para-a-imprensa/itau-unibanco---itau-day-2025-302524873.html"},
+ {id:"S14", t:"Sites de produto, atendimento e empresas do grupo", meta:"itau.com.br, itaubba, ion.itau, userede, devportal · consultados em 12/09/2026", u:"https://www.itau.com.br/relacoes-com-investidores/resultados-e-relatorios/empresas-do-grupo/"},
+ {id:"S15", t:"Imprensa especializada e comunicados de terceiros", meta:"Fonte secundária — usada só onde não há fonte primária acessível; datas citadas na entidade", u:"https://www.itau.com.br/relacoes-com-investidores/", weak:true},
+ {id:"S16", t:"Sustainable Finance Framework e Relatório Climático", meta:"Itaú RI · publicação periódica", u:"https://www.itau.com.br/relacoes-com-investidores/"}
+];
+
+/* ---------- rastreabilidade: domínio → fontes ---------- */
+const SRCMAP = {
+ "0.01":["S13","S8"], "0.02":["S13","S5","S15"], "0.03":["S16","S15"], "0.04":["S3","S12","S4"],
+ "I.01":["S3","S2"], "I.02":["S3"], "I.03":["S3","S2"], "I.04":["S3","S2","S5"],
+ "I.05":["S2","S3","S9","S15"], "I.06":["S3","S2"], "I.07":["S4","S3","S9"], "I.08":["S3"],
+ "II.01":["S3"], "II.02":["S3","S14"], "II.03":["S3","S15"], "II.04":["S3","S14","S15"],
+ "II.05":["S3","S2","S14"], "II.06":["S3","S14"], "II.07":["S14","S13","S15"], "II.08":["S14"], "II.09":["S3","S15"],
+ "III.01":["S5","S2"], "III.02":["S5","S2"], "III.03":["S5","S2","S15"], "III.04":["S14"],
+ "III.05":["S14"], "III.06":["S5","S2","S15"], "III.07":["S14"], "III.08":["S3","S4","S14"], "III.09":["S14","S13"],
+ "IV.01":["S14"], "IV.02":["S5","S3","S14"], "IV.03":["S5","S2","S3"], "IV.04":["S5","S14"],
+ "IV.05":["S5","S14"], "IV.06":["S5","S2","S3"], "IV.07":["S5","S3","S14"], "IV.08":["S14"],
+ "IV.09":["S5","S2","S3"], "IV.10":["S3","S14"], "IV.11":["S14","S4"], "IV.12":["S14","S13"], "IV.13":["S4"],
+ "V.01":["S3","S12","S2"], "V.02":["S4","S6"], "V.03":["S4"], "V.04":["S4"], "V.05":["S4","S3","S6"],
+ "V.06":["S4"], "V.07":["S4"], "V.08":["S4","S3","S15"], "V.09":["S4"], "V.10":["S4","S2","S15"],
+ "V.11":["S4","S9"], "V.12":["S4","S9"], "V.13":["S4","S15"], "V.14":["S4"], "V.15":["S14","S15"],
+ "VI.01":["S11"], "VI.02":["S4","S11","S9"], "VI.03":["S4","S11","S2"], "VI.04":["S11","S4"],
+ "VI.05":["S14","S11"], "VI.06":["S11","S3"], "VI.07":["S11","S14"], "VI.08":["S16","S15"], "VI.09":["S4","S3"],
+ "VII.01":["S10","S15"], "VII.02":["S10"], "VII.03":["S10"], "VII.04":["S10"], "VII.05":["S4"],
+ "VII.06":["S13","S15"], "VII.07":["S5","S2"],
+ "VIII.01":["S7","S5","S6"], "VIII.02":["S7","S5","S6"], "VIII.03":["S7","S5"], "VIII.04":["S4"], "VIII.05":["S4"],
+ "VIII.06":["S7","S5"], "VIII.07":["S13","S2","S5","S15"], "VIII.08":["S15","S16"], "VIII.09":["S8","S7","S6"]
+};
+
+const L = [
+{
+ id:"c0", num:"0", title:"Direcionadores Estratégicos",
+ purpose:"A camada que condiciona todas as demais. Como a redação oficial de propósito, visão e valores não foi confirmada em fonte primária nesta apuração, os direcionadores foram instanciados pelos compromissos e metas que o banco efetivamente divulgou — que é o que o framework precisa para amarrar as camadas abaixo.",
+ domains:[
+  {code:"0.01", name:"Ambição de performance", note:"Metas quantitativas de longo prazo declaradas no Itaú Day 2025 (02/09/2025).", ents:[
+    ["Dobrar a carteira de varejo até 2030","Com ROE do varejo projetado entre 25% e 30%."],
+    ["Multiplicar a carteira PJ por 2 a 3 vezes até 2030",""],
+    ["Índice de eficiência próximo de 30% até 2030","Partindo de 38,8% no 2T25; 37,4% no 2T26."],
+    ["Custo de capital próprio de ~15% a.a.","Premissa de gestão declarada no Guidance 2026."]
+  ]},
+  {code:"0.02", name:"Ambição digital e de experiência", note:"Direcionadores que governam as camadas III e IV.", ents:[
+    ["75% dos atendimentos do varejo em canal digital em 3 anos","Meta declarada no Itaú Day 2025."],
+    ["One Itaú como plataforma única","Unificação de sete apps concluída em jan/2026 com 99,3% de adesão.","ok"],
+    ["NPS acima de 80 no app","Alta renda e One Itaú; Itaú Empresas acima de 70."],
+    ["Meta de 1 milhão de maquininhas laranjinha em operação até 2027",""]
+  ]},
+  {code:"0.03", name:"Compromissos ASG e climáticos", note:"Direcionadores que governam as camadas VI e VIII.", ents:[
+    ["R$ 1 trilhão em finanças sustentáveis até 31/12/2030","Anunciado em 04/11/2024; amplia a meta original de R$ 400 bi, atingida um ano antes do prazo."],
+    ["Net-Zero até 2050","Adesão à Net-Zero Banking Alliance.","warn"],
+    ["Sustainable Finance Framework","Documento público que define o que se qualifica como finança sustentável."]
+  ]},
+  {code:"0.04", name:"Direcionadores de governança", note:"Restrições permanentes que a estrutura de controle impõe à estratégia.", ents:[
+    ["Controle familiar compartilhado","IUPAR 50/50 entre Itaúsa (Egydio de Souza Aranha) e Cia. E. Johnston (Moreira Salles), por acordo de acionistas."],
+    ["Dupla listagem B3 e NYSE","Sujeição simultânea a CVM e SEC; ADR Nível II desde 21/02/2002."],
+    ["Enquadramento Segmento 1 (S1) do BACEN","D-SIB: adicional sistêmico de 1,0% e obrigação de PRSO."]
+  ]}
+ ]
+},
+{
+ id:"c1", num:"I", title:"Mercado, Segmento e Nicho",
+ purpose:"O contexto externo: onde o conglomerado compete, quem ele atende, sob que regime responde e contra quem. Esta camada é a única inteiramente exógena — o banco a lê, não a define.",
+ domains:[
+  {code:"I.01", name:"Segmentos de reporte gerencial", note:"Estrutura vigente desde o 1T2015. Receita operacional líquida 2025: R$ 167.780 mi.", ents:[
+    ["Banco de Varejo","PF e micro/pequenas e médias empresas. Receita 2025: R$ 112.204 mi."],
+    ["Banco de Atacado","Middle market, agro, grandes empresas, banco de investimento, gestão de recursos, serviços a investidores, private banking, unidades externas. Receita 2025: R$ 62.620 mi."],
+    ["Atividades com Mercado + Corporação","Excesso de capital e de dívida subordinada, créditos tributários, margem com o mercado, tesouraria. Receita 2025: R$ 9.569 mi."]
+  ]},
+  {code:"I.02", name:"Segmentos de cliente — pessoa física", note:"Cortes de renda e patrimônio conforme Formulário de Referência 2025.", ents:[
+    ["Itaú (varejo tradicional)","Renda mensal até R$ 7 mil."],
+    ["Itaú Uniclass","Renda mensal entre R$ 7 mil e R$ 15 mil — mass affluent."],
+    ["Itaú Personnalité","Renda acima de R$ 15 mil/mês ou investimentos acima de R$ 250 mil."],
+    ["Itaú Private Bank","Alta e ultra-alta renda. Alocado no Atacado. 31,1% de market share; 14 escritórios no Brasil, mais Miami e Zurique."]
+  ]},
+  {code:"I.03", name:"Segmentos de cliente — pessoa jurídica e institucional", note:"Corte principal em R$ 50 milhões de faturamento anual.", ents:[
+    ["Itaú Empresas","Faturamento anual até R$ 50 mi. Mais de 1,6 milhão de clientes. Segmento Varejo."],
+    ["Middle market e agronegócio","Atacado."],
+    ["Grandes empresas / corporate","Faturamento anual igual ou superior a R$ 50 mi."],
+    ["Infraestrutura e utilities","Vertical dedicada dentro do Atacado."],
+    ["Clientes institucionais","Fundos, seguradoras, RPPS, gestores — atendidos por Wealth Management & Services."]
+  ]},
+  {code:"I.04", name:"Nichos e verticais setoriais", note:"Recortes em que o grupo mantém proposta e time dedicados.", ents:[
+    ["Agronegócio","Vertical do Atacado, com FIDC dedicado (Angico)."],
+    ["Infraestrutura e energia","Inclui comercialização de energia como atividade própria."],
+    ["Imobiliário","26,3% de share em novas concessões de crédito imobiliário PF (2025)."],
+    ["Veículos","Carteira PF de R$ 35,1 bi (jun/26); marketplace próprio iCarros."],
+    ["Tecnologia, multinacionais e instituições financeiras","Verticais de cobertura do Itaú BBA."],
+    ["Microcrédito produtivo orientado","324,4 mil clientes ativos e 380,3 mil contratos (2025)."],
+    ["Crédito estudantil","Via Pravaler S.A. (50,14%, não consolidada)."],
+    ["Crédito embarcado em ERP","Via Totvs Techfin S.A. (50%)."]
+  ]},
+  {code:"I.05", name:"Mercados geográficos", note:"18 países e territórios de presença declarada (20-F FY2025).", ents:[
+    ["Brasil","Mercado-núcleo. 1.663 agências e 298 PABs em jun/26."],
+    ["Chile","67,42% do Banco Itaú Chile. 5º maior banco privado, 11,5% de share. 130 agências."],
+    ["Colômbia","Operação conduzida a partir do cluster chileno. 60 agências."],
+    ["Paraguai","3º maior banco privado, 16,0% de share em carteira. 29 agências."],
+    ["Uruguai","2º maior banco privado, 29,6% de share. Inclui OCA, maior emissor de cartões do país."],
+    ["Panamá","Veículo bancário sob o cluster colombiano."],
+    ["Estados Unidos","Oito entidades: Miami Branch, Edge Act, broker-dealers, Avenue."],
+    ["Reino Unido e Portugal","Itaú BBA International Plc e Itaú BBA Europe S.A."],
+    ["Suíça e Luxemburgo","Private banking internacional e veículo europeu."],
+    ["Bahamas e Ilhas Cayman","Liquidez internacional, trust e operações cross-border."],
+    ["Argentina","Operação vendida ao Banco Macro, fechamento em 03/11/2023. Restam duas entidades consolidadas.","stop"]
+  ]},
+  {code:"I.06", name:"Mercados de produto adjacentes", note:"Arenas competitivas distintas da bancária, com posição de mercado própria.", ents:[
+    ["Cartões de crédito","Líder: 21,4% de share em carteira e 24% em volume de compras (4T25)."],
+    ["Adquirência","Maior player do Brasil via Rede: 22,7% de share; R$ 1.025,4 bi processados em 2025."],
+    ["Seguros","4º do país — 8,5% incluindo Porto Seguro; 11,1% considerando apenas recorrentes."],
+    ["Previdência aberta","3º do país, 19,9% de share em provisões."],
+    ["Capitalização","4º do país, 11,1% de share."],
+    ["Gestão de recursos","Itaú Asset: R$ 1.236 bi sob gestão, 11,5% de share. Kinea: R$ 162 bi."],
+    ["Mercado de capitais","1º em assessoria de M&A, 2º em equity, líder em DCM (Dealogic/ANBIMA, dez/2025)."],
+    ["Serviços a investidores","17,2% em serviços fiduciários e 18,4% em custódia."],
+    ["Corretagem","3ª em volume de ações; R$ 246,8 bi negociados em 2025."],
+    ["Consórcio e câmbio","Ofertas ativas; participação de mercado não divulgada.","warn"],
+    ["Ativos virtuais","Entidade VASP própria constituída; regime da Lei 14.478/2022 em implementação.","warn"]
+  ]},
+  {code:"I.07", name:"Ambiente regulatório", note:"O conjunto de autoridades e regimes que delimita o espaço de manobra do conglomerado.", ents:[
+    ["CMN e BACEN","Autoridade máxima do SFN e supervisor prudencial. Enquadramento S1, D-SIB."],
+    ["CVM","Companhia aberta, gestores, corretoras e distribuidoras."],
+    ["SUSEP","Seguros, previdência aberta e capitalização."],
+    ["ANS","Itauseg Saúde, carteira em run-off."],
+    ["PREVIC e CNPC","Fundação Itaú Unibanco, entidade fechada de previdência complementar."],
+    ["SEC, NYSE, FINRA","Emissor estrangeiro (ITUB), broker-dealers e investment advisers nos EUA."],
+    ["Federal Reserve, OCC, FinCEN","Miami Branch, Edge Act, branch do Itaú Chile em NY, money transmitter."],
+    ["CMF, SFC, BCP, BCU","Reguladores bancários de Chile, Colômbia, Paraguai e Uruguai."],
+    ["PRA/FCA, Banco de Portugal, FINMA, CSSF, CIMA","Reino Unido, Portugal, Suíça, Luxemburgo e Cayman."],
+    ["Basileia III / Res. CMN 4.958","Requerimentos de capital, alavancagem, LCR e NSFR."],
+    ["SOX","Decorrente do registro como emissor na SEC."],
+    ["LGPD, Open Finance, Pix","Regimes de dados e de infraestrutura de pagamento instituídos pelo BACEN."],
+    ["CADE","Controle concorrencial de operações societárias (FIC/Investcred, Avenue).","warn"]
+  ]},
+  {code:"I.08", name:"Cenário competitivo", note:"Itaú, Bradesco e Santander somam 32,5% dos ativos bancários; estatais, 30,7% (dez/2025).", ents:[
+    ["Incumbentes de varejo","Caixa Econômica Federal, Banco do Brasil, Bradesco, Santander Brasil."],
+    ["Entrantes digitais","Nubank e Mercado Pago — pressão declarada em cartões, crédito e adquirência."],
+    ["Adquirência","Cielo, GetNet, PagSeguro, Stone."],
+    ["Banco de investimento","Bradesco BBI, BTG Pactual, XP, UBS BB, Morgan Stanley, J.P. Morgan, Merrill Lynch."]
+  ]}
+ ]
+},
+{
+ id:"c2", num:"II", title:"Marca",
+ purpose:"O portfólio de marcas é onde a estratégia de segmentação se torna visível ao mercado. A arquitetura do grupo é predominantemente de endosso — 'Itaú X' — com um conjunto restrito de marcas autônomas herdadas de aquisições, e um movimento nítido de consolidação sob a marca-mãe desde 2024.",
+ domains:[
+  {code:"II.01", name:"Marca-mãe e institucional", note:"", ents:[
+    ["Itaú","Marca-mãe e marca de face ao consumidor."],
+    ["Itaú Unibanco","Marca institucional e corporativa; razão social da holding. Resultado da fusão de 2008."]
+  ]},
+  {code:"II.02", name:"Marcas de segmento — pessoa física", note:"Endosso puro; a marca-mãe precede o qualificador de segmento.", ents:[
+    ["Itaú Uniclass","Mass affluent."],
+    ["Itaú Personnalité","Alta renda."],
+    ["Itaú Private Bank","Alta e ultra-alta renda."],
+    ["íon","Plataforma de investimentos. Marca autônoma endossada, operada pela Itaú Corretora."]
+  ]},
+  {code:"II.03", name:"Marcas de segmento — pessoa jurídica e atacado", note:"", ents:[
+    ["Itaú Empresas","PJ até R$ 50 mi de faturamento."],
+    ["Itaú BBA","Atacado, banco de investimento, tesouraria e institucionais. Endosso forte, com identidade quase autônoma — sobrevive à extinção da entidade legal homônima.","warn"]
+  ]},
+  {code:"II.04", name:"Marcas de pagamentos, cartões e adquirência", note:"Domínio de maior concentração de marcas autônomas — quase todas herdadas de aquisição — e o de maior movimentação atual.", ents:[
+    ["Rede","Adquirência. Marca independente, maior do Brasil."],
+    ["laranjinha / laranjinha+","Linha de terminais da Rede para micro e pequenas empresas."],
+    ["Itaucard","Cartões. Produtos em descontinuação gradual anunciada em set/2026, sem lista divulgada.","warn"],
+    ["Credicard","Cartões, adquirida em 2012–2013. App migrado ao super app; produtos em descontinuação gradual.","warn"],
+    ["Hipercard","Bandeira própria encerrada em 29–30/06/2025 após 57 anos; ~15 mi de clientes migrados para Mastercard. Sobrevive apenas como nome de produto.","stop"],
+    ["iti","Conta digital. Base migrada ao super app Itaú; marca sem comunicação autônoma.","warn"],
+    ["OCA","Cartões no Uruguai — maior emissor do país."],
+    ["Handy","Pagamentos e cobranças no Uruguai; participação elevada a 75% em mar/2025."],
+    ["Plexo","Facilitador de pagamentos no Uruguai; 100% adquirido em 2025."],
+    ["Resonet","Adquirência no Uruguai; participação levada a 100% em 2024."]
+  ]},
+  {code:"II.05", name:"Marcas de investimento e gestão", note:"", ents:[
+    ["Itaú Asset Management","Gestão de recursos."],
+    ["Kinea","Gestão de alternativos. Marca independente."],
+    ["Itaú Corretora","Corretagem de valores."],
+    ["Itaú Securities Services","Marca comercial de custódia, administração fiduciária e escrituração — sem CNPJ próprio.","info"],
+    ["Avenue","Investimentos no exterior para brasileiros. Marca independente; controle de 50,1% assumido no 1T26."],
+    ["Ideal","Corretora digital e infraestrutura de mercado; 50,10%."]
+  ]},
+  {code:"II.06", name:"Marcas de seguros, previdência e capitalização", note:"", ents:[
+    ["Itaú Seguros","Vida, acidentes pessoais, patrimonial, residencial, auto, viagem, celular, pet."],
+    ["Itaú Vida e Previdência","Previdência aberta — PGBL e VGBL."],
+    ["PIC","Títulos de capitalização."],
+    ["Itaú Corretora de Seguros","Corretagem, inclusive de produtos de terceiros."],
+    ["Porto Seguro","Coligada com 30,7% de participação — marca de terceiro, não do grupo.","info"],
+    ["Itauseg Saúde","Produto de saúde não mais comercializado.","stop"]
+  ]},
+  {code:"II.07", name:"Marcas de plataforma e tecnologia", note:"", ents:[
+    ["One Itaú","Nome do programa de unificação dos aplicativos, concluído em jan/2026."],
+    ["ia.i","Assistente de IA generativa dentro do super app."],
+    ["Itaú Shop","Marketplace dentro do app, com parceiros de varejo."],
+    ["Zup / StackSpot","Empresa de tecnologia do grupo e sua plataforma de engenharia com IA. Marca independente."],
+    ["iCarros","Marketplace automotivo."]
+  ]},
+  {code:"II.08", name:"Marcas institucionais e de investimento social", note:"Operam sob a Fundação Itaú, fora do perímetro financeiro.", ents:[
+    ["Fundação Itaú","Guarda-chuva do investimento social privado."],
+    ["Itaú Cultural","Cultura, pesquisa e mapeamento artístico."],
+    ["Itaú Social","Educação básica e equidade educacional."],
+    ["Itaú Educação e Trabalho","Educação profissional e inserção de jovens."],
+    ["Fundação Itaú Unibanco","Previdência complementar fechada dos colaboradores — entidade distinta da Fundação Itaú."],
+    ["Instituto Unibanco","Educação pública de ensino médio. Mantenedor formal atual não confirmado.","warn"]
+  ]},
+  {code:"II.09", name:"Marcas e alianças encerradas", note:"Registradas porque o princípio V exige que o modelo guarde o movimento, não só o estado.", ents:[
+    ["XP","Saída integral do capital concluída em 2024.","stop"],
+    ["Rappi / RappiCard","Aliança comercial no Chile encerrada em 27/12/2024; migração ao app do Itaú em jun/2025.","stop"],
+    ["Itaú Argentina","Marca vendida com a operação ao Banco Macro em nov/2023.","stop"],
+    ["Samsung Itaú","Cartão co-branded descontinuado; data exata não confirmada.","warn"]
+  ]}
+ ]
+},
+{
+ id:"c3", num:"III", title:"Canais de Distribuição e Atendimento",
+ purpose:"A camada em transformação mais rápida do conglomerado: a rede física caiu de 2.738 para 2.210 pontos em doze meses, enquanto mais de 99% das transferências e pagamentos já ocorrem em canal digital e 68% das novas contas nascem digitais. O correspondente bancário deixou de ser canal transacional e virou canal de originação.",
+ domains:[
+  {code:"III.01", name:"Rede física própria", note:"Posição em 30/06/2026 (Análise Gerencial 2T26).", ents:[
+    ["Agências físicas — Brasil","1.663 unidades (contra 1.817 no 1T26).","warn"],
+    ["Postos de Atendimento Bancário (PAB)","298 unidades."],
+    ["Rede América Latina e Itaú BBA","249 pontos; 240 agências e CSBs na LatAm ex-Brasil."],
+    ["Agências digitais","17 confirmadas na América Latina; quantidade no Brasil não divulgada.","warn"],
+    ["Escritórios de private banking","14 no Brasil, mais Miami e Zurique."]
+  ]},
+  {code:"III.02", name:"Autoatendimento", note:"", ents:[
+    ["Caixas eletrônicos próprios","11.822 terminais, incluindo PAEs e pontos em terceiros; exclui Banco24Horas."],
+    ["Rede Banco24Horas / TecBan","14.196 ATMs de parceria (2025). Participação de 28,75% na TecBan."]
+  ]},
+  {code:"III.03", name:"Canais digitais proprietários", note:"Sete aplicativos consolidados em um super app; migração concluída em jan/2026 com 99,3% de adesão.", ents:[
+    ["App Itaú (One Itaú)","Super app de pessoa física: conta, cartões, crédito, investimentos, seguros, Pix, ia.i e Itaú Shop."],
+    ["App Itaú Empresas","PJ. 97% das interações de pessoa jurídica foram digitais no 1T26."],
+    ["App e web íon","Plataforma de investimentos, mantida separada do super app."],
+    ["App Avenue","Investimentos internacionais, mantido separado."],
+    ["Internet banking e site","itau.com.br."]
+  ]},
+  {code:"III.04", name:"Canais remotos e assistidos", note:"", ents:[
+    ["Central de atendimento e SAC","0800 728 0728."],
+    ["Ouvidoria","0800 570 0011 — canal de segunda instância exigido por norma."],
+    ["WhatsApp por segmento","Linhas distintas para PF, Uniclass, Personnalité, Empresas e renegociação."],
+    ["Gerente digital — Uniclass Digital","Gerente especialista em agência digital, 9h às 18h, com agência física preservada."],
+    ["Agência digital Personnalité","Modelo equivalente para alta renda."],
+    ["Assessoria de investimentos","Itaú Assessoria e íon Assessoria, digital ou humana."]
+  ]},
+  {code:"III.05", name:"Canais de terceiros — originação de crédito", note:"O serviço transacional presencial dos correspondentes foi encerrado; restou a originação.", ents:[
+    ["Correspondentes — cartões","Propostas, pagamento de fatura, parcelamento."],
+    ["Correspondentes — imobiliário","Financiamento de imóveis novos e usados."],
+    ["Correspondentes — consignado","INSS e servidores públicos."],
+    ["Correspondentes — veículos","Financiamento de novos e usados."],
+    ["Correspondentes digitais","Lista própria publicada pelo banco."],
+    ["Concessionárias de veículos","Canal histórico de originação de CDC."],
+    ["Imobiliárias e construtoras","Originação de crédito habitacional."],
+    ["Corretores de seguros","Distribuição via Itaú Corretora de Seguros e rede Porto Seguro."],
+    ["Representantes de consórcio","Escritórios autorizados."]
+  ]},
+  {code:"III.06", name:"Canais de aceitação e pagamento", note:"Volume de adquirência de R$ 298,7 bi no 2T26, alta de 23,5% a/a.", ents:[
+    ["Terminais POS Rede","Incluindo laranjinha e laranjinha+, com aceitação de Pix, QR Code, débito e crédito."],
+    ["Link de pagamento","Cobrança sem terminal."],
+    ["E-commerce e gateway","Linha de produtos da Rede; detalhamento não acessível publicamente.","warn"],
+    ["Pix e QR Code","Aceitação em todos os pontos de captura."]
+  ]},
+  {code:"III.07", name:"Canais abertos e interoperáveis", note:"Canais que o banco não controla, mas nos quais precisa estar presente por norma ou por arranjo de mercado.", ents:[
+    ["Pix","Arranjo instituído e operado pelo BACEN."],
+    ["Open Finance","Participação confirmada; portal de APIs dedicado."],
+    ["Open Insurance","Citado no ambiente de seguros."],
+    ["Portal itaú for developers","APIs para empresas; catálogo completo não enumerável publicamente.","warn"],
+    ["CIP e TecBan","Infraestruturas de compensação e saque compartilhado, com participação societária."]
+  ]},
+  {code:"III.08", name:"Canais embarcados e de parceria", note:"Distribuição dentro do ambiente de um terceiro — o vetor de crescimento de crédito ao consumo.", ents:[
+    ["Itaú Shop","Marketplace no app, com Nike, Casas Bahia, Natura, Droga Raia; pagamento em cartão, Pontos Itaú ou Pix."],
+    ["FIC — GPA/Pão de Açúcar e Assaí","Crédito ao consumo no varejo alimentar. Participação elevada a 53,88% em 2025."],
+    ["Luizacred — Magazine Luiza","Cartão Luiza; 50%."],
+    ["Banco Investcred — origem Ponto Frio/Via","50%; aquisição das participações remanescentes acordada em 2025."],
+    ["Totvs Techfin","Crédito embarcado em ERP; 50%."],
+    ["Conectcar","Pagamento automático de pedágio e estacionamento; 50%."],
+    ["Cartões co-branded","Companhias aéreas e varejistas — LATAM Pass, Magazine Luiza, Pão de Açúcar, Assaí."]
+  ]},
+  {code:"III.09", name:"Canais de atacado e mercado", note:"", ents:[
+    ["Cobertura corporate Itaú BBA","Times setoriais de relacionamento."],
+    ["Mesa de tesouraria e global markets","Câmbio, derivativos e distribuição."],
+    ["Plataformas institucionais de custódia","Itaú Securities Services."],
+    ["Relações com Investidores","Canal regulado de divulgação — CVM e SEC."]
+  ]}
+ ]
+},
+{
+ id:"c4", num:"IV", title:"Produtos e Serviços",
+ purpose:"O catálogo é o ponto em que o conglomerado deixa de ser um banco e passa a ser um grupo financeiro: crédito e depósito respondem por parte do portfólio, mas seguros, gestão de recursos, adquirência, custódia e consórcio são negócios com regulador, economia e concorrência próprios.",
+ domains:[
+  {code:"IV.01", name:"Contas e meios de pagamento", note:"", ents:[
+    ["Conta corrente PF","Nas variantes Itaú, Uniclass, Personnalité e Private."],
+    ["Conta PJ","Abertura 100% online."],
+    ["Poupança",""],
+    ["Pix","PF e PJ, incluindo Pix por maquininha."],
+    ["TED, boleto e débito automático",""],
+    ["Cartão de débito",""],
+    ["Câmbio e produtos de viagem",""]
+  ]},
+  {code:"IV.02", name:"Cartões", note:"Volume transacionado de R$ 245,7 bi no 2T26, alta de 8,5% a/a.", ents:[
+    ["Cartões de crédito","Linhas próprias — Azul Infinite, Azul Visa Platinum, Uniclass Mastercard Black."],
+    ["Cartões co-branded","Companhias aéreas e varejistas."],
+    ["Cartões empresariais","Signature e Black para PJ."],
+    ["Cartões pré-pagos e virtuais",""],
+    ["Programas de recompensa","Pontos Itaú e cashback."]
+  ]},
+  {code:"IV.03", name:"Crédito pessoa física", note:"Carteira Brasil em 30/06/2026.", ents:[
+    ["Crédito imobiliário","R$ 152,2 bi. 26,3% de share em novas concessões (2025)."],
+    ["Cartão de crédito","R$ 150,4 bi."],
+    ["Crédito consignado","R$ 81,3 bi. Consignado privado (CLT) +14,3% no trimestre."],
+    ["Crédito pessoal","R$ 68,1 bi. 10,4% de share."],
+    ["Financiamento de veículos","R$ 35,1 bi."],
+    ["Cheque especial e CDC",""],
+    ["Rotativo e parcelamento de fatura",""],
+    ["Antecipação de FGTS e de recebimentos",""],
+    ["Portabilidade e renegociação de dívidas","Inclui adesão ao Desenrola Brasil."],
+    ["Microcrédito produtivo orientado",""]
+  ]},
+  {code:"IV.04", name:"Crédito pessoa jurídica", note:"Carteira Brasil em 30/06/2026: PMEs R$ 307,4 bi; grandes empresas R$ 474,9 bi.", ents:[
+    ["Capital de giro",""],
+    ["Antecipação de recebíveis","Inclui antecipação automática e agregador de recebíveis de cartão."],
+    ["Limite de conta e cheque empresarial",""],
+    ["Pronampe e linhas públicas",""],
+    ["Trade finance e câmbio comercial",""],
+    ["Empréstimos em moeda estrangeira",""],
+    ["Crédito rural e agro",""],
+    ["Leasing","Via Dibens Leasing."],
+    ["Repasses BNDES","Linha histórica; não confirmada nas páginas de produto atuais.","warn"]
+  ]},
+  {code:"IV.05", name:"Investimentos e captação", note:"Ativos sob administração de R$ 3.824 bi em jun/26.", ents:[
+    ["Renda fixa bancária","CDB, LCI, LCA, LCD, LIG."],
+    ["Renda fixa de mercado","Tesouro Direto, CRI, CRA, debêntures."],
+    ["Fundos de investimento","Fundos abertos, FIIs, Fiagros, FIDCs, ETFs."],
+    ["Renda variável","Ações, BDRs, opções, mercado futuro."],
+    ["Produtos estruturados","COE e operações estruturadas."],
+    ["Previdência privada","PGBL e VGBL."],
+    ["Investimentos internacionais","Via Avenue."],
+    ["Criptomoedas","Oferta listada na plataforma de investimentos."]
+  ]},
+  {code:"IV.06", name:"Gestão de recursos e serviços a investidores", note:"Ativos sob custódia de R$ 4.481,2 bi em jun/26, alta de 21,5% a/a.", ents:[
+    ["Gestão de recursos — Itaú Asset","R$ 1.236 bi sob gestão."],
+    ["Gestão de alternativos — Kinea","R$ 162 bi: imobiliário, private equity, infraestrutura, crédito."],
+    ["Private banking","31,1% de share."],
+    ["Administração fiduciária de fundos","Via Intrag DTVM."],
+    ["Custódia qualificada","17,2% em serviços fiduciários; 18,4% em custódia."],
+    ["Escrituração de ações","Via Itaú Corretora; nomenclatura oficial não confirmada.","warn"],
+    ["Corretagem","661 mil clientes de varejo; R$ 246,8 bi negociados em 2025."]
+  ]},
+  {code:"IV.07", name:"Seguros, previdência e capitalização", note:"Resultado de seguros de ~R$ 3,5 bi no 2T26, alta de 8,4% a/a.", ents:[
+    ["Seguro de vida e acidentes pessoais",""],
+    ["Seguros patrimoniais","Residencial e empresarial."],
+    ["Seguro auto","Predominantemente via Porto Seguro."],
+    ["Seguros de nicho","Viagem, celular, odontológico, pet."],
+    ["Seguros vinculados a produto","Cartão Protegido, Transação Protegida, prestamista."],
+    ["Previdência aberta","Contribuições de R$ 30,6 bi em 2025, com portabilidade."],
+    ["Capitalização — PIC",""],
+    ["Corretagem de seguros","Inclusive de produtos de terceiros."]
+  ]},
+  {code:"IV.08", name:"Consórcio", note:"", ents:[
+    ["Consórcio de imóveis",""],
+    ["Consórcio de veículos",""],
+    ["Itaú Consórcios Empresas",""],
+    ["Portal do Consorciado","Canal de autosserviço do produto."]
+  ]},
+  {code:"IV.09", name:"Adquirência e serviços a estabelecimentos", note:"", ents:[
+    ["Credenciamento e captura","R$ 1.025,4 bi processados em 2025; 22,7% de share."],
+    ["Antecipação de recebíveis de cartão","Inclusive automática e com taxa zero em planos específicos."],
+    ["Conta PJ integrada à maquininha",""],
+    ["Crédito no ecossistema Rede","Via Redecard Sociedade de Crédito Direto."]
+  ]},
+  {code:"IV.10", name:"Banco de investimento e mercado de capitais", note:"Linha de negócio do Itaú BBA.", ents:[
+    ["Equity Capital Markets","2º colocado em operações de equity."],
+    ["Debt Capital Markets","Líder em originação e distribuição."],
+    ["Fusões e aquisições","1º em assessoria de M&A."],
+    ["Finanças estruturadas e project finance","Nomenclatura oficial não confirmada no site.","warn"],
+    ["Research",""]
+  ]},
+  {code:"IV.11", name:"Tesouraria e mercados", note:"", ents:[
+    ["Trading e distribuição",""],
+    ["Câmbio",""],
+    ["Derivativos e hedge","Nomenclatura oficial não confirmada no site.","warn"],
+    ["Comercialização de energia","Atividade própria, via entidade dedicada."]
+  ]},
+  {code:"IV.12", name:"Cash management e serviços transacionais", note:"O Itaú BBA declara movimentar R$ 1 trilhão por mês em pagamentos.", ents:[
+    ["Cobrança e boletos",""],
+    ["Folha de pagamento e soluções de RH",""],
+    ["Arrecadação e convênios",""],
+    ["Gestão financeira PJ",""]
+  ]},
+  {code:"IV.13", name:"Ativos digitais", note:"Domínio novo, ainda sem produto de massa divulgado.", ents:[
+    ["Serviços de ativos virtuais","Entidade VASP constituída sob a Lei 14.478/2022.","warn"]
+  ]}
+ ]
+},
+{
+ id:"c5", num:"V", title:"Veículos Legais",
+ purpose:"A camada mais extensa e a que mais revela sobre a arquitetura real: cerca de noventa entidades consolidadas, mais dezenas de fundos e SPEs. Note a assimetria de perímetro — o consolidado prudencial exclui seguradoras, previdência e capitalização, mas inclui FIDCs de fintechs parceiras, porque o risco substancial permanece no grupo.",
+ domains:[
+  {code:"V.01", name:"Holdings e cadeia de controle", note:"Posições de 23/12/2025 e 31/12/2024, conforme Formulário de Referência.", ents:[
+    ["Itaú Unibanco Holding S.A.","Holding financeira não operacional; instituição líder para supervisão do BACEN. CNPJ 60.872.504/0001-23."],
+    ["IUPAR — Itaú Unibanco Participações S.A.","51,713% das ON, 26,346% do total. Holding pura de controle."],
+    ["Itaúsa S.A.","39,205% das ON direto, mais 66,532% da IUPAR. Holding de investimentos listada."],
+    ["Cia. E. Johnston de Participações","33,468% da IUPAR. Veículo da família Moreira Salles."],
+    ["Itauseg Participações S.A.","Holding do bloco segurador."],
+    ["IGA Participações S.A. e Investimentos Bemge S.A.","Holdings de participações legadas."],
+    ["ITB Holding Ltd. e ITB Holding Brasil Participações","Veículos de participação."]
+  ]},
+  {code:"V.02", name:"Bancos e instituições financeiras — Brasil", note:"Núcleo do conglomerado prudencial.", ents:[
+    ["Itaú Unibanco S.A.","Banco múltiplo — principal operadora. Varejo, atacado, tesouraria, custódia, câmbio, imobiliário. 100%."],
+    ["Banco Itaucard S.A.","Cartões e financiamento ao consumo. 100%."],
+    ["Banco Itaú Consignado S.A.","Crédito consignado. 100%."],
+    ["Banco Itaú Veículos S.A.","Financiamento de veículos. 100%."],
+    ["Banco ItauBank S.A.","Veículo legado remanescente. 100%."],
+    ["Dibens Leasing S.A.","Arrendamento mercantil. 100%."],
+    ["Microinvest S.A. SCMEPP","Microcrédito. 100%."],
+    ["Itaú BBA Trading S.A.","Trading e mesa, com sucursal no Uruguai. 100%."]
+  ]},
+  {code:"V.03", name:"Mercado de capitais, corretagem e gestão", note:"", ents:[
+    ["Itaú Corretora de Valores S.A.","CTVM — corretagem, escrituração, distribuição. 100%."],
+    ["Intrag DTVM Ltda.","DTVM — administração fiduciária de fundos. 100%."],
+    ["Ideal Corretora de TVM S.A. e Ideal Holding Financeira S.A.","Corretora digital e institucional. 50,10%."],
+    ["Itaú Unibanco Asset Management Ltda.","Gestão de recursos. Consolidada apenas no societário, fora do prudencial. 100%.","info"],
+    ["Kinea Investimentos Ltda.","Gestão de alternativos. 80%."],
+    ["Kinea Private Equity Investimentos S.A.","80%, não consolidada."],
+    ["Kinea US Asset Management LLC","Investment adviser registrado na SEC. 80%."],
+    ["Itaú BBA Assessoria Financeira S.A.","Recebeu a parcela de assessoria cindida do Banco Itaú BBA. 100%."]
+  ]},
+  {code:"V.04", name:"Pagamentos, adquirência e ativos virtuais", note:"", ents:[
+    ["Redecard Instituição de Pagamento S.A.","Credenciamento e adquirência — a Rede. 100%."],
+    ["Redecard Sociedade de Crédito Direto S.A.","SCD no ecossistema Rede. 100%."],
+    ["Beta Correspondente e Tecnologia Ltda.","Correspondente bancário. 100%."],
+    ["Conexão Tecnologia de Pagamentos Ltda.","Tecnologia de pagamentos. 100%."],
+    ["Itaú Sociedade Prestadora de Serviços de Ativos Virtuais Ltda.","VASP — entidade nova no perímetro. 100%.","warn"]
+  ]},
+  {code:"V.05", name:"Seguros, previdência e capitalização", note:"Excluídas do consolidado prudencial; entram por equivalência ou dedução.", ents:[
+    ["Itaú Seguros S.A.","Danos e patrimoniais. 100%. SUSEP."],
+    ["Itaú Vida e Previdência S.A.","Vida e previdência aberta. 100%. SUSEP."],
+    ["Cia. Itaú de Capitalização","Títulos de capitalização. 100%. SUSEP."],
+    ["Itauseg Saúde S.A.","Saúde suplementar em run-off. 100%. ANS.","stop"],
+    ["Itaú Corretora de Seguros S.A.","Corretagem. 100%."],
+    ["IU Corretora de Seguros Ltda. e Avita Corretora de Seguros S.A.","100% e 80%."]
+  ]},
+  {code:"V.06", name:"Consórcios", note:"", ents:[
+    ["Itaú Administradora de Consórcios Ltda.","Imóveis e demais bens. 100%."],
+    ["Itaú Unibanco Veículos Administradora de Consórcios Ltda.","Veículos. 100%."]
+  ]},
+  {code:"V.07", name:"Securitização e recuperação de crédito", note:"Dentro do perímetro prudencial.", ents:[
+    ["Iresolve Companhia Securitizadora de Créditos Financeiros S.A.","100%."],
+    ["Itaú Companhia Securitizadora de Créditos Financeiros","100%."],
+    ["Recovery do Brasil Consultoria S.A.","Gestão e recuperação de NPL. 100%. Não financeira."]
+  ]},
+  {code:"V.08", name:"Joint ventures e coligadas", note:"Onde o grupo divide controle econômico com varejistas, seguradoras e plataformas.", ents:[
+    ["Financeira Itaú CBD S.A. — CFI (FIC)","JV com GPA/Assaí. 53,88%, elevada de 50% em 2025. Consolidada."],
+    ["Luizacred S.A. SCFI","JV com Magazine Luiza. 50%. Consolidada."],
+    ["Banco Investcred Unibanco S.A.","Origem Ponto Frio/Via. 50%. Consolidada."],
+    ["Porto Seguro Itaú Unibanco Participações S.A.","Aliança de seguros. 42,93%. Equivalência."],
+    ["Totvs Techfin S.A.","Crédito embarcado em ERP. 50%."],
+    ["Conectcar Instituição de Pagamento","Mobilidade eletrônica. 50%."],
+    ["Pravaler S.A.","Crédito estudantil. 50,14%, classificada como não consolidada — controle compartilhado por acordo.","info"],
+    ["BSF Holding S.A. e Olímpia Promoção e Serviços S.A.","49% e 50%."]
+  ]},
+  {code:"V.09", name:"Participações em infraestrutura de mercado", note:"Entidades que o setor opera em conjunto — determinam a interoperabilidade do sistema.", ents:[
+    ["CIP S.A.","Compensação e liquidação. 22,89%."],
+    ["Tecnologia Bancária S.A. — TecBan","Rede Banco24Horas. 28,75%."],
+    ["Gestora de Inteligência de Crédito — Quod","Bureau positivo. 15,71%."],
+    ["Rede Agro Fidelidade e Intermediação","12,82%."],
+    ["Rias Redbanc S.A. e Caja de Valores del Paraguay","25% e 9,09%."],
+    ["Biomas Serviços Ambientais, Restauração e Carbono","16,67%."]
+  ]},
+  {code:"V.10", name:"Entidades no exterior — América Latina", note:"", ents:[
+    ["Banco Itaú Chile","67,42%. Ex-Itaú Corpbanca. Regulador CMF."],
+    ["Cluster Chile","Corredores de Bolsa, Administradora General de Fondos, Asesorías Financieras, Corredores de Seguros, Recaudaciones y Cobranzas, Chile Participaciones SpA."],
+    ["Itaú Colombia S.A.","67,06%. Regulador SFC."],
+    ["Cluster Colômbia","Comisionista de Bolsa, Fiduciaria, Corredor de Seguros, Holding Colombia S.A.S."],
+    ["Itaú (Panamá) S.A.","67,06%, sob o cluster colombiano."],
+    ["Banco Itaú Paraguay S.A.","100%. Regulador BCP."],
+    ["Cluster Paraguai","Invest Casa de Bolsa, Asset Management AFPISA, Seguros Paraguay, Albarus, Pont S.A."],
+    ["Banco Itaú Uruguay S.A.","100%. Regulador BCU."],
+    ["Cluster Uruguai","OCA S.A., OCA Dinero Electrónico, Administradora de Fondos, AFAP Itaú, Handy, Plexo, Resonet, Mundostar, Red Visual."],
+    ["Ank Platform S.A. e FC Recovery S.A.U.","Argentina, 100%, ainda consolidadas após a venda ao Banco Macro. Finalidade não apurada.","warn"]
+  ]},
+  {code:"V.11", name:"Entidades no exterior — Europa, EUA e offshore", note:"", ents:[
+    ["Itaú BBA International Plc","Reino Unido, 100%. Atacado e private banking, com sucursal em Lisboa. PRA/FCA."],
+    ["Itaú BBA Europe S.A.","Portugal, 100%."],
+    ["Itaú Europe S.A.","Luxemburgo, 100%. Consolidada apenas no societário. CSSF."],
+    ["Banco Itaú (Suisse) S.A.","Suíça, 100%. Private banking internacional. FINMA."],
+    ["Banco Itaú International","EUA, 100%. Edge Act Corporation. Federal Reserve de Atlanta."],
+    ["Itaú BBA USA Securities, Inc.","Broker-dealer e investment adviser em Nova York. SEC e FINRA."],
+    ["Itaú International Securities, Inc.","Broker-dealer e RIA na Flórida. SEC, FINRA, NFA, CFTC."],
+    ["Itaú USA Asset Management, Inc.","Investment adviser. SEC."],
+    ["Avenue Securities LLC e Avenue Cash LLC","Broker-dealer e money transmitter. Controle de 50,1% assumido no 1T26."],
+    ["Itaú Bank, Ltd.","Cayman, 100%. Banco offshore. CIMA."],
+    ["Itaú Bank & Trust Cayman e Bahamas","Trust e administração. 100%."],
+    ["Licania Fund Limited e Itaú BBA International Cayman","Veículos offshore. 100%."]
+  ]},
+  {code:"V.12", name:"Dependências e sucursais", note:"Não são sociedades — são extensões contábeis de uma entidade existente.", ents:[
+    ["Itaú Unibanco S.A. — Miami Branch","Florida OFR e Federal Reserve de Atlanta."],
+    ["Itaú Unibanco S.A. — Nassau Branch","Bahamas."],
+    ["Itaú Unibanco Holding S.A. — Grand Cayman Branch",""],
+    ["Banco Itaú Chile — New York Branch","Agência federal. OCC."],
+    ["Itaú BBA Trading S.A. — Sucursal Uruguay",""]
+  ]},
+  {code:"V.13", name:"Entidades não financeiras e de serviços", note:"", ents:[
+    ["Zup I.T. Serviços em Tecnologia e Inovação S.A.","Engenharia de software. 100%. Adquirida em 2019."],
+    ["ZUP Innovation Corp.","EUA, 100%."],
+    ["iCarros Ltda.","Marketplace automotivo. 100%."],
+    ["Itaú Unibanco Comercializadora de Energia Ltda.","Comercialização de energia. 100%. CCEE/ANEEL."],
+    ["Estrel Serviços Administrativos S.A. e Provar Negócios de Varejo Ltda.","Serviços. 100%."],
+    ["Itaú Rent Administração e Participações Ltda.","Gestão de imóveis próprios. 100%."],
+    ["Itaú Consultoria de Valores Mobiliários e Participações S.A.",""]
+  ]},
+  {code:"V.14", name:"Veículos estruturados — FIDCs, fundos e SPEs", note:"Consolidados no prudencial quando o grupo retém substancialmente riscos e benefícios. O uso de FIDC como funding de fintechs parceiras é o traço mais notável deste domínio.", ents:[
+    ["FIDCs de carteira própria","Acácia, IA, IA II, Tangerina, Soul (93,97%), Mobilitas (86,85%), NC 2025, NC 2025 I, TOP 2025 I."],
+    ["FIDCs de crédito inadimplido","FIDC NP NPL II e FIDC B2cycle NPL."],
+    ["FIDC setorial","Angico — infraestrutura e agronegócio."],
+    ["FIDCs de fintechs parceiras","CloudWalk Kick Ass I (93,99%), Cloudw Akira I (96,88%), SumUp Solo (93,39%), Kiwify (83,23%).","info"],
+    ["Fundos Kinea consolidados","Kinea Ventures, Private Equity MM FIC, I Private Equity FIP, CO-investimento FII, FOF Imobiliário, Equity Infra I, KP FI MM CP."],
+    ["Fundos de debêntures incentivadas","Tarumã, Tarumã 2, Vitex, Théros, série Itaú Isento."],
+    ["Fundos de tesouraria","Série RT, AJ Títulos Públicos, Borsen, Itaú Institucional, Oiti."],
+    ["SPEs operacionais","SPE IRA 01 a 27 Ltda."],
+    ["SPEs imobiliárias","~30 veículos nomeados por endereço (SP Alameda Franca, SP Augusta, SP Av. Morumbi, RJ Niterói Icaraí, PR Curitiba Mariano Torres, entre outros). Fora do prudencial."]
+  ]},
+  {code:"V.15", name:"Entidades sem fins lucrativos", note:"Fora do perímetro financeiro, mas dentro da arquitetura institucional do grupo.", ents:[
+    ["Fundação Itaú para a Educação e Cultura","Guarda-chuva do investimento social. Velamento do MP-SP."],
+    ["Itaú Cultural, Itaú Social, Itaú Educação e Trabalho","Frentes programáticas sob a Fundação Itaú."],
+    ["Fundação Itaú Unibanco — Previdência Complementar","EFPC. 17 planos, mais de 53 mil participantes, ~R$ 32 bi de patrimônio. PREVIC."],
+    ["Instituto Unibanco","Ensino médio público. Mantenedor formal atual não confirmado.","warn"]
+  ]}
+ ]
+},
+{
+ id:"c6", num:"VI", title:"Políticas, Normas e Procedimentos",
+ purpose:"A camada normativa tem duas naturezas distintas que o framework obriga a separar: o que o conglomerado escreve para si (políticas corporativas) e o que lhe é imposto de fora (arcabouço regulatório). O segundo grupo é o mais determinante — boa parte das políticas do primeiro existe porque uma resolução do CMN a exige nominalmente.",
+ domains:[
+  {code:"VI.01", name:"Integridade e conduta", note:"Políticas públicas confirmadas no portal Integridade e Ética.", ents:[
+    ["Código de Ética e Conduta","Documento-raiz do programa de integridade. PDF público."],
+    ["Programa Corporativo de Prevenção a Atos Ilícitos","Guarda-chuva que abrange PLD/FT."],
+    ["Política Corporativa de Prevenção à Corrupção",""],
+    ["Código de Relacionamento com o Setor Público","Com lista de contratos ativos."],
+    ["Código de Relacionamento com Fornecedores",""],
+    ["Diretrizes de Doações e Patrocínios",""]
+  ]},
+  {code:"VI.02", name:"Risco e capital", note:"Instrumentos estruturantes descritos no Pilar 3 4T25.", ents:[
+    ["Política de Gestão de Capital","PDF público."],
+    ["Política de Gestão e Controle de Risco de Crédito","PDF público."],
+    ["RAS — Risk Appetite Statement","Aprovado pelo Conselho. Seis dimensões: capitalização, liquidez, composição de resultados, risco operacional, reputação e riscos de clientes."],
+    ["ICAAP","Avaliação de adequação de capital, com teste de estresse e estresse reverso. Circular 3.846 e IN 322."],
+    ["PRSO — Plano de Recuperação e Saída Organizada","Exigido de instituições S1. Res. BCB 5.187."],
+    ["US Resolution Plan 165(d)","Plano entregue ao Federal Reserve e ao FDIC — jun/2025."],
+    ["Política de Gerenciamento de Riscos autônoma","Estrutura descrita no Pilar 3; documento público não localizado.","warn"]
+  ]},
+  {code:"VI.03", name:"Compliance e controles internos", note:"", ents:[
+    ["Política de Compliance","Regida expressamente pela Res. CMN 4.595/2017."],
+    ["Modelo de três linhas de defesa","Instrumento organizacional descrito na camada VII."],
+    ["Conformidade SOX","Decorrente do registro na SEC."]
+  ]},
+  {code:"VI.04", name:"Segurança da informação e tecnologia", note:"", ents:[
+    ["Política Corporativa de Segurança da Informação e Cyber Security","PDF público. Atende à Res. CMN 4.893/2021."],
+    ["Política de contratação de serviços relevantes em nuvem","Exigida pela Res. 4.893/4.658; documento público não localizado.","warn"],
+    ["Política de continuidade de negócios","Exigida por norma; documento público não localizado.","warn"]
+  ]},
+  {code:"VI.05", name:"Privacidade e proteção de dados", note:"", ents:[
+    ["Política de Privacidade e Proteção de Dados — clientes",""],
+    ["Política de Privacidade — colaboradores",""],
+    ["Política de Cookies",""],
+    ["Regime LGPD","Titularidade dos dados declarada no portal de Open Finance."]
+  ]},
+  {code:"VI.06", name:"Governança societária", note:"", ents:[
+    ["Regimento Interno do Conselho de Administração","PDF público."],
+    ["Informe sobre o Código Brasileiro de Governança Corporativa","Documento 'pratique ou explique' da CVM. PDF público."],
+    ["Política de Divulgação e de Negociação de Valores Mobiliários","Exigida por norma; página do RI retornou HTTP 403.","warn"],
+    ["Política de Transações com Partes Relacionadas","Existe comitê estatutário homônimo; política não acessada.","warn"],
+    ["Política de Remuneração","Existe comitê estatutário homônimo; política não acessada.","warn"]
+  ]},
+  {code:"VI.07", name:"Relacionamento com clientes", note:"", ents:[
+    ["Política de Relacionamento com Clientes e Usuários","Exigida pelas Res. 4.539 e 4.949; documento não localizado.","warn"],
+    ["Regulamento de Ouvidoria","Exigido pela Res. 4.860; documento não localizado. O canal existe e opera.","warn"],
+    ["Autorregulação SARB / FEBRABAN","Adesão por enquadramento setorial."]
+  ]},
+  {code:"VI.08", name:"Sustentabilidade e clima", note:"", ents:[
+    ["Sustainable Finance Framework","Documento público que qualifica as operações contadas na meta de R$ 1 trilhão."],
+    ["Relatório Climático","Publicação periódica."],
+    ["Compromisso Net-Zero Banking Alliance","Confirmado em fonte secundária.","warn"],
+    ["Política de Sustentabilidade / ASG autônoma","Existe comitê estatutário de Responsabilidade Social, Ambiental e Climática; política autônoma não localizada.","warn"]
+  ]},
+  {code:"VI.09", name:"Arcabouço regulatório externo", note:"As normas nomeadas no Pilar 3 4T25 e no Formulário de Referência — as que efetivamente moldam processo e sistema.", ents:[
+    ["Res. CMN 4.557/2017","Estrutura de gerenciamento de riscos e de capital."],
+    ["Res. CMN 4.958","Apuração de RWA e requerimentos de capital — Basileia III."],
+    ["Res. BCB 54","Divulgação de informações de risco e capital — o próprio Pilar 3."],
+    ["Circular BACEN 3.846 e IN 322","ICAAP."],
+    ["Res. BCB 5.187","Plano de recuperação e resolução ordenada."],
+    ["Res. CMN 4.595/2017","Política de compliance."],
+    ["Res. CMN 4.893/2021","Segurança cibernética e contratação de nuvem."],
+    ["Lei 13.709/2018 — LGPD",""],
+    ["Lei 14.478/2022","Prestadores de serviços de ativos virtuais."],
+    ["Sarbanes-Oxley Act",""],
+    ["Regulamentação de Open Finance e Pix","Instituídas pelo CMN e pelo BACEN."],
+    ["Recomendações do Comitê de Basileia","Alinhamento declarado."]
+  ]}
+ ]
+},
+{
+ id:"c7", num:"VII", title:"Estrutura, Papéis e Responsabilidades",
+ purpose:"Pela Lei de Conway, esta é a camada que prediz a forma dos sistemas. Três traços se destacam: a separação entre controle familiar e gestão profissional no topo; um sistema de nove comitês do Conselho que institucionaliza temas que em outros bancos ficariam na diretoria; e um modelo de trabalho em tecnologia — Comunidades Integradas — que mistura negócio, tecnologia e design no mesmo time.",
+ domains:[
+  {code:"VII.01", name:"Conselho de Administração", note:"Composição conforme página de Estrutura Administrativa do RI. Validar na ata da AGO mais recente.", ents:[
+    ["Copresidência não executiva","Roberto Egydio Setubal (desde 2017) e Pedro Moreira Salles.","warn"],
+    ["Vice-presidência não executiva","Ricardo Villela Marino (desde 2020)."],
+    ["Conselheiros independentes","Pedro Luiz Bodin de Moraes, Candido Botelho Bracher, Cesar Nivaldo Gon, Fabricio Bloisi Rocha, Paulo Antunes Veras, Maria Helena dos Santos Fernandes de Santana."],
+    ["Conselheiros não executivos","Alfredo Egydio Setubal, Ana Lúcia de Mattos Barretto Villela, João Moreira Salles."],
+    ["Conselheiro executivo","Milton Maluhy Filho, na condição de Diretor-Presidente."]
+  ]},
+  {code:"VII.02", name:"Comitês do Conselho", note:"Nove órgãos. Não há comitê nomeado 'de Estratégia' — o equivalente funcional é o Conselho Estratégico LATAM.", ents:[
+    ["Gestão de Risco e de Capital (CGRC)","Preside: Pedro Luiz Bodin de Moraes."],
+    ["Auditoria","Preside: Maria Helena dos Santos Fernandes de Santana (independente, desde 2023)."],
+    ["Remuneração","Preside: Roberto Egydio Setubal."],
+    ["Nomeação e Governança Corporativa","Preside: Candido Botelho Bracher."],
+    ["Pessoas","Preside: Paulo Antunes Veras (desde 2026)."],
+    ["Partes Relacionadas","Preside: Maria Helena dos Santos Fernandes de Santana."],
+    ["Responsabilidade Social, Ambiental e Climática","Preside: Alfredo Egydio Setubal."],
+    ["Experiência do Cliente","Preside: Cesar Nivaldo Gon. Inclui o CEO."],
+    ["Conselho Estratégico LATAM","Ricardo V. Marino, Roberto Setubal, Milton Maluhy, André Gailey."]
+  ]},
+  {code:"VII.03", name:"Diretoria executiva", note:"Comitê Executivo presidido pelo CEO.", ents:[
+    ["Diretor-Presidente (CEO)","Milton Maluhy Filho, desde 2021."],
+    ["Financeiro (CFO)","Gabriel Amado de Moura, desde out/2024."],
+    ["Riscos (CRO)","Matias Granata, desde 2021."],
+    ["Tecnologia (CIO) e Operações","Ricardo Ribeiro Mandacaru Guerra."],
+    ["Jurídico, Compliance e Sustentabilidade","José Virgilio Vita Neto."],
+    ["Pessoas, Marketing e Comunicação","Sergio Guillinet Fajerman."]
+  ]},
+  {code:"VII.04", name:"Estrutura de negócio", note:"O recorte executivo espelha a segmentação da camada I.", ents:[
+    ["Varejo — Pessoa Física","André Luís Teixeira Rodrigues."],
+    ["Pequenas e Médias Empresas","Carlos Orestes Vanzo."],
+    ["Atacado — Corporate & Investment Banking","Flávio Augusto Aguiar de Souza."],
+    ["Wealth Management & Services","Carlos Fernando Rossi Constantini."],
+    ["Tesouraria e Global Markets","Pedro Paulo Giubbina Lorenzini."]
+  ]},
+  {code:"VII.05", name:"Linhas de defesa e controle", note:"Modelo descrito literalmente no Pilar 3 4T25.", ents:[
+    ["Primeira linha","Áreas de negócio e suporte corporativo: identificam, mensuram, monitoram, controlam e mitigam os riscos que originam."],
+    ["Segunda linha","Área de Risco, independente e centralizada: assegura aderência a políticas e dá visibilidade consolidada à alta administração."],
+    ["Terceira linha","Auditoria Interna, com reporte ao Conselho: avaliação independente de controles, gestão de riscos e conformidade."],
+    ["Compliance e Controles Internos","Sob a vice-presidência Jurídica, Compliance e Sustentabilidade."],
+    ["Ouvidoria","Canal de segunda instância exigido pela Res. 4.860."]
+  ]},
+  {code:"VII.06", name:"Modelo de trabalho em tecnologia", note:"A evidência pública mais direta da Lei de Conway no grupo — e a ponte para as camadas IX a XIII, fora de escopo aqui.", ents:[
+    ["Comunidades Integradas","Times multidisciplinares de tecnologia, negócio e design, com práticas ágeis e OKRs. Nomenclatura oficial confirmada — 'tribos e squads' não é uso corporativo formal.","info"],
+    ["Quadro de tecnologia","~17 mil profissionais (Itaú Day 2025)."],
+    ["Zup Innovation","Empresa de engenharia do grupo; papel corrente na estrutura não confirmado em fonte oficial atual.","warn"],
+    ["Programa de IA","Mais de 500 iniciativas; plataforma GenAI proprietária, com ~70% do esforço em controles; 15 mil análises jurídicas automatizadas por mês."],
+    ["Modernização de plataforma","Migração de mainframe e legado para nuvem em curso; percentual e data-alvo não confirmados em fonte primária.","warn"]
+  ]},
+  {code:"VII.07", name:"Força de trabalho", note:"Posição em 30/06/2026.", ents:[
+    ["Colaboradores do conglomerado","90.429 — sendo 80.657 no Brasil e 9.772 no exterior."],
+    ["Trajetória","91.545 no 1T26; redução contínua acompanhando o fechamento de agências.","warn"],
+    ["Distribuição na América Latina","Chile 4.670, Colômbia 1.899, Paraguai 1.354, Uruguai 1.277 (31/12/2025)."]
+  ]}
+ ]
+},
+{
+ id:"c8", num:"VIII", title:"Métricas de Gestão e Controle",
+ purpose:"A camada de fechamento do ciclo: é por ela que as demais são avaliadas e corrigidas. Separei as métricas por aquilo que cada grupo controla — rentabilidade, eficiência, risco, capital, liquidez, escala, cliente e ASG — e isolei o guidance, que é a única faixa comprometida publicamente com o mercado.",
+ domains:[
+  {code:"VIII.01", name:"Rentabilidade e resultado", note:"Data-base 30/06/2026, salvo indicação.", ents:[
+    ["Resultado recorrente gerencial — 2T26","R$ 12,4 bi, alta de 7,8% a/a. 1S26: R$ 24,68 bi."],
+    ["Resultado recorrente gerencial — 2025","R$ 46,8 bi, alta de 13,1%."],
+    ["ROE recorrente gerencial — consolidado","24,3%, alta de 1,0 p.p. a/a. Ano de 2025: 23,4%."],
+    ["ROE recorrente gerencial — Brasil","25,7%."],
+    ["Margem financeira gerencial","R$ 33,5 bi, alta de 5,2% a/a; com clientes R$ 32,6 bi."],
+    ["Receitas de serviços","R$ 11,0 bi, alta de 2,3% a/a."],
+    ["Resultado de seguros","~R$ 3,5 bi, alta de 8,4% a/a."]
+  ]},
+  {code:"VIII.02", name:"Eficiência e custos", note:"", ents:[
+    ["Índice de eficiência — consolidado","37,4%, contra 38,0% a/a."],
+    ["Índice de eficiência — Brasil","35,2%."],
+    ["Despesas não decorrentes de juros","Linha de guidance: variação de 1,5% a 5,5% em 2026."]
+  ]},
+  {code:"VIII.03", name:"Risco de crédito", note:"", ents:[
+    ["NPL 90 dias","1,9%, estável a/a."],
+    ["Custo do crédito","R$ 10,1 bi no 2T26, alta de 7,4% a/a."],
+    ["Provisão para perda esperada (PDD)","R$ 10,5 bi no 2T26."]
+  ]},
+  {code:"VIII.04", name:"Capital e solvência", note:"Data-base 31/12/2025 (Pilar 3 4T25), exceto onde indicado.", ents:[
+    ["Capital Principal (CET1)","12,3% — também em jun/26. Valor: R$ 185.595 mi."],
+    ["Capital Nível I","13,8%. Valor: R$ 208.161 mi."],
+    ["Índice de Basileia","15,2%, contra 16,5% a/a."],
+    ["Patrimônio de Referência","R$ 228.589 mi. Excedente sobre o requerimento: R$ 108.151 mi."],
+    ["RWA total","R$ 1.505.475 mi."],
+    ["Adicionais de capital principal (ACP)","Total de 3,6%: conservação 2,5%, sistêmico 1,0%, contracíclico 0,1%."],
+    ["Razão de alavancagem","7,0%, contra 7,4% em set/2025. Exposição total: R$ 2.983.477 mi."]
+  ]},
+  {code:"VIII.05", name:"Liquidez e funding", note:"", ents:[
+    ["LCR — Liquidity Coverage Ratio","215,0%."],
+    ["NSFR — Net Stable Funding Ratio","124,8%."]
+  ]},
+  {code:"VIII.06", name:"Escala e volume", note:"", ents:[
+    ["Carteira de crédito ampliada","R$ 1.522,4 bi, alta de 9,6% a/a — acima do teto do guidance."],
+    ["Ativos totais","R$ 3.227 bi."],
+    ["Ativos sob administração","R$ 3.824 bi (produtos próprios R$ 3.371 bi + plataforma aberta R$ 452,9 bi)."],
+    ["Ativos sob custódia","R$ 4.481,2 bi, alta de 21,5% a/a."],
+    ["Volume de adquirência (TPV Rede)","R$ 298,7 bi no 2T26, alta de 23,5% a/a."],
+    ["Volume transacionado em cartões emitidos","R$ 245,7 bi no 2T26."]
+  ]},
+  {code:"VIII.07", name:"Cliente e experiência", note:"", ents:[
+    ["NPS One Itaú","Acima de 80 pontos."],
+    ["NPS alta renda","Acima de 80 pontos no app."],
+    ["NPS Itaú Empresas","Acima de 70 pontos."],
+    ["Transações em canal digital","Mais de 99% das transferências e pagamentos."],
+    ["Abertura digital de contas","4,6 mi em 2025 — 68% de todas as novas contas."],
+    ["Migração ao super app","Concluída em jan/2026 com 99,3% de adesão, ~15 mi de clientes."],
+    ["Base de clientes no Brasil","100,2 mi ao fim do 3T25 — dado do BACEN, não divulgado pelo banco.","info"],
+    ["Ranking de reclamações BACEN","5º lugar, índice 41,27, 4.066 reclamações analisadas e 98 procedentes. Trimestre de referência inconsistente na fonte.","warn"]
+  ]},
+  {code:"VIII.08", name:"Sustentabilidade", note:"", ents:[
+    ["Meta de finanças sustentáveis","R$ 1 trilhão até 31/12/2030, no período jan/2020–dez/2030."],
+    ["Meta original","R$ 400 bi, atingida um ano antes do prazo."]
+  ]},
+  {code:"VIII.09", name:"Guidance 2026", note:"Fato Relevante de 04/02/2026, revisado em 05/08/2026. Base: demonstração de resultado ajustada de 2025.", ents:[
+    ["Carteira de crédito total — consolidado","5,5% a 9,5%. Mantido."],
+    ["Carteira de crédito — Brasil","6,5% a 10,5%. Mantido."],
+    ["Margem financeira com clientes","5,0% a 9,0%. Mantido."],
+    ["Margem financeira com o mercado","R$ 2,5 bi a R$ 5,5 bi. Mantido."],
+    ["Custo do crédito","R$ 38,5 bi a R$ 43,5 bi. Mantido."],
+    ["Receitas de serviços + resultado de seguros","Revisado para baixo: de 5,0%–9,0% para 2,0%–5,0%, por desempenho abaixo do esperado e volatilidade nos mercados de capitais.","warn"],
+    ["Despesas não decorrentes de juros","1,5% a 5,5%. Mantido."],
+    ["Alíquota efetiva de IR/CS","29,5% a 32,5%. Mantido."]
+  ]}
+ ]
+}
+];
+
+
+/* ---------- render ---------- */
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const TAGTXT = {ok:"consolidado", warn:"verificar", stop:"encerrado", info:"nota"};
+
+function pad(n){return String(n).padStart(2,"0")}
+
+let totalEnts = 0;
+const counts = {};
+const XREF = {};
+
+const layersEl = document.getElementById("layers");
+layersEl.innerHTML = L.map(layer => {
+  let n = 0;
+  const doms = layer.domains.map(d => {
+    const ents = d.ents.map((e,i) => {
+      n++;
+      const [name, desc, tag] = e;
+      const tagHtml = tag ? `<span class="tag t-${tag}">${TAGTXT[tag]}</span>` : "";
+      return `<li class="ent"><span class="ent-code">${layer.num}.${d.code.split(".")[1]}.${pad(i+1)}</span><span class="ent-name">${esc(name)}${tagHtml}</span><span class="ent-desc">${esc(desc||"")}</span></li>`;
+    }).join("");
+    const srcs = SRCMAP[d.code] || [];
+    srcs.forEach(s => { (XREF[s] = XREF[s] || []).push({code:d.code, name:d.name, layer:layer.id}); });
+    const chips = srcs.length
+      ? `<span class="srcchips">${srcs.map(s=>`<a class="srcchip" href="#${s.toLowerCase()}" title="Fonte ${s}">${s}</a>`).join("")}</span>`
+      : "";
+    return `<section class="domain" id="d-${d.code.replace(/\./g,"-")}"><div class="domain-head"><span class="domain-code">${esc(d.code)}</span><span class="domain-name">${esc(d.name)}</span>${chips}${d.note?`<p class="domain-note">${esc(d.note)}</p>`:""}</div><ul class="ents">${ents}</ul></section>`;
+  }).join("");
+  counts[layer.id] = n;
+  totalEnts += n;
+  return `<section class="cl-layer" id="${layer.id}">
+    <div class="cl-layer-head"><span class="cl-layer-numeral">${layer.num}</span><h2>${esc(layer.title)}</h2></div>
+    <p class="cl-layer-purpose">${esc(layer.purpose)}</p>
+    <div class="domains">${doms}</div>
+  </section>`;
+}).join("");
+
+document.getElementById("stack").innerHTML = STACK.map(r => {
+  if (r.h) return `<div class="stack-row head">${esc(r.h)}</div>`;
+  const c = r.id ? counts[r.id] : null;
+  const right = c!=null ? `${c} entidades` : (r.note || "");
+  const inner = `<span class="stack-num">${r.n}</span><span>${r.id?`<a href="#${r.id}" style="text-decoration:none">${esc(r.t)}</a>`:esc(r.t)}</span><span class="stack-count">${esc(right)}</span>`;
+  return `<div class="stack-row${r.inn?"":" out"}">${inner}</div>`;
+}).join("");
+
+/* ---------- tabela de referência cruzada ---------- */
+document.getElementById("xrefbody").innerHTML = SOURCES.map(s => {
+  const doms = (XREF[s.id] || []);
+  const list = doms.length
+    ? doms.map(d => `<a href="#d-${d.code.replace(/\./g,"-")}" title="${esc(d.name)}">${esc(d.code)}</a>`).join(" · ")
+    : (s.method ? "Método — princípios, camadas e regra de agrupamento por domínios aplicados em todo o documento" : "—");
+  return `<tr id="${s.id.toLowerCase()}">
+    <td class="xr-id">${s.id}</td>
+    <td><span class="xr-title"><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></span><span class="xr-meta">${esc(s.meta)}</span></td>
+    <td class="xr-doms">${list}</td>
+    <td class="xr-n">${doms.length ? doms.length : (s.method ? "todos" : "0")}</td>
+  </tr>`;
+}).join("");
+
+document.getElementById("navpills").innerHTML = L.map(l =>
+  `<a href="#${l.id}">${l.num}</a>`).join("");
+
+/* ---------- filter ---------- */
+const q = document.getElementById("q");
+const hits = document.getElementById("hits");
+const allEnts = [...document.querySelectorAll(".ent")];
+const allDoms = [...document.querySelectorAll(".domain")];
+const allLayers = [...document.querySelectorAll(".cl-layer")];
+
+function baseline(){ hits.textContent = `${totalEnts} entidades · ${allDoms.length} domínios · 9 camadas`; }
+baseline();
+
+q.addEventListener("input", () => {
+  const t = q.value.trim().toLowerCase();
+  if (!t){
+    allEnts.forEach(e=>e.classList.remove("hidden"));
+    allDoms.forEach(e=>e.classList.remove("hidden"));
+    allLayers.forEach(e=>e.classList.remove("hidden"));
+    baseline();
+    return;
+  }
+  let found = 0;
+  allDoms.forEach(dom => {
+    const domText = dom.querySelector(".domain-head").textContent.toLowerCase();
+    const domMatch = domText.includes(t);
+    let visible = 0;
+    dom.querySelectorAll(".ent").forEach(ent => {
+      const show = domMatch || ent.textContent.toLowerCase().includes(t);
+      ent.classList.toggle("hidden", !show);
+      if (show) visible++;
+    });
+    dom.classList.toggle("hidden", visible === 0);
+    found += visible;
+  });
+  allLayers.forEach(layer => {
+    const any = [...layer.querySelectorAll(".domain")].some(d => !d.classList.contains("hidden"));
+    layer.classList.toggle("hidden", !any);
+  });
+  hits.textContent = `${found} ${found===1?"entidade":"entidades"}`;
+});
+</script>
+</body>
+</html>
