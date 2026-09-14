@@ -28,4 +28,9 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.claraea.com.br/es/ClaraEA-Autor.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claraea.com.br/ClaraEA-Autor.html"/>
   </url>
+  <url>
+    <loc>https://www.claraea.com.br/casos/itau-unibanco.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

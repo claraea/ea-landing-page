@@ -31,9 +31,10 @@ jobs:
 
       - name: Stage site for deployment
         run: |
-          mkdir -p _site/assets _site/en _site/es
+          mkdir -p _site/assets _site/en _site/es _site/casos
           cp index.html ClaraEA-CMDB.html ClaraEA-Autor.html _site/
           cp -r assets/. _site/assets/
+          cp -r casos/. _site/casos/
           cp -r en/. _site/en/
           cp -r es/. _site/es/
           cp .nojekyll CNAME sitemap.xml robots.txt _site/

@@ -17,6 +17,8 @@ Site **estático puro** — HTML + CSS + JS vanilla, sem etapa de build.
 index.html              # home (era ClaraEA-Mockup.html)
 ClaraEA-CMDB.html       # página da ferramenta EA/CMDB
 ClaraEA-Autor.html      # página do autor
+casos/
+  itau-unibanco.html    # caso de mercado (IA agêntica) — só PT, fora do build i18n
 assets/
   styles.css            # CSS compartilhado entre as três páginas
   cubes.svg             # ilustração modular auxiliar
