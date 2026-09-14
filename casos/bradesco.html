@@ -203,9 +203,11 @@
     padding:1px 6px;border:1px solid currentColor;border-radius:2px;margin-left:8px;vertical-align:1px;white-space:nowrap;
   }
   .t-ok{color:var(--doc-ok)}
-  .t-warn{color:var(--doc-warn)}
+  .t-trans{color:var(--brand-deep)}
+  .t-nd{color:var(--ink-muted)}
+  .t-sec{color:var(--doc-warn)}
+  .t-open{color:var(--doc-open)}
   .t-stop{color:var(--doc-stop)}
-  .t-info{color:var(--brand-deep)}
 
   /* ---------- ressalvas e referência cruzada ---------- */
   .case-notes{padding:64px 0 96px;border-top:3px solid var(--accent-gold)}
@@ -316,7 +318,7 @@
         <li><span><b>Apuração.</b> Coleta orientada em fontes primárias: Form 20-F, Relatório de Análise Econômica e Financeira, Pilar 3, Relatório Integrado, organograma societário, atos societários, portais de RI e de produto.</span></li>
         <li><span><b>Instanciação.</b> Cada camada é povoada com entidades reais; dentro da camada, o agente agrupa por semelhança de atributo, processo ou relacionamento (princípio III), sem reproduzir organograma.</span></li>
         <li><span><b>Rastreabilidade.</b> Todo domínio carrega os códigos das fontes que o sustentam; a tabela final percorre o caminho inverso. Fontes secundárias ficam isoladas para sinalizar carência de confirmação primária.</span></li>
-        <li><span><b>Marcadores de estado.</b> Entidades em transição ou encerradas recebem etiqueta (princípio V), para que o modelo registre movimento, não apenas retrato.</span></li>
+        <li><span><b>Marcadores de estado e de evidência.</b> Cada entidade pode receber um marcador que separa o estado do fato — confirmado, em transição, encerrado — da qualidade da evidência que o sustenta — fonte secundária, não divulgado, em aberto (princípio V). Dado oficial e conferido não recebe marca.</span></li>
         <li><span><b>Revisão editorial.</b> Ressalvas, limites de escopo e pontos que exigem verificação antes de uso externo são declarados abertamente no rodapé do documento.</span></li>
       </ol>
     </div>
@@ -346,7 +348,7 @@
     </div>
     <div>
       <h3>V · Evolução</h3>
-      <p>Entidades trazem marcadores de estado — <span class="tag t-warn">verificar</span> e <span class="tag t-stop">encerrado</span> — para que o modelo registre movimento, não apenas retrato.</p>
+      <p>O marcador separa o estado do fato da qualidade da evidência. <span class="tag t-ok">confirmado</span> <span class="tag t-trans">em transição</span> <span class="tag t-stop">encerrado</span> descrevem o fato; <span class="tag t-sec">fonte secundária</span> <span class="tag t-nd">não divulgado</span> <span class="tag t-open">em aberto</span> descrevem o que o sustenta. Dado oficial e conferido não recebe marca.</p>
     </div>
     <div>
       <h3>Lei de Conway</h3>
@@ -400,7 +402,7 @@
       <li><strong>Aumento de capital de até R$ 10 bilhões</strong>: período de preferência encerrado em 04/09/2026, poucos dias antes desta apuração. Resultado final, rateio de sobras e homologação pelo BACEN não foram confirmados.</li>
       <li><strong>Quebra acionária ON/PN por controladora</strong>: a página de Estrutura Acionária do RI publica o organograma como imagem e as extrações devolveram linhas embaralhadas. Os percentuais por holding precisam ser lidos no PDF original.</li>
       <li><strong>Capital regulatório entre trimestres</strong>: CET1 de 11,2% (dez/25), 10,2% (mar/26, Pilar 3) e 11,3% (jun/26). A oscilação é grande para dois trimestres — reconferir a base de cada número antes de usar em série.</li>
-      <li><strong>Políticas corporativas</strong>: onze políticas exigidas por norma não foram localizadas como documento público autônomo. A causa provável é a página "Políticas e Normas" do RI, renderizada por JavaScript, que não retornou conteúdo. Ausência de acesso, não prova de inexistência.</li>
+      <li><strong>Políticas corporativas</strong>: onze políticas exigidas por norma não foram localizadas como documento público autônomo. A causa provável é a página "Políticas e Normas" do RI, renderizada por JavaScript, que não retornou conteúdo. Ausência de acesso, não prova de inexistência — por isso ficaram <span class="tag t-open">em aberto</span>, e não como fato negativo.</li>
       <li><strong>Composição nominal dos comitês</strong> do Conselho não foi obtida em nenhuma fonte acessível — as páginas do RI descrevem finalidade, não membros.</li>
       <li><strong>Segmento Exclusive</strong>: a descontinuação gradual é reportada por imprensa (09/2025) e por sindicato (10/2025), sem comunicado oficial do banco. O portal seguia no ar na data desta apuração.</li>
       <li><strong>Participação final na Cielo, na Alelo e na Livelo</strong> após o fechamento de capital e a reorganização via EloPar não foi confirmada entidade a entidade.</li>
@@ -559,13 +561,13 @@ const L = [
   {code:"0.02", name:"Ambição de rentabilidade e eficiência", note:"O eixo de recuperação: a distância para o par de mercado é o que o plano existe para fechar.", ents:[
     ["Recuperação do ROAE","De 14,6% no 2T25 para 16,2% no 2T26."],
     ["Recuperação da eficiência","Índice de 46,5% no 2T26, melhora de 3,4 p.p. em 12 meses."],
-    ["Moderação de apetite de risco","Postura declarada para 2026 pelo CEO em 05/08/2026.","info"],
+    ["Moderação de apetite de risco","Postura declarada para 2026 pelo CEO em 05/08/2026."],
     ["Guidance 2026 mantido","Nenhuma das cinco linhas revisada no 2T26."]
   ]},
   {code:"0.03", name:"Ambição de alta renda e digital", note:"As duas avenidas em que o plano concentra investimento — e a contrapartida em rede física.", ents:[
-    ["Escalar o Bradesco Principal","De 3 escritórios em nov/2024 para 70+ em 45 cidades e 400 mil clientes em jun/26; meta de 800 mil no ano.","warn"],
-    ["Ampliar o Prime","3,7 mi de clientes em dez/25, com meta de 4,7 mi em 2026.","warn"],
-    ["Encolher a rede física","Plano de fechar 600 a 700 agências e pontos em 2026, despriorizando cidades com menos de 20 mil habitantes.","warn"],
+    ["Escalar o Bradesco Principal","De 3 escritórios em nov/2024 para 70+ em 45 cidades e 400 mil clientes em jun/26; meta de 800 mil no ano.","sec"],
+    ["Ampliar o Prime","3,7 mi de clientes em dez/25, com meta de 4,7 mi em 2026.","sec"],
+    ["Encolher a rede física","Plano de fechar 600 a 700 agências e pontos em 2026, despriorizando cidades com menos de 20 mil habitantes.","sec"],
     ["Digitalizar a originação","99% das transações em canais digitais; 46% dos créditos liberados por canal digital no 2T26."]
   ]},
   {code:"0.04", name:"Compromissos ASG e climáticos", note:"", ents:[
@@ -576,10 +578,10 @@ const L = [
   ]},
   {code:"0.05", name:"Direcionadores de governança e capital", note:"Restrições permanentes que a estrutura de controle e o regime prudencial impõem à estratégia.", ents:[
     ["Controle por fundação e holdings","Fundação Bradesco, Cidade de Deus, Nova Cidade de Deus, BBD e NCF detêm em conjunto ~74% do capital votante."],
-    ["Administradores dentro do bloco de controle","A BBD Participações reúne ações de administradores e ex-administradores — o mecanismo que amarra a gestão ao controle.","info"],
+    ["Administradores dentro do bloco de controle","A BBD Participações reúne ações de administradores e ex-administradores — o mecanismo que amarra a gestão ao controle."],
     ["Dupla listagem","B3 Nível 1 (BBDC3/BBDC4) e NYSE (ADRs BBD e BBDO desde 21/11/2001)."],
     ["Enquadramento Segmento 1 (S1)","Res. CMN 4.553/2017; requerimento mínimo de Basileia de 11,5%."],
-    ["Aumento de capital de até R$ 10 bi","Subscrição privada anunciada em 29/07/2026, mínimo de R$ 8 bi com compromisso firme das controladoras; preferência encerrada em 04/09/2026. Resultado não confirmado.","warn"]
+    ["Aumento de capital de até R$ 10 bi","Subscrição privada anunciada em 29/07/2026, mínimo de R$ 8 bi com compromisso firme das controladoras; preferência encerrada em 04/09/2026. Resultado não confirmado.","open"]
   ]}
  ]
 },
@@ -594,22 +596,22 @@ const L = [
   ]},
   {code:"I.02", name:"Segmentos de cliente — pessoa física", note:"Estrutura em revisão: o Principal foi criado em out/2024 e o Exclusive está em descontinuação reportada.", ents:[
     ["Bradesco (Classic / varejo)","Base ampla. 74,3 mi de clientes totais e 37,9 mi de correntistas em jun/26."],
-    ["Bradesco Exclusive","Faixa intermediária, historicamente a partir de ~R$ 4 mil/mês. Descontinuação gradual reportada por imprensa e sindicato em set–out/2025, sem confirmação oficial.","warn"],
-    ["Bradesco Prime","Renda de R$ 8 mil a R$ 25 mil/mês. 3,7 mi de clientes em dez/25. Critério declarado pelo CEO à imprensa, não publicado pelo banco.","warn"],
+    ["Bradesco Exclusive","Faixa intermediária, historicamente a partir de ~R$ 4 mil/mês. Descontinuação gradual reportada por imprensa e sindicato em set–out/2025, sem confirmação oficial.","sec"],
+    ["Bradesco Prime","Renda de R$ 8 mil a R$ 25 mil/mês. 3,7 mi de clientes em dez/25. Critério declarado pelo CEO à imprensa, não publicado pelo banco.","sec"],
     ["Bradesco Principal","Renda acima de R$ 25 mil/mês ou investimentos de R$ 300 mil a R$ 10 mi. Lançado em 31/10/2024; 400 mil+ clientes e 70+ escritórios em jun/26."],
-    ["Bradesco Global Private Bank","Disponibilidade financeira a partir de R$ 10 mi. ~9 mil famílias e 22% de share — dados de 2023, sem atualização oficial.","warn"],
+    ["Bradesco Global Private Bank","Disponibilidade financeira a partir de R$ 10 mi. ~9 mil famílias e 22% de share — dados de 2023, sem atualização oficial.","sec"],
     ["Perfis especializados","Aposentados, universitários, servidor público, Nikkei, crianças e adolescentes."]
   ]},
   {code:"I.03", name:"Segmentos de cliente — pessoa jurídica", note:"Os cortes de faturamento vigentes não foram publicados; as referências disponíveis são de 2015 e 2019.", ents:[
     ["Empresas & Negócios","PMEs. Carteira MPME de R$ 267,5 bi em jun/26 (+16,1% a/a); share que subiu de 14,3% para 16,6%."],
     ["Corporate","Grandes empresas. 87 pontos de atendimento em jun/26."],
     ["Large Corporate e Ultra Corporate","Faixas superiores do atacado, com diretorias executivas dedicadas."],
-    ["Middle market — célula BBI","Empresas de R$ 50 mi a R$ 1 bi de receita; célula criada em 2026.","info"],
-    ["Cortes de faturamento vigentes","Não divulgados em 2025–2026. Referências históricas: Corporate One R$ 30–500 mi, Corporate R$ 500 mi–R$ 4 bi, Large Corporate acima de R$ 4 bi (2019).","warn"]
+    ["Middle market — célula BBI","Empresas de R$ 50 mi a R$ 1 bi de receita; célula criada em 2026."],
+    ["Cortes de faturamento vigentes","Não divulgados em 2025–2026. Referências históricas: Corporate One R$ 30–500 mi, Corporate R$ 500 mi–R$ 4 bi, Large Corporate acima de R$ 4 bi (2019).","nd"]
   ]},
   {code:"I.04", name:"Nichos e verticais setoriais", note:"", ents:[
     ["Agronegócio","Crédito rural PF de R$ 42,5 bi e PJ de R$ 56,7 bi (+30,9% a/a) em jun/26; JV de 50% no Banco John Deere concluída em 2025; consórcio agro com vendas de R$ 1,3 bi no 1S26."],
-    ["Saúde","Vertical que se tornou empresa listada própria em 2026 — a Bradsaúde.","info"],
+    ["Saúde","Vertical que se tornou empresa listada própria em 2026 — a Bradsaúde.","trans"],
     ["Veículos","Carteira PF de R$ 48,2 bi (+26,8% a/a), a linha de maior crescimento do varejo."],
     ["Imobiliário","Carteira PF de R$ 115,6 bi; LTV de originação de 60,9%."],
     ["Consignado","Carteira de R$ 108,6 bi; 13,9% de share total, com forte assimetria entre público (14,5%) e privado (7,1%)."],
@@ -625,21 +627,21 @@ const L = [
     ["México","Bradescard México (cartões) e Ictineo Plataforma (99,99%), sociedad financiera popular."],
     ["Ilhas Cayman","Agência do Banco Bradesco — funding e operações offshore."],
     ["Guatemala","Escritório de representação."],
-    ["Argentina","Operação bancária encerrada em set/2021; a Bradesco Argentina de Seguros (100%) permanece no perímetro. Finalidade atual não apurada.","warn"],
-    ["Japão","Ausente das listas oficiais de 2025–2026; sem comunicado de encerramento localizado.","warn"]
+    ["Argentina","Operação bancária encerrada em set/2021; a Bradesco Argentina de Seguros (100%) permanece no perímetro. Finalidade atual não apurada.","open"],
+    ["Japão","Ausente das listas oficiais de 2025–2026; sem comunicado de encerramento localizado.","open"]
   ]},
   {code:"I.06", name:"Mercados de produto adjacentes", note:"Participações de mercado divulgadas pelo próprio banco, posição jun/26 salvo indicação.", ents:[
     ["Seguros, previdência e capitalização","21,6% de share em prêmios e 21,1% em provisões técnicas. Líder em saúde por faturamento entre as 50 maiores operadoras."],
     ["Capitalização","21,8% de share (2025); 3,2 mi de clientes ativos."],
     ["Previdência aberta / VGBL","23,1% de share (2025)."],
-    ["Gestão e administração de recursos","R$ 1.515 bi administrados, 16,1% de share ANBIMA. Sob gestão, a BRAM tem R$ 905,7 bi e 8,8% (out/25) — conceitos distintos, não somáveis.","info"],
+    ["Gestão e administração de recursos","R$ 1.515 bi administrados, 16,1% de share ANBIMA. Sob gestão, a BRAM tem R$ 905,7 bi e 8,8% (out/25) — conceitos distintos, não somáveis."],
     ["Custódia","16,9% de share; R$ 2,8 tri sob custódia."],
     ["Consórcios","Automóveis 20,2%, pesados 16,4%, imóveis 11,3%. 1,614 mi de cotas ativas."],
     ["Financiamento de veículos","11,9% entre instituições privadas."],
     ["Crédito imobiliário","9,3% de share."],
     ["Câmbio","14,2% em exportação e 8,8% em importação."],
     ["Mercado de capitais — renda fixa","Líder do ranking ANBIMA no 1S26 com 28% de share e R$ 62 bi originados; primeira liderança desde 2016."],
-    ["Adquirência","Via Cielo, hoje de capital fechado. Share de 19,9% no 2T24, em trajetória de queda.","warn"],
+    ["Adquirência","Via Cielo, hoje de capital fechado. Share de 19,9% no 2T24, em trajetória de queda.","sec"],
     ["Crédito no SFN","10,3% das operações de crédito do sistema."]
   ]},
   {code:"I.07", name:"Ambiente regulatório", note:"A dupla natureza do conglomerado dobra o número de autoridades: à supervisão bancária somam-se SUSEP e ANS, e a partir de 2026 uma segunda companhia listada.", ents:[
@@ -651,13 +653,13 @@ const L = [
     ["Federal Reserve, OCC e FDIC","Agência de Nova York, Bradesco Bank e plano de resolução 165(d) de 2025."],
     ["CSSF, FCA, SFC, CNBV, CIMA","Luxemburgo, Reino Unido, Hong Kong, México e Cayman."],
     ["CADE","Aprovou a JV do Banco John Deere (2025); análise aplicável à equalização da Elo."],
-    ["PREVIC","Não foi localizada entidade fechada de previdência própria dos funcionários. Exposição não confirmada.","warn"],
+    ["PREVIC","Não foi localizada entidade fechada de previdência própria dos funcionários. Exposição não confirmada.","open"],
     ["Basileia III, LGPD, Open Finance e Pix","Regimes transversais de capital, liquidez, dados e pagamentos."],
     ["Autorregulação","FEBRABAN/SARB 026/2023, Princípios do Equador e Código ANBIMA de Fundos."]
   ]},
   {code:"I.08", name:"Cenário competitivo", note:"", ents:[
     ["Incumbentes","Itaú Unibanco, Banco do Brasil, Caixa Econômica Federal e Santander Brasil."],
-    ["Entrantes digitais","Nubank — que ultrapassou o Bradesco em número de clientes, tornando-se a 2ª maior instituição do país nesse critério (reportado em jan/2026) —, Banco Inter, PicPay e Mercado Pago.","warn"],
+    ["Entrantes digitais","Nubank — que ultrapassou o Bradesco em número de clientes, tornando-se a 2ª maior instituição do país nesse critério (reportado em jan/2026) —, Banco Inter, PicPay e Mercado Pago.","sec"],
     ["Alta renda","Itaú Personnalité e Uniclass, Santander Select, BB Estilo, XP, BTG+ e Safra."],
     ["Atacado e banco de investimento","Itaú BBA, BTG Pactual, Santander, BB e bancos globais."],
     ["Gestão de recursos","BB Asset (líder), Itaú Asset, Caixa Asset, Santander Asset, BTG e XP."],
@@ -676,7 +678,7 @@ const L = [
   ]},
   {code:"II.02", name:"Marcas de segmento — pessoa física", note:"", ents:[
     ["Bradesco Prime","Alta renda. Ativa, com meta de expansão para 2026."],
-    ["Bradesco Exclusive","Faixa intermediária. Portal ativo, descontinuação gradual reportada sem confirmação oficial.","warn"],
+    ["Bradesco Exclusive","Faixa intermediária. Portal ativo, descontinuação gradual reportada sem confirmação oficial.","sec"],
     ["Bradesco Principal","Faixa entre Prime e Private. Ativa, lançada em 31/10/2024 — a marca mais nova do portfólio."],
     ["Bradesco Global Private Bank","Ultra-alta renda. Ativa."]
   ]},
@@ -689,8 +691,8 @@ const L = [
   {code:"II.04", name:"Marcas de pagamentos, cartões e adquirência", note:"Domínio onde estão quase todas as marcas independentes do grupo — e onde a arquitetura é compartilhada com o Banco do Brasil via EloPar.", ents:[
     ["Bradescard","Cartões private label e co-branded com varejistas. Endosso. Ativa."],
     ["Digio","Banco digital e cartões. Independente. Ativa — R$ 23,0 bi de carteira e 10,0 mi de clientes únicos em jun/26."],
-    ["Cielo","Adquirência. Independente. Ativa como marca; companhia fechada desde 26/08/2024, com Bradesco e BB detendo 95,1% via EloPar.","warn"],
-    ["Elo","Bandeira doméstica de cartões. Independente. Equalização para 1/3 entre Bradesco, BB e Caixa comunicada em 12/05/2025, sujeita a BACEN e CADE.","warn"],
+    ["Cielo","Adquirência. Independente. Ativa como marca; companhia fechada desde 26/08/2024, com Bradesco e BB detendo 95,1% via EloPar."],
+    ["Elo","Bandeira doméstica de cartões. Independente. Equalização para 1/3 entre Bradesco, BB e Caixa comunicada em 12/05/2025, sujeita a BACEN e CADE.","open"],
     ["Livelo","Programa de fidelidade e coalizão. Independente. JV com o BB via EloPar."],
     ["Alelo","Benefícios corporativos. Independente. JV com o BB; participação direta de 30,61%."],
     ["Bitz","Carteira digital. Marca encerrada em 2023, com migração de clientes para o Digio — mas a Bitz Instituição de Pagamentos S.A. segue 100% no organograma de 09/2025.","stop"],
@@ -708,9 +710,9 @@ const L = [
     ["Bradesco Vida e Previdência","Vida, PGBL e VGBL. Ativa — 27 mi de contratos."],
     ["Bradesco Auto/RE","Auto e ramos elementares. Ativa — 1,6 mi de veículos segurados."],
     ["Bradesco Capitalização","Títulos de capitalização. Ativa."],
-    ["Bradesco Saúde","Saúde suplementar. Ativa como marca, migrada de perímetro para a Bradsaúde em 2026.","warn"],
+    ["Bradesco Saúde","Saúde suplementar. Ativa como marca, migrada de perímetro para a Bradsaúde em 2026.","trans"],
     ["Bradsaúde","Nova holding de saúde listada (SAUD3). Ativa desde 05/05/2026 — consolidou Bradesco Saúde, Odontoprev, Mediservice, Atlântica Hospitais, Orizon e participações."],
-    ["Odontoprev","Planos odontológicos. Marca comercial ativa, mas a companhia listada foi renomeada Bradsaúde e o ticker ODPV3 virou SAUD3.","warn"],
+    ["Odontoprev","Planos odontológicos. Marca comercial ativa, mas a companhia listada foi renomeada Bradsaúde e o ticker ODPV3 virou SAUD3.","trans"],
     ["Mediservice","Operadora corporativa de saúde. Independente. Ativa."],
     ["Atlântica Hospitais","Rede hospitalar própria. Independente. Ativa — 21 unidades e mais de 2.200 leitos."],
     ["Bradesco Dental","Plano odontológico de varejo. Endosso. Ativa."]
@@ -721,21 +723,21 @@ const L = [
     ["BIA Tech","Cobertura do ciclo de desenvolvimento dentro dos times de tecnologia."],
     ["BEX","Plataforma do ecossistema 'Tech for Tech', focada em simplificação."],
     ["Meu Bradesco","Ecossistema de personalização e análise preditiva de segurança."],
-    ["inovabra","Programa de inovação. Sem divulgação recente localizada em 2025–2026.","warn"]
+    ["inovabra","Programa de inovação. Sem divulgação recente localizada em 2025–2026.","nd"]
   ]},
   {code:"II.08", name:"Marcas institucionais e sociais", note:"", ents:[
     ["Fundação Bradesco","Educação gratuita. Ativa — 40 escolas, 42 mil+ alunos, ~R$ 1 bi investidos em 2024 e R$ 10,6 bi na década."],
     ["Escola Virtual","Plataforma de educação a distância da Fundação. Ativa."],
-    ["Instituto Bradesco de Sustentabilidade","Não localizado como pessoa jurídica ou marca autônoma. Provavelmente não existe com esse nome.","stop"]
+    ["Instituto Bradesco de Sustentabilidade","Não localizado como pessoa jurídica ou marca autônoma. Provavelmente não existe com esse nome.","open"]
   ]},
   {code:"II.09", name:"Marcas encerradas, migradas ou reabsorvidas", note:"Registradas porque o princípio V exige que o modelo guarde o movimento. Note a inversão em relação ao caso comparável: aqui a entidade legal costuma sobreviver à marca, não o contrário.", ents:[
     ["next","Banco digital reabsorvido pelo Bradesco na virada de 2023/2024. Site ainda no ar, ausente de toda a comunicação financeira recente.","stop"],
     ["Bitz","Carteira digital encerrada em 2023; base migrada ao Digio. Entidade legal preservada.","stop"],
-    ["Losango","Crédito ao consumo. Banco Losango S.A. ativo no 20-F FY2025; intensidade comercial da marca não confirmada.","warn"],
+    ["Losango","Crédito ao consumo. Banco Losango S.A. ativo no 20-F FY2025; intensidade comercial da marca não confirmada.","open"],
     ["Kirton Bank","Veículo originado do HSBC Brasil. Entidade ativa, sem uso comercial voltado ao público.","stop"],
     ["Banco Bradesco Argentina","Operação bancária encerrada em set/2021.","stop"],
-    ["Atlântica Companhia de Seguros","Seguradora de automóveis sem demonstrações publicadas desde ~2020 e ausente do organograma de 09/2025. Provável incorporação, não confirmada.","warn"],
-    ["Crediare","Não consta do organograma de 09/2025 nem do 20-F FY2025. Vínculo com o grupo não confirmado.","warn"]
+    ["Atlântica Companhia de Seguros","Seguradora de automóveis sem demonstrações publicadas desde ~2020 e ausente do organograma de 09/2025. Provável incorporação, não confirmada.","open"],
+    ["Crediare","Não consta do organograma de 09/2025 nem do 20-F FY2025. Vínculo com o grupo não confirmado.","open"]
   ]}
  ]
 },
@@ -744,8 +746,8 @@ const L = [
  purpose:"Esta camada carrega a assinatura mais distintiva do grupo: com 39.250 pontos, o Bradesco Expresso é quase metade de toda a rede de atendimento e o maior canal por contagem — mas deixou de ser transacional e hoje só origina. Ao mesmo tempo a rede própria encolhe em dois dígitos ao ano e o autoatendimento migra deliberadamente para a rede compartilhada.",
  domains:[
   {code:"III.01", name:"Rede física própria", note:"Posição em 30/06/2026. Total de 86.659 pontos de atendimento somando todos os formatos.", ents:[
-    ["Agências","1.938 unidades, contra 2.168 um ano antes — queda de 10,6% a/a.","warn"],
-    ["Postos de Atendimento (PA)","1.293 unidades, contra 1.939 um ano antes — queda de 33%, o vetor mais agressivo do enxugamento.","warn"],
+    ["Agências","1.938 unidades, contra 2.168 um ano antes — queda de 10,6% a/a."],
+    ["Postos de Atendimento (PA)","1.293 unidades, contra 1.939 um ano antes — queda de 33%, o vetor mais agressivo do enxugamento."],
     ["Unidades de Negócios","706 unidades."],
     ["Postos Eletrônicos (PAE)","430 unidades."],
     ["Composição por segmento","Varejo + Prime 1.509; Empresas & Negócios 150; Corporate 90; postos em plataformas 95."],
@@ -762,13 +764,13 @@ const L = [
   {code:"III.03", name:"Autoatendimento", note:"Substituição deliberada de capilaridade própria por rede compartilhada.", ents:[
     ["Caixas eletrônicos próprios","12.150 em jun/26, queda de 9,2% a/a."],
     ["Rede Banco24Horas","27.312 terminais disponíveis, alta de 9,9% a/a — mais do que o dobro da rede própria."],
-    ["Participação na TecBan","~25,3%, segundo maior acionista. Percentual de fonte secundária.","warn"]
+    ["Participação na TecBan","~25,3%, segundo maior acionista. Percentual de fonte secundária.","sec"]
   ]},
   {code:"III.04", name:"Canais digitais proprietários", note:"99% das transações e 96% concentradas em mobile e internet.", ents:[
     ["App Bradesco","Avaliação 4,7/5 nas duas lojas. Volume transacionado em mobile PF +44% a/a."],
     ["App Empresas & Negócios","Avaliação 4,7/5. Aberturas de conta +124% e emissão de cartões +122% a/a."],
     ["Internet Banking","Agregado à métrica de mobile + internet."],
-    ["BIA — assistente de IA","28 mi de clientes com acesso; 34 mi de interações no 2T26 com 88% de resolutividade; 49 mi de interações com IA generativa no acumulado de 2025.","info"],
+    ["BIA — assistente de IA","28 mi de clientes com acesso; 34 mi de interações no 2T26 com 88% de resolutividade; 49 mi de interações com IA generativa no acumulado de 2025."],
     ["Pix Inteligente via BIA","525 mil acessos no 2T26, +36% sobre o 1T26."],
     ["App Ágora","Avaliação 4,8/5 — a maior do portfólio."],
     ["Clientes 100% digitais","Mais de 30 milhões em jun/26."]
@@ -783,22 +785,22 @@ const L = [
   ]},
   {code:"III.06", name:"Canais de terceiros", note:"", ents:[
     ["Concessionárias de veículos","Canal do Bradesco Financiamentos — carteira de R$ 21,7 bi em jun/26, hoje minoritária frente aos R$ 48,2 bi de veículos PF."],
-    ["Imobiliárias e construtoras","Originação de crédito imobiliário. Quantidade de parceiros não divulgada.","warn"],
-    ["Corretores de seguros","Rede de corretagem do grupo segurador, somada ao canal bancassurance das agências. Quantidade não divulgada.","warn"],
-    ["Assessores de investimento","Canal de AAI credenciados da Ágora. Quantidade não divulgada.","warn"]
+    ["Imobiliárias e construtoras","Originação de crédito imobiliário. Quantidade de parceiros não divulgada.","nd"],
+    ["Corretores de seguros","Rede de corretagem do grupo segurador, somada ao canal bancassurance das agências. Quantidade não divulgada.","nd"],
+    ["Assessores de investimento","Canal de AAI credenciados da Ágora. Quantidade não divulgada.","nd"]
   ]},
   {code:"III.07", name:"Aceitação e pagamento", note:"Toda a camada de aceitação está fora do balanço do banco, em joint venture com o Banco do Brasil.", ents:[
     ["Cielo — credenciamento e captura","Companhia fechada desde 26/08/2024. OPA de R$ 4,3 bi; ofertantes com 95,1% do capital, seguido de resgate compulsório."],
     ["EloPar — Elo Participações","Holding que consolida Cielo, Alelo, Livelo e a bandeira Elo. Bradesco com 50,01% das cotas."],
     ["Quixaba Empreendimentos","Veículo que detinha a fatia do Bradesco na Cielo (30,61% pré-OPA)."],
     ["Elo Serviços","Bandeira de cartões, 100% via EloPar e Bradescard."],
-    ["Participação econômica final na Cielo","Não confirmada após o resgate e a reorganização societária.","warn"]
+    ["Participação econômica final na Cielo","Não confirmada após o resgate e a reorganização societária.","open"]
   ]},
   {code:"III.08", name:"Canais abertos e interoperáveis", note:"O bloco de menor evidência pública de toda a camada — o relatório trimestral não divulga métricas de Pix nem de Open Finance.", ents:[
-    ["Pix","Operado em todos os canais. Volume e quantidade de transações não divulgados.","warn"],
-    ["Open Finance","Portal e jornada ativos; participante do ecossistema regulado. Consentimentos e compartilhamentos não divulgados.","warn"],
-    ["APIs para empresas","Portal de desenvolvedores com APIs de cobrança, pagamentos e extrato. Catálogo não confirmado em fonte primária.","warn"],
-    ["Banking as a Service","Área existe no organograma executivo (sob a diretoria de Ultra Corporate e Pagamentos); oferta formal não confirmada.","warn"]
+    ["Pix","Operado em todos os canais. Volume e quantidade de transações não divulgados.","nd"],
+    ["Open Finance","Portal e jornada ativos; participante do ecossistema regulado. Consentimentos e compartilhamentos não divulgados.","nd"],
+    ["APIs para empresas","Portal de desenvolvedores com APIs de cobrança, pagamentos e extrato. Catálogo não confirmado em fonte primária.","sec"],
+    ["Banking as a Service","Área existe no organograma executivo (sob a diretoria de Ultra Corporate e Pagamentos); oferta formal não confirmada.","open"]
   ]},
   {code:"III.09", name:"Canais de atacado e mercado", note:"", ents:[
     ["Cobertura corporate e large corporate","Diretorias executivas dedicadas por faixa de porte."],
@@ -829,17 +831,17 @@ const L = [
     ["Cartões Digio","R$ 23,0 bi de carteira e 10,0 mi de clientes únicos."],
     ["Pré-pagos e benefícios","Via Alelo."],
     ["Programa de fidelidade","Livelo."],
-    ["Concentração em alta renda","~52% do faturamento de cartões, crescendo 14% a/a.","info"],
+    ["Concentração em alta renda","~52% do faturamento de cartões, crescendo 14% a/a."],
     ["Rendas de cartão","R$ 4.494 mi no 2T26, praticamente estáveis (+0,8% a/a)."]
   ]},
   {code:"IV.03", name:"Crédito pessoa física", note:"Carteira em 30/06/2026. Total PF de R$ 479,7 bi, +8,4% a/a.", ents:[
     ["Financiamento imobiliário","R$ 115,6 bi, +3,8% a/a — praticamente estagnado em termos reais."],
     ["Crédito consignado","R$ 108,6 bi, +9,3% a/a."],
     ["Cartão de crédito","R$ 84,4 bi, +10,6% a/a."],
-    ["Crédito pessoal","R$ 70,2 bi, −2,3% a/a — a única linha em queda.","warn"],
+    ["Crédito pessoal","R$ 70,2 bi, −2,3% a/a — a única linha em queda."],
     ["Veículos (CDC e leasing)","R$ 48,2 bi, +26,8% a/a — o motor de crescimento do varejo."],
     ["Crédito rural PF","R$ 42,5 bi, +17,6% a/a."],
-    ["Cheque especial e rotativo","Não desagregados na divulgação; embutidos em crédito pessoal e cartão.","warn"]
+    ["Cheque especial e rotativo","Não desagregados na divulgação; embutidos em crédito pessoal e cartão.","nd"]
   ]},
   {code:"IV.04", name:"Crédito pessoa jurídica", note:"Total PJ de R$ 656,9 bi em jun/26, +14,1% a/a — crescendo ao dobro da velocidade do varejo.", ents:[
     ["Capital de giro","R$ 180,9 bi."],
@@ -848,7 +850,7 @@ const L = [
     ["Financiamento a comércio exterior","R$ 51,5 bi."],
     ["CDC e leasing PJ","R$ 31,6 bi."],
     ["Repasses BNDES e Finame","R$ 26,5 bi."],
-    ["Antecipação de recebíveis","Não desagregada; embutida em capital de giro e TVM.","warn"],
+    ["Antecipação de recebíveis","Não desagregada; embutida em capital de giro e TVM.","nd"],
     ["Grandes empresas e MPME","R$ 389,4 bi e R$ 267,5 bi respectivamente."]
   ]},
   {code:"IV.05", name:"Investimentos e captação", note:"R$ 3,7 trilhões captados e administrados em jun/26, +13,6% a/a.", ents:[
@@ -860,7 +862,7 @@ const L = [
     ["Tesouro Direto e debêntures incentivadas",""],
     ["Produtos estruturados","COE."],
     ["Previdência privada","PGBL e VGBL."],
-    ["CDB, LCI e LCA individualmente","Não desagregados na divulgação trimestral.","warn"]
+    ["CDB, LCI e LCA individualmente","Não desagregados na divulgação trimestral.","nd"]
   ]},
   {code:"IV.06", name:"Gestão de recursos e serviços a investidores", note:"Dois conceitos convivem e não devem ser somados: administração (R$ 1.515 bi) e gestão (R$ 905,7 bi).", ents:[
     ["Administração de fundos e carteiras","R$ 1.515 bi, 16,1% de share ANBIMA. Receita de R$ 984 mi no 2T26."],
@@ -869,7 +871,7 @@ const L = [
     ["Custódia","R$ 2,8 tri sob custódia, 16,9% de share — liderança de mercado."],
     ["Corretagem — Ágora","1,5 mi de clientes ativos (+23% a/a) e R$ 140 bi sob custódia (+19% a/a)."],
     ["Gestão de alternativos — Tivio Capital","~R$ 32 bi de AUM; Bradesco passou a 100% em abr/2026."],
-    ["Private banking","AuM não segregado na divulgação.","warn"],
+    ["Private banking","AuM não segregado na divulgação.","nd"],
     ["Receita de custódia e corretagem","R$ 617 mi no 2T26, +13,0% t/t — a linha de serviços que mais cresce."]
   ]},
   {code:"IV.07", name:"Seguros, previdência e capitalização", note:"Resultado de R$ 2,94 bi no 2T26 (+28,3% a/a) e provisões técnicas de R$ 467,3 bi.", ents:[
@@ -890,7 +892,7 @@ const L = [
     ["Tecnologia e gestão em saúde — Orizon",""],
     ["Diagnóstico — participação no Grupo Fleury","24,85%."],
     ["Oncologia — Croma","JV de oncologia integrada ao perímetro da Bradsaúde."],
-    ["Escala consolidada","13,4 mi de vidas, receita pro forma de R$ 52 bi e lucro de R$ 3,6 bi (base 2025). Dados de imprensa, sem fato relevante primário.","warn"]
+    ["Escala consolidada","13,4 mi de vidas, receita pro forma de R$ 52 bi e lucro de R$ 3,6 bi (base 2025). Dados de imprensa, sem fato relevante primário.","sec"]
   ]},
   {code:"IV.09", name:"Consórcio", note:"Faturamento de R$ 24,6 bi no 1S26, +14% a/a; receita de administração de R$ 852 mi no 2T26.", ents:[
     ["Consórcio de automóveis","20,2% de share."],
@@ -901,7 +903,7 @@ const L = [
   ]},
   {code:"IV.10", name:"Banco de investimento — Bradesco BBI", note:"A reconstrução mais visível do plano de transformação: de 15% de share em DCM em 2024 para 28% no 1S26.", ents:[
     ["Debt Capital Markets","Líder do ranking ANBIMA no 1S26 — R$ 62 bi originados, 28% de share."],
-    ["Equity Capital Markets","Área reforçada; ranking não confirmado.","warn"],
+    ["Equity Capital Markets","Área reforçada; ranking não confirmado.","open"],
     ["Fusões e aquisições",""],
     ["Project finance e finanças estruturadas","Operações de destaque: FIDC de R$ 5,5 bi para a CloudWalk e US$ 850 mi de financiamento de biocombustíveis para a Acelen."],
     ["Research",""],
@@ -918,7 +920,7 @@ const L = [
     ["Cobrança e arrecadações","R$ 414 mi de receita no 2T26."],
     ["Folha de pagamento",""],
     ["Convênios e arrecadação de tributos",""],
-    ["Escrituração de ativos e serviços fiduciários","Não desagregados na divulgação.","warn"],
+    ["Escrituração de ativos e serviços fiduciários","Não desagregados na divulgação.","nd"],
     ["Banco depositário",""]
   ]}
  ]
@@ -932,11 +934,11 @@ const L = [
     ["Fundação Bradesco","Fundação privada filantrópica e, ao mesmo tempo, acionista direta do banco (~8,6%) e das holdings. CNPJ 60.701.521/0001-06."],
     ["Cidade de Deus Cia. Comercial de Participações","Holding principal de controle — ~23% do capital total e ~46% das ON."],
     ["Nova Cidade de Deus Participações S.A.","Detém 47,93% da Cidade de Deus. Capital dividido em ações classe A (administradores e ex-administradores) e classe B."],
-    ["BBD Participações S.A.","Holding dos administradores e ex-administradores; 26,07% da Nova Cidade de Deus. É o mecanismo que amarra a gestão ao controle.","info"],
+    ["BBD Participações S.A.","Holding dos administradores e ex-administradores; 26,07% da Nova Cidade de Deus. É o mecanismo que amarra a gestão ao controle."],
     ["NCF Participações S.A.","5,33% do Banco Bradesco e 9,37% da Bradespar."],
-    ["Free float","~63% do capital total. A quebra ON/PN por controladora não pôde ser extraída da página do RI.","warn"],
-    ["Bradespar S.A.","Companhia irmã, não controlada — mesmo bloco de controle, fora do conglomerado prudencial.","info"],
-    ["Bradesco Holding de Investimentos S.A. (BHI)","Subsidiária do banco, não holding de topo. Não confundir com uma holding controladora — que não existe.","info"]
+    ["Free float","~63% do capital total. A quebra ON/PN por controladora não pôde ser extraída da página do RI.","open"],
+    ["Bradespar S.A.","Companhia irmã, não controlada — mesmo bloco de controle, fora do conglomerado prudencial."],
+    ["Bradesco Holding de Investimentos S.A. (BHI)","Subsidiária do banco, não holding de topo. Não confundir com uma holding controladora — que não existe."]
   ]},
   {code:"V.02", name:"Bancos e instituições financeiras — Brasil", note:"Núcleo do conglomerado prudencial, que inclui as instituições autorizadas pelo BACEN e exclui todo o grupo segurador.", ents:[
     ["Banco Bradesco S.A.","Banco múltiplo — instituição líder do conglomerado."],
@@ -946,7 +948,7 @@ const L = [
     ["Banco Bradescard S.A.","Banco de cartões private label e co-branded. 100%."],
     ["Banco Digio S.A.","Banco digital e cartões. 100% desde 2021."],
     ["Banco Losango S.A.","Banco múltiplo de crédito ao consumo, herança do HSBC. 100%."],
-    ["Kirton Bank S.A.","Banco múltiplo originado do HSBC Brasil; entidade ativa sem uso comercial. 100%.","warn"],
+    ["Kirton Bank S.A.","Banco múltiplo originado do HSBC Brasil; entidade ativa sem uso comercial. 100%.","trans"],
     ["Banco Bradesco BERJ S.A.","Veículo bancário de origem Banerj. 100%."],
     ["Banco John Deere S.A.","JV de crédito ao agronegócio. 50% das ON, concluída em 2025."]
   ]},
@@ -968,7 +970,7 @@ const L = [
     ["Alelo Instituição de Pagamento S.A.","Benefícios. 30,61%."],
     ["Bradescard Elo Participações S.A.","Holding de cartões. 99,99%."],
     ["Quixaba Empreendimentos e Participações Ltda.","SPE detentora da fatia na Cielo. 99,99%."],
-    ["Bitz Instituição de Pagamentos S.A.","Entidade 100% preservada no organograma de 09/2025, embora a marca tenha sido encerrada em 2023.","warn"],
+    ["Bitz Instituição de Pagamentos S.A.","Entidade 100% preservada no organograma de 09/2025, embora a marca tenha sido encerrada em 2023.","trans"],
     ["Aarin — Repasses Financeiros e Soluções Tecnológicas IP S.A.","Instituição de pagamento e infraestrutura. 100%."]
   ]},
   {code:"V.05", name:"Grupo segurador — Bradseg", note:"Fora do conglomerado prudencial: segue padrões de capital da SUSEP, não de Basileia. Entra no consolidado contábil e no gerenciamento de riscos.", ents:[
@@ -980,7 +982,7 @@ const L = [
     ["Bradescor Corretora de Seguros Ltda.","Corretagem. 100%. Também Ágora, Bpar e Ibi Corretoras."],
     ["BSP Empreendimentos Imobiliários S.A.","Gestão imobiliária do grupo segurador; mais de 900 imóveis."],
     ["Bradesco Segprev Investimentos Ltda.","Veículo de investimentos do grupo segurador."],
-    ["Bradesco Argentina de Seguros S.A.","Seguradora remanescente na Argentina. 100%. Finalidade atual não apurada.","warn"]
+    ["Bradesco Argentina de Seguros S.A.","Seguradora remanescente na Argentina. 100%. Finalidade atual não apurada.","open"]
   ]},
   {code:"V.06", name:"Saúde — Bradsaúde", note:"Reorganização em três etapas: cisão parcial da Bradseg, incorporação de ações da BGS pela Odontoprev e contribuição da carteira odontológica à Mediservice. Eficácia em 30/04/2026.", ents:[
     ["Bradsaúde S.A. (SAUD3)","Holding de saúde listada no Novo Mercado desde 05/05/2026. Bradesco com 91,35%; free float de 8,65%."],
@@ -992,27 +994,27 @@ const L = [
     ["Cia. Brasileira de Gestão de Serviços (Orizon)","Gestão de serviços de saúde. 100%."],
     ["Novamed Gestão de Clínicas Ltda.","Clínicas de atenção primária. 33,33%."],
     ["Grupo Fleury S.A.","Medicina diagnóstica. 24,85%."],
-    ["Free float abaixo do mínimo do Novo Mercado","8,65% contra os 20% exigidos; prazo de readequação reportado em 18 meses, não confirmado em documento da B3.","warn"]
+    ["Free float abaixo do mínimo do Novo Mercado","8,65% contra os 20% exigidos; prazo de readequação reportado em 18 meses, não confirmado em documento da B3.","sec"]
   ]},
   {code:"V.07", name:"Consórcio, securitização e recuperação de crédito", note:"", ents:[
     ["Bradesco Administradora de Consórcios Ltda.","Consórcios de imóveis, veículos e motos. 100%. BACEN."],
     ["Cia. Securitizadora de Créditos Financeiros Rubi","Securitizadora do grupo. 92,73%. CVM."],
     ["RCB Investimentos S.A.","Aquisição e recuperação de carteiras de crédito. 100% das ON."],
-    ["FIDCs e fundos exclusivos consolidados","O grupo consolida fundos em que retém substancialmente riscos e benefícios. Lista nominal não extraída.","warn"]
+    ["FIDCs e fundos exclusivos consolidados","O grupo consolida fundos em que retém substancialmente riscos e benefícios. Lista nominal não extraída.","open"]
   ]},
   {code:"V.08", name:"Participações em infraestrutura e coligadas", note:"", ents:[
     ["Pacífico Operações Hospitalares e Pacífico Holding Imobiliária","49,99% cada."],
     ["Hospital Santa Lúcia S.A.","20%."],
     ["CPM Holdings","14,60%."],
     ["Titanium Holdings","53% detidos pela Nova Cidade de Deus."],
-    ["TecBan","~25,3% segundo fonte secundária; percentual atual não confirmado.","warn"],
-    ["IRB Brasil RE","Ausente do organograma de 09/2025. Participação atual não confirmada, presumivelmente zerada ou residual.","warn"],
-    ["CIP/Núclea, Quod e B3","Participações como banco associado não confirmadas.","warn"]
+    ["TecBan","~25,3% segundo fonte secundária; percentual atual não confirmado.","sec"],
+    ["IRB Brasil RE","Ausente do organograma de 09/2025. Participação atual não confirmada, presumivelmente zerada ou residual.","open"],
+    ["CIP/Núclea, Quod e B3","Participações como banco associado não confirmadas.","open"]
   ]},
   {code:"V.09", name:"Entidades no exterior — Américas", note:"Presença americana reconhecida como material no plano de resolução 165(d) apresentado ao FDIC e ao Fed em 2025.", ents:[
     ["Banco Bradesco S.A. — New York Branch","Agência bancária; corporate e trade finance. US$ 5,53 bi de ativos. OCC e Federal Reserve."],
     ["Banco Bradesco S.A. — Grand Cayman Branch","Agência de funding e operações offshore. CIMA."],
-    ["Bradesco Bank (Coral Gables, FL)","Ex-BAC Florida Bank, adquirido em 2020 e renomeado em 2022. Não foi vendido. US$ 5,1 bi de ativos. FDIC, OCC e Fed.","info"],
+    ["Bradesco Bank (Coral Gables, FL)","Ex-BAC Florida Bank, adquirido em 2020 e renomeado em 2022. Não foi vendido. US$ 5,1 bi de ativos. FDIC, OCC e Fed."],
     ["Lecce Holdings S.A.","Holding intermediária das operações na Flórida. 100%."],
     ["Bradesco Investments Inc.","Broker-dealer em Miami. SEC e FINRA."],
     ["Bradesco Global Advisors Inc.","Investment adviser em Miami. SEC."],
@@ -1031,8 +1033,8 @@ const L = [
   {code:"V.11", name:"Entidades sem fins lucrativos", note:"", ents:[
     ["Fundação Bradesco","Entidade de fins filantrópicos (1975) e de utilidade pública federal (1981). Fundada em 1956. 40 escolas gratuitas em todos os estados e no DF."],
     ["Escola Virtual","Braço de educação a distância da Fundação."],
-    ["Papel societário da Fundação","Além de filantrópica, é acionista do banco e das holdings; a administração do banco compõe sua Mesa Regedora — o elo que perpetua o controle.","info"],
-    ["Entidade fechada de previdência dos funcionários","Não localizada no cadastro da PREVIC. Previdência dos empregados aparentemente via planos abertos da Bradesco Vida e Previdência.","warn"]
+    ["Papel societário da Fundação","Além de filantrópica, é acionista do banco e das holdings; a administração do banco compõe sua Mesa Regedora — o elo que perpetua o controle."],
+    ["Entidade fechada de previdência dos funcionários","Não localizada no cadastro da PREVIC. Previdência dos empregados aparentemente via planos abertos da Bradesco Vida e Previdência.","open"]
   ]},
   {code:"V.12", name:"Entidades não financeiras e veículos de propósito específico", note:"", ents:[
     ["Bradesco Comercializadora de Energia Ltda.","Comercialização de energia. 100%."],
@@ -1058,8 +1060,8 @@ const L = [
   {code:"VI.02", name:"Risco, capital e crédito", note:"", ents:[
     ["Política de Gestão de Riscos da Organização Bradesco","","ok"],
     ["COGIRAC","Comitê Executivo de Gestão Integrada de Riscos e Alocação de Capital — instrumento executivo nomeado no Pilar 3."],
-    ["Política de Gestão de Capital","Tema tratado dentro do Pilar 3; documento autônomo não localizado.","warn"],
-    ["Política de Crédito","Descrita no Pilar 3 e nas demonstrações; documento autônomo não localizado.","warn"],
+    ["Política de Gestão de Capital","Tema tratado dentro do Pilar 3; documento autônomo não localizado.","open"],
+    ["Política de Crédito","Descrita no Pilar 3 e nas demonstrações; documento autônomo não localizado.","open"],
     ["Plano de recuperação e resolução","Exigido pela Res. CMN 5.187/24."],
     ["US Resolution Plan 165(d)","Plano apresentado ao FDIC e ao Federal Reserve em 2025."]
   ]},
@@ -1071,8 +1073,8 @@ const L = [
   ]},
   {code:"VI.04", name:"Segurança da informação e tecnologia", note:"", ents:[
     ["Política Corporativa de Segurança da Informação e Cibernética","Atende à Res. CMN 4.893/2021. Versão autônoma separada para o Grupo Segurador (fev/2023).","ok"],
-    ["Política de contratação de serviços de nuvem","Exigida pelas Res. 4.893/4.658; documento autônomo não localizado.","warn"],
-    ["Política de continuidade de negócios","Exigida por norma; documento autônomo não localizado.","warn"]
+    ["Política de contratação de serviços de nuvem","Exigida pelas Res. 4.893/4.658; documento autônomo não localizado.","open"],
+    ["Política de continuidade de negócios","Exigida por norma; documento autônomo não localizado.","open"]
   ]},
   {code:"VI.05", name:"Privacidade e proteção de dados", note:"", ents:[
     ["Diretiva de Privacidade da Organização Bradesco","Documento LGPD, com avisos de privacidade específicos por público.","ok"],
@@ -1081,15 +1083,15 @@ const L = [
   {code:"VI.06", name:"Governança societária", note:"O bloco de menor evidência pública da camada.", ents:[
     ["Regimento Interno do Conselho de Administração","","ok"],
     ["Regimento do Comitê de Auditoria","Versão pública circulante.","ok"],
-    ["Política de Divulgação de Ato ou Fato Relevante","Não localizada em versão do Banco Bradesco S.A.","warn"],
-    ["Política de Negociação de Valores Mobiliários","Não localizada; existem apenas regras de subsidiárias.","warn"],
-    ["Política de Transações com Partes Relacionadas","Não localizada.","warn"],
-    ["Política de Remuneração","Não localizada como documento autônomo; conteúdo esperado no Formulário de Referência.","warn"]
+    ["Política de Divulgação de Ato ou Fato Relevante","Não localizada em versão do Banco Bradesco S.A.","open"],
+    ["Política de Negociação de Valores Mobiliários","Não localizada; existem apenas regras de subsidiárias.","open"],
+    ["Política de Transações com Partes Relacionadas","Não localizada.","open"],
+    ["Política de Remuneração","Não localizada como documento autônomo; conteúdo esperado no Formulário de Referência.","open"]
   ]},
   {code:"VI.07", name:"Relacionamento com clientes e Ouvidoria", note:"", ents:[
     ["Relatórios semestrais da Ouvidoria","Série contínua publicada, incluindo o 2º semestre de 2025.","ok"],
-    ["Regulamento de Ouvidoria","Exigido pela Res. CMN 4.860; o normativo em si não foi localizado — apenas os relatórios.","warn"],
-    ["Política de Relacionamento com Clientes e Usuários","Exigida pelas Res. 4.539/4.949; documento autônomo não localizado.","warn"],
+    ["Regulamento de Ouvidoria","Exigido pela Res. CMN 4.860; o normativo em si não foi localizado — apenas os relatórios.","open"],
+    ["Política de Relacionamento com Clientes e Usuários","Exigida pelas Res. 4.539/4.949; documento autônomo não localizado.","open"],
     ["Autorregulação FEBRABAN / SARB","Inclui a SARB 026/2023 sobre diretrizes de desmatamento."]
   ]},
   {code:"VI.08", name:"Socioambiental e climático", note:"", ents:[
@@ -1102,7 +1104,7 @@ const L = [
   {code:"VI.09", name:"Arcabouço regulatório externo", note:"As normas efetivamente nomeadas nos relatórios — as que moldam processo e sistema.", ents:[
     ["Res. CMN 4.557/17","Gerenciamento integrado de riscos e de capital."],
     ["Res. CMN 4.955/21","Apuração do Patrimônio de Referência."],
-    ["Res. CMN 4.966/21","Classificação e provisionamento de risco de crédito; em vigor desde 01/01/2025 — explica boa parte da mudança de base comparativa de PDD.","info"],
+    ["Res. CMN 4.966/21","Classificação e provisionamento de risco de crédito; em vigor desde 01/01/2025 — explica boa parte da mudança de base comparativa de PDD."],
     ["Res. CMN 4.957/21","Controles internos."],
     ["Res. CMN 4.943/21","Alterações no gerenciamento de riscos."],
     ["Res. CMN 4.945/21","PRSAC."],
@@ -1131,12 +1133,12 @@ const L = [
     ["Comitê de Auditoria (COAUD)","Estatutário. Membros sem relação direta com a instituição, exceto o presidente, que integra o Conselho."],
     ["Comitê de Riscos","Assessora o Conselho em riscos e capital."],
     ["Comitê de Remuneração",""],
-    ["Comitê de Nomeação e Sucessão","Absorve, aparentemente, a função de elegibilidade — não confirmado em documento formal.","warn"],
-    ["Comitê de Integridade e Conduta Ética","Absorve, aparentemente, a função de controles internos e compliance no nível do Conselho.","warn"],
+    ["Comitê de Nomeação e Sucessão","Absorve, aparentemente, a função de elegibilidade — não confirmado em documento formal.","open"],
+    ["Comitê de Integridade e Conduta Ética","Absorve, aparentemente, a função de controles internos e compliance no nível do Conselho.","open"],
     ["Comitê de Sustentabilidade e Diversidade",""],
     ["Comitê Estratégico",""],
     ["Comitê de Divulgação",""],
-    ["Composição nominal dos comitês","Não divulgada nas páginas acessíveis do RI.","warn"]
+    ["Composição nominal dos comitês","Não divulgada nas páginas acessíveis do RI.","nd"]
   ]},
   {code:"VII.03", name:"Diretoria executiva — núcleo corporativo", note:"CEO: Marcelo de Araújo Noronha. Quatro vice-presidentes executivos: Cassiano Ricardo Scarpelli, José Ramos Rocha Neto, Guilherme Muller Leal e Bruno D'Avila Melo Boetger.", ents:[
     ["Finanças","Oswaldo Tadeu Fernandes — controladoria, contabilidade, corporativo/tributário, ativos e compras."],
@@ -1144,7 +1146,7 @@ const L = [
     ["Auditoria Interna Global","Renata Geiser Mantarro, Chief Audit Executive."],
     ["Jurídico (CLO)","Júlio César Bueno — jurídico, governança e relações institucionais."],
     ["Tecnologia (CTO)","Cíntia Scovine Barcelos de Souza — arquitetura, infraestrutura, cibersegurança, dados e IA."],
-    ["Inovação e Experiência (CIO)","Francesco Di Marcello. Há sobreposição aparente com o escopo do CTO na própria página oficial.","warn"],
+    ["Inovação e Experiência (CIO)","Francesco Di Marcello. Há sobreposição aparente com o escopo do CTO na própria página oficial.","open"],
     ["Pessoas (CHRO)","Silvana Rosa Machado — pessoas, cultura, performance e sustentabilidade; Juliano Ribeiro Marcílio em recursos humanos."],
     ["Tesouraria e Pesquisa Econômica","Roberto de Jesus Paris — inclui private equity e venture capital."]
   ]},
@@ -1156,7 +1158,7 @@ const L = [
     ["Large Corporate e Ultra Corporate","Carlos Henrique Villela Pedras."],
     ["Ultra Corporate, Pagamentos e Banking as a Service","Fernando Freiberger."],
     ["Alta renda e internacional","José Augusto Ramalho Miranda — Global Private Bank, Bradesco Principal, Bradesco Investimentos, Bradesco Bank e Bradesco Europa."],
-    ["Seguros","Não há vice-presidência de seguros no banco; a condução é feita pelas holdings do grupo segurador.","info"]
+    ["Seguros","Não há vice-presidência de seguros no banco; a condução é feita pelas holdings do grupo segurador."]
   ]},
   {code:"VII.05", name:"Liderança do grupo segurador e de saúde", note:"Reorganização anunciada em 26/03/2026 — o grupo passou a operar em duas divisões com presidências distintas.", ents:[
     ["BradSaúde","CEO Carlos Marinelli — Bradesco Saúde, Operadora de Planos, Mediservice, Odontoprev, Atlântica Hospitais, Orizon e a participação no Fleury."],
@@ -1172,20 +1174,20 @@ const L = [
     ["Ouvidoria","Estrutura ativa com relatórios semestrais públicos."]
   ]},
   {code:"VII.07", name:"Modelo de trabalho em tecnologia", note:"A ponte para as camadas IX a XIII, fora de escopo aqui. O traço distintivo é a internalização: a proporção de TI terceirizada caiu de 70% para 60%.", ents:[
-    ["Governança de IA","Rastreamento de consumo de tokens, monitoramento de custo e mensuração de valor; governança centralizada com deployment federado.","info"],
+    ["Governança de IA","Rastreamento de consumo de tokens, monitoramento de custo e mensuração de valor; governança centralizada com deployment federado."],
     ["BIA e IA generativa","49 mi de interações e 87% de resolutividade no acumulado de 2025; parceria confirmada com Microsoft Azure."],
     ["Plataforma Bridge","Inteligência de dados com IA generativa e 'AI Apps'; 200 iniciativas em um ano."],
     ["Ritmo de entrega","73 novas soluções testadas com times de negócio e tecnologia em 2025; redução de 43,3% no lead time."],
-    ["Nuvem","Infraestrutura híbrida com modernização de legado em componentes modulares. Parcerias com AWS ou Google Cloud não confirmadas.","warn"],
+    ["Nuvem","Infraestrutura híbrida com modernização de legado em componentes modulares. Parcerias com AWS ou Google Cloud não confirmadas.","open"],
     ["Internalização de TI","Mais de 1.500 profissionais de tecnologia contratados em 2025; terceirização de 70% para 60%."],
-    ["Quadro total de tecnologia","Número absoluto não divulgado.","warn"],
-    ["Tech CIO","Daniel Augusto Falbi, cargo abaixo do nível estatutário. Atribuições não reconciliadas com CTO e CIO.","warn"]
+    ["Quadro total de tecnologia","Número absoluto não divulgado.","nd"],
+    ["Tech CIO","Daniel Augusto Falbi, cargo abaixo do nível estatutário. Atribuições não reconciliadas com CTO e CIO.","open"]
   ]},
   {code:"VII.08", name:"Força de trabalho", note:"", ents:[
     ["Colaboradores do conglomerado","80.348 em jun/26, contra 82,1 mil em dez/25."],
-    ["Redução em 12 meses","~2,4 mil postos, acompanhando o fechamento de rede.","warn"],
+    ["Redução em 12 meses","~2,4 mil postos, acompanhando o fechamento de rede.","sec"],
     ["Colaboradores do grupo segurador","8.104, mais 406 estagiários e 70 aprendizes (2025)."],
-    ["Escritório de transformação","800 pessoas dedicadas ao plano (fev/2026).","info"]
+    ["Escritório de transformação","800 pessoas dedicadas ao plano (fev/2026)."]
   ]}
  ]
 },
@@ -1195,7 +1197,7 @@ const L = [
  domains:[
   {code:"VIII.01", name:"Rentabilidade e resultado", note:"Data-base 30/06/2026, salvo indicação.", ents:[
     ["Lucro líquido recorrente — 2T26","R$ 7.050 mi, +3,5% t/t e +16,2% a/a. 1S26: R$ 13,86 bi."],
-    ["Lucro líquido recorrente — 2025","~R$ 24,6 bi, +26% sobre 2024. Fontes divergem entre R$ 24,6 bi e R$ 24,7 bi.","warn"],
+    ["Lucro líquido recorrente — 2025","~R$ 24,6 bi, +26% sobre 2024. Fontes divergem entre R$ 24,6 bi e R$ 24,7 bi.","sec"],
     ["ROAE trimestral","16,2% no 2T26, contra 14,6% no 2T25. 4T25: 15,2%."],
     ["Margem financeira total","R$ 20.872 mi, +4,1% t/t e +15,7% a/a."],
     ["Margem com clientes","R$ 20.199 mi, +3,6% t/t e +13,8% a/a."],
@@ -1208,7 +1210,7 @@ const L = [
     ["Despesas operacionais","Linha de guidance: variação de 6% a 8% em 2026."]
   ]},
   {code:"VIII.03", name:"Risco de crédito", note:"O bloco onde a distância para o par de mercado é maior, e onde o efeito da Res. 4.966 muda a base comparativa.", ents:[
-    ["Inadimplência acima de 90 dias","4,3%, alta de 0,1 p.p. t/t e 0,2 p.p. a/a.","warn"],
+    ["Inadimplência acima de 90 dias","4,3%, alta de 0,1 p.p. t/t e 0,2 p.p. a/a."],
     ["PDD expandida","R$ 9.985 mi no 2T26, +3,3% t/t e +22,6% a/a."],
     ["Custo do crédito anualizado","3,5%."]
   ]},
@@ -1217,10 +1219,10 @@ const L = [
     ["Capital Nível I — jun/26","12,8%."],
     ["Capital Principal (CET1) — jun/26","11,3%, contra 11,1% no 2T25."],
     ["Posição em dez/25","Basileia 15,8%; Nível I 13,2%; CET1 11,2%; alavancagem 7,1%."],
-    ["Posição em mar/26 (Pilar 3)","Basileia 14,9%; Nível I 12,0%; CET1 10,2% — queda relevante frente a dez/25.","warn"],
+    ["Posição em mar/26 (Pilar 3)","Basileia 14,9%; Nível I 12,0%; CET1 10,2% — queda relevante frente a dez/25.","open"],
     ["RWA total","R$ 1.152.479 mi (mar/26)."],
     ["Patrimônio de Referência","R$ 171.771 mi (mar/26)."],
-    ["Efeito do aumento de capital","Nível I projetado de ~12,7% para ~13,6% pós-operação. Resultado não confirmado.","warn"]
+    ["Efeito do aumento de capital","Nível I projetado de ~12,7% para ~13,6% pós-operação. Resultado não confirmado.","open"]
   ]},
   {code:"VIII.05", name:"Liquidez e funding", note:"Posição em 31/03/2026 (Pilar 3 1T26).", ents:[
     ["LCR — Liquidity Coverage Ratio","161,6%."],
@@ -1232,8 +1234,8 @@ const L = [
     ["Carteira PJ","R$ 656,9 bi, +14,1% a/a."],
     ["Recursos captados e administrados","R$ 3,7 tri, +13,6% a/a."],
     ["Ativos sob custódia","R$ 2,8 tri, +11,3% a/a."],
-    ["Volume transacionado em cartões","R$ 91,5 bi no 2T26, −8,8% a/a.","warn"],
-    ["Ativos totais do conglomerado bancário","Não confirmados em fonte primária e por isso omitidos deste mapa.","warn"]
+    ["Volume transacionado em cartões","R$ 91,5 bi no 2T26, −8,8% a/a."],
+    ["Ativos totais do conglomerado bancário","Não confirmados em fonte primária e por isso omitidos deste mapa.","nd"]
   ]},
   {code:"VIII.07", name:"Métricas do negócio segurador", note:"Bloco que só existe por causa da dupla natureza do conglomerado — não tem equivalente num grupo puramente bancário.", ents:[
     ["Lucro líquido — 2T26","R$ 2.944 mi, +6,7% t/t e +28,3% a/a. 1S26: R$ 5,704 bi, +20,4%."],
@@ -1250,8 +1252,8 @@ const L = [
     ["Clientes 100% digitais","Mais de 30 milhões."],
     ["Transações em canais digitais","99%, sendo 96% em mobile e internet."],
     ["Crédito liberado por canal digital","46% no 2T26; 44% no acumulado de 2025."],
-    ["NPS","Crescimento de 20% em dois anos. O valor absoluto não é divulgado.","warn"],
-    ["Ranking de reclamações do BACEN","1º lugar no 2T26, com 9.375 reclamações procedentes entre abril e junho de 2026. Queixa mais frequente: integridade e segurança das operações, sobretudo cartão de crédito.","stop"]
+    ["NPS","Crescimento de 20% em dois anos. O valor absoluto não é divulgado.","nd"],
+    ["Ranking de reclamações do BACEN","1º lugar no 2T26, com 9.375 reclamações procedentes entre abril e junho de 2026. Queixa mais frequente: integridade e segurança das operações, sobretudo cartão de crédito."]
   ]},
   {code:"VIII.09", name:"Sustentabilidade", note:"", ents:[
     ["Meta de finanças sustentáveis","R$ 350 bi cumpridos em 2025, com realizado de R$ 381,9 bi. Nova meta de R$ 450 bi."],
@@ -1273,7 +1275,7 @@ const L = [
 
 /* ---------- render ---------- */
 const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
-const TAGTXT = {ok:"consolidado", warn:"verificar", stop:"encerrado", info:"nota"};
+const TAGTXT = {ok:"confirmado", trans:"em transição", nd:"não divulgado", sec:"fonte secundária", open:"em aberto", stop:"encerrado"};
 
 function pad(n){return String(n).padStart(2,"0")}
 
