@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XP Inc. sob o método Clara/EA — Caso de Mercado</title>
+<meta name="description" content="Arquitetura de negócios do grupo XP Inc. mapeada nas oito camadas do Clara/EA por IA agêntica, exclusivamente a partir de divulgação pública — 80 domínios, 467 entidades e rastreabilidade fonte a fonte.">
+<meta name="author" content="Marcelo Andrade Clara">
+<link rel="canonical" href="https://www.claraea.com.br/casos/xp.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#1B2D4F">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Clara/EA">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://www.claraea.com.br/casos/xp.html">
+<meta property="og:title" content="XP Inc. sob o método Clara/EA">
+<meta property="og:description" content="Arquitetura de negócios do grupo XP Inc. mapeada nas oito camadas do Clara/EA por IA agêntica, a partir de divulgação pública — 80 domínios, 467 entidades, rastreabilidade fonte a fonte.">
+<meta property="og:image" content="https://www.claraea.com.br/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clara/EA · Framework de Arquitetura Corporativa">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="XP Inc. sob o método Clara/EA">
+<meta name="twitter:description" content="Arquitetura de negócios mapeada nas oito camadas do Clara/EA por IA agêntica, a partir de divulgação pública.">
+<meta name="twitter:image" content="https://www.claraea.com.br/assets/og-card.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<!-- Structured data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnalysisNewsArticle",
+  "headline": "XP Inc. sob o método Clara/EA",
+  "description": "Arquitetura de negócios do grupo XP Inc. mapeada nas oito camadas do Clara/EA por IA agêntica, exclusivamente a partir de divulgação pública.",
+  "url": "https://www.claraea.com.br/casos/xp.html",
+  "inLanguage": "pt-BR",
+  "datePublished": "2026-09-14",
+  "author": { "@id": "https://www.claraea.com.br/#person" },
+  "publisher": { "@type": "Organization", "name": "Clara/EA", "url": "https://www.claraea.com.br/" },
+  "about": { "@type": "Organization", "name": "XP Inc." },
+  "isPartOf": { "@type": "WebSite", "name": "Clara/EA", "url": "https://www.claraea.com.br/" }
+}
+</script>
+
+<style>
+  /* ---------- tokens do documento (derivados do design system do site) ---------- */
+  .case-doc{
+    --doc-ink-2:#3A3A3A;
+    --doc-rule-strong:#C4BDAE;
+    --doc-surface-2:#FAF8F3;
+    --doc-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --doc-ok:#1F6B4A;
+    --doc-warn:#8A6210;
+    --doc-stop:#8F2B2B;
+    font-size:15px;
+    line-height:1.55;
+  }
+  .case-doc code{font-family:var(--doc-mono);font-size:.92em;background:var(--doc-surface-2);padding:1px 5px;border:1px solid var(--rule)}
+  .case-doc h1,.case-doc h2,.case-doc h3,.case-doc h4{text-wrap:balance}
+
+  /* ---------- hero ---------- */
+  .case-hero{padding:96px 0 56px;border-top:none}
+  .case-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:end}
+  .case-hero .section-title{font-size:clamp(36px,5vw,58px);max-width:18ch;margin-bottom:24px}
+  .case-hero .section-lead{margin-bottom:0}
+  .case-meta{
+    font-family:var(--doc-mono);
+    font-size:12px;
+    line-height:2;
+    color:var(--ink-muted);
+    border-left:2px solid var(--accent-gold);
+    padding-left:18px;
+    white-space:nowrap;
+  }
+  .case-meta b{color:var(--ink-primary);font-weight:500}
+
+  /* ---------- como foi produzido ---------- */
+  .case-how{padding:72px 0}
+  .case-how-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px 64px;align-items:start}
+  .case-how p{font-size:16px;line-height:1.7;color:var(--doc-ink-2);margin-bottom:16px;max-width:60ch}
+  .case-how p:last-child{margin-bottom:0}
+  .case-how-steps{list-style:none;counter-reset:step}
+  .case-how-steps li{
+    counter-increment:step;
+    display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;
+    padding:18px 0;border-top:1px solid var(--rule);
+    font-size:15px;line-height:1.6;color:var(--doc-ink-2);
+  }
+  .case-how-steps li:last-child{border-bottom:1px solid var(--rule)}
+  .case-how-steps li::before{
+    content:counter(step,decimal-leading-zero);
+    font-family:var(--doc-mono);font-size:12px;color:var(--accent-gold);font-weight:600;padding-top:3px;
+  }
+  .case-how-steps b{color:var(--ink-primary);font-weight:600}
+
+  /* ---------- premissas do método ---------- */
+  .case-method{padding:0 0 72px;border-top:none}
+  .method{
+    display:grid;grid-template-columns:1fr;gap:1px;
+    background:var(--rule);border:1px solid var(--rule);
+  }
+  .method > div{background:var(--bg-elevated);padding:20px 22px}
+  @media (min-width:620px){ .method{grid-template-columns:repeat(2,1fr)} }
+  @media (min-width:980px){ .method{grid-template-columns:repeat(3,1fr)} }
+  .method h3{
+    font-family:var(--doc-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent-gold);margin-bottom:8px;font-weight:600;
+  }
+  .method p{margin:0;font-size:14px;color:var(--doc-ink-2);line-height:1.55}
+
+  /* ---------- escopo (stack) ---------- */
+  .case-stack{padding:0 0 64px;border-top:none}
+  .section-label{
+    font-family:var(--doc-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-muted);margin:0 0 14px;
+  }
+  .stack{display:flex;flex-direction:column;gap:3px}
+  .stack-row{
+    display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:center;
+    padding:10px 16px;background:var(--bg-elevated);border:1px solid var(--rule);font-size:14px;
+  }
+  .stack-row a{color:var(--ink-primary);text-decoration:none}
+  .stack-row a:hover{color:var(--brand-deep);text-decoration:underline;text-decoration-color:var(--accent-gold)}
+  .stack-row.out{opacity:.55;background:transparent;border-style:dashed}
+  .stack-row.head{
+    background:transparent;border:none;padding-block:12px 2px;
+    font-family:var(--doc-mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--accent-gold);grid-template-columns:1fr;
+  }
+  .stack-num{font-family:var(--doc-mono);font-size:12px;color:var(--brand-deep);font-weight:600}
+  .stack-count{font-family:var(--doc-mono);font-size:11.5px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+
+  /* ---------- toolbar ---------- */
+  .toolbar{
+    position:sticky;top:73px;z-index:20;
+    background:rgba(245,242,236,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:12px 0;
+  }
+  .toolbar .container{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+  #q{
+    flex:1 1 240px;min-width:0;font:inherit;font-size:14px;padding:9px 12px;
+    background:var(--bg-elevated);border:1px solid var(--doc-rule-strong);color:var(--ink-primary);border-radius:2px;
+  }
+  #q:focus{outline:2px solid var(--brand-deep);outline-offset:1px}
+  .navpills{display:flex;flex-wrap:wrap;gap:4px}
+  .navpills a{
+    font-family:var(--doc-mono);font-size:11.5px;text-decoration:none;padding:5px 9px;
+    border:1px solid var(--doc-rule-strong);color:var(--doc-ink-2);border-radius:2px;
+  }
+  .navpills a:hover{border-color:var(--brand-deep);color:var(--brand-deep)}
+  .navpills a:focus-visible{outline:2px solid var(--brand-deep);outline-offset:1px}
+  #hits{font-family:var(--doc-mono);font-size:11.5px;color:var(--ink-muted)}
+
+  /* ---------- camadas ---------- */
+  .case-layers{padding:0 0 40px;border-top:none}
+  .cl-layer{padding:56px 0 0;border-top:1px solid var(--rule)}
+  .cl-layer:first-of-type{border-top:none;padding-top:40px}
+  .cl-layer-head{display:flex;gap:20px;align-items:baseline;flex-wrap:wrap}
+  .cl-layer-numeral{
+    font-family:var(--serif);font-size:44px;font-weight:600;color:var(--accent-gold);
+    line-height:1;font-variant-numeric:tabular-nums;
+  }
+  .cl-layer h2{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;letter-spacing:-.01em}
+  .cl-layer-purpose{margin:14px 0 0;color:var(--doc-ink-2);max-width:76ch;font-size:15px;line-height:1.65}
+  .domains{margin-top:28px;display:flex;flex-direction:column;gap:22px;min-width:0}
+  .domains > *{min-width:0}
+  .domain{padding:0;border:1px solid var(--rule);background:var(--bg-elevated)}
+  .domain-head{
+    display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;
+    padding:14px 18px;border-bottom:1px solid var(--rule);background:var(--doc-surface-2);
+  }
+  .domain-code{font-family:var(--doc-mono);font-size:11.5px;font-weight:600;color:var(--accent-gold);letter-spacing:.04em}
+  .domain-name{font-weight:600;font-size:15px;color:var(--ink-primary)}
+  .domain-note{font-size:12.5px;color:var(--ink-muted);flex:1 1 100%;margin:0;line-height:1.45}
+  .srcchips{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+  .srcchip{
+    font-family:var(--doc-mono);font-size:10px;letter-spacing:.04em;text-decoration:none;
+    color:var(--brand-deep);border:1px solid var(--doc-rule-strong);border-radius:2px;padding:1px 5px;
+    background:var(--bg-elevated);white-space:nowrap;
+  }
+  .srcchip:hover{border-color:var(--brand-deep)}
+  .srcchip:focus-visible{outline:2px solid var(--brand-deep);outline-offset:1px}
+  .ents{list-style:none;margin:0;padding:0}
+  .ent{
+    display:grid;grid-template-columns:70px minmax(150px,1fr) minmax(0,2.2fr);gap:4px 16px;
+    padding:9px 18px;border-top:1px solid var(--rule);align-items:baseline;
+  }
+  .ent:first-child{border-top:none}
+  .ent-code{font-family:var(--doc-mono);font-size:11px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+  .ent-name{font-weight:500;font-size:14px;line-height:1.4;color:var(--ink-primary);overflow-wrap:anywhere}
+  .ent-desc{font-size:13.2px;color:var(--doc-ink-2);line-height:1.45;overflow-wrap:anywhere}
+  .tag{
+    display:inline-block;font-family:var(--doc-mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+    padding:1px 6px;border:1px solid currentColor;border-radius:2px;margin-left:8px;vertical-align:1px;white-space:nowrap;
+  }
+  .t-ok{color:var(--doc-ok)}
+  .t-trans{color:var(--brand-deep)}
+  .t-nd{color:var(--ink-muted)}
+  .t-sec{color:var(--doc-warn)}
+  .t-open{color:var(--doc-open)}
+  .t-stop{color:var(--doc-stop)}
+
+  /* ---------- ressalvas e referência cruzada ---------- */
+  .case-notes{padding:64px 0 96px;border-top:3px solid var(--accent-gold)}
+  .case-notes h2{font-family:var(--serif);font-size:28px;font-weight:600;margin-bottom:14px}
+  .case-notes h3{font-size:14px;margin:30px 0 10px;font-weight:600;color:var(--ink-primary)}
+  .case-notes ul{margin:0;padding-left:20px;color:var(--doc-ink-2);font-size:14px}
+  .case-notes li{margin-bottom:7px;line-height:1.55}
+  .case-notes p{color:var(--doc-ink-2);font-size:14.5px;max-width:80ch;line-height:1.65}
+  .xref{margin-top:14px;overflow-x:auto}
+  table.xr{border-collapse:collapse;width:100%;min-width:720px;font-size:12.8px}
+  table.xr th{
+    text-align:left;font-family:var(--doc-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-muted);font-weight:500;border-bottom:1px solid var(--doc-rule-strong);padding:0 14px 8px 0;vertical-align:bottom;
+  }
+  table.xr td{border-bottom:1px solid var(--rule);padding:10px 14px 10px 0;vertical-align:top;color:var(--doc-ink-2)}
+  table.xr tr:target td{background:#F3EBDD}
+  .xr-id{font-family:var(--doc-mono);font-size:11.5px;font-weight:600;color:var(--accent-gold);white-space:nowrap}
+  .xr-title{color:var(--ink-primary);font-weight:500}
+  .xr-title a{color:inherit;text-decoration-color:var(--doc-rule-strong)}
+  .xr-meta{display:block;font-size:11.5px;color:var(--ink-muted);margin-top:3px}
+  .xr-doms{font-family:var(--doc-mono);font-size:11px;line-height:1.9;color:var(--ink-muted)}
+  .xr-doms a{text-decoration:none;color:var(--doc-ink-2);border-bottom:1px solid var(--doc-rule-strong)}
+  .xr-doms a:hover{color:var(--brand-deep);border-color:var(--brand-deep)}
+  .xr-n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+  .colophon{
+    margin-top:44px;padding-top:18px;border-top:1px solid var(--rule);
+    font-family:var(--doc-mono);font-size:11px;color:var(--ink-muted);line-height:1.9;
+  }
+
+  /* ---------- cta ---------- */
+  .case-cta{padding:72px 0;background:var(--bg-elevated)}
+  .case-cta .section-lead{margin-bottom:28px}
+  .case-cta-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+  .hidden{display:none !important}
+
+  @media (max-width:980px){
+    .case-hero-grid{grid-template-columns:1fr}
+    .case-how-grid{grid-template-columns:1fr;gap:32px}
+    .case-meta{white-space:normal}
+  }
+  @media (max-width:760px){
+    .case-hero{padding:64px 0 40px}
+    .ent{grid-template-columns:56px minmax(0,1fr)}
+    .ent-desc{grid-column:1 / -1;padding-left:0}
+    .ent-code{font-size:10px}
+    .stack-row{grid-template-columns:48px minmax(0,1fr)}
+    .stack-count{grid-column:2;justify-self:start}
+    .toolbar{top:0}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="case-doc">
+
+<header>
+  <div class="container nav">
+    <a href="/" class="logo">Clara<span>/</span>EA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/#framework">Framework</a></li>
+        <li><a href="/ClaraEA-CMDB.html">EA/CMDB</a></li>
+        <li><a href="/#casos-mercado" class="current">Casos</a></li>
+        <li><a href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="https://cmdb-app-shell.onrender.com" class="btn btn-outline btn-sm btn-login">Entrar</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="case-hero">
+  <div class="container">
+    <div class="case-hero-grid">
+      <div>
+        <p class="section-eyebrow">Caso de Mercado · IA Agêntica · Camadas 0–VIII</p>
+        <h1 class="section-title">XP Inc. sob o método Clara/EA</h1>
+        <p class="section-lead">Mapeamento das oito camadas de arquitetura de negócios do conglomerado XP Inc., mais os direcionadores estratégicos, com as entidades de cada camada agrupadas internamente por domínios. Construído exclusivamente a partir de divulgação pública, com rastreabilidade domínio a domínio: cada bloco indica no cabeçalho os códigos das fontes que o sustentam, e a <a href="#xref">referência cruzada no rodapé</a> percorre o caminho inverso, de cada fonte para todos os domínios que dela derivam.</p>
+      </div>
+      <div class="case-meta">
+        Framework <b>Clara/EA</b><br>
+        Sujeito <b>XP Inc.</b> (Cayman)<br>
+        Operadora <b>XP Investimentos CCTVM S.A.</b><br>
+        Data-base <b>30/06/2026</b> (2T26)<br>
+        Societário <b>31/12/2025</b> (20-F FY2025)<br>
+        Elaborado <b>14/09/2026</b><br>
+        Escopo <b>9 camadas · 80 domínios · 467 entidades</b><br>
+        Fontes <b>17 rastreadas</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FOI PRODUZIDO -->
+<section class="case-how">
+  <div class="container">
+    <div class="case-how-grid">
+      <div>
+        <p class="section-eyebrow">Como este caso foi produzido</p>
+        <h2 class="section-title" style="font-size: clamp(28px,3.4vw,40px);">O framework como instrução para agentes de IA</h2>
+        <p>Este documento não foi escrito à mão nem a partir de acesso privilegiado. Foi produzido por um agente de IA (Claude, via Claude Code) que recebeu o Clara/EA — princípios, camadas e regra de agrupamento por domínios — como método de trabalho, e a divulgação pública da XP Inc. como único material de entrada.</p>
+        <p>O resultado demonstra uma propriedade do framework que importa mais do que o retrato de uma instituição: por ser universal, recursivo e explícito sobre o que cada camada contém, o Clara/EA funciona como especificação operável por agentes. O mesmo processo pode ser aplicado a qualquer organização com divulgação suficiente — ou, dentro de uma empresa, às suas fontes internas, alimentando diretamente o <a href="/ClaraEA-CMDB.html">EA/CMDB</a>.</p>
+      </div>
+      <ol class="case-how-steps">
+        <li><span><b>Instrução.</b> O agente recebe o manifesto, os cinco princípios e a definição das treze camadas do Clara/EA como método — não como tema.</span></li>
+        <li><span><b>Apuração.</b> Coleta orientada em fontes primárias: Form 20-F e exhibits, releases de resultados, Pilar 3, Schedule 13D, portal de compliance, demonstrações do Banco XP, normas CVM e portais de RI e de produto.</span></li>
+        <li><span><b>Instanciação.</b> Cada camada é povoada com entidades reais; dentro da camada, o agente agrupa por semelhança de atributo, processo ou relacionamento (princípio III), sem reproduzir organograma.</span></li>
+        <li><span><b>Rastreabilidade.</b> Todo domínio carrega os códigos das fontes que o sustentam; a tabela final percorre o caminho inverso. Fontes secundárias ficam isoladas para sinalizar carência de confirmação primária.</span></li>
+        <li><span><b>Marcadores de estado e de evidência.</b> Cada entidade pode receber um marcador que separa o estado do fato — confirmado, em transição, encerrado — da qualidade da evidência que o sustenta — fonte secundária, não divulgado, em aberto (princípio V). Dado oficial e conferido não recebe marca.</span></li>
+        <li><span><b>Revisão editorial.</b> Ressalvas, limites de escopo e pontos que exigem verificação antes de uso externo são declarados abertamente no rodapé do documento.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- PREMISSAS DO MÉTODO -->
+<section class="case-method">
+  <div class="container">
+    <p class="section-label">Premissas do método aplicadas</p>
+    <div class="method" aria-label="Premissas do método">
+    <div>
+      <h3>I · Universalidade</h3>
+      <p>O mesmo conjunto de camadas descreve uma startup e um conglomerado. Aqui ele é instanciado numa holding de Cayman cujo conglomerado prudencial no Brasil tem apenas quatro instituições.</p>
+    </div>
+    <div>
+      <h3>II · Hierarquia recursiva</h3>
+      <p>Cada camada se decompõe em domínios e estes em entidades. A codificação <code>V.08.03</code> lê-se camada V, domínio 08, entidade 03.</p>
+    </div>
+    <div>
+      <h3>III · Domínios</h3>
+      <p>Dentro de cada camada as entidades foram agrupadas por semelhança de atributo, processo ou relacionamento — não pela estrutura de reporte do banco.</p>
+    </div>
+    <div>
+      <h3>IV · Materialização</h3>
+      <p>Este documento é a projeção legível de um grafo: cada entidade é nó, cada domínio é um agrupamento e as camadas ligam negócio a tecnologia.</p>
+    </div>
+    <div>
+      <h3>V · Evolução</h3>
+      <p>O marcador separa o estado do fato da qualidade da evidência. <span class="tag t-ok">confirmado</span> <span class="tag t-trans">em transição</span> <span class="tag t-stop">encerrado</span> descrevem o fato; <span class="tag t-sec">fonte secundária</span> <span class="tag t-nd">não divulgado</span> <span class="tag t-open">em aberto</span> descrevem o que o sustenta. Dado oficial e conferido não recebe marca.</p>
+    </div>
+    <div>
+      <h3>Lei de Conway</h3>
+      <p>A premissa-raiz: estrutura condiciona resultado. Aqui o canal principal está fora da empresa: ~600 escritórios são sociedades independentes, e a norma que os rege mudou em 2023.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCOPO -->
+<section class="case-stack">
+  <div class="container">
+    <p class="section-label">Escopo — as nove camadas mapeadas</p>
+    <div class="stack" id="stack"></div>
+  </div>
+</section>
+
+<!-- FILTRO -->
+<div class="toolbar">
+  <div class="container">
+    <input id="q" type="search" placeholder="Filtrar entidades, domínios e camadas…" aria-label="Filtrar entidades">
+    <span id="hits"></span>
+    <nav class="navpills" id="navpills" aria-label="Ir para camada"></nav>
+  </div>
+</div>
+
+<!-- CAMADAS -->
+<section class="case-layers">
+  <div class="container">
+    <main id="layers"></main>
+  </div>
+</section>
+
+<!-- RESSALVAS E RASTREABILIDADE -->
+<section class="case-notes" id="xref">
+  <div class="container">
+    <h2>Ressalvas e rastreabilidade</h2>
+    <p>Todo modelo de arquitetura feito de fora tem fronteira de evidência. Estas são as deste.</p>
+
+    <h3>Limites de escopo</h3>
+    <ul>
+      <li>O escopo é <strong>exclusivamente a arquitetura de negócios</strong>. As camadas IX a XIII — soluções, dados, tecnologia, infraestrutura e segurança da informação — ficaram de fora por decisão de escopo, reforçada pela ausência de divulgação pública que permitisse instanciá-las com entidades reais. O que existe publicamente sobre tecnologia foi alocado na camada VII.</li>
+      <li>Os direcionadores estratégicos (camada 0) foram reconstruídos a partir da estratégia de longo prazo e das metas divulgadas. A redação oficial de propósito, missão e valores <strong>não foi confirmada em fonte primária</strong> nesta apuração e por isso não é citada literalmente.</li>
+      <li>O agrupamento em domínios é uma escolha analítica, derivada do princípio III do framework. Não reproduz nenhum organograma ou taxonomia interna da companhia.</li>
+      <li>A base societária é o <strong>Exhibit 8.1 do Form 20-F FY2025</strong>, que lista 83 entidades <strong>sem divulgar percentual de participação em nenhuma delas</strong>. Onde este mapa indica percentual, a fonte é outra e está anotada.</li>
+    </ul>
+
+    <h3>Pontos que exigem verificação antes de uso externo</h3>
+    <ul>
+      <li><strong>Enquadramento prudencial</strong>: uma fonte registra promoção ao <strong>S2</strong> em 10/10/2024; outra classifica a instituição como <strong>S3</strong>. As duas são secundárias e se contradizem. Confirmar no Unicad do BACEN antes de usar.</li>
+      <li><strong>Composição do conglomerado prudencial</strong>: o Pilar 3 4T25 lista quatro instituições; a política de segurança cibernética lista três. Divergência não reconciliada.</li>
+      <li><strong>Saída do Itaú Unibanco</strong>: integral apenas nas ações Class A, em 26/08/2024. Restaram 8.285.060 Class B (1,54% do capital) cujo destino em 2025–2026 não foi confirmado. Dizer que "o Itaú saiu integralmente em 2024" é impreciso.</li>
+      <li><strong>Rico e Clear não são corretoras</strong>: são marcas incorporadas à XP Investimentos CCTVM — a Clear como operação incorporada, a Rico como filial. Confirmar antes de qualquer uso societário.</li>
+      <li><strong>Escritórios credenciados</strong>: o número de "mais de 600" vem do site institucional, sem data de referência. A XP não reporta contagem de escritórios nos releases trimestrais.</li>
+      <li><strong>Participações nos escritórios de assessoria</strong>: apenas a da Blue3 (42%) é pública. As demais não são divulgadas e nenhum desses escritórios aparece nominalmente na lista de subsidiárias.</li>
+      <li><strong>Índice de Basileia regulatório</strong>: os 20,3% de BIS e 17,1% de CET1 são índices gerenciais da XP Inc. O Pilar 3 do conglomerado prudencial não foi acessado para 2026.</li>
+      <li><strong>Entidades na Suíça e em Portugal</strong>: não constam da lista de 83 subsidiárias. O escritório de Genebra é citado historicamente, sem entidade legal correspondente confirmada.</li>
+      <li><strong>Nomes de executivos</strong>: o RI publica apenas CEO e General Counsel. Heads de varejo, institucional, tecnologia, riscos e pessoas não são divulgados e não foram inventados aqui.</li>
+    </ul>
+
+    <h3>Referência cruzada — rastreabilidade de conteúdo</h3>
+    <p>Cada domínio das oito camadas carrega, no próprio cabeçalho, o código das fontes que o sustentam; o código leva a esta tabela. Aqui o caminho é o inverso: de cada fonte para todos os domínios que dela derivam. Fontes secundárias estão isoladas em <strong>S17</strong> — onde ela aparece sozinha, o conteúdo carece de confirmação primária.</p>
+    <div class="xref">
+      <table class="xr">
+        <thead>
+          <tr>
+            <th>Cód.</th>
+            <th>Fonte, natureza e data-base</th>
+            <th>Domínios rastreados</th>
+            <th class="xr-n">Qtd.</th>
+          </tr>
+        </thead>
+        <tbody id="xrefbody"></tbody>
+      </table>
+    </div>
+
+        <p class="colophon">
+      Mapeamento Clara/EA conduzido por Marcelo Clara com apoio de IA agêntica (Claude Code) · 14 de setembro de 2026<br>
+      Documento analítico independente, construído sobre divulgação pública. Não é material da XP Inc. nem endossado por ela.<br>
+      Números financeiros com data-base 30/06/2026; composição societária com data-base 31/12/2025, atualizada onde eventos de 2026 alteraram o desenho.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="case-cta">
+  <div class="container">
+    <p class="section-eyebrow">Próximo passo</p>
+    <h2 class="section-title" style="font-size: clamp(28px,3.4vw,40px);">A mesma leitura, aplicada à sua organização</h2>
+    <p class="section-lead">O que aqui foi feito de fora, com divulgação pública, pode ser feito de dentro — com fontes internas, entidades verificadas e o resultado materializado no EA/CMDB. Para uma demonstração ou uma conversa sobre o método, escreva diretamente.</p>
+    <div class="case-cta-actions">
+      <a href="mailto:contato@claraea.com.br" class="btn btn-primary">contato@claraea.com.br</a>
+      <a href="/#casos-mercado" class="btn btn-outline">Voltar aos casos</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="logo">Clara<span>/</span>EA</a>
+        <p class="footer-tagline">Arquitetura corporativa que conecta estratégia, negócios e tecnologia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Framework</h4>
+        <ul>
+          <li><a href="/#framework">Camadas</a></li>
+          <li><a href="/#manifesto">Manifesto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ferramenta</h4>
+        <ul>
+          <li><a href="/ClaraEA-CMDB.html">EA/CMDB</a></li>
+          <li><a href="/ClaraEA-CMDB.html#compare">Comparativo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sobre</h4>
+        <ul>
+          <li><a href="/ClaraEA-Autor.html">Autor</a></li>
+          <li><a href="/#casos-mercado">Casos</a></li>
+          <li><a href="https://www.linkedin.com/in/maclara/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:contato@claraea.com.br">contato@claraea.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Marcelo Andrade Clara. Todos os direitos reservados.</div>
+      <div>Documento em português</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const STACK = [
+  {h:"Direcionadores estratégicos"},
+  {n:"0", t:"Missão, Visão e Valores", id:"c0", inn:true},
+  {h:"Arquitetura de negócios — escopo deste documento"},
+  {n:"I", t:"Mercado, Segmento e Nicho", id:"c1", inn:true},
+  {n:"II", t:"Marca", id:"c2", inn:true},
+  {n:"III", t:"Canais de Distribuição e Atendimento", id:"c3", inn:true},
+  {n:"IV", t:"Produtos e Serviços", id:"c4", inn:true},
+  {n:"V", t:"Veículos Legais", id:"c5", inn:true},
+  {n:"VI", t:"Políticas, Normas e Procedimentos", id:"c6", inn:true},
+  {n:"VII", t:"Estrutura, Papéis e Responsabilidades", id:"c7", inn:true},
+  {n:"VIII", t:"Métricas de Gestão e Controle", id:"c8", inn:true},
+  {h:"Arquitetura de tecnologia"},
+  {n:"IX–XIII", t:"Soluções, Dados, Tecnologia, Infraestrutura e Segurança da Informação", note:"fora do escopo"}
+];
+
+const SOURCES = [
+ {id:"S1", t:"Clara/EA — framework, manifesto e princípios", meta:"Método · claraea.com.br · consultado em 12/09/2026", u:"https://www.claraea.com.br/", method:true},
+ {id:"S2", t:"Form 20-F FY2025 e Exhibits 2.1 e 8.1", meta:"SEC · protocolado 29/04/2026 · data-base 31/12/2025", u:"https://www.sec.gov/Archives/edgar/data/1787425/000207097926000182/xp-20251231.htm"},
+ {id:"S3", t:"Release de resultados do 2T26", meta:"XP Inc. · divulgado 17/08/2026 · data-base 30/06/2026", u:"https://www.businesswire.com/news/home/20260817593369/en/XP-Inc.-Reports-Second-Quarter-2026-Results"},
+ {id:"S4", t:"Release de resultados do 4T25 e do exercício de 2025", meta:"XP Inc. · divulgado 12/02/2026 · data-base 31/12/2025", u:"https://www.businesswire.com/news/home/20260212416895/en/XP-Inc.-Reports-Fourth-Quarter-2025-Results"},
+ {id:"S5", t:"Pilar 3 — Gerenciamento de Riscos e Capital do Conglomerado Prudencial XP", meta:"data-base 31/12/2025 · Res. CMN 4.950/21", u:"https://web.xpi.com.br/xp/documentos/pilar-3-gerenciamento-de-riscos-e-capital-4t25/"},
+ {id:"S6", t:"Estrutura Acionária — XP Inc.", meta:"RI XP · data de referência 18/08/2026", u:"https://investors.xpinc.com/governanca-corporativa/estrutura-acionaria/"},
+ {id:"S7", t:"Schedule 13D/A nº 6 — XP Control LLC e Guilherme Benchimol", meta:"SEC · protocolado 07/07/2026", u:"https://www.sec.gov/Archives/edgar/data/1787425/000119312526297550/xslSCHEDULE_13D_X02/primary_doc.xml"},
+ {id:"S8", t:"Portal de compliance e políticas corporativas", meta:"xpi.com.br/compliance · consultado em 14/09/2026", u:"https://www.xpi.com.br/compliance/"},
+ {id:"S9", t:"Governança — Conselho, Diretoria e comitês", meta:"RI XP · AGM de 29/05/2026 · páginas atualizadas em 2026", u:"https://investors.xpinc.com/en/corporate-governance/board-of-directors/"},
+ {id:"S10", t:"ESG — metas, relatórios e inventário de GEE", meta:"xpinc.com/esg · consultado em 14/09/2026", u:"https://www.xpinc.com/esg/"},
+ {id:"S11", t:"Demonstrações do Banco XP S.A. e Formulário de Referência da XP CCTVM", meta:"data-base 31/12/2025 e exercício de 2025", u:"https://api.mziq.com/mzfilemanager/v2/d/d1820734-8b3f-4a23-8642-331a3a8561a6/82da9626-efc0-b8ff-495f-8a967a93307a?origin=2"},
+ {id:"S12", t:"Sites de produto e institucionais do grupo", meta:"xpi.com.br, Clear, Rico, XP Asset, Banco de Atacado, XP Empresas, XP Educação · consultados em 14/09/2026", u:"https://www.xpi.com.br/produtos/"},
+ {id:"S13", t:"Resoluções CVM 178 e 179 e normas CMN/CVM aplicáveis", meta:"editadas em 14/02/2023 · vigência 01/06/2023 e 02/01/2024", u:"https://conteudo.cvm.gov.br/legislacao/resolucoes/resol178.html"},
+ {id:"S14", t:"Registros de reguladores estrangeiros", meta:"FINRA BrokerCheck (CRD 156691), SEC, FCA e Companies House", u:"https://files.brokercheck.finra.org/firm/firm_156691.pdf"},
+ {id:"S15", t:"Teleconferência de resultados do 2T26", meta:"transcrição · 24/08/2026", u:"https://www.fool.com/earnings/call-transcripts/2026/08/24/xp-xp-q2-2026-earnings-call-transcript/"},
+ {id:"S16", t:"Expert XP 2026 — estratégia de longo prazo", meta:"23/07/2026 · horizonte 2033", u:"https://www.infomoney.com.br/mercados/3a-onda-como-xp-pretende-dobrar-de-tamanho-ate-2033-e-liderar-investimento-no-brasil/"},
+ {id:"S17", t:"Imprensa especializada e fontes secundárias", meta:"Fonte secundária — usada só onde não há fonte primária acessível; datas citadas na entidade", u:"https://investors.xpinc.com/", weak:true}
+];
+
+const SRCMAP = {
+ "0.01":["S16","S15"], "0.02":["S3","S15"], "0.03":["S15","S12","S17"], "0.04":["S10"], "0.05":["S2","S6","S7"],
+ "I.01":["S3","S4","S2"], "I.02":["S12","S17"], "I.03":["S3","S12"], "I.04":["S12","S17"],
+ "I.05":["S2","S14"], "I.06":["S3","S12"], "I.07":["S13","S2","S5"], "I.08":["S2","S17"],
+ "II.01":["S2","S6"], "II.02":["S2","S12"], "II.03":["S12","S17"], "II.04":["S12","S2"],
+ "II.05":["S12","S3"], "II.06":["S12","S3"], "II.07":["S12","S17"], "II.08":["S2","S17"], "II.09":["S2","S17"],
+ "III.01":["S3","S13","S12"], "III.02":["S12","S17"], "III.03":["S12","S15"], "III.04":["S12","S17"],
+ "III.05":["S3","S12"], "III.06":["S12","S17"], "III.07":["S12","S17"], "III.08":["S8","S12"], "III.09":["S14","S2"],
+ "IV.01":["S3","S12"], "IV.02":["S3","S12"], "IV.03":["S3","S12"], "IV.04":["S3","S12"],
+ "IV.05":["S3","S17"], "IV.06":["S3","S12"], "IV.07":["S12","S17"], "IV.08":["S3","S12"],
+ "IV.09":["S3","S12"], "IV.10":["S12","S17"], "IV.11":["S12","S17"], "IV.12":["S12","S17"],
+ "V.01":["S2","S6","S7"], "V.02":["S5","S11"], "V.03":["S2","S11"], "V.04":["S2","S12"],
+ "V.05":["S2","S12"], "V.06":["S2"], "V.07":["S2","S14"], "V.08":["S2","S14"],
+ "V.09":["S17"], "V.10":["S2"], "V.11":["S2","S17"], "V.12":["S11","S17"],
+ "VI.01":["S8"], "VI.02":["S8","S5"], "VI.03":["S8"], "VI.04":["S8"],
+ "VI.05":["S8"], "VI.06":["S8","S9"], "VI.07":["S8","S13"], "VI.08":["S10","S8"], "VI.09":["S13","S2","S5"],
+ "VII.01":["S9"], "VII.02":["S9"], "VII.03":["S9","S17"], "VII.04":["S8"],
+ "VII.05":["S15"], "VII.06":["S3"], "VII.07":["S9","S7","S17"],
+ "VIII.01":["S3","S4"], "VIII.02":["S3","S15"], "VIII.03":["S3"], "VIII.04":["S3"],
+ "VIII.05":["S3"], "VIII.06":["S3","S4"], "VIII.07":["S2"], "VIII.08":["S10"], "VIII.09":["S16","S15"]
+};
+
+const L = [
+{
+ id:"c0", num:"0", title:"Direcionadores Estratégicos",
+ purpose:"Os direcionadores da XP têm um horizonte declarado e um número: dobrar de tamanho até 2033, chegando a ~R$ 4 trilhões de custódia e ~20% de participação no mercado brasileiro de investimentos. O que sustenta essa meta é uma tese de escopo — transformar o assessor de distribuidor de produtos em gestor financeiro da vida do cliente —, e é dela que derivam quase todos os movimentos visíveis nas camadas de produto e canal.",
+ domains:[
+  {code:"0.01", name:"Estratégia de longo prazo — a 'terceira onda'", note:"Apresentada no Expert XP de 23/07/2026, com horizonte 2033.", ents:[
+    ["Liderar o mercado de investimentos no Brasil até 2033","Custódia projetada de ~R$ 4 trilhões, praticamente o dobro da atual."],
+    ["Elevar a participação de mercado","De ~11% hoje para ~20% em 2033.","sec"],
+    ["Ampliar o escopo do assessor","Tese declarada: o assessor como gestor financeiro da vida do cliente — investimentos, crédito, planejamento tributário, aposentadoria, imóveis e sucessão."],
+    ["Elevar a alocação internacional das carteiras","De ~7% para 15% — recomendação do CIO contra a exposição média atual dos clientes."],
+    ["Três pilares declarados","Expansão de serviços financeiros além de investimentos, crescimento do banco e fortalecimento da assessoria."]
+  ]},
+  {code:"0.02", name:"Ambição de rentabilidade e retorno ao acionista", note:"Guidance operacional reiterado na teleconferência do 2T26.", ents:[
+    ["Crescimento de receita de dois dígitos em 2026","Declarado como meta independente do cenário econômico."],
+    ["Índice de eficiência estável em 2026","Apesar do aumento de investimento em IA, nuvem e novas linhas."],
+    ["Payout acima de 50% do lucro líquido por ano","Dividendos mais recompras. R$ 2,5 bi distribuídos no 1S26."],
+    ["Reduzir o índice de Basileia para 16%–19%","Partindo de 20,3% no 2T26, via maior retorno ao acionista."],
+    ["Cancelamento de ações em tesouraria","~11,8 milhões de ações, cerca de 2,3% do capital, anunciado no 2T26."]
+  ]},
+  {code:"0.03", name:"Ambição de produto e plataforma", note:"As frentes em que a XP está deliberadamente saindo do território de corretora.", ents:[
+    ["Crédito como vetor de escopo","Consignado privado lançado; crédito imobiliário de alto padrão previsto para o 2º semestre de 2026, com funding fora do SFH.","sec"],
+    ["Plataforma de PME","Cartões, adquirência e crédito para pequenas e médias, com rollout a partir de 01/09/2026.","sec"],
+    ["Assessor de IA","Plataforma para varejo digital e mass affluent, prevista para o 3T26, com objetivo declarado de melhorar a economia unitária do ticket menor.","open"],
+    ["Migração para modelos fee-based","Pouco mais de 26% dos ativos de clientes já em fee-based (2T26)."]
+  ]},
+  {code:"0.04", name:"Compromissos ASG", note:"Metas com linha de base 2025 e horizonte 2030–2031.", ents:[
+    ["Redução de emissões","42% nos Escopos 1 e 2 até 2030, alinhado ao SBTi; 42% no Escopo 3, excluída a categoria 15. Compensação de 100% das emissões."],
+    ["Intensidade de carbono","12,7 tCO₂ por R$ 1 milhão investido."],
+    ["Finanças sustentáveis","30% das emissões de renda fixa do investment banking classificadas como ASG até 2030 — 25% já atingidos em 2025."],
+    ["Educação financeira","Impactar 50 milhões de pessoas até 2031; 22 milhões alcançados."],
+    ["Diversidade até 2030","Mulheres 40% (34% hoje), pessoas negras 24% (20,5%), liderança negra 15% (13,8%), pessoas com deficiência 5% (2,4%)."]
+  ]},
+  {code:"0.05", name:"Direcionadores de controle e estrutura", note:"Restrições permanentes que a estrutura societária impõe à estratégia.", ents:[
+    ["Controle por ações de voto múltiplo","A XP Control LLC detém 19,04% do capital e 70,31% dos votos, via ações Class B com 10 votos cada."],
+    ["Ausência de cláusula de sunset","A conversão automática B→A só ocorre em transferência em bolsa ou quando as Class B caírem abaixo de 10% dos votos. Não há prazo."],
+    ["Holding em Cayman, listada na Nasdaq","XP Inc. constituída em 29/08/2019; disclosure primário é o Form 20-F, não o Formulário de Referência."],
+    ["Fechamento de capital da XP Investimentos S.A. no Brasil","Cancelamento do registro de emissor deferido pela CVM em 19/03/2026. Os BDRs XPBR31 seguem negociando.","sec"],
+    ["Concentração operacional","A XP CCTVM respondeu por ~51% da receita líquida consolidada na média de 2023–2025."]
+  ]}
+ ]
+},
+{
+ id:"c1", num:"I", title:"Mercado, Segmento e Nicho",
+ purpose:"A camada mudou de forma durante o período analisado: em 2026 a XP reorganizou o reporte de quatro segmentos para dois — Varejo e Atacado —, absorvendo o Institucional no Atacado e dissolvendo as linhas 'Digital Content' e 'Other'. Qualquer série histórica que atravesse o 1T26 precisa ser reconstruída.",
+ domains:[
+  {code:"I.01", name:"Segmentos de reporte", note:"Mudança de estrutura a partir do 1T26 — o release declara literalmente a inclusão do Institucional no Atacado.", ents:[
+    ["Retail (Varejo)","R$ 3.881 mi de receita bruta no 2T26, +8% a/a — 77% do total. FY2025: R$ 14.584 mi."],
+    ["Wholesale (Atacado)","R$ 1.175 mi no 2T26, +32% a/a — 23% do total. Reúne Corporate, Issuer Services e Institutional."],
+    ["— Corporate","R$ 606 mi no 2T26, +117% a/a — a linha de maior crescimento do grupo."],
+    ["— Institutional","R$ 383 mi no 2T26, +12% a/a. Migrado de 'Other' para Atacado no 1T26."],
+    ["— Issuer Services","R$ 186 mi no 2T26, −30% a/a."],
+    ["Estrutura anterior (até o 4T25)","Retail, Institutional, Corporate & Issuer Services e Other. Receita bruta de R$ 19.447 mi em 2025."],
+    ["Digital Content","Deixou de ser reportado como segmento. Data exata da descontinuação não apurada.","open"]
+  ]},
+  {code:"I.02", name:"Segmentos de cliente — pessoa física", note:"A XP não publica tabela oficial de segmentação; os cortes abaixo vêm de declarações de executivos à imprensa especializada.", ents:[
+    ["Clear","Sem mínimo. Trading e day trade, corretagem zero.","sec"],
+    ["Rico","Sem mínimo. Varejo digital e autosserviço, corretagem zerada.","sec"],
+    ["XP Investimentos","Varejo amplo, com e sem assessoria. Faixa de alta renda a partir de R$ 300 mil investidos.","sec"],
+    ["Consultoria XP","A partir de R$ 1 milhão. Modelo fee-based multicustódia, lançado em 10/07/2025; taxa de 0,4% a 1% a.a.","sec"],
+    ["XP Unique","Acima de R$ 3 milhões. Transição entre alta renda e private.","sec"],
+    ["XP Private","Acima de R$ 10 milhões. R$ 360 bi sob gestão em set/2026, ~3.400 assessores dedicados.","sec"],
+    ["Multifamily office","Acima de R$ 100 milhões. De R$ 3 bi para ~R$ 30 bi em dois anos.","sec"],
+    ["Definição oficial de cliente ativo","Clientes atendidos pelas marcas XP Investimentos, Rico, Clear, XP Investments e XP Private (Europe), com ativos acima de R$ 100 ou uma transação nos últimos 30 dias."]
+  ]},
+  {code:"I.03", name:"Segmentos de cliente — pessoa jurídica e institucional", note:"", ents:[
+    ["XP Empresas","Conta PJ, câmbio, crédito, seguros e investimentos do caixa. Mais de 100 mil clientes PJ ativos, base dobrada em três anos.","sec"],
+    ["PME","Nova frente com cartões, adquirência e crédito, para empresas com receita até R$ 500 milhões.","sec"],
+    ["Corporate","Foco declarado em empresas com faturamento acima de R$ 20 milhões.","sec"],
+    ["Issuer Services","Emissores em operações de renda fixa e renda variável."],
+    ["Clientes institucionais","Fundos, gestoras, seguradoras e investidores estrangeiros. R$ 346 bi de custódia corporate e institucional no 2T26."],
+    ["RPPS","Solução dedicada a Regimes Próprios de Previdência Social."]
+  ]},
+  {code:"I.04", name:"Nichos e verticais", note:"", ents:[
+    ["Trading ativo","Atendido pela Clear, com plataformas MetaTrader 5, Profit, Tryd e Tradezone."],
+    ["Investimento internacional para brasileiros","Custódia internacional de ~US$ 15 bi; acesso via Allfunds a 5.000+ fundos e 1.400 gestoras.","sec"],
+    ["Crédito privado secundário","Posicionamento declarado de nº 1 no mercado secundário; dealer do Tesouro Nacional.","sec"],
+    ["Previdência por portabilidade","Mais de 80% dos ativos vindos de portabilidade de concorrentes — dado de 2023.","sec"],
+    ["Esportes","XP Sports Asset Management, gestora dedicada a fundos do setor."],
+    ["Energia","XP Comercializadora de Energia."],
+    ["Educação e conteúdo","InfoMoney e XP Educação como canal de aquisição, não apenas como produto."]
+  ]},
+  {code:"I.05", name:"Mercados geográficos", note:"Presença internacional concentrada em corretagem e private banking, sem operação de varejo fora do Brasil.", ents:[
+    ["Brasil","Mercado-núcleo. 4,772 milhões de clientes ativos e R$ 1.535 bi de ativos de clientes em jun/26."],
+    ["Estados Unidos","XP Investments US (broker-dealer, Nova York) e XP Advisory US (RIA). Registro em 35 estados; escritório também em Miami."],
+    ["Reino Unido","XP Investments UK LLP, autorizada pela FCA; duas holdings britânicas."],
+    ["Ilhas Cayman","Sede da holding XP Inc. e domicílio dos fundos offshore."],
+    ["Bahamas","MM Hedge Icon, fundo de legado Modal."],
+    ["Suíça (Genebra)","Escritório citado historicamente desde 2016; nenhuma entidade suíça consta da lista de 83 subsidiárias.","open"],
+    ["Portugal e União Europeia","Nenhuma entidade localizada na lista de subsidiárias nem registro na CMVM.","open"]
+  ]},
+  {code:"I.06", name:"Mercados de produto adjacentes", note:"A trajetória de saída do território estrito de corretora — cada linha é um mercado com regulador e concorrência próprios.", ents:[
+    ["Banco digital e cartões","Banco XP. TPV de R$ 13,5 bi e 1,6 mi de cartões ativos no 2T26; R$ 52,2 bi de TPV em 2025."],
+    ["Crédito","Carteira expandida de R$ 77,9 bi (+16% a/a). Receita de R$ 330 mi em 2025 — menos de 2% da receita bruta."],
+    ["Seguros","R$ 489 mi de prêmios emitidos no 2T26; R$ 1.745 mi em 2025, +33% a/a."],
+    ["Previdência aberta","XP Vida e Previdência, seguradora própria. R$ 101 bi de ativos de clientes no 2T26."],
+    ["Gestão de recursos","XP Asset Management, 13 estratégias e mais de 170 profissionais. AUM de R$ 188 bi em fev/2025; valor atualizado para 2026 não divulgado.","nd"],
+    ["Mercado de capitais","Issuer Services. Rankings do site do atacado sem data de atualização visível.","open"],
+    ["Câmbio","Via XP CCTVM e XP Empresas."],
+    ["Consórcio","Listado como produto; marca específica não identificada.","nd"],
+    ["Energia","XP Comercializadora de Energia."],
+    ["Ativos digitais","Sem exchange própria. Exposição indireta via fundo de Bitcoin da Rico e ETFs XBIT11 e XETH11 da XP Asset.","trans"]
+  ]},
+  {code:"I.07", name:"Ambiente regulatório", note:"A regulação que mais importa aqui não é prudencial — é a que governa a relação com a rede de distribuição.", ents:[
+    ["Resolução CVM 178 (2023)","Marco do assessor de investimento. Acabou com a exclusividade obrigatória, permitiu sócios de capital nos escritórios e exigiu diretor responsável registrado."],
+    ["Resolução CVM 179 (2023–2024)","Transparência de remuneração: divulgação qualitativa e quantitativa dos arranjos e extratos trimestrais ao cliente."],
+    ["Resolução CVM 35/2021","Suitability — dever de verificação de adequação do produto ao perfil."],
+    ["Instrução CVM 598/18","Atuação dos analistas de valores mobiliários."],
+    ["BACEN e CMN","Banco XP como líder do conglomerado prudencial. Res. CMN 5.008/2022 (riscos e capital) e 4.950/21 (cibersegurança e nuvem)."],
+    ["Enquadramento prudencial","Uma fonte registra promoção ao S2 em 10/10/2024; outra classifica como S3. As duas são secundárias e se contradizem.","sec"],
+    ["SUSEP","XP Vida e Previdência e as corretoras de seguros."],
+    ["SEC, Nasdaq e SOX","Emissor privado estrangeiro; Form 20-F e 6-K; regras de independência de conselho e comitê de auditoria."],
+    ["FINRA, SIPC e NFA","XP Investments US (CRD 156691, SEC 8-68817)."],
+    ["FCA","XP Investments UK LLP."],
+    ["ANBIMA","Código de Distribuição citado como base da política de transparência de remuneração."],
+    ["LGPD, Pix e Open Finance","Termos de adesão ao Open Finance publicados; encarregada de dados nomeada."]
+  ]},
+  {code:"I.08", name:"Cenário competitivo", note:"O 20-F não nomeia concorrentes individualmente — descreve apenas categorias.", ents:[
+    ["Descrição oficial","Provedores tradicionais de serviços financeiros, afiliadas de instituições financeiras e provedores não tradicionais com recursos financeiros significativos."],
+    ["Plataformas e bancos de investimento","BTG Pactual, Itaú, Bradesco, Santander, Safra — sem participação de mercado comparável divulgada.","open"],
+    ["Private banking","Mercado brasileiro de ~R$ 2,8 tri no 1S26. Itaú com R$ 1,1 tri e 31% de share; BTG com R$ 1,3 tri; XP Private com R$ 360 bi.","sec"],
+    ["Resposta competitiva declarada","Corretagem zerada na Rico e redução de 75% nas taxas do XP Direct, registradas no próprio 20-F."],
+    ["Entrantes digitais","Nubank, Inter, Avenue, Warren e demais plataformas — sem share confirmado.","open"]
+  ]}
+ ]
+},
+{
+ id:"c2", num:"II", title:"Marca",
+ purpose:"Arquitetura híbrida deliberada: marca-mãe forte onde o endosso ajuda, marcas independentes onde o posicionamento precisa ser distinto da XP — Rico para o baixo custo, Clear para o trader, InfoMoney para a mídia, cuja independência editorial é o próprio ativo. Note que Rico e Clear são marcas sem entidade legal própria: ambas operam dentro da XP CCTVM.",
+ domains:[
+  {code:"II.01", name:"Marca-mãe e corporativa", note:"", ents:[
+    ["XP Inc.","Holding listada na Nasdaq sob o ticker XP; BDR XPBR31 na B3."],
+    ["XP / XP Investimentos","Marca-mãe do varejo e da corretora principal."]
+  ]},
+  {code:"II.02", name:"Marcas de varejo e trading", note:"Duas marcas independentes que não correspondem a entidades legais — o traço mais contraintuitivo desta camada.", ents:[
+    ["Rico","Varejo digital e autosserviço, corretagem zero. Opera como filial da XP CCTVM, não como corretora autônoma."],
+    ["Clear","Trading e day trade, corretagem zero em todos os produtos. Operações incorporadas à XP CCTVM."],
+    ["XP Direct","Oferta de corretagem reduzida citada no 20-F. Escopo atual não confirmado.","open"]
+  ]},
+  {code:"II.03", name:"Marcas de segmentação por patrimônio", note:"Empilhadas sob a marca-mãe, com a Consultoria XP como trilha paralela fee-based.", ents:[
+    ["Consultoria XP","Modelo fee-based multicustódia, a partir de R$ 1 mi. ~120 profissionais em ago/2026, ticket médio de ~R$ 6 mi, meta de R$ 100 bi até 2027.","sec"],
+    ["XP Unique","Alta renda, acima de R$ 3 mi."],
+    ["XP Private","Private banking, acima de R$ 10 mi."],
+    ["XP Private (Europe)","Braço internacional do private, citado na definição oficial de clientes ativos."],
+    ["XP International","Marca sob a qual atua a XP Investments US."]
+  ]},
+  {code:"II.04", name:"Marcas de gestão de recursos", note:"A XP Asset é guarda-chuva de sete gestoras autorizadas pela CVM.", ents:[
+    ["XP Asset Management","Marca guarda-chuva. 13 estratégias, mais de 170 profissionais, ~4 milhões de cotistas."],
+    ["XP Gestão (XPG)","Renda variável e multimercado."],
+    ["XP Vista (XPV)","Renda fixa, estruturados e venture capital."],
+    ["XP PE","Private equity."],
+    ["XP Allocation","Fundos internacionais e indexados."],
+    ["XP Advisory","Mandatos exclusivos e fundos de alocação. Não é marca de segmentação de clientes."],
+    ["XP Sports Asset","Fundos do setor esportivo."],
+    ["Augme Capital","Gestora de crédito adquirida, com marca preservada."]
+  ]},
+  {code:"II.05", name:"Marcas de banco, crédito e seguros", note:"", ents:[
+    ["Banco XP","Banco múltiplo, conta digital, cartão e crédito."],
+    ["Cartão XP","Linha Visa com tiers XP One, Visa Infinite e Legacy. Critérios de anuidade e Investback não detalhados na página oficial.","nd"],
+    ["Investback","Programa de cashback investido."],
+    ["XP Seguros","Corretagem e distribuição de seguros."],
+    ["XP Vida e Previdência","Seguradora e entidade aberta de previdência complementar própria."],
+    ["Antecipa","Antecipação de recebíveis, marca preservada após aquisição."]
+  ]},
+  {code:"II.06", name:"Marcas de atacado e empresas", note:"", ents:[
+    ["XP Banco de Atacado","Guarda-chuva do wholesale: Corporate, Institucional e Issuer Services."],
+    ["XP Empresas","Conta PJ, crédito, câmbio e investimentos corporativos."],
+    ["XP Empresas Pay","Maquininha lançada em 21/07/2026, com tecnologia Fiserv/Clover.","trans"],
+    ["XP Finanças","Assessoria financeira e M&A."],
+    ["XP Research","Área de análise, com cobertura para varejo e institucional."]
+  ]},
+  {code:"II.07", name:"Marcas de conteúdo e educação", note:"Conteúdo aqui não é comunicação de marca — é canal de aquisição com métrica própria.", ents:[
+    ["InfoMoney","Portal de conteúdo financeiro. Marca independente; 25,57% de share de audiência entre os 33 maiores sites do setor em dez/2025.","sec"],
+    ["XP Educação (XPE)","Graduação, pós-graduação, MBA, certificações e cursos. Sucessora da marca Xpeed."],
+    ["Xpeed","Escola de educação financeira, renomeada XP Educação. Base legada ainda referenciada no suporte.","stop"],
+    ["Expert XP","Evento anual. Edição de 2026 em 23–25/07, com expectativa de mais de 50 mil participantes."],
+    ["Hub XP","Portal e app do assessor — ferramenta de CRM e gestão de carteira da rede."]
+  ]},
+  {code:"II.08", name:"Marcas institucionais", note:"", ents:[
+    ["Instituto XP","Braço de educação financeira, com meta de alcançar 50 milhões de pessoas. Natureza jurídica não confirmada.","open"],
+    ["XP Control","Veículo de controle em Cayman, titular das ações Class B."]
+  ]},
+  {code:"II.09", name:"Marcas encerradas e absorvidas", note:"", ents:[
+    ["XTAGE","Exchange de cripto em parceria com a Nasdaq. Encerramento anunciado em 18/10/2023, com liquidação automática das posições a partir de 16/12/2023. A entidade XTage Intermediação S.A. ainda consta da lista de subsidiárias.","stop"],
+    ["XDEX","Primeira tentativa de exchange, 2018–2020.","stop"],
+    ["modalmais","Marca do Banco Modal. Clientes migrados para a XP; Banco Modal extinto por incorporação em 01/09/2025.","stop"],
+    ["Banco Modal","Units MODL11 deslistadas e registro cancelado na CVM.","stop"]
+  ]}
+ ]
+},
+{
+ id:"c3", num:"III", title:"Canais de Distribuição e Atendimento",
+ purpose:"A camada mais característica do conglomerado e a que mais o distingue de um banco: o canal principal não pertence à empresa. Cerca de 600 escritórios são sociedades independentes ligadas por contrato de distribuição, e a norma que rege essa relação mudou em 2023 — a Resolução CVM 178 acabou com a exclusividade obrigatória. A resposta da XP foi comprar participação em treze desses escritórios e, em paralelo, construir uma rede interna de assessores CLT.",
+ domains:[
+  {code:"III.01", name:"Rede de assessores", note:"Atenção à definição: o release inclui em 'total de assessores' os assessores credenciados, funcionários XP que prestam assessoria, consultores e gestores de patrimônio. Não são todos autônomos.", ents:[
+    ["Total de assessores","18,4 mil em jun/26, +1% a/a. Eram 18,0 mil no 4T25."],
+    ["Assessores dedicados ao XP Private","~3.400 do total.","sec"],
+    ["Assessores internos (CLT)","~2.000, com meta declarada de 10.000 até 2028 e ritmo de 70 a 100 contratações por mês.","sec"],
+    ["Mercado de referência","27.721 assessores registrados na Ancord em mar/2026, distribuídos em 1.425 escritórios.","sec"],
+    ["Fim da exclusividade obrigatória","Desde a Res. CVM 178, o assessor pode manter contrato com um ou mais intermediários. A XP mantém exclusividade contratual de plataforma de investimentos com a maioria dos escritórios."],
+    ["Modelos de remuneração","Comissionado sobre receita gerada ou fee-based de 0,4% a 1,0% a.a. sobre os ativos. Percentuais de repasse ao escritório não são divulgados.","nd"],
+    ["Participação do fee-based","Pouco mais de 26% dos ativos de clientes (2T26). Métrica anterior media percentual de clientes, não de ativos."],
+    ["Cobertura da rede","Assessores pessoa física da XP CCTVM atendiam ~25% dos clientes ativos em 31/12/2025."],
+    ["Academia de Assessoria","Escola interna de formação e certificação."]
+  ]},
+  {code:"III.02", name:"Escritórios credenciados", note:"Sociedades independentes com contrato de distribuição — não são franquias nem filiais.", ents:[
+    ["Escritórios parceiros","Mais de 600 no Brasil, com mais de 7.000 assessores atuando neles. Número do site institucional, sem data de referência.","sec"],
+    ["Concentração","Aproximadamente um quarto da custódia da XP está em escritórios nos quais a companhia tem participação.","sec"],
+    ["Diversificação dos escritórios","Cerca de 70% dos escritórios parceiros já oferecem algum produto financeiro além da plataforma de investimentos — câmbio, conta internacional, consórcio e benefícios, inclusive com concorrentes.","sec"],
+    ["Escritórios que viraram corretoras","Monte Bravo tornou-se corretora em out/2024; Nomos busca aprovação. Fami desistiu.","sec"],
+    ["Premiações da rede","Brazil Advisor Awards e Selo de Governança, usados como instrumento de engajamento."],
+    ["Perda de escritórios para concorrentes","Reportada, sem fonte acessível para confirmação.","open"]
+  ]},
+  {code:"III.03", name:"Canais digitais", note:"", ents:[
+    ["App XP e plataforma web","Canal principal do varejo, com home broker integrado."],
+    ["App Rico","Varejo digital massificado."],
+    ["App Clear","Trader ativo, com suporte a MetaTrader 5, Profit, Tryd e Tradezone."],
+    ["App XP Empresas","Conta PJ."],
+    ["Hub XP","App e portal do assessor — CRM e gestão de carteira."],
+    ["Assessor de IA","Previsto para o 3T26, direcionado a varejo digital e mass affluent.","open"],
+    ["Negociações diárias médias no varejo","2,4 milhões no 2T26, +3% a/a."]
+  ]},
+  {code:"III.04", name:"Canais remotos e assistidos", note:"", ents:[
+    ["Consultoria XP","Consultoria fee-based multicustódia, com equipe de apoio em sucessão, seguros, câmbio e crédito."],
+    ["XP Private","Atendimento dedicado, com primeiro escritório regional em Curitiba (~ago/2026) e expansão prevista para Centro-Oeste, Nordeste e Norte até 2027.","sec"],
+    ["XP Advisory","Mandatos exclusivos e carteiras administradas, originalmente do private e depois estendidos ao varejo."],
+    ["Mesas de operações","Renda fixa, renda variável, derivativos e câmbio no atacado; salas ao vivo com analistas na Clear."],
+    ["Especialistas por produto","Equipes de apoio ao assessor. Quantidade não divulgada.","nd"]
+  ]},
+  {code:"III.05", name:"Canais institucionais e de atacado", note:"Estrutura unificada de wholesale banking com três frentes.", ents:[
+    ["Corretora institucional","Títulos públicos, crédito privado, ações, opções, futuros, BTC, commodities e moedas."],
+    ["Cobertura corporate","Empresas com faturamento acima de R$ 20 mi; clientes citados incluem Rede D'Or, Aegea, JBS, Eletrobras e CSN."],
+    ["Issuer Services","Originação e distribuição de renda fixa e renda variável."],
+    ["Distribuição para terceiros","Plataforma aberta com gestoras independentes nacionais e internacionais, incluindo Morgan Stanley, J.P. Morgan e Bridgewater."],
+    ["Custódia institucional","Mais de R$ 80 bi de 300+ clientes institucionais, segundo o site do atacado — sem data de referência.","sec"]
+  ]},
+  {code:"III.06", name:"Conteúdo como canal de aquisição", note:"Domínio que não tem equivalente num banco: mídia própria com audiência medida por terceiro.", ents:[
+    ["InfoMoney","25,57% de share de audiência em dez/2025 entre os 33 maiores sites de economia e investimentos; 14,2 milhões de pessoas alcançadas no mês.","sec"],
+    ["XP Educação","Graduação, pós, certificações e cursos; 25 mil bolsas em curso de IA com o InfoMoney. Número de alunos não divulgado.","nd"],
+    ["Expert XP","Evento anual; edição anterior com 230 patrocinadores e 350 palestrantes."],
+    ["XP Research","Relatórios, carteiras recomendadas e cobertura setorial. Tamanho da equipe não divulgado.","nd"]
+  ]},
+  {code:"III.07", name:"Canais de terceiros e parcerias", note:"", ents:[
+    ["Allfunds","Acesso a mais de 5 mil fundos e 1.400 gestoras internacionais."],
+    ["Fiserv / Clover","Tecnologia da maquininha XP Empresas Pay."],
+    ["Visa","Bandeira dos cartões XP e do XP Empresas Visa Infinite."],
+    ["Gestoras parceiras de previdência","~100 gestoras e 330+ fundos na prateleira — dados de 2023.","sec"],
+    ["Parceiros dos escritórios","Avenue para conta internacional, Ouribank e B&T Câmbio — concorrentes da própria XP em algumas linhas.","sec"],
+    ["Distribuição via bancos parceiros","Não localizada divulgação recente.","open"]
+  ]},
+  {code:"III.08", name:"Canais abertos e B2B", note:"", ents:[
+    ["Open Finance","Termos de adesão publicados (v3.2025.8.6); funcionalidade de trazer saldos de outros bancos."],
+    ["Pix","Operado em todos os canais."],
+    ["Banking as a Service","Não localizada divulgação recente e confiável.","open"],
+    ["Receita por canal de distribuição","Não divulgada. A XP reporta receita por segmento e por linha de produto, não por canal.","nd"]
+  ]},
+  {code:"III.09", name:"Canais internacionais", note:"", ents:[
+    ["XP Investments US","Escritórios em Nova York (55 W 46th St) e Miami (701 Brickell Ave). Conta padrão a partir de US$ 500 mil; conta digital internacional sem mínimo."],
+    ["XP Advisory US","Consultoria de investimentos registrada na SEC; fee mínimo anual de US$ 5 mil."],
+    ["XP Private (Europe)","Operação europeia, com holding britânica identificada."],
+    ["Reforço da estrutura internacional","Cinco novos executivos anunciados em 19/11/2025 para o XP Private Bank, com ampliação nos EUA.","sec"]
+  ]}
+ ]
+},
+{
+ id:"c4", num:"IV", title:"Produtos e Serviços",
+ purpose:"O catálogo mostra uma plataforma de investimentos que vem anexando negócios bancários um a um — cartão, crédito, seguro, previdência, adquirência — sem que nenhum deles ainda pese muito na receita. Crédito, por exemplo, era menos de 2% da receita bruta de 2025. As 'novas verticais' são a aposta de escopo da camada 0 ainda em construção.",
+ domains:[
+  {code:"IV.01", name:"Renda fixa e captação", note:"R$ 833 mi de receita no 2T26; R$ 3.858 mi em 2025, +12% a/a.", ents:[
+    ["CDB","Inclusive do Banco XP, com campanhas de 150% a 230% do CDI para novos clientes.","sec"],
+    ["LCI e LCA",""],
+    ["CRI, CRA e debêntures","Inclusive incentivadas."],
+    ["Tesouro Direto e títulos públicos federais",""],
+    ["Letras financeiras",""],
+    ["Taxa de administração agregada","R$ 558 mi no 2T26, +27% a/a."]
+  ]},
+  {code:"IV.02", name:"Renda variável, fundos e estruturados", note:"Renda variável: R$ 1.138 mi no 2T26. Plataforma de fundos: R$ 418 mi.", ents:[
+    ["Ações, opções e futuros","Inclusive mini contratos e aluguel de ações (BTC)."],
+    ["BDRs, ETFs e FIIs",""],
+    ["Commodities e moedas",""],
+    ["Plataforma aberta de fundos","Multigestora, com fundos próprios e de terceiros; compra e venda de fundos fechados pelo app."],
+    ["COE e produtos estruturados","Remuneração da XP via spread mais corretagem."],
+    ["Fundos internacionais","90 a 100 na prateleira local; alguns a partir de US$ 1 mil.","sec"],
+    ["Custódia internacional","~US$ 15 bilhões. Exposição internacional média dos clientes PF de 6% a 7%.","sec"]
+  ]},
+  {code:"IV.03", name:"Previdência", note:"R$ 118 mi de receita no 2T26; R$ 477 mi em 2025, +20% a/a.", ents:[
+    ["PGBL e VGBL","R$ 101 bi de ativos de clientes no 2T26, +18% a/a."],
+    ["XP Vida e Previdência","Seguradora própria; R$ 97 bi de ativos no 2T26, +34% a/a."],
+    ["Participação de mercado","5% no varejo (4T25). Posição competitiva de '6ª maior' é de 2023 e não foi atualizada.","sec"],
+    ["Prateleira","330+ fundos e ~100 gestoras parceiras, com aporte inicial a partir de R$ 500 em alguns fundos — dados de 2023.","sec"]
+  ]},
+  {code:"IV.04", name:"Banco digital e cartões", note:"R$ 375 mi de receita de cartões no 2T26; R$ 1.380 mi em 2025, +11% a/a.", ents:[
+    ["Conta digital PF","Com rendimento e CDBs do Banco XP."],
+    ["Conta global","Investimento internacional."],
+    ["Cartão de crédito XP","Linha Visa com tiers One, Infinite e Legacy. TPV de R$ 13,5 bi e 1,6 mi de cartões ativos no 2T26."],
+    ["Investback","Cashback investido; até 1,2% no cartão PJ."],
+    ["Pix e transferências",""],
+    ["Cartão global como produto separado","Não confirmado; a oferta internacional se dá via conta global e XP Investments US.","open"]
+  ]},
+  {code:"IV.05", name:"Crédito", note:"Carteira expandida de R$ 77,9 bi no 2T26, +16% a/a. Receita de R$ 105 mi no trimestre.", ents:[
+    ["Crédito com garantia de investimentos","Produto-âncora; colateralizado, de baixo risco."],
+    ["Home equity",""],
+    ["Crédito pessoal sem garantia","Para a base de investidores."],
+    ["Resgate Express","Antecipação de recursos aplicados em investimentos longos."],
+    ["Consignado privado","Lançado; a XP identificou que seus clientes representam ~15% do mercado.","sec"],
+    ["Crédito imobiliário","Previsto para o 2º semestre de 2026, focado em alto padrão, com funding fora do SFH.","open"],
+    ["Crédito corporativo","RWA do atacado +26% a/a no 2T26."],
+    ["Crédito PJ colateralizado","Mínimo de R$ 300 mil."],
+    ["Cartão consignado","Não localizado no portfólio.","open"]
+  ]},
+  {code:"IV.06", name:"Seguros", note:"R$ 80 mi de receita no 2T26; R$ 308 mi em 2025, +47% a/a — a linha de maior crescimento percentual do varejo.", ents:[
+    ["Seguro de vida",""],
+    ["Seguro viagem",""],
+    ["Seguros corporativos","Via XP Corretora de Seguros de Riscos Corporativos; saúde, odontológico, vida e garantia para empresas."],
+    ["Administração de benefícios","XP Administradora de Benefícios."],
+    ["Seguro residencial e auto","Não confirmados na página de produtos.","nd"],
+    ["Prêmios emitidos","R$ 489 mi no 2T26, +10% a/a; R$ 1.745 mi em 2025."]
+  ]},
+  {code:"IV.07", name:"Gestão de recursos", note:"", ents:[
+    ["XP Asset Management","13 estratégias líquidas e ilíquidas; mais de 170 profissionais; ~4 milhões de cotistas."],
+    ["Estratégias","Ações, renda fixa, multimercado macro, crédito estruturado e privado, special situations, imobiliário, agro, infraestrutura, private equity e venture capital."],
+    ["Fundos imobiliários","XP Malls (XPML11) e aquisição de portfólio logístico de R$ 919 milhões.","sec"],
+    ["Base comercial","400+ escritórios e ~2.000 assessores, além de institucionais e family offices.","sec"],
+    ["AUM","R$ 188 bi em 28/02/2025 e ~R$ 200 bi em jun/2025. Valor de 2026 não divulgado.","nd"]
+  ]},
+  {code:"IV.08", name:"Banco de investimento e atacado", note:"Rankings do site do atacado sem data de atualização visível — o mais recente citado é de jan/2024.", ents:[
+    ["Equity Capital Markets","IPOs e follow-ons no Brasil e nos EUA; mais de 100 ofertas desde 2017.","sec"],
+    ["Debt Capital Markets e securitização","Debêntures, CRA, CRI, CDCA, FIDCs, bonds, private placements e syndicated loans."],
+    ["M&A","Buy-side, sell-side, joint ventures e fairness opinions; 5º lugar em valor entre 2021 e 2024.","sec"],
+    ["Project finance","Assessoria em infraestrutura, leilões e modelagem."],
+    ["Tesouraria, câmbio e derivativos","Mesas dedicadas a corporates."],
+    ["Híbridos","FIIs, FIPs e FIAgro."]
+  ]},
+  {code:"IV.09", name:"Institucional", note:"R$ 383 mi de receita no 2T26; R$ 1.373 mi em 2025, estável.", ents:[
+    ["Corretagem institucional","Títulos públicos, crédito privado, ações, opções, futuros, BTC, commodities e moedas."],
+    ["Crédito privado secundário","Posicionamento declarado de nº 1; dealer do Tesouro Nacional.","sec"],
+    ["Solutions","Estruturas customizadas para institucionais."],
+    ["Research institucional",""]
+  ]},
+  {code:"IV.10", name:"Empresas e PME", note:"", ents:[
+    ["Conta digital PJ","100% online, com investimentos do caixa em CDBs, letras financeiras, debêntures, títulos públicos e fundos."],
+    ["Câmbio digital","USD, EUR, CNY, JPY e MXN; contratos a termo."],
+    ["Antecipação de recebíveis","Via Antecipa."],
+    ["Gestão de riscos","Derivativos de moedas, ações, commodities, juros e energia."],
+    ["XP Empresas Pay","Maquininha com tecnologia Fiserv/Clover, rollout a partir do 3T26.","trans"],
+    ["XP Empresas Visa Infinite","Anuidade zero, até 6 adicionais, limite híbrido ampliável por colateralização."]
+  ]},
+  {code:"IV.11", name:"Conteúdo e educação", note:"", ents:[
+    ["InfoMoney","Portal de conteúdo financeiro."],
+    ["XP Educação","Graduação, pós-graduação, MBA, certificações e cursos em mercado financeiro e tecnologia."],
+    ["Expert XP","Evento anual."],
+    ["Carteiras recomendadas e relatórios","Produzidos pelo XP Research."]
+  ]},
+  {code:"IV.12", name:"Ativos digitais", note:"Duas tentativas de exchange própria fracassaram; o modelo atual é de exposição indireta.", ents:[
+    ["Fundo Rico Bitcoin Dólar","Primeiro fundo de Bitcoin da casa, distribuído pela Rico; mínimo de R$ 100 e taxa de 0,40% a.a.","sec"],
+    ["ETFs XBIT11 e XETH11","Trend BTC e Trend ETH da XP Asset, anunciados em 27/11/2025. Taxas não divulgadas.","nd"],
+    ["Cobertura de research","Relatórios sobre cripto e ETFs."],
+    ["Exchange própria","Nenhuma em operação. XDEX encerrada em 2020, XTAGE em dez/2023.","stop"]
+  ]}
+ ]
+},
+{
+ id:"c5", num:"V", title:"Veículos Legais",
+ purpose:"Oitenta e três entidades listadas no 20-F, e o Exhibit que as enumera não divulga percentual de participação em nenhuma. O contraste mais nítido com um conglomerado bancário está aqui: o conglomerado prudencial brasileiro tem apenas quatro instituições, enquanto a maior parte do grupo — gestoras, seguros, mídia, educação, energia, fundos — fica fora do perímetro de capital regulatório.",
+ domains:[
+  {code:"V.01", name:"Cadeia de controle", note:"Posição de 18/08/2026. O controle se exerce por voto múltiplo, não por participação econômica majoritária.", ents:[
+    ["XP Inc.","Exempted company de Cayman, constituída em 29/08/2019. Nasdaq: XP. 508.500.275 ações em 18/08/2026."],
+    ["XP Control LLC","Veículo de controle em Cayman. 96.797.602 ações — 19,04% do capital e 70,31% dos votos."],
+    ["Ações Class A e Class B","Class A com 1 voto, Class B com 10 votos. Conversão automática em transferência em bolsa ou quando as Class B caírem abaixo de 10% dos votos."],
+    ["Free float","408.731.865 ações — 80,38% do capital e 29,69% dos votos."],
+    ["Guilherme Benchimol","Reporting person do Schedule 13D junto com a XP Control."],
+    ["Acordo de acionistas","Rescindido em 10/07/2023."],
+    ["General Atlantic","Saída iniciada em oferta secundária de US$ 1 bi em 29/06/2020. Ausente da estrutura de 2026; comunicado de saída integral não localizado.","open"],
+    ["Itaúsa","Saída integral confirmada entre nov e dez/2023, levantando R$ 1,7 bi."],
+    ["Itaú Unibanco","Alienou integralmente as Class A em 26/08/2024, mas manteve 8.285.060 Class B (1,54% do capital). Destino dessa posição em 2025–2026 não confirmado.","open"],
+    ["BDR XPBR31","Negociado na B3, depositária Itaú Unibanco e custodiante BNY Mellon. Nível, patrocínio e paridade não confirmados.","open"]
+  ]},
+  {code:"V.02", name:"Conglomerado prudencial (BACEN)", note:"Liderado pelo Banco XP, sob a Res. CMN 4.950/21. O escopo prudencial difere do consolidado contábil da XP Inc.", ents:[
+    ["Banco XP S.A.","Banco múltiplo — carteiras comercial, de investimento e câmbio. Instituição líder. Sede no Leblon, Rio de Janeiro."],
+    ["XP Investimentos CCTVM S.A.","Corretora principal. CNPJ 02.332.886/0001-04; subsidiária integral do Banco XP. Responde por ~51% da receita líquida consolidada."],
+    ["XP DTVM Ltda.","Distribuidora de títulos e valores mobiliários."],
+    ["XP Serviços Financeiros DTVM Ltda.","Distribuidora; provável ex-Modal DTVM, sem ato de alteração de denominação localizado.","open"],
+    ["Divergência de composição","O Pilar 3 4T25 lista quatro instituições; a política de segurança cibernética lista três. Não reconciliado.","open"],
+    ["Composição histórica","Em 30/09/2023 o conglomerado tinha cinco integrantes, incluindo Banco Modal e Modal DTVM."]
+  ]},
+  {code:"V.03", name:"Holdings intermediárias e veículos de participação", note:"", ents:[
+    ["XP Finance Holding S.A.","Holding intermediária, controladora direta do Banco XP."],
+    ["XP Investimentos S.A.","Holding operacional; cindida parcialmente em 01/05/2025 e com registro de emissor cancelado na CVM em 19/03/2026."],
+    ["XP Holding International LLC","Holding das operações norte-americanas."],
+    ["XP Controle Participações S.A. e Nova XP Controle Participações S.A.","Veículos de participação. Função exata não divulgada.","open"],
+    ["XP Controle 4, 5 e 7 Participações","Veículos de participação."],
+    ["Wealth High Governance Holding de Participações S.A.","Holding de participações, provável veículo das participações em escritórios de assessoria. Não confirmado.","open"],
+    ["XP Controle 3 Participações S.A.","Consta na cadeia registrada na FINRA; provável denominação anterior da XP Finance Holding. Ato societário não localizado.","open"]
+  ]},
+  {code:"V.04", name:"Gestão de recursos", note:"Todas autorizadas pela CVM como gestoras de recursos de valores mobiliários.", ents:[
+    ["XP Gestão de Recursos Ltda.","Renda variável e multimercado."],
+    ["XP Vista Asset Management Ltda.","Renda fixa, estruturados e venture capital."],
+    ["XP PE Gestão de Recursos Ltda.","Private equity."],
+    ["XP Allocation Asset Management Ltda.","Fundos internacionais e indexados. CNPJ 37.918.829/0001-88. AUM próprio não divulgado.","nd"],
+    ["XP Advisory Gestão Recursos Ltda.","Mandatos exclusivos e fundos de alocação."],
+    ["XP Sports Asset Management Ltda.","Fundos do setor esportivo."],
+    ["Augme Capital Gestão de Recursos Ltda. e Augme Holding","Gestão de crédito, adquirida."]
+  ]},
+  {code:"V.05", name:"Seguros e previdência", note:"Fora do conglomerado prudencial; reguladas pela SUSEP.", ents:[
+    ["XP Vida e Previdência S.A.","Seguradora de vida e entidade aberta de previdência complementar."],
+    ["XP Corretora de Seguros Ltda.","Corretagem."],
+    ["XP Corretora de Seguros de Riscos Corporativos S.A.","Corretagem corporativa."],
+    ["XP Representação Seguros Ltda.","Representação."],
+    ["XP Administradora de Benefícios Ltda.","Administração de benefícios. Regulador presumido ANS, não confirmado.","open"],
+    ["DM10 Corretora de Seguros","Corretora adquirida."]
+  ]},
+  {code:"V.06", name:"Entidades não financeiras", note:"", ents:[
+    ["Infostocks Informações e Sistemas Ltda.","Opera o portal InfoMoney."],
+    ["XPE Infomoney Educação Assessoria Empresarial e Participações Ltda.","Opera a XP Educação, sucessora da Xpeed."],
+    ["Instituto de Gestão e Tecnologia da Informação Ltda. (IGTI)","Educação e pós-graduação, parte da XP Educação."],
+    ["Tecfinance Informática e Projetos de Sistemas Ltda.","Tecnologia e sistemas."],
+    ["Antecipa S.A.","Antecipação de recebíveis; fatia majoritária adquirida, percentual não divulgado.","nd"],
+    ["XP Finanças Assessoria Financeira Ltda.","Assessoria financeira e M&A."],
+    ["Modal Assessoria Financeira Ltda.","Assessoria financeira, legado Modal."],
+    ["XP Comercializadora de Energia Ltda.","Comercialização de energia."],
+    ["XP Eventos Ltda.","Eventos, incluindo o Expert XP."],
+    ["XTage Intermediação S.A.","Ex-plataforma de cripto; atividades encerradas em dez/2023, entidade ainda listada.","stop"],
+    ["Galapos, Cip S.A. e Vai Tourinho S.A.","Entidades da lista de subsidiárias cujo papel funcional não foi identificado.","open"]
+  ]},
+  {code:"V.07", name:"Entidades no exterior — Estados Unidos", note:"", ents:[
+    ["XP Investments US, LLC","Broker-dealer. CRD 156691, SEC 8-68817. Sede em 55 West 46th Street, Nova York. Registrada em 35 estados. Atua sob as marcas XP Private e XP International. SEC, FINRA, SIPC e NFA."],
+    ["XP Advisory US","Registered Investment Adviser, com Form ADV na SEC."],
+    ["XP Holding International, LLC","Holding; detém mais de 75% da XP Investments US."],
+    ["Escritório de Miami","701 Brickell Ave, Suite 2120. Entidade legal própria não confirmada — provável branch office.","open"],
+    ["Eventos regulatórios","Três eventos finalizados na XP Investments US: informação incorreta de volume negociado, falha de supervisão em private placements e violação de gravação de áudio."]
+  ]},
+  {code:"V.08", name:"Entidades no exterior — Reino Unido e offshore", note:"", ents:[
+    ["XP Investments UK LLP","Firma autorizada pela FCA. Companies House OC403105."],
+    ["XP Holding UK Ltd e XP Private Holding UK Ltd","Holdings britânicas."],
+    ["XPAC Sponsor LLC","Sponsor do SPAC XPAC Acquisition Corp, em Cayman."],
+    ["XProject LTD","Entidade de Cayman cujo papel não foi identificado.","open"],
+    ["Fundos offshore de Cayman","XP High Yield Fund SP, XP International Fund SPC – XP Multistrategy Fund SP, XP Phalanx CT Fund e XP Alesia Fund SPC."],
+    ["MM Hedge Icon","Fundo em Nassau, legado Modal."]
+  ]},
+  {code:"V.09", name:"Participações em escritórios de assessoria", note:"Estratégia iniciada em 2021: capital primário para profissionalizar a gestão, remuneração por dividendos e sem estratégia de saída declarada. Nenhum destes aparece nominalmente na lista de subsidiárias.", ents:[
+    ["Blue3","Única participação pública: XP tinha 50%, a Blue3 recomprou 8%, restando 42%.","sec"],
+    ["Monte Bravo","R$ 35 bi sob custódia; tornou-se corretora em out/2024. Participação não divulgada.","nd"],
+    ["Fami (fusão de Messem e Faros)","Maior da rede, R$ 65 bi. Participação não divulgada.","nd"],
+    ["Manchester Investimentos","Participação minoritária relevante adquirida em mai/2024; R$ 16 bi sob custódia à época. Percentual não divulgado.","nd"],
+    ["Nomos, Ável, SVN, BRA e BS Investimentos","Participações adquiridas entre 2021 e 2022; percentuais não divulgados.","nd"],
+    ["Criteria, Center e 3A Riva","Participações adquiridas entre jan e abr/2025.","sec"],
+    ["Meta declarada","Seis aquisições em 2025 — o maior volume desde o início da estratégia.","sec"]
+  ]},
+  {code:"V.10", name:"Veículos estruturados consolidados", note:"Fundos consolidados nas demonstrações da XP Inc. em 31/12/2025, todos regulados pela CVM.", ents:[
+    ["FIDCs","Aetos Energia, Consignado Público XP, Credit Restructuring I e II, Correspondente Banqueiro Consignados INSS e Frade FIC FIDC NP."],
+    ["FIPs","Cactos, Novo Hotel Botafogo, Pleiades, Newave, Endor, Chardonnay Capital Semente e KSM Realty."],
+    ["FIIs","Aurea Extrema Logística e FII Desenvolvimento 1 Modalmais."],
+    ["Fundos multimercado e de crédito privado","Araca, Falx, Solar, Gladius, Scorpio, SMF, Javelin, Frade III, Coliseu, Makhaira, Nimrod, MM Macadâmia e Suécia I e II."],
+    ["Securitizadora própria","Nenhuma entidade com essa natureza consta da lista de subsidiárias.","open"]
+  ]},
+  {code:"V.11", name:"Entidade sem fins lucrativos", note:"", ents:[
+    ["Instituto XP","Consta da lista de subsidiárias do 20-F FY2025. Educação financeira, com meta de alcançar 50 milhões de pessoas; parceria com a Nova Escola."],
+    ["Natureza jurídica e CNPJ","Não confirmados — as fontes disponíveis são jornalísticas e institucionais, sem o estatuto.","open"]
+  ]},
+  {code:"V.12", name:"Eventos societários de 2025 e 2026", note:"Registrados porque o princípio V exige que o modelo guarde o movimento.", ents:[
+    ["Cisão parcial da XP Investimentos S.A.","01/05/2025. Patrimônio líquido cindido de valor nulo; o Banco XP passou a deter a totalidade das quotas da XP Controle 5 Participações."],
+    ["Incorporação do Banco Modal pelo Banco XP","Deliberada em 31/12/2024 e aprovada pelo BACEN em 01/09/2025. Banco Modal extinto e sucedido em todos os direitos e obrigações.","stop"],
+    ["Banco XP como controlador direto da XP Investimentos S.A.","Aprovado pelo BACEN em 14/11/2024, concluindo reorganização iniciada em 2023."],
+    ["Reorganização da XP Control","Acordo efetivo em 11/02/2026 removeu três sócios; em 02/07/2026 a XP Control exerceu direito de recompra sobre a posição remanescente, entregando 4,95 mi de ações. Efeito líquido: concentração do controle.","sec"],
+    ["Cancelamento do registro de emissor da XP Investimentos S.A.","Deferido pela CVM em 19/03/2026. O disclosure primário passa a ser o 20-F.","sec"]
+  ]}
+ ]
+},
+{
+ id:"c6", num:"VI", title:"Políticas, Normas e Procedimentos",
+ purpose:"A camada normativa da XP tem um domínio que não existe num banco de varejo: a conduta de distribuição. Como a receita vem de intermediar produtos próprios e de terceiros através de uma rede que não é sua, o conflito de interesses é estrutural — e é justamente aí que está a regulação mais recente e a política mais detalhada do grupo.",
+ domains:[
+  {code:"VI.01", name:"Integridade e conduta", note:"Todos confirmados como documento público autônomo no portal de compliance.", ents:[
+    ["Código de Ética e Conduta","POL_CPL_001_v7. Abrange administradores, funcionários, sócios, terceiros, assessores de investimento, representantes e fornecedores. Cláusula expressa de não retaliação.","ok"],
+    ["Política de Compliance","","ok"],
+    ["Política Anticorrupção","","ok"],
+    ["Política de Conduta Tributária","","ok"],
+    ["Canal Confidencial de Denúncias","24/7, anônimo, com garantia de não retaliação.","ok"],
+    ["Política de Direitos Humanos","","ok"]
+  ]},
+  {code:"VI.02", name:"Risco e capital", note:"", ents:[
+    ["Manual de Risco","PRO_RIS_002_v65, aprovado em 09/06/2026. Cobre risco de mercado, crédito, liquidez e operacional. Escopo declarado: XP Investimentos CCTVM.","ok"],
+    ["Política de Gestão de Riscos do grupo","Não localizada como documento autônomo — o Manual de Risco tem escopo de uma entidade, não da holding.","open"],
+    ["Política de Gestão de Capital","Tema embutido nos relatórios Pilar 3; não há política autônoma publicada.","open"],
+    ["Relatórios Pilar 3","Série trimestral publicada. A edição de 2026 não foi acessada nesta apuração.","open"]
+  ]},
+  {code:"VI.03", name:"Compliance e controles internos", note:"", ents:[
+    ["Política de Controles Internos","","ok"],
+    ["Política de PLD e Financiamento ao Terrorismo","Tipificação, detecção e KYC.","ok"],
+    ["Manual de Compliance do assessor de investimento","Documento específico da rede.","ok"],
+    ["Política de Investimentos Pessoais","Regras de negociação pessoal de colaboradores.","ok"],
+    ["Política de Atuação dos Analistas","Referencia a Instrução CVM 598/18.","ok"],
+    ["Conformidade SOX","Aplicável como registrante SEC. Relatório público de deficiências não localizado.","open"]
+  ]},
+  {code:"VI.04", name:"Segurança da informação", note:"", ents:[
+    ["Política de Segurança Cibernética","POL_SEGINF_v8. Escopo explícito do grupo e do conglomerado prudencial. Cita Res. CMN 4.950/21, LGPD e manuais do BACEN.","ok"],
+    ["Política de Segurança da Informação para Fornecedores, Terceiros e Parceiros","","ok"],
+    ["Política de Continuidade de Negócios","URL no padrão do portal retorna 404. Não localizada.","open"]
+  ]},
+  {code:"VI.05", name:"Privacidade e dados", note:"", ents:[
+    ["Política de Privacidade","Versão 13.3, publicada em março de 2026. Encarregada de dados nomeada publicamente.","ok"],
+    ["Termos de Adesão ao Open Finance","Versão V3.2025.8.6.","ok"],
+    ["Regime LGPD","Lei 13.709/2018, citada no 20-F como risco e obrigação."]
+  ]},
+  {code:"VI.06", name:"Governança societária", note:"", ents:[
+    ["Política de Transações com Partes Relacionadas","POL_CPL_v6. Limites de 10% do PL ajustado no global, 1% para PF e 5% para PJ. Operações acima de US$ 120 mil exigem aprovação prévia do Comitê de Auditoria e ratificação do Conselho.","ok"],
+    ["Política de Diversidade do Conselho","","ok"],
+    ["Política de Divulgação e Negociação","A insider trading policy deve ser arquivada como exhibit do 20-F, mas não foi localizada em página pública autônoma.","open"],
+    ["Política de Remuneração de administradores","Não localizada. Não confundir com a Política de Transparência da Remuneração, que trata de distribuição de produtos.","open"],
+    ["Charters dos comitês do Conselho","Não localizados em versão pública.","open"],
+    ["Clawback policy","Exigida por Nasdaq e SEC desde 2023; não localizada em versão pública.","open"]
+  ]},
+  {code:"VI.07", name:"Conduta de distribuição e conflito de interesses", note:"O domínio característico deste conglomerado — e o mais regulado nos últimos anos.", ents:[
+    ["Política de Transparência da Remuneração","POL_CPL_v2. Atende à Res. CVM 179 e ao Código ANBIMA de Distribuição. Declara equiparação da remuneração entre produtos próprios e de terceiros como mitigação de conflito.","ok"],
+    ["Modalidades de receita divulgadas","Percentual da taxa de administração e de performance em fundos, corretagem em renda variável, spread em renda fixa secundária, spread mais corretagem em estruturados."],
+    ["Percentuais de comissão e repasse","Não divulgados — a política descreve modalidades, não valores.","nd"],
+    ["Política de Ouvidoria","Com relatórios semestrais publicados.","ok"],
+    ["FAQ de Suitability","Política autônoma de suitability não localizada; o tema é normatizado pela Res. CVM 35/2021.","open"],
+    ["Política de Conflito de Interesses autônoma","Não localizada. O tema é tratado dentro do Código de Ética e da política de partes relacionadas.","open"]
+  ]},
+  {code:"VI.08", name:"Socioambiental e climático", note:"", ents:[
+    ["PRSAC","Política de Responsabilidade Social, Ambiental e Climática — documento ASG guarda-chuva, padrão Res. CMN 4.945.","ok"],
+    ["Política de Investimento Responsável das gestoras","","ok"],
+    ["Política de Educação Financeira","","ok"],
+    ["Relatório GRSAC e Inventário de GEE 2025","Publicados.","ok"],
+    ["Política de Sustentabilidade com esse nome","Não existe documento assim denominado — o equivalente funcional é a PRSAC."]
+  ]},
+  {code:"VI.09", name:"Arcabouço regulatório externo", note:"", ents:[
+    ["Resolução CVM 178","Marco do assessor de investimento. Editada em 14/02/2023, vigência em 01/06/2023."],
+    ["Resolução CVM 179","Transparência de remuneração. Vigência em 01/06/2023 e 02/01/2024."],
+    ["Resolução CVM 35/2021","Suitability."],
+    ["Resolução CVM 94","Divulgação de partes relacionadas."],
+    ["Instrução CVM 598/18","Atuação de analistas."],
+    ["Res. CMN 5.008/2022","Estrutura de gerenciamento de riscos e de capital."],
+    ["Res. CMN 4.950/21","Segurança cibernética e contratação de nuvem."],
+    ["Res. CMN 4.945","PRSAC."],
+    ["Res. CMN 5.185 (nov/2024)","Relatório de sustentabilidade padrão ISSB para instituições S1, S2 e S3.","sec"],
+    ["Sarbanes-Oxley Act",""],
+    ["Regras da Nasdaq","Independência de conselheiros e de comitê de auditoria."],
+    ["Código ANBIMA de Distribuição",""],
+    ["LGPD, Pix e Open Finance",""]
+  ]}
+ ]
+},
+{
+ id:"c7", num:"VII", title:"Estrutura, Papéis e Responsabilidades",
+ purpose:"Pela Lei de Conway, a estrutura prediz a forma dos sistemas — e a estrutura aqui é de uma companhia que reorganizou o próprio bloco de controle duas vezes em 2026, trocou de CFO no meio do ano e mantém quatro comitês de Conselho que agregam funções que num banco estariam separadas. O que o RI publica de diretoria executiva é notavelmente pouco: apenas CEO e General Counsel.",
+ domains:[
+  {code:"VII.01", name:"Conselho de Administração", note:"Composição após a AGM de 29/05/2026. A chapa original tinha nove nomes; um candidato retirou a candidatura e renunciou com efeito na própria data.", ents:[
+    ["Chairman","Guilherme Dias Fernandes Benchimol, fundador, no cargo desde agosto de 2019."],
+    ["CEO e conselheiro","Thiago Simões Maffra."],
+    ["Conselheiro","Bruno Constantino Alexandre dos Santos, no Conselho desde nov/2019; atualmente CFO da XP CCTVM."],
+    ["Conselheiro","José de Menezes Berenguer Neto, no Conselho desde set/2020; CEO do Banco XP."],
+    ["Conselheiro independente","Martin Emiliano Escobari Lifchitz, do Management Committee da General Atlantic."],
+    ["Conselheiro independente","José Luiz Acar Pedro."],
+    ["Conselheiro independente","João Roberto Gonçalves Teixeira, ex-CEO da Copersucar e do Banco Votorantim."],
+    ["Conselheira independente","Melissa Werneck, Global Chief People Officer da Kraft Heinz. Atende aos requisitos de independência da Nasdaq e de financial literacy da SEC."],
+    ["Conselheiro independente interino","José Luiz Majolo, de 29/05/2026 até a AGM de 2027. Ex-Banco Votorantim e ex-presidente do FGC."],
+    ["Designação de 'executive chairman'","Não localizada em documento da companhia — o RI descreve Benchimol como chairman do Conselho.","open"]
+  ]},
+  {code:"VII.02", name:"Comitês do Conselho", note:"Quatro comitês, não sete. A XP agrega funções que num conglomerado bancário seriam comitês separados — risco com crédito e ASG, remuneração com pessoas, indicação e governança.", ents:[
+    ["Audit Committee","Acar Pedro, Teixeira e Werneck — todos independentes."],
+    ["Compensation, People Nominating and Governance Committee","Benchimol e Werneck. Funde remuneração, pessoas, indicação e governança."],
+    ["Risks, Credit and ESG Committee","Presidido por Majolo; Constantino e Teixeira. Funde risco, crédito e ASG."],
+    ["Performance and Management Committee","Benchimol, Constantino, Maffra, Acar Pedro e Teixeira."],
+    ["Comitês de Risk, ESG e Nominating separados","Não existem na estrutura atual."]
+  ]},
+  {code:"VII.03", name:"Diretoria executiva", note:"A página de Management do RI lista publicamente apenas CEO e General Counsel.", ents:[
+    ["CEO","Thiago Maffra, na XP desde 2015."],
+    ["CFO","Gustavo Alejo Viviani, desde 03/08/2026. Veio do Santander Brasil após 26 anos.","sec"],
+    ["Transição de CFO","Victor Mansur deixou o cargo em 31/05/2026; Maffra acumulou interinamente de 01/06 a 02/08/2026.","sec"],
+    ["Diretor de Relações com Investidores","André Parize."],
+    ["General Counsel","Fabrício Almeida, no cargo desde novembro de 2019."],
+    ["CEO do Banco XP","José Berenguer."],
+    ["CFO da XP CCTVM","Bruno Constantino."],
+    ["CRO","Cargo existe, com reporte direto ao CEO e autoridade independente, conforme o Manual de Risco. Nome não divulgado.","nd"],
+    ["Heads de varejo, institucional, corporate, seguros, asset, tecnologia e pessoas","Não divulgados publicamente.","nd"]
+  ]},
+  {code:"VII.04", name:"Linhas de defesa e controle", note:"Modelo confirmado no Manual de Risco v65.", ents:[
+    ["Primeira linha","Áreas de negócio, donas do risco e dos controles."],
+    ["Segunda linha","Compliance, Gestão de Riscos e Controles Internos."],
+    ["Terceira linha","Auditoria Interna, independente."],
+    ["CRO e Comitê de Risco","O CRO reporta diretamente ao CEO; o Comitê de Risco é presidido pelo CEO e supervisiona as funções do CRO."],
+    ["Supervisão no nível do Conselho","Comitê de Auditoria com três independentes e Comitê de Riscos, Crédito e ESG presidido por independente."],
+    ["Ouvidoria","Com política própria e relatórios semestrais publicados."]
+  ]},
+  {code:"VII.05", name:"Modelo de trabalho em tecnologia", note:"A ponte para as camadas IX a XIII, fora de escopo aqui. É o bloco de menor evidência pública de toda a camada.", ents:[
+    ["Investimento declarado","Aumento substancial em inteligência artificial, infraestrutura de nuvem e servidores, declarado na teleconferência do 2T26."],
+    ["Assessor de IA","Plataforma para varejo digital, com objetivo explícito de melhorar a economia unitária do ticket menor."],
+    ["Meta de eficiência","Índice estável em 2026 apesar dos investimentos."],
+    ["Quadro de tecnologia","Número de profissionais, composição do time e nome do CTO não divulgados.","nd"],
+    ["Nuvem","Provedores contratados e percentual de cargas migradas não divulgados.","nd"]
+  ]},
+  {code:"VII.06", name:"Força de trabalho", note:"", ents:[
+    ["Headcount","8.491 em jun/26, +13% a/a. Eram 8.280 em mar/26 e 8.093 em dez/25."],
+    ["Dinâmica de custo","Salários subiram 23% a/a contra 13% de crescimento de headcount; a administração pede que se observe o índice de compensação total, ~23% da receita."]
+  ]},
+  {code:"VII.07", name:"Reorganizações de 2025 e 2026", note:"", ents:[
+    ["Sucessão do CFO","Saída em 31/05/2026, interinidade do CEO, e posse do novo CFO em 03/08/2026.","sec"],
+    ["Reformulação do Conselho","AGM de 29/05/2026: chapa reduzida de nove para oito, entrada de Majolo como independente interino e de Werneck no Comitê de Auditoria."],
+    ["Reorganização do bloco de controle","Fevereiro e julho de 2026: saída de três sócios históricos da XP Control, com concentração do controle.","sec"],
+    ["Fechamento de capital da XP Investimentos S.A.","Registro cancelado na CVM em 19/03/2026.","sec"],
+    ["Cancelamento de ações em tesouraria","~11,8 milhões de ações, ~2,3% do capital, anunciado no 2T26."],
+    ["Banco XP como controlador da corretora","AGE de 01/11/2023, aprovação do BACEN publicada em 05/01/2024. Capital do Banco XP subiu de R$ 1,610 bi para R$ 9,752 bi.","sec"]
+  ]}
+ ]
+},
+{
+ id:"c8", num:"VIII", title:"Métricas de Gestão e Controle",
+ purpose:"O painel da XP tem métricas que um banco não tem — take rate, net new money, custódia — e uma que merece leitura separada: o NPS caiu de 72 para 65 em dois anos, e é a própria companhia que reporta isso como indicador de deterioração da lealdade, entre os fatores de risco do 20-F.",
+ domains:[
+  {code:"VIII.01", name:"Rentabilidade e resultado", note:"Data-base 30/06/2026, salvo indicação.", ents:[
+    ["Receita bruta — 2T26","R$ 5.056 mi, +8% a/a e +3% t/t."],
+    ["Receita líquida — 2T26","R$ 4.884 mi, +9% a/a."],
+    ["Lucro líquido ajustado — 2T26","R$ 1.384 mi, +5% a/a."],
+    ["EPS diluído ajustado","R$ 2,67, +9% a/a."],
+    ["Resultado do exercício de 2025","Receita bruta de R$ 19,5 bi; receita líquida de R$ 18,4 bi (+8%); lucro líquido de R$ 5,2 bi (+15%)."],
+    ["ROAE ajustado","22,5% no 2T26, queda de 189 bps a/a."],
+    ["ROTE ajustado","27,2% no 2T26, queda de 282 bps a/a."],
+    ["Margem bruta e margem EBT","68,6% e 32,0% no 2T26."]
+  ]},
+  {code:"VIII.02", name:"Eficiência e custos", note:"", ents:[
+    ["Índice de eficiência (LTM)","~34,3% no 2T26; 34,6% no 1T26. O release apresenta o número com sinal negativo por convenção."],
+    ["Índice de compensação (TTM)","~23% da receita."],
+    ["Take rate de varejo anualizado","1,20% no 2T26, queda de 5 bps a/a. Era 1,18% no 1T26."]
+  ]},
+  {code:"VIII.03", name:"Capital", note:"Índices gerenciais divulgados pela XP Inc. O Pilar 3 do conglomerado prudencial não foi acessado para 2026.", ents:[
+    ["BIS Ratio gerencial","20,3% no 2T26; 20,7% no 1T26.","open"],
+    ["CET1 gerencial","17,1% no 2T26; 17,5% no 1T26.","open"],
+    ["VaR","R$ 44 mi no 2T26, equivalente a 18 bps do patrimônio líquido."],
+    ["Faixa-alvo declarada","16% a 19% de Basileia, a ser alcançada via maior retorno ao acionista."]
+  ]},
+  {code:"VIII.04", name:"Escala e volume", note:"Atenção: há duas métricas distintas de ativos que a imprensa frequentemente confunde.", ents:[
+    ["Client Assets","R$ 1.535 bi no 2T26, +12% a/a. Exclui custódia institucional."],
+    ["Base ampliada (custódia + AUM + AUA)","R$ 2,2 trilhões no 2T26, +17% a/a. Inclui atacado."],
+    ["Decomposição da base ampliada","Varejo R$ 1,372 tri; corporate e institucional R$ 346 bi; AUM R$ 284 bi; AUA R$ 354 bi."],
+    ["Net new money — 2T26","R$ 28 bi, +188% a/a — sendo R$ 20 bi no varejo e R$ 8 bi no atacado."],
+    ["Net new money — 2025","R$ 94 bi, −13% a/a."],
+    ["Clientes ativos","4,772 milhões no 2T26, +1% a/a."],
+    ["Total de assessores","18,4 mil no 2T26, +1% a/a."],
+    ["Carteira de crédito expandida","R$ 77,9 bi, +16% a/a."],
+    ["TPV de cartões","R$ 13,5 bi no 2T26; R$ 52,2 bi em 2025."]
+  ]},
+  {code:"VIII.05", name:"Receita por segmento", note:"Estrutura vigente desde o 1T26.", ents:[
+    ["Retail","R$ 3.881 mi no 2T26 — 77% da receita bruta."],
+    ["Wholesale","R$ 1.175 mi no 2T26 — 23% da receita bruta."],
+    ["Corporate","R$ 606 mi, +117% a/a."],
+    ["Institutional","R$ 383 mi, +12% a/a."],
+    ["Issuer Services","R$ 186 mi, −30% a/a."]
+  ]},
+  {code:"VIII.06", name:"Receita do varejo por linha", note:"Valores do 2T26 e do exercício de 2025.", ents:[
+    ["Renda variável","R$ 1.138 mi no 2T26; R$ 4.067 mi em 2025, −5% a/a."],
+    ["Renda fixa","R$ 833 mi no 2T26; R$ 3.858 mi em 2025, +12% a/a."],
+    ["Plataforma de fundos","R$ 418 mi no 2T26; R$ 1.442 mi em 2025, +4% a/a."],
+    ["Cartões","R$ 375 mi no 2T26; R$ 1.380 mi em 2025, +11% a/a."],
+    ["Previdência","R$ 118 mi no 2T26; R$ 477 mi em 2025, +20% a/a."],
+    ["Crédito","R$ 105 mi no 2T26; R$ 330 mi em 2025, +24% a/a."],
+    ["Seguros","R$ 80 mi no 2T26; R$ 308 mi em 2025, +47% a/a."],
+    ["Outros","R$ 813 mi no 2T26; R$ 2.722 mi em 2025, +22% a/a."]
+  ]},
+  {code:"VIII.07", name:"Cliente e experiência", note:"", ents:[
+    ["NPS","72 em 2023, 70 em 2024 e 65 em 2025 — declínio por dois anos consecutivos, reportado pela própria companhia entre os fatores de risco."],
+    ["Concentração de receita","A XP CCTVM respondeu por ~51% da receita líquida consolidada na média de três anos."],
+    ["Fatores de risco destacados no 20-F","Investimentos em tecnologia, competição, atrito de clientes, ameaças cibernéticas, complexidade regulatória, câmbio e concentração em subsidiárias-chave."],
+    ["Ranking de reclamações do BACEN","Posição do Banco XP em 2026 não apurada.","open"]
+  ]},
+  {code:"VIII.08", name:"Sustentabilidade", note:"", ents:[
+    ["Ativos ASG sob custódia","R$ 16,3 bi, com 182 mil clientes."],
+    ["Emissões ASG no investment banking","25% do total em 2025, contra meta de 30% até 2030."],
+    ["Educação financeira","22 milhões de pessoas alcançadas, contra meta de 50 milhões até 2031."],
+    ["Intensidade de carbono","12,7 tCO₂ por R$ 1 milhão investido."],
+    ["Diversidade","Mulheres 34%, pessoas negras 20,5%, liderança negra 13,8%, pessoas com deficiência 2,4%."]
+  ]},
+  {code:"VIII.09", name:"Guidance e metas", note:"A XP não publica guidance numérico por linha como um banco — publica horizonte estratégico e diretrizes operacionais.", ents:[
+    ["Crescimento de receita em 2026","Dois dígitos, declarado como independente do cenário."],
+    ["Índice de eficiência em 2026","Estável, apesar dos investimentos em tecnologia."],
+    ["Payout","Acima de 50% do lucro líquido por ano; R$ 2,5 bi distribuídos no 1S26."],
+    ["Basileia","Redução de 20,3% para a faixa de 16% a 19%."],
+    ["Horizonte 2033","~R$ 4 trilhões de custódia e ~20% de participação de mercado.","sec"],
+    ["Plano de Investor Day anterior","Metas originais e prestação de contas não localizadas.","open"]
+  ]}
+ ]
+},
+];
+
+/* ---------- render ---------- */
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const TAGTXT = {ok:"confirmado", trans:"em transição", nd:"não divulgado", sec:"fonte secundária", open:"em aberto", stop:"encerrado"};
+
+function pad(n){return String(n).padStart(2,"0")}
+
+let totalEnts = 0;
+const counts = {};
+const XREF = {};
+
+const layersEl = document.getElementById("layers");
+layersEl.innerHTML = L.map(layer => {
+  let n = 0;
+  const doms = layer.domains.map(d => {
+    const ents = d.ents.map((e,i) => {
+      n++;
+      const [name, desc, tag] = e;
+      const tagHtml = tag ? `<span class="tag t-${tag}">${TAGTXT[tag]}</span>` : "";
+      return `<li class="ent"><span class="ent-code">${layer.num}.${d.code.split(".")[1]}.${pad(i+1)}</span><span class="ent-name">${esc(name)}${tagHtml}</span><span class="ent-desc">${esc(desc||"")}</span></li>`;
+    }).join("");
+    const srcs = SRCMAP[d.code] || [];
+    srcs.forEach(s => { (XREF[s] = XREF[s] || []).push({code:d.code, name:d.name, layer:layer.id}); });
+    const chips = srcs.length
+      ? `<span class="srcchips">${srcs.map(s=>`<a class="srcchip" href="#${s.toLowerCase()}" title="Fonte ${s}">${s}</a>`).join("")}</span>`
+      : "";
+    return `<section class="domain" id="d-${d.code.replace(/\./g,"-")}"><div class="domain-head"><span class="domain-code">${esc(d.code)}</span><span class="domain-name">${esc(d.name)}</span>${chips}${d.note?`<p class="domain-note">${esc(d.note)}</p>`:""}</div><ul class="ents">${ents}</ul></section>`;
+  }).join("");
+  counts[layer.id] = n;
+  totalEnts += n;
+  return `<section class="cl-layer" id="${layer.id}">
+    <div class="cl-layer-head"><span class="cl-layer-numeral">${layer.num}</span><h2>${esc(layer.title)}</h2></div>
+    <p class="cl-layer-purpose">${esc(layer.purpose)}</p>
+    <div class="domains">${doms}</div>
+  </section>`;
+}).join("");
+
+document.getElementById("stack").innerHTML = STACK.map(r => {
+  if (r.h) return `<div class="stack-row head">${esc(r.h)}</div>`;
+  const c = r.id ? counts[r.id] : null;
+  const right = c!=null ? `${c} entidades` : (r.note || "");
+  const inner = `<span class="stack-num">${r.n}</span><span>${r.id?`<a href="#${r.id}" style="text-decoration:none">${esc(r.t)}</a>`:esc(r.t)}</span><span class="stack-count">${esc(right)}</span>`;
+  return `<div class="stack-row${r.inn?"":" out"}">${inner}</div>`;
+}).join("");
+
+/* ---------- tabela de referência cruzada ---------- */
+document.getElementById("xrefbody").innerHTML = SOURCES.map(s => {
+  const doms = (XREF[s.id] || []);
+  const list = doms.length
+    ? doms.map(d => `<a href="#d-${d.code.replace(/\./g,"-")}" title="${esc(d.name)}">${esc(d.code)}</a>`).join(" · ")
+    : (s.method ? "Método — princípios, camadas e regra de agrupamento por domínios aplicados em todo o documento" : "—");
+  return `<tr id="${s.id.toLowerCase()}">
+    <td class="xr-id">${s.id}</td>
+    <td><span class="xr-title"><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></span><span class="xr-meta">${esc(s.meta)}</span></td>
+    <td class="xr-doms">${list}</td>
+    <td class="xr-n">${doms.length ? doms.length : (s.method ? "todos" : "0")}</td>
+  </tr>`;
+}).join("");
+
+document.getElementById("navpills").innerHTML = L.map(l =>
+  `<a href="#${l.id}">${l.num}</a>`).join("");
+
+/* ---------- filter ---------- */
+const q = document.getElementById("q");
+const hits = document.getElementById("hits");
+const allEnts = [...document.querySelectorAll(".ent")];
+const allDoms = [...document.querySelectorAll(".domain")];
+const allLayers = [...document.querySelectorAll(".cl-layer")];
+
+function baseline(){ hits.textContent = `${totalEnts} entidades · ${allDoms.length} domínios · 9 camadas`; }
+baseline();
+
+q.addEventListener("input", () => {
+  const t = q.value.trim().toLowerCase();
+  if (!t){
+    allEnts.forEach(e=>e.classList.remove("hidden"));
+    allDoms.forEach(e=>e.classList.remove("hidden"));
+    allLayers.forEach(e=>e.classList.remove("hidden"));
+    baseline();
+    return;
+  }
+  let found = 0;
+  allDoms.forEach(dom => {
+    const domText = dom.querySelector(".domain-head").textContent.toLowerCase();
+    const domMatch = domText.includes(t);
+    let visible = 0;
+    dom.querySelectorAll(".ent").forEach(ent => {
+      const show = domMatch || ent.textContent.toLowerCase().includes(t);
+      ent.classList.toggle("hidden", !show);
+      if (show) visible++;
+    });
+    dom.classList.toggle("hidden", visible === 0);
+    found += visible;
+  });
+  allLayers.forEach(layer => {
+    const any = [...layer.querySelectorAll(".domain")].some(d => !d.classList.contains("hidden"));
+    layer.classList.toggle("hidden", !any);
+  });
+  hits.textContent = `${found} ${found===1?"entidade":"entidades"}`;
+});
+</script>
+</body>
+</html>
