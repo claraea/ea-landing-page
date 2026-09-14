@@ -29,6 +29,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claraea.com.br/ClaraEA-Autor.html"/>
   </url>
   <url>
+    <loc>https://www.claraea.com.br/ClaraEA-Casos.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.claraea.com.br/ClaraEA-Casos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claraea.com.br/en/ClaraEA-Casos.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claraea.com.br/es/ClaraEA-Casos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claraea.com.br/ClaraEA-Casos.html"/>
+  </url>
+  <url>
     <loc>https://www.claraea.com.br/casos/itau-unibanco.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

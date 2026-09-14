@@ -21,7 +21,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-PAGES = ['index.html', 'ClaraEA-CMDB.html', 'ClaraEA-Autor.html']
+PAGES = ['index.html', 'ClaraEA-CMDB.html', 'ClaraEA-Autor.html', 'ClaraEA-Casos.html']
 LANGS_OTHER = ['en', 'es']  # PT is the canonical default at root
 ALL_LANGS = ['pt', 'en', 'es']
 
@@ -198,6 +198,13 @@ def update_lang_switcher(html: str, page: str, lang: str) -> str:
             return f'<a href="{href}" data-lang="{target}"{cls}>{text}</a>'
         block = re.sub(
             r'<button\s+data-lang="(\w+)"(?:\s+class="active")?>(.*?)</button>',
+            repl_btn,
+            block,
+            flags=re.DOTALL,
+        )
+        # Anchors already present (PT rebuilt in place): refresh href + active state.
+        block = re.sub(
+            r'<a href="[^"]*" data-lang="(\w+)"(?:\s+class="active")?>(.*?)</a>',
             repl_btn,
             block,
             flags=re.DOTALL,
