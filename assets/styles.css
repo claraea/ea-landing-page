@@ -456,15 +456,18 @@ section {
   border-bottom: 1px solid var(--rule);
 }
 .relations-note .section-eyebrow { margin-bottom: 12px; }
-.relations-title {
-  font-family: var(--serif);
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin-bottom: 20px;
-  max-width: 30ch;
+.relations-title { max-width: 24ch; margin-bottom: 28px; }
+.relations-cta {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
 }
+.relations-note .relations-cta p { margin: 0; flex: 1 1 42ch; font-size: 15px; color: var(--ink-muted); }
 .relations-note p:not(.section-eyebrow) {
   font-size: 16px;
   line-height: 1.7;

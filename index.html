@@ -150,7 +150,7 @@
   <div class="container reveal">
     <p class="section-eyebrow" data-i18n="concept.eyebrow">O Conceito</p>
     <h2 class="section-title" data-i18n="concept.title">Cinco pilares para ler o framework</h2>
-    <p class="section-lead" data-i18n="concept.lead">Antes da pirâmide das 13 camadas — oito de negócio e cinco de TI, mais a camada 0 dos direcionadores estratégicos, fora da pilha —, cinco ideias dão a chave de leitura do Clara/EA — e explicam por que ele é diferente de outros frameworks de Arquitetura Corporativa.</p>
+    <p class="section-lead" data-i18n="concept.lead">Antes das 13 camadas — oito de negócio e cinco de TI, mais a camada 0 dos direcionadores estratégicos, fora da pilha —, cinco ideias dão a chave de leitura do Clara/EA — e explicam por que ele é diferente de outros frameworks de Arquitetura Corporativa.</p>
 
     <div class="concept-grid">
       <article class="concept-card">
@@ -254,13 +254,13 @@
 
     <div class="relations-note">
       <p class="section-eyebrow" data-i18n="rel.eyebrow">Relações multidimensionais</p>
-      <h3 class="relations-title" data-i18n="rel.title">Da pirâmide à rede: como as camadas se relacionam</h3>
-      <p class="relations-intro" data-i18n="rel.intro">A pirâmide acima apresenta as camadas uma a uma, na ordem em que dependem entre si. Mas descrever uma organização não é preencher uma lista. Cada camada é povoada por entidades — mercados, marcas, canais, produtos, empresas, políticas, áreas, indicadores, soluções — e pelos processos que as fazem funcionar. Entidades e processos possuem relacionamentos, e esses relacionamentos não ficam confinados à camada em que nascem.</p>
+      <h2 class="section-title relations-title" data-i18n="rel.title">Das camadas à rede: como elas se relacionam</h2>
+      <p class="relations-intro" data-i18n="rel.intro">As camadas acima estão apresentadas uma a uma, na ordem em que dependem entre si. Mas descrever uma organização não é preencher uma lista. Cada camada é povoada por entidades — mercados, marcas, canais, produtos, empresas, políticas, áreas, indicadores, soluções — e pelos processos que as fazem funcionar. Entidades e processos possuem relacionamentos, e esses relacionamentos não ficam confinados à camada em que nascem.</p>
 
       <h4 data-i18n="rel.h1">Por que uma rede, e não uma lista</h4>
       <p data-i18n="rel.p1">Como todas as camadas guardam entre si uma relação e uma interdependência hierárquica, as ligações entre entidades atravessam a pilha. O resultado é uma relação multidimensional — que não é desenhada de uma vez, mas vai se construindo à medida que a arquitetura de negócios é descrita, camada a camada.</p>
 
-      <h4 data-i18n="rel.h2">Um exemplo, descendo a pirâmide</h4>
+      <h4 data-i18n="rel.h2">Um exemplo, descendo as camadas</h4>
       <p data-i18n="rel.p2">Ao mapear Mercado, Segmento e Nicho, a primeira relação já aparece: um mercado se divide em <em>n</em> segmentos, e cada segmento em <em>n</em> nichos. Na camada seguinte, Marca, surge outra: cada marca atende um nicho, um segmento, um mercado. Ao descer para Canais, o mesmo ocorre — por quais canais cada marca é acessada. E, de Canais para Produtos, quais produtos cada canal oferta.</p>
 
       <h4 data-i18n="rel.h3">…e voltando por ela</h4>
@@ -272,6 +272,10 @@
         <span data-i18n="rel.c1">Mercado</span><span class="rel-arrow" data-i18n="rel.a1">1 → n</span><span data-i18n="rel.c2">Segmento</span><span class="rel-arrow" data-i18n="rel.a1b">1 → n</span><span data-i18n="rel.c3">Nicho</span><span class="rel-arrow" data-i18n="rel.a2">atendido por</span><span data-i18n="rel.c4">Marca</span><span class="rel-arrow" data-i18n="rel.a3">acessada por</span><span data-i18n="rel.c5">Canais</span><span class="rel-arrow" data-i18n="rel.a4">que ofertam</span><span data-i18n="rel.c6">Produtos</span><span class="rel-arrow" data-i18n="rel.a5">realizados por</span><span data-i18n="rel.c7">Soluções</span>
       </div>
       <p class="relations-legend" data-i18n="rel.legend">Lê-se nos dois sentidos: de cima para baixo, o que cada camada desdobra; de baixo para cima, o que cada entidade sustenta.</p>
+      <div class="relations-cta">
+        <p data-i18n="rel.cta.lead">O EA/CMDB é a ferramenta que materializa essa rede: camadas, domínios, entidades e relacionamentos em um grafo consultável, integrado à gestão.</p>
+        <a href="ClaraEA-CMDB.html" class="btn btn-outline" data-i18n="rel.cta">Conheça o EA/CMDB →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -621,7 +625,7 @@
       'manifesto.cite': 'Lei de Conway, 1968',
       'concept.eyebrow': 'O Conceito',
       'concept.title': 'Cinco pilares para ler o framework',
-      'concept.lead': 'Antes da pirâmide das 13 camadas — oito de negócio e cinco de TI, mais a camada 0 dos direcionadores estratégicos, fora da pilha —, cinco ideias dão a chave de leitura do Clara/EA — e explicam por que ele é diferente de outros frameworks de Arquitetura Corporativa.',
+      'concept.lead': 'Antes das 13 camadas — oito de negócio e cinco de TI, mais a camada 0 dos direcionadores estratégicos, fora da pilha —, cinco ideias dão a chave de leitura do Clara/EA — e explicam por que ele é diferente de outros frameworks de Arquitetura Corporativa.',
       'concept.c1.title': 'Universalidade',
       'concept.c1.desc': 'Aplicável a qualquer empresa, qualquer porte. Da startup ao conglomerado, a Arquitetura Corporativa traz visão estruturada do todo — pré-requisito para gestão estratégica e operacional.',
       'concept.c2.title': 'Hierarquia recursiva',
@@ -636,11 +640,11 @@
       'framework.lead': 'O ClaraEA estrutura a organização em camadas hierárquicas e interdependentes — da estratégia à implementação. Clique em cada camada para ver detalhes.',
       'framework.note': 'As descrições abaixo são introdutórias. O tratamento aprofundado de cada camada está no <a href="ClaraEA-Autor.html#livro">livro Clara/EA (2027)</a> e na <a href="ClaraEA-Autor.html#contato-autor">atuação consultiva</a>.',
       'framework.business': 'Arquitetura de Negócios', 'framework.tech': 'Arquitetura de Tecnologia da Informação',
-      'rel.eyebrow': 'Relações multidimensionais', 'rel.title': 'Da pirâmide à rede: como as camadas se relacionam',
-      'rel.intro': 'A pirâmide acima apresenta as camadas uma a uma, na ordem em que dependem entre si. Mas descrever uma organização não é preencher uma lista. Cada camada é povoada por entidades — mercados, marcas, canais, produtos, empresas, políticas, áreas, indicadores, soluções — e pelos processos que as fazem funcionar. Entidades e processos possuem relacionamentos, e esses relacionamentos não ficam confinados à camada em que nascem.',
+      'rel.eyebrow': 'Relações multidimensionais', 'rel.title': 'Das camadas à rede: como elas se relacionam',
+      'rel.intro': 'As camadas acima estão apresentadas uma a uma, na ordem em que dependem entre si. Mas descrever uma organização não é preencher uma lista. Cada camada é povoada por entidades — mercados, marcas, canais, produtos, empresas, políticas, áreas, indicadores, soluções — e pelos processos que as fazem funcionar. Entidades e processos possuem relacionamentos, e esses relacionamentos não ficam confinados à camada em que nascem.',
       'rel.h1': 'Por que uma rede, e não uma lista',
       'rel.p1': 'Como todas as camadas guardam entre si uma relação e uma interdependência hierárquica, as ligações entre entidades atravessam a pilha. O resultado é uma relação multidimensional — que não é desenhada de uma vez, mas vai se construindo à medida que a arquitetura de negócios é descrita, camada a camada.',
-      'rel.h2': 'Um exemplo, descendo a pirâmide',
+      'rel.h2': 'Um exemplo, descendo as camadas',
       'rel.p2': 'Ao mapear Mercado, Segmento e Nicho, a primeira relação já aparece: um mercado se divide em <em>n</em> segmentos, e cada segmento em <em>n</em> nichos. Na camada seguinte, Marca, surge outra: cada marca atende um nicho, um segmento, um mercado. Ao descer para Canais, o mesmo ocorre — por quais canais cada marca é acessada. E, de Canais para Produtos, quais produtos cada canal oferta.',
       'rel.h3': '…e voltando por ela',
       'rel.p3': 'Percorrida no sentido inverso, a mesma rede responde perguntas que nenhuma camada responde sozinha: quais canais suportam quais marcas, e atendem quais nichos, segmentos e mercados; que produtos dependem de que canal; que mercado fica descoberto se uma marca sair. A mesma lógica se aplica a cada camada descida — até que, na Arquitetura de TI, os produtos passam a apontar para as soluções que os realizam.',
@@ -648,6 +652,7 @@
       'rel.c1': 'Mercado', 'rel.c2': 'Segmento', 'rel.c3': 'Nicho', 'rel.c4': 'Marca', 'rel.c5': 'Canais', 'rel.c6': 'Produtos', 'rel.c7': 'Soluções',
       'rel.a1': '1 → n', 'rel.a1b': '1 → n', 'rel.a2': 'atendido por', 'rel.a3': 'acessada por', 'rel.a4': 'que ofertam', 'rel.a5': 'realizados por',
       'rel.legend': 'Lê-se nos dois sentidos: de cima para baixo, o que cada camada desdobra; de baixo para cima, o que cada entidade sustenta.',
+      'rel.cta.lead': 'O EA/CMDB é a ferramenta que materializa essa rede: camadas, domínios, entidades e relacionamentos em um grafo consultável, integrado à gestão.', 'rel.cta': 'Conheça o EA/CMDB →',
       'strategic.eyebrow': 'Direcionadores Estratégicos',
       'strategic.title': 'Camada 0 — acima da arquitetura corporativa',
       'strategic.culture': 'Cultura', 'strategic.culture.note': 'Estável: muda pouco com fatores externos e internos.',
@@ -712,7 +717,7 @@
       'manifesto.cite': "Conway's Law, 1968",
       'concept.eyebrow': 'The Concept',
       'concept.title': 'Five pillars for reading the framework',
-      'concept.lead': 'Before the pyramid of 13 layers — eight business layers and five IT layers, plus layer 0, the strategic drivers, outside the stack — five ideas provide the key to reading Clara/EA — and explain why it differs from other Enterprise Architecture frameworks.',
+      'concept.lead': 'Before the 13 layers — eight business layers and five IT layers, plus layer 0, the strategic drivers, outside the stack — five ideas provide the key to reading Clara/EA — and explain why it differs from other Enterprise Architecture frameworks.',
       'concept.c1.title': 'Universality',
       'concept.c1.desc': 'Applicable to any company, of any size. From startup to conglomerate, Enterprise Architecture provides a structured view of the whole — a prerequisite for strategic and operational management.',
       'concept.c2.title': 'Recursive hierarchy',
@@ -727,11 +732,11 @@
       'framework.lead': 'ClaraEA structures the organization into hierarchical, interdependent layers — from strategy to implementation. Click any layer to see details.',
       'framework.note': 'The descriptions below are introductory. The in-depth treatment of each layer lives in the <a href="ClaraEA-Autor.html#livro">Clara/EA book (2027)</a> and in <a href="ClaraEA-Autor.html#contato-autor">consulting engagements</a>.',
       'framework.business': 'Business Architecture', 'framework.tech': 'Information Technology Architecture',
-      'rel.eyebrow': 'Multidimensional relationships', 'rel.title': 'From the pyramid to the network: how the layers relate',
-      'rel.intro': 'The pyramid above presents the layers one by one, in the order in which they depend on each other. But describing an organization is not filling in a list. Each layer is populated by entities — markets, brands, channels, products, companies, policies, areas, indicators, solutions — and by the processes that make them work. Entities and processes have relationships, and those relationships do not stay confined to the layer where they are born.',
+      'rel.eyebrow': 'Multidimensional relationships', 'rel.title': 'From the layers to the network: how they relate',
+      'rel.intro': 'The layers above are presented one by one, in the order in which they depend on each other. But describing an organization is not filling in a list. Each layer is populated by entities — markets, brands, channels, products, companies, policies, areas, indicators, solutions — and by the processes that make them work. Entities and processes have relationships, and those relationships do not stay confined to the layer where they are born.',
       'rel.h1': 'Why a network, not a list',
       'rel.p1': 'Because every layer holds a hierarchical relationship and interdependence with the others, the links between entities cross the stack. The result is a multidimensional relationship — not drawn all at once, but built progressively as the business architecture is described, layer by layer.',
-      'rel.h2': 'An example, going down the pyramid',
+      'rel.h2': 'An example, going down the layers',
       'rel.p2': 'When mapping Market, Segment and Niche, the first relationship already appears: one market splits into <em>n</em> segments, and each segment into <em>n</em> niches. In the next layer, Brand, another one emerges: each brand serves a niche, a segment, a market. Descending to Channels, the same happens — through which channels each brand is accessed. And, from Channels to Products, which products each channel offers.',
       'rel.h3': '…and coming back up',
       'rel.p3': 'Traversed in reverse, the same network answers questions no single layer can answer alone: which channels support which brands, and serve which niches, segments and markets; which products depend on which channel; which market is left uncovered if a brand exits. The same logic applies to every layer you descend — until, in the IT Architecture, products start pointing to the solutions that realize them.',
@@ -739,6 +744,7 @@
       'rel.c1': 'Market', 'rel.c2': 'Segment', 'rel.c3': 'Niche', 'rel.c4': 'Brand', 'rel.c5': 'Channels', 'rel.c6': 'Products', 'rel.c7': 'Solutions',
       'rel.a1': '1 → n', 'rel.a1b': '1 → n', 'rel.a2': 'served by', 'rel.a3': 'accessed through', 'rel.a4': 'that offer', 'rel.a5': 'realized by',
       'rel.legend': 'Read in both directions: top-down, what each layer unfolds; bottom-up, what each entity sustains.',
+      'rel.cta.lead': 'EA/CMDB is the tool that materializes this network: layers, domains, entities and relationships in a queryable graph, integrated with management.', 'rel.cta': 'Discover EA/CMDB →',
       'strategic.eyebrow': 'Strategic Drivers',
       'strategic.title': 'Layer 0 — above the enterprise architecture',
       'strategic.culture': 'Culture', 'strategic.culture.note': 'Stable: changes little with external and internal factors.',
@@ -803,7 +809,7 @@
       'manifesto.cite': 'Ley de Conway, 1968',
       'concept.eyebrow': 'El Concepto',
       'concept.title': 'Cinco pilares para leer el framework',
-      'concept.lead': 'Antes de la pirámide de 13 capas — ocho de negocio y cinco de TI, más la capa 0 de los direccionadores estratégicos, fuera de la pila —, cinco ideas dan la clave de lectura de Clara/EA — y explican por qué se diferencia de otros frameworks de Arquitectura Empresarial.',
+      'concept.lead': 'Antes de las 13 capas — ocho de negocio y cinco de TI, más la capa 0 de los direccionadores estratégicos, fuera de la pila —, cinco ideas dan la clave de lectura de Clara/EA — y explican por qué se diferencia de otros frameworks de Arquitectura Empresarial.',
       'concept.c1.title': 'Universalidad',
       'concept.c1.desc': 'Aplicable a cualquier empresa, de cualquier porte. De la startup al conglomerado, la Arquitectura Empresarial aporta una visión estructurada del todo — requisito previo para la gestión estratégica y operativa.',
       'concept.c2.title': 'Jerarquía recursiva',
@@ -818,11 +824,11 @@
       'framework.lead': 'ClaraEA estructura la organización en capas jerárquicas e interdependientes — desde la estrategia hasta la implementación. Haz clic en cada capa para ver detalles.',
       'framework.note': 'Las descripciones a continuación son introductorias. El tratamiento en profundidad de cada capa está en el <a href="ClaraEA-Autor.html#livro">libro Clara/EA (2027)</a> y en la <a href="ClaraEA-Autor.html#contato-autor">actuación consultiva</a>.',
       'framework.business': 'Arquitectura de Negocio', 'framework.tech': 'Arquitectura de Tecnología de la Información',
-      'rel.eyebrow': 'Relaciones multidimensionales', 'rel.title': 'De la pirámide a la red: cómo se relacionan las capas',
-      'rel.intro': 'La pirámide de arriba presenta las capas una a una, en el orden en que dependen entre sí. Pero describir una organización no es rellenar una lista. Cada capa está poblada por entidades — mercados, marcas, canales, productos, empresas, políticas, áreas, indicadores, soluciones — y por los procesos que las hacen funcionar. Entidades y procesos tienen relaciones, y esas relaciones no quedan confinadas a la capa en la que nacen.',
+      'rel.eyebrow': 'Relaciones multidimensionales', 'rel.title': 'De las capas a la red: cómo se relacionan',
+      'rel.intro': 'Las capas de arriba se presentan una a una, en el orden en que dependen entre sí. Pero describir una organización no es rellenar una lista. Cada capa está poblada por entidades — mercados, marcas, canales, productos, empresas, políticas, áreas, indicadores, soluciones — y por los procesos que las hacen funcionar. Entidades y procesos tienen relaciones, y esas relaciones no quedan confinadas a la capa en la que nacen.',
       'rel.h1': 'Por qué una red, y no una lista',
       'rel.p1': 'Como todas las capas guardan entre sí una relación y una interdependencia jerárquica, los vínculos entre entidades atraviesan la pila. El resultado es una relación multidimensional — que no se dibuja de una vez, sino que se va construyendo a medida que se describe la arquitectura de negocio, capa a capa.',
-      'rel.h2': 'Un ejemplo, bajando por la pirámide',
+      'rel.h2': 'Un ejemplo, bajando por las capas',
       'rel.p2': 'Al mapear Mercado, Segmento y Nicho, la primera relación ya aparece: un mercado se divide en <em>n</em> segmentos, y cada segmento en <em>n</em> nichos. En la capa siguiente, Marca, surge otra: cada marca atiende un nicho, un segmento, un mercado. Al descender a Canales ocurre lo mismo — por qué canales se accede a cada marca. Y, de Canales a Productos, qué productos ofrece cada canal.',
       'rel.h3': '…y volviendo por ella',
       'rel.p3': 'Recorrida en sentido inverso, la misma red responde preguntas que ninguna capa responde sola: qué canales soportan qué marcas, y atienden qué nichos, segmentos y mercados; qué productos dependen de qué canal; qué mercado queda descubierto si una marca sale. La misma lógica se aplica a cada capa que se desciende — hasta que, en la Arquitectura de TI, los productos pasan a apuntar a las soluciones que los realizan.',
@@ -830,6 +836,7 @@
       'rel.c1': 'Mercado', 'rel.c2': 'Segmento', 'rel.c3': 'Nicho', 'rel.c4': 'Marca', 'rel.c5': 'Canales', 'rel.c6': 'Productos', 'rel.c7': 'Soluciones',
       'rel.a1': '1 → n', 'rel.a1b': '1 → n', 'rel.a2': 'atendido por', 'rel.a3': 'accedida por', 'rel.a4': 'que ofrecen', 'rel.a5': 'realizados por',
       'rel.legend': 'Se lee en ambos sentidos: de arriba abajo, lo que cada capa despliega; de abajo arriba, lo que cada entidad sostiene.',
+      'rel.cta.lead': 'EA/CMDB es la herramienta que materializa esa red: capas, dominios, entidades y relaciones en un grafo consultable, integrado a la gestión.', 'rel.cta': 'Conoce EA/CMDB →',
       'strategic.eyebrow': 'Direccionadores Estratégicos',
       'strategic.title': 'Capa 0 — por encima de la arquitectura empresarial',
       'strategic.culture': 'Cultura', 'strategic.culture.note': 'Estable: cambia poco con factores externos e internos.',
