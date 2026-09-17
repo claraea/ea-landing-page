@@ -1191,3 +1191,30 @@ footer .logo { display: block; margin-bottom: 12px; }
 .case-tiles-note a { color: var(--brand-deep); font-weight: 500; }
 @media (max-width: 980px) { .case-tiles { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .case-tiles { grid-template-columns: 1fr; } }
+
+/* ---- Aviso de cookies (assets/analytics.js) --------------------------- */
+#cookie-notice {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  background: var(--bg-elevated);
+  color: var(--ink-primary);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(14, 26, 46, 0.18);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+#cookie-notice p { margin: 0; flex: 1 1 320px; }
+#cookie-notice a { color: var(--brand-deep); text-decoration: underline; }
+.cookie-notice__actions { display: flex; gap: 0.5rem; flex: 0 0 auto; }
