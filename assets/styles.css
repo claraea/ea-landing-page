@@ -473,6 +473,17 @@ section {
   margin-bottom: 14px;
 }
 .relations-note p em { font-family: var(--serif); font-style: italic; }
+.relations-note p.relations-intro { font-size: 17px; color: var(--ink-primary); margin-bottom: 8px; }
+.relations-note h4 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+  margin: 22px 0 8px;
+}
+.relations-note p.relations-close { font-family: var(--serif); font-style: italic; font-size: 17px; margin-top: 20px; }
+.relations-note p.relations-legend { font-size: 13px; color: var(--ink-muted); margin: 12px 0 0; }
 .relations-chain {
   display: flex;
   flex-wrap: wrap;

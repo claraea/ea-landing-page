@@ -254,13 +254,24 @@
 
     <div class="relations-note">
       <p class="section-eyebrow" data-i18n="rel.eyebrow">Relações multidimensionais</p>
-      <h3 class="relations-title" data-i18n="rel.title">A hierarquia entre camadas vira uma rede de relações</h3>
-      <p data-i18n="rel.p1">Entidades e seus processos possuem relacionamentos. Como todas as camadas guardam entre si uma relação e uma interdependência hierárquica, isso se reflete numa relação multidimensional — que se constrói à medida que a arquitetura de negócios é descrita.</p>
-      <p data-i18n="rel.p2">Ao mapear Mercado, Segmento e Nicho, já existe uma relação: um mercado para <em>n</em> segmentos, e cada segmento para <em>n</em> nichos. Na camada seguinte, Marca, surge outra: a marca que atende um nicho, um segmento, um mercado. Ao descer para Canais, o mesmo ocorre — por quais canais a marca é acessada. Voltando na hierarquia em busca das relações anteriores, entende-se quais canais suportam quais marcas e atendem quais nichos, segmentos e mercados.</p>
-      <p data-i18n="rel.p3">A mesma lógica se aplica a cada camada descida — até que, na Arquitetura de TI, os produtos passam a apontar para as soluções que os realizam. É essa rede, e não a lista de camadas, que o EA/CMDB materializa em grafo.</p>
+      <h3 class="relations-title" data-i18n="rel.title">Da pirâmide à rede: como as camadas se relacionam</h3>
+      <p class="relations-intro" data-i18n="rel.intro">A pirâmide acima apresenta as camadas uma a uma, na ordem em que dependem entre si. Mas descrever uma organização não é preencher uma lista. Cada camada é povoada por entidades — mercados, marcas, canais, produtos, empresas, políticas, áreas, indicadores, soluções — e pelos processos que as fazem funcionar. Entidades e processos possuem relacionamentos, e esses relacionamentos não ficam confinados à camada em que nascem.</p>
+
+      <h4 data-i18n="rel.h1">Por que uma rede, e não uma lista</h4>
+      <p data-i18n="rel.p1">Como todas as camadas guardam entre si uma relação e uma interdependência hierárquica, as ligações entre entidades atravessam a pilha. O resultado é uma relação multidimensional — que não é desenhada de uma vez, mas vai se construindo à medida que a arquitetura de negócios é descrita, camada a camada.</p>
+
+      <h4 data-i18n="rel.h2">Um exemplo, descendo a pirâmide</h4>
+      <p data-i18n="rel.p2">Ao mapear Mercado, Segmento e Nicho, a primeira relação já aparece: um mercado se divide em <em>n</em> segmentos, e cada segmento em <em>n</em> nichos. Na camada seguinte, Marca, surge outra: cada marca atende um nicho, um segmento, um mercado. Ao descer para Canais, o mesmo ocorre — por quais canais cada marca é acessada. E, de Canais para Produtos, quais produtos cada canal oferta.</p>
+
+      <h4 data-i18n="rel.h3">…e voltando por ela</h4>
+      <p data-i18n="rel.p3">Percorrida no sentido inverso, a mesma rede responde perguntas que nenhuma camada responde sozinha: quais canais suportam quais marcas, e atendem quais nichos, segmentos e mercados; que produtos dependem de que canal; que mercado fica descoberto se uma marca sair. A mesma lógica se aplica a cada camada descida — até que, na Arquitetura de TI, os produtos passam a apontar para as soluções que os realizam.</p>
+
+      <p class="relations-close" data-i18n="rel.p4">É essa rede — e não a lista de camadas — que o EA/CMDB materializa em grafo, navegável nos dois sentidos.</p>
+
       <div class="relations-chain" aria-hidden="true">
-        <span data-i18n="rel.c1">Mercado</span><span class="rel-arrow">1 → n</span><span data-i18n="rel.c2">Segmento</span><span class="rel-arrow">1 → n</span><span data-i18n="rel.c3">Nicho</span><span class="rel-arrow">←</span><span data-i18n="rel.c4">Marca</span><span class="rel-arrow">←</span><span data-i18n="rel.c5">Canais</span><span class="rel-arrow">←</span><span data-i18n="rel.c6">Produtos</span><span class="rel-arrow">← …</span>
+        <span data-i18n="rel.c1">Mercado</span><span class="rel-arrow" data-i18n="rel.a1">1 → n</span><span data-i18n="rel.c2">Segmento</span><span class="rel-arrow" data-i18n="rel.a1b">1 → n</span><span data-i18n="rel.c3">Nicho</span><span class="rel-arrow" data-i18n="rel.a2">atendido por</span><span data-i18n="rel.c4">Marca</span><span class="rel-arrow" data-i18n="rel.a3">acessada por</span><span data-i18n="rel.c5">Canais</span><span class="rel-arrow" data-i18n="rel.a4">que ofertam</span><span data-i18n="rel.c6">Produtos</span><span class="rel-arrow" data-i18n="rel.a5">realizados por</span><span data-i18n="rel.c7">Soluções</span>
       </div>
+      <p class="relations-legend" data-i18n="rel.legend">Lê-se nos dois sentidos: de cima para baixo, o que cada camada desdobra; de baixo para cima, o que cada entidade sustenta.</p>
     </div>
   </div>
 </section>
@@ -625,11 +636,18 @@
       'framework.lead': 'O ClaraEA estrutura a organização em camadas hierárquicas e interdependentes — da estratégia à implementação. Clique em cada camada para ver detalhes.',
       'framework.note': 'As descrições abaixo são introdutórias. O tratamento aprofundado de cada camada está no <a href="ClaraEA-Autor.html#livro">livro Clara/EA (2027)</a> e na <a href="ClaraEA-Autor.html#contato-autor">atuação consultiva</a>.',
       'framework.business': 'Arquitetura de Negócios', 'framework.tech': 'Arquitetura de Tecnologia da Informação',
-      'rel.eyebrow': 'Relações multidimensionais', 'rel.title': 'A hierarquia entre camadas vira uma rede de relações',
-      'rel.p1': 'Entidades e seus processos possuem relacionamentos. Como todas as camadas guardam entre si uma relação e uma interdependência hierárquica, isso se reflete numa relação multidimensional — que se constrói à medida que a arquitetura de negócios é descrita.',
-      'rel.p2': 'Ao mapear Mercado, Segmento e Nicho, já existe uma relação: um mercado para <em>n</em> segmentos, e cada segmento para <em>n</em> nichos. Na camada seguinte, Marca, surge outra: a marca que atende um nicho, um segmento, um mercado. Ao descer para Canais, o mesmo ocorre — por quais canais a marca é acessada. Voltando na hierarquia em busca das relações anteriores, entende-se quais canais suportam quais marcas e atendem quais nichos, segmentos e mercados.',
-      'rel.p3': 'A mesma lógica se aplica a cada camada descida — até que, na Arquitetura de TI, os produtos passam a apontar para as soluções que os realizam. É essa rede, e não a lista de camadas, que o EA/CMDB materializa em grafo.',
-      'rel.c1': 'Mercado', 'rel.c2': 'Segmento', 'rel.c3': 'Nicho', 'rel.c4': 'Marca', 'rel.c5': 'Canais', 'rel.c6': 'Produtos',
+      'rel.eyebrow': 'Relações multidimensionais', 'rel.title': 'Da pirâmide à rede: como as camadas se relacionam',
+      'rel.intro': 'A pirâmide acima apresenta as camadas uma a uma, na ordem em que dependem entre si. Mas descrever uma organização não é preencher uma lista. Cada camada é povoada por entidades — mercados, marcas, canais, produtos, empresas, políticas, áreas, indicadores, soluções — e pelos processos que as fazem funcionar. Entidades e processos possuem relacionamentos, e esses relacionamentos não ficam confinados à camada em que nascem.',
+      'rel.h1': 'Por que uma rede, e não uma lista',
+      'rel.p1': 'Como todas as camadas guardam entre si uma relação e uma interdependência hierárquica, as ligações entre entidades atravessam a pilha. O resultado é uma relação multidimensional — que não é desenhada de uma vez, mas vai se construindo à medida que a arquitetura de negócios é descrita, camada a camada.',
+      'rel.h2': 'Um exemplo, descendo a pirâmide',
+      'rel.p2': 'Ao mapear Mercado, Segmento e Nicho, a primeira relação já aparece: um mercado se divide em <em>n</em> segmentos, e cada segmento em <em>n</em> nichos. Na camada seguinte, Marca, surge outra: cada marca atende um nicho, um segmento, um mercado. Ao descer para Canais, o mesmo ocorre — por quais canais cada marca é acessada. E, de Canais para Produtos, quais produtos cada canal oferta.',
+      'rel.h3': '…e voltando por ela',
+      'rel.p3': 'Percorrida no sentido inverso, a mesma rede responde perguntas que nenhuma camada responde sozinha: quais canais suportam quais marcas, e atendem quais nichos, segmentos e mercados; que produtos dependem de que canal; que mercado fica descoberto se uma marca sair. A mesma lógica se aplica a cada camada descida — até que, na Arquitetura de TI, os produtos passam a apontar para as soluções que os realizam.',
+      'rel.p4': 'É essa rede — e não a lista de camadas — que o EA/CMDB materializa em grafo, navegável nos dois sentidos.',
+      'rel.c1': 'Mercado', 'rel.c2': 'Segmento', 'rel.c3': 'Nicho', 'rel.c4': 'Marca', 'rel.c5': 'Canais', 'rel.c6': 'Produtos', 'rel.c7': 'Soluções',
+      'rel.a1': '1 → n', 'rel.a1b': '1 → n', 'rel.a2': 'atendido por', 'rel.a3': 'acessada por', 'rel.a4': 'que ofertam', 'rel.a5': 'realizados por',
+      'rel.legend': 'Lê-se nos dois sentidos: de cima para baixo, o que cada camada desdobra; de baixo para cima, o que cada entidade sustenta.',
       'strategic.eyebrow': 'Direcionadores Estratégicos',
       'strategic.title': 'Camada 0 — acima da arquitetura corporativa',
       'strategic.culture': 'Cultura', 'strategic.culture.note': 'Estável: muda pouco com fatores externos e internos.',
@@ -709,11 +727,18 @@
       'framework.lead': 'ClaraEA structures the organization into hierarchical, interdependent layers — from strategy to implementation. Click any layer to see details.',
       'framework.note': 'The descriptions below are introductory. The in-depth treatment of each layer lives in the <a href="ClaraEA-Autor.html#livro">Clara/EA book (2027)</a> and in <a href="ClaraEA-Autor.html#contato-autor">consulting engagements</a>.',
       'framework.business': 'Business Architecture', 'framework.tech': 'Information Technology Architecture',
-      'rel.eyebrow': 'Multidimensional relationships', 'rel.title': 'The hierarchy between layers becomes a network of relationships',
-      'rel.p1': 'Entities and their processes have relationships. Because every layer holds a hierarchical relationship and interdependence with the others, this is reflected in a multidimensional relationship — one that is built as the business architecture is described.',
-      'rel.p2': 'When mapping Market, Segment and Niche, a relationship already exists: one market to <em>n</em> segments, and each segment to <em>n</em> niches. In the next layer, Brand, another one appears: the brand that serves a niche, a segment, a market. Descending to Channels, the same happens — through which channels the brand is accessed. Going back up the hierarchy for the earlier relationships, you understand which channels support which brands and serve which niches, segments and markets.',
-      'rel.p3': 'The same logic applies to every layer you descend — until, in the IT Architecture, products start pointing to the solutions that realize them. It is this network, not the list of layers, that EA/CMDB materializes as a graph.',
-      'rel.c1': 'Market', 'rel.c2': 'Segment', 'rel.c3': 'Niche', 'rel.c4': 'Brand', 'rel.c5': 'Channels', 'rel.c6': 'Products',
+      'rel.eyebrow': 'Multidimensional relationships', 'rel.title': 'From the pyramid to the network: how the layers relate',
+      'rel.intro': 'The pyramid above presents the layers one by one, in the order in which they depend on each other. But describing an organization is not filling in a list. Each layer is populated by entities — markets, brands, channels, products, companies, policies, areas, indicators, solutions — and by the processes that make them work. Entities and processes have relationships, and those relationships do not stay confined to the layer where they are born.',
+      'rel.h1': 'Why a network, not a list',
+      'rel.p1': 'Because every layer holds a hierarchical relationship and interdependence with the others, the links between entities cross the stack. The result is a multidimensional relationship — not drawn all at once, but built progressively as the business architecture is described, layer by layer.',
+      'rel.h2': 'An example, going down the pyramid',
+      'rel.p2': 'When mapping Market, Segment and Niche, the first relationship already appears: one market splits into <em>n</em> segments, and each segment into <em>n</em> niches. In the next layer, Brand, another one emerges: each brand serves a niche, a segment, a market. Descending to Channels, the same happens — through which channels each brand is accessed. And, from Channels to Products, which products each channel offers.',
+      'rel.h3': '…and coming back up',
+      'rel.p3': 'Traversed in reverse, the same network answers questions no single layer can answer alone: which channels support which brands, and serve which niches, segments and markets; which products depend on which channel; which market is left uncovered if a brand exits. The same logic applies to every layer you descend — until, in the IT Architecture, products start pointing to the solutions that realize them.',
+      'rel.p4': 'It is this network — not the list of layers — that EA/CMDB materializes as a graph, navigable in both directions.',
+      'rel.c1': 'Market', 'rel.c2': 'Segment', 'rel.c3': 'Niche', 'rel.c4': 'Brand', 'rel.c5': 'Channels', 'rel.c6': 'Products', 'rel.c7': 'Solutions',
+      'rel.a1': '1 → n', 'rel.a1b': '1 → n', 'rel.a2': 'served by', 'rel.a3': 'accessed through', 'rel.a4': 'that offer', 'rel.a5': 'realized by',
+      'rel.legend': 'Read in both directions: top-down, what each layer unfolds; bottom-up, what each entity sustains.',
       'strategic.eyebrow': 'Strategic Drivers',
       'strategic.title': 'Layer 0 — above the enterprise architecture',
       'strategic.culture': 'Culture', 'strategic.culture.note': 'Stable: changes little with external and internal factors.',
@@ -793,11 +818,18 @@
       'framework.lead': 'ClaraEA estructura la organización en capas jerárquicas e interdependientes — desde la estrategia hasta la implementación. Haz clic en cada capa para ver detalles.',
       'framework.note': 'Las descripciones a continuación son introductorias. El tratamiento en profundidad de cada capa está en el <a href="ClaraEA-Autor.html#livro">libro Clara/EA (2027)</a> y en la <a href="ClaraEA-Autor.html#contato-autor">actuación consultiva</a>.',
       'framework.business': 'Arquitectura de Negocio', 'framework.tech': 'Arquitectura de Tecnología de la Información',
-      'rel.eyebrow': 'Relaciones multidimensionales', 'rel.title': 'La jerarquía entre capas se convierte en una red de relaciones',
-      'rel.p1': 'Las entidades y sus procesos tienen relaciones. Como todas las capas guardan entre sí una relación y una interdependencia jerárquica, esto se refleja en una relación multidimensional — que se construye a medida que se describe la arquitectura de negocio.',
-      'rel.p2': 'Al mapear Mercado, Segmento y Nicho, ya existe una relación: un mercado para <em>n</em> segmentos, y cada segmento para <em>n</em> nichos. En la capa siguiente, Marca, surge otra: la marca que atiende un nicho, un segmento, un mercado. Al descender a Canales ocurre lo mismo — por qué canales se accede a la marca. Volviendo en la jerarquía en busca de las relaciones anteriores, se entiende qué canales soportan qué marcas y atienden qué nichos, segmentos y mercados.',
-      'rel.p3': 'La misma lógica se aplica a cada capa que se desciende — hasta que, en la Arquitectura de TI, los productos pasan a apuntar a las soluciones que los realizan. Es esa red, y no la lista de capas, lo que EA/CMDB materializa en grafo.',
-      'rel.c1': 'Mercado', 'rel.c2': 'Segmento', 'rel.c3': 'Nicho', 'rel.c4': 'Marca', 'rel.c5': 'Canales', 'rel.c6': 'Productos',
+      'rel.eyebrow': 'Relaciones multidimensionales', 'rel.title': 'De la pirámide a la red: cómo se relacionan las capas',
+      'rel.intro': 'La pirámide de arriba presenta las capas una a una, en el orden en que dependen entre sí. Pero describir una organización no es rellenar una lista. Cada capa está poblada por entidades — mercados, marcas, canales, productos, empresas, políticas, áreas, indicadores, soluciones — y por los procesos que las hacen funcionar. Entidades y procesos tienen relaciones, y esas relaciones no quedan confinadas a la capa en la que nacen.',
+      'rel.h1': 'Por qué una red, y no una lista',
+      'rel.p1': 'Como todas las capas guardan entre sí una relación y una interdependencia jerárquica, los vínculos entre entidades atraviesan la pila. El resultado es una relación multidimensional — que no se dibuja de una vez, sino que se va construyendo a medida que se describe la arquitectura de negocio, capa a capa.',
+      'rel.h2': 'Un ejemplo, bajando por la pirámide',
+      'rel.p2': 'Al mapear Mercado, Segmento y Nicho, la primera relación ya aparece: un mercado se divide en <em>n</em> segmentos, y cada segmento en <em>n</em> nichos. En la capa siguiente, Marca, surge otra: cada marca atiende un nicho, un segmento, un mercado. Al descender a Canales ocurre lo mismo — por qué canales se accede a cada marca. Y, de Canales a Productos, qué productos ofrece cada canal.',
+      'rel.h3': '…y volviendo por ella',
+      'rel.p3': 'Recorrida en sentido inverso, la misma red responde preguntas que ninguna capa responde sola: qué canales soportan qué marcas, y atienden qué nichos, segmentos y mercados; qué productos dependen de qué canal; qué mercado queda descubierto si una marca sale. La misma lógica se aplica a cada capa que se desciende — hasta que, en la Arquitectura de TI, los productos pasan a apuntar a las soluciones que los realizan.',
+      'rel.p4': 'Es esa red — y no la lista de capas — lo que EA/CMDB materializa en grafo, navegable en ambos sentidos.',
+      'rel.c1': 'Mercado', 'rel.c2': 'Segmento', 'rel.c3': 'Nicho', 'rel.c4': 'Marca', 'rel.c5': 'Canales', 'rel.c6': 'Productos', 'rel.c7': 'Soluciones',
+      'rel.a1': '1 → n', 'rel.a1b': '1 → n', 'rel.a2': 'atendido por', 'rel.a3': 'accedida por', 'rel.a4': 'que ofrecen', 'rel.a5': 'realizados por',
+      'rel.legend': 'Se lee en ambos sentidos: de arriba abajo, lo que cada capa despliega; de abajo arriba, lo que cada entidad sostiene.',
       'strategic.eyebrow': 'Direccionadores Estratégicos',
       'strategic.title': 'Capa 0 — por encima de la arquitectura empresarial',
       'strategic.culture': 'Cultura', 'strategic.culture.note': 'Estable: cambia poco con factores externos e internos.',
