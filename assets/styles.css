@@ -445,6 +445,66 @@ section {
   top: 100px;
 }
 
+/* Relações multidimensionais — nota abaixo da pirâmide */
+.relations-note {
+  margin-top: 64px;
+  padding: 40px 44px;
+  border-top: 3px solid var(--accent-gold);
+  background: var(--bg-elevated);
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.relations-note .section-eyebrow { margin-bottom: 12px; }
+.relations-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  max-width: 30ch;
+}
+.relations-note p:not(.section-eyebrow) {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-primary);
+  max-width: 78ch;
+  margin-bottom: 14px;
+}
+.relations-note p em { font-family: var(--serif); font-style: italic; }
+.relations-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+.relations-chain > span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--rule);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.relations-chain > .rel-arrow {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--accent-gold);
+}
+@media (max-width: 560px) {
+  .relations-note { padding: 28px 22px; }
+  .relations-title { font-size: 22px; }
+}
+
 .layer-detail h3 {
   font-family: var(--serif);
   font-size: 32px;
