@@ -352,6 +352,44 @@ section {
   padding: 5px 12px;
   border-radius: 999px;
 }
+.strategic-drivers .sd-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 4px 14px;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule);
+}
+.strategic-drivers .sd-row:first-of-type { border-top: none; padding-top: 4px; }
+.strategic-drivers .sd-row-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+}
+.strategic-drivers .sd-pills--chain { gap: 6px 18px; }
+.strategic-drivers .sd-pills--chain .sd-pill + .sd-pill { position: relative; }
+.strategic-drivers .sd-pills--chain .sd-pill + .sd-pill::before {
+  content: '→';
+  position: absolute;
+  left: -15px;
+  top: 4px;
+  color: var(--accent-gold);
+  font-size: 12px;
+}
+.strategic-drivers .sd-note {
+  grid-column: 2;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+@media (max-width: 560px) {
+  .strategic-drivers .sd-row { grid-template-columns: 1fr; }
+  .strategic-drivers .sd-note { grid-column: 1; }
+}
 .strategic-drivers .sd-arrow {
   display: block;
   text-align: center;
