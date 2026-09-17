@@ -99,7 +99,7 @@
       <div class="hero-text">
         <p class="section-eyebrow" data-i18n="hero.eyebrow">Enterprise Architecture Repository</p>
         <h1 class="section-title" style="font-size: clamp(36px,4.6vw,56px); max-width: 18ch;" data-i18n="hero.title">EA/CMDB — Enterprise Architecture com profundidade de negócio única.</h1>
-        <p class="section-lead" style="font-size: 18px; max-width: 56ch;" data-i18n="hero.lead">EA/CMDB é o EA Repository nativo do framework Clara/EA. Único no mercado a integrar hierarquia completa de negócio — Mercado → Nicho → Marca → Veículo Legal → Produto → Canal — com grafo nativo de alta performance, descoberta automática de infraestrutura e geração de IaC via LLM. Posiciona-se como alternativa enterprise-grade ao LeanIX, Ardoq e Alfabet, com âncora open-source.</p>
+        <p class="section-lead" style="font-size: 18px; max-width: 56ch;" data-i18n="hero.lead">EA/CMDB é o EA Repository nativo do framework Clara/EA. Único no mercado a integrar hierarquia completa de negócio — Mercado → Marca → Canais → Produtos → Veículos Legais — com grafo nativo de alta performance, descoberta automática de infraestrutura e geração de IaC via LLM. Posiciona-se como alternativa enterprise-grade ao LeanIX, Ardoq e Alfabet, com âncora open-source.</p>
         <div class="hero-ctas" style="margin-top: 32px;">
           <a href="#capacidades" class="btn btn-primary" data-i18n="hero.cta1">Ver capacidades</a>
           <a href="#compare" class="btn btn-outline" data-i18n="hero.cta2">Comparativo de mercado</a>
@@ -183,8 +183,8 @@
     <div class="capability-grid">
       <div class="capability-card">
         <span class="cap-num">I</span>
-        <h3 data-i18n="cap.c1.title">Hierarquia Clara/EA — 12 camadas</h3>
-        <p data-i18n="cap.c1.desc">Mercado → Segmento → Nicho → Marca → Veículo Legal → Produto → Canal → Modalidade, conectados como entidades de primeira classe em grafo. Ningúem desce a esse nível: LeanIX e Alfabet param em Business Capability. Únicos a modelar o próprio negócio em toda a sua hierarquia de valor.</p>
+        <h3 data-i18n="cap.c1.title">Hierarquia Clara/EA — 13 camadas</h3>
+        <p data-i18n="cap.c1.desc">Mercado → Marca → Canais → Produtos → Veículos Legais → Políticas → Estrutura → Métricas — as oito camadas de negócio, mais as cinco de TI e a camada 0 dos direcionadores estratégicos, fora da pilha — conectadas como entidades de primeira classe em grafo. A modalidade é a quebra do produto, filha de Produto. Ninguém desce a esse nível: LeanIX e Alfabet param em Business Capability. Únicos a modelar o próprio negócio em toda a sua hierarquia de valor.</p>
       </div>
       <div class="capability-card">
         <span class="cap-num">II</span>
@@ -296,7 +296,7 @@
           </g>
           <g>
             <rect x="40" y="305" width="240" height="22" fill="#F5F2EC" stroke="#1B2D4F" stroke-width="1"/>
-            <text x="160" y="320" text-anchor="middle" font-family="'Source Serif 4',serif" font-style="italic" font-size="11" fill="#1B2D4F">framework Clara/EA · 12 camadas</text>
+            <text x="160" y="320" text-anchor="middle" font-family="'Source Serif 4',serif" font-style="italic" font-size="11" fill="#1B2D4F">framework Clara/EA · 13 camadas</text>
           </g>
         </svg>
       </div>
@@ -368,7 +368,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class="feature" data-i18n="cmp.r1">Hierarquia Mercado → Nicho → Marca → Veículo Legal</td>
+            <td class="feature" data-i18n="cmp.r1">Hierarquia Mercado → Marca → Canais → Produtos → Veículos Legais</td>
             <td class="check-yes highlight" data-i18n="cmp.r1.a">★★★★★ Imbatível</td>
             <td class="check-no" data-i18n="cmp.r1.b">Não modela</td>
             <td class="check-no" data-i18n="cmp.r1.c">Não modela</td>
@@ -738,7 +738,7 @@
       'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contato', 'nav.login': 'Entrar',
       'hero.eyebrow': 'Enterprise Architecture Repository',
       'hero.title': 'EA/CMDB — Enterprise Architecture com profundidade de negócio única.',
-      'hero.lead': 'EA/CMDB é o EA Repository nativo do framework Clara/EA. Único no mercado a integrar hierarquia completa de negócio — Mercado → Nicho → Marca → Veículo Legal → Produto → Canal — com grafo nativo de alta performance, descoberta automática de infraestrutura e geração de IaC via LLM. Posiciona-se como alternativa enterprise-grade ao LeanIX, Ardoq e Alfabet, com âncora open-source.',
+      'hero.lead': 'EA/CMDB é o EA Repository nativo do framework Clara/EA. Único no mercado a integrar hierarquia completa de negócio — Mercado → Marca → Canais → Produtos → Veículos Legais — com grafo nativo de alta performance, descoberta automática de infraestrutura e geração de IaC via LLM. Posiciona-se como alternativa enterprise-grade ao LeanIX, Ardoq e Alfabet, com âncora open-source.',
       'hero.cta1': 'Ver capacidades', 'hero.cta2': 'Comparativo de mercado',
       'what.eyebrow': 'O que é', 'what.title': 'EA Repository, não CMDB operacional.',
       'what.p1': 'CMDBs operacionais — ServiceNow, BMC, Device42 — nasceram para ITSM: incident, change, inventário técnico. Servem ao help desk, ao NOC, ao change manager. Respondem "este servidor está funcionando?".',
@@ -755,8 +755,8 @@
       'dist.r6': 'Exemplos', 'dist.r6.a': 'ServiceNow, BMC Helix, Device42', 'dist.r6.b': 'LeanIX, Ardoq, Alfabet, Mega HOPEX, EA/CMDB',
       'cap.eyebrow': 'Capacidades', 'cap.title': 'Onde o EA/CMDB é imbatível',
       'cap.lead': 'Seis capacidades que combinadas inexistem em qualquer EA Repository do mercado. Nenhum concorrente entrega esse conjunto — e várias delas, individualmente, são únicas no segmento global.',
-      'cap.c1.title': 'Hierarquia Clara/EA — 12 camadas',
-      'cap.c1.desc': 'Mercado → Segmento → Nicho → Marca → Veículo Legal → Produto → Canal → Modalidade, conectados como entidades de primeira classe em grafo. Ningúem desce a esse nível: LeanIX e Alfabet param em Business Capability. Únicos a modelar o próprio negócio em toda a sua hierarquia de valor.',
+      'cap.c1.title': 'Hierarquia Clara/EA — 13 camadas',
+      'cap.c1.desc': 'Mercado → Marca → Canais → Produtos → Veículos Legais → Políticas → Estrutura → Métricas — as oito camadas de negócio, mais as cinco de TI e a camada 0 dos direcionadores estratégicos, fora da pilha — conectadas como entidades de primeira classe em grafo. A modalidade é a quebra do produto, filha de Produto. Ninguém desce a esse nível: LeanIX e Alfabet param em Business Capability. Únicos a modelar o próprio negócio em toda a sua hierarquia de valor.',
       'cap.c2.title': 'Grafo nativo (ArangoDB)',
       'cap.c2.desc': 'Banco de dados em grafo nativo — não emulado via foreign keys. 29 tipos de aresta tipados, named graphs múltiplos, traversal multi-hop em AQL. Apenas Ardoq usa grafo nativo entre os concorrentes — e sem nossa profundidade de modelo de negócio.',
       'cap.c3.title': 'Discovery automático de IaC',
@@ -781,7 +781,7 @@
       'cmp.eyebrow': 'Comparativo', 'cmp.title': 'EA/CMDB vs. LeanIX, Ardoq e Alfabet',
       'cmp.lead': 'Comparativo direto com os três EA Repositories de maior maturidade no mercado global. Score consolidado: EA/CMDB <strong>4,2★</strong>, acima do LeanIX (3,7★) e Ardoq (3,9★) em profundidade de modelo de negócio; abaixo de Alfabet (4,4★) em modelagem formal de EA. Diferenciadores únicos abaixo.',
       'cmp.col1': 'Capacidade', 'cmp.col2': 'EA/CMDB', 'cmp.col3': 'LeanIX', 'cmp.col4': 'Ardoq', 'cmp.col5': 'Alfabet',
-      'cmp.r1': 'Hierarquia Mercado → Nicho → Marca → Veículo Legal',
+      'cmp.r1': 'Hierarquia Mercado → Marca → Canais → Produtos → Veículos Legais',
       'cmp.r1.a': '★★★★★ Imbatível', 'cmp.r1.b': 'Não modela', 'cmp.r1.c': 'Não modela', 'cmp.r1.d': 'Parcial',
       'cmp.r2': 'Grafo nativo (não emulado)',
       'cmp.r2.a': '★★★★★ ArangoDB', 'cmp.r2.b': 'Relacional', 'cmp.r2.c': '★★★★★ Sim', 'cmp.r2.d': 'Relacional',
@@ -834,7 +834,7 @@
       'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Cases', 'nav.contact': 'Contact', 'nav.login': 'Sign in',
       'hero.eyebrow': 'Enterprise Architecture Repository',
       'hero.title': 'EA/CMDB — Enterprise Architecture with unmatched business depth.',
-      'hero.lead': 'EA/CMDB is the native EA Repository for the Clara/EA framework. Unique in the market in combining a complete business hierarchy — Market → Niche → Brand → Legal Vehicle → Product → Channel — with a high-performance native graph, automatic infrastructure discovery, and LLM-powered IaC generation. Positioned as an enterprise-grade alternative to LeanIX, Ardoq, and Alfabet, anchored by an open-source edition.',
+      'hero.lead': 'EA/CMDB is the native EA Repository for the Clara/EA framework. Unique in the market in combining a complete business hierarchy — Market → Brand → Channels → Products → Legal Vehicles — with a high-performance native graph, automatic infrastructure discovery, and LLM-powered IaC generation. Positioned as an enterprise-grade alternative to LeanIX, Ardoq, and Alfabet, anchored by an open-source edition.',
       'hero.cta1': 'See capabilities', 'hero.cta2': 'Market comparison',
       'what.eyebrow': 'What it is', 'what.title': 'EA Repository, not operational CMDB.',
       'what.p1': 'Operational CMDBs — ServiceNow, BMC, Device42 — were born for ITSM: incident, change, technical inventory. They serve the help desk, the NOC, the change manager. They answer "is this server up?".',
@@ -851,8 +851,8 @@
       'dist.r6': 'Examples', 'dist.r6.a': 'ServiceNow, BMC Helix, Device42', 'dist.r6.b': 'LeanIX, Ardoq, Alfabet, Mega HOPEX, EA/CMDB',
       'cap.eyebrow': 'Capabilities', 'cap.title': 'Where EA/CMDB is unbeatable',
       'cap.lead': 'Six capabilities that, combined, exist in no EA Repository on the market. No competitor delivers this set — and several of them, individually, are unique in the global segment.',
-      'cap.c1.title': 'Clara/EA hierarchy — 12 layers',
-      'cap.c1.desc': 'Market → Segment → Niche → Brand → Legal Vehicle → Product → Channel → Modality, connected as first-class graph entities. No one descends to that level: LeanIX and Alfabet stop at Business Capability. The only platform to model the business itself across its entire value hierarchy.',
+      'cap.c1.title': 'Clara/EA hierarchy — 13 layers',
+      'cap.c1.desc': 'Market → Brand → Channels → Products → Legal Vehicles → Policies → Structure → Metrics — the eight business layers, plus the five IT layers and layer 0, the strategic drivers, outside the stack — connected as first-class graph entities. Modality is the breakdown of a product, a child of Product. No one descends to that level: LeanIX and Alfabet stop at Business Capability. The only platform to model the business itself across its entire value hierarchy.',
       'cap.c2.title': 'Native graph (ArangoDB)',
       'cap.c2.desc': 'Native graph database — not emulated via foreign keys. 29 typed edge types, multiple named graphs, multi-hop traversal in AQL. Only Ardoq uses a native graph among competitors — without our depth of business model.',
       'cap.c3.title': 'Automatic IaC discovery',
@@ -877,7 +877,7 @@
       'cmp.eyebrow': 'Comparison', 'cmp.title': 'EA/CMDB vs. LeanIX, Ardoq, and Alfabet',
       'cmp.lead': 'Direct comparison with the three highest-maturity EA Repositories in the global market. Consolidated score: EA/CMDB <strong>4.2★</strong>, above LeanIX (3.7★) and Ardoq (3.9★) on business model depth; below Alfabet (4.4★) on formal EA modeling. Unique differentiators below.',
       'cmp.col1': 'Capability', 'cmp.col2': 'EA/CMDB', 'cmp.col3': 'LeanIX', 'cmp.col4': 'Ardoq', 'cmp.col5': 'Alfabet',
-      'cmp.r1': 'Hierarchy Market → Niche → Brand → Legal Vehicle',
+      'cmp.r1': 'Hierarchy Market → Brand → Channels → Products → Legal Vehicles',
       'cmp.r1.a': '★★★★★ Unbeatable', 'cmp.r1.b': "Doesn't model", 'cmp.r1.c': "Doesn't model", 'cmp.r1.d': 'Partial',
       'cmp.r2': 'Native graph (not emulated)',
       'cmp.r2.a': '★★★★★ ArangoDB', 'cmp.r2.b': 'Relational', 'cmp.r2.c': '★★★★★ Yes', 'cmp.r2.d': 'Relational',
@@ -930,7 +930,7 @@
       'nav.framework': 'Framework', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contacto', 'nav.login': 'Iniciar sesión',
       'hero.eyebrow': 'Enterprise Architecture Repository',
       'hero.title': 'EA/CMDB — Enterprise Architecture con profundidad de negocio única.',
-      'hero.lead': 'EA/CMDB es el EA Repository nativo del framework Clara/EA. Único en el mercado en integrar una jerarquía completa de negocio — Mercado → Nicho → Marca → Vehículo Legal → Producto → Canal — con grafo nativo de alto rendimiento, descubrimiento automático de infraestructura y generación de IaC vía LLM. Se posiciona como alternativa enterprise-grade a LeanIX, Ardoq y Alfabet, anclado en una edición open-source.',
+      'hero.lead': 'EA/CMDB es el EA Repository nativo del framework Clara/EA. Único en el mercado en integrar una jerarquía completa de negocio — Mercado → Marca → Canales → Productos → Vehículos Legales — con grafo nativo de alto rendimiento, descubrimiento automático de infraestructura y generación de IaC vía LLM. Se posiciona como alternativa enterprise-grade a LeanIX, Ardoq y Alfabet, anclado en una edición open-source.',
       'hero.cta1': 'Ver capacidades', 'hero.cta2': 'Comparativo de mercado',
       'what.eyebrow': 'Qué es', 'what.title': 'EA Repository, no CMDB operativo.',
       'what.p1': 'Los CMDBs operativos — ServiceNow, BMC, Device42 — nacieron para ITSM: incident, change, inventario técnico. Sirven al help desk, al NOC, al change manager. Responden "¿este servidor está funcionando?".',
@@ -947,8 +947,8 @@
       'dist.r6': 'Ejemplos', 'dist.r6.a': 'ServiceNow, BMC Helix, Device42', 'dist.r6.b': 'LeanIX, Ardoq, Alfabet, Mega HOPEX, EA/CMDB',
       'cap.eyebrow': 'Capacidades', 'cap.title': 'Donde EA/CMDB es imbatible',
       'cap.lead': 'Seis capacidades que combinadas no existen en ningún EA Repository del mercado. Ningún competidor entrega este conjunto — y varias de ellas, individualmente, son únicas en el segmento global.',
-      'cap.c1.title': 'Jerarquía Clara/EA — 12 capas',
-      'cap.c1.desc': 'Mercado → Segmento → Nicho → Marca → Vehículo Legal → Producto → Canal → Modalidad, conectados como entidades de primera clase en grafo. Nadie desciende a ese nivel: LeanIX y Alfabet se detienen en Business Capability. Únicos en modelar el propio negocio en toda su jerarquía de valor.',
+      'cap.c1.title': 'Jerarquía Clara/EA — 13 capas',
+      'cap.c1.desc': 'Mercado → Marca → Canales → Productos → Vehículos Legales → Políticas → Estructura → Métricas — las ocho capas de negocio, más las cinco de TI y la capa 0 de los direccionadores estratégicos, fuera de la pila — conectadas como entidades de primera clase en grafo. La modalidad es el desglose del producto, hija de Producto. Nadie desciende a ese nivel: LeanIX y Alfabet se detienen en Business Capability. Únicos en modelar el propio negocio en toda su jerarquía de valor.',
       'cap.c2.title': 'Grafo nativo (ArangoDB)',
       'cap.c2.desc': 'Base de datos en grafo nativa — no emulada vía foreign keys. 29 tipos de aristas tipados, named graphs múltiples, traversal multi-hop en AQL. Solo Ardoq usa grafo nativo entre los competidores — y sin nuestra profundidad de modelo de negocio.',
       'cap.c3.title': 'Descubrimiento automático de IaC',
@@ -973,7 +973,7 @@
       'cmp.eyebrow': 'Comparativo', 'cmp.title': 'EA/CMDB vs. LeanIX, Ardoq y Alfabet',
       'cmp.lead': 'Comparativo directo con los tres EA Repositories de mayor madurez en el mercado global. Score consolidado: EA/CMDB <strong>4,2★</strong>, por encima de LeanIX (3,7★) y Ardoq (3,9★) en profundidad de modelo de negocio; por debajo de Alfabet (4,4★) en modelado formal de EA. Diferenciadores únicos abajo.',
       'cmp.col1': 'Capacidad', 'cmp.col2': 'EA/CMDB', 'cmp.col3': 'LeanIX', 'cmp.col4': 'Ardoq', 'cmp.col5': 'Alfabet',
-      'cmp.r1': 'Jerarquía Mercado → Nicho → Marca → Vehículo Legal',
+      'cmp.r1': 'Jerarquía Mercado → Marca → Canales → Productos → Vehículos Legales',
       'cmp.r1.a': '★★★★★ Imbatible', 'cmp.r1.b': 'No modela', 'cmp.r1.c': 'No modela', 'cmp.r1.d': 'Parcial',
       'cmp.r2': 'Grafo nativo (no emulado)',
       'cmp.r2.a': '★★★★★ ArangoDB', 'cmp.r2.b': 'Relacional', 'cmp.r2.c': '★★★★★ Sí', 'cmp.r2.d': 'Relacional',
