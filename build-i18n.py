@@ -6,7 +6,8 @@ For each non-PT language:
   - Extract dictionary from JS at the bottom of the file.
   - Walk every element with data-i18n attribute and replace text/HTML with translation.
   - Walk every element with data-i18n-attr to translate attribute values (placeholders, etc.).
-  - Update <html lang>, data-lang, page <title>, meta description, OG / Twitter meta,
+  - Update <html lang>, data-lang, page <title>, meta description, OG / Twitter meta
+    (texts come from `meta.*` keys in the dictionary; URLs and locale are computed),
     canonical, JSON-LD URLs, currentLang in JS, language switcher hrefs and active state.
   - Save to <lang>/<page>.
 
@@ -124,6 +125,28 @@ def update_html_lang(html: str, lang: str) -> str:
         html,
         count=1,
     )
+    return html
+
+
+META_TAGS = {
+    'meta.title': [r'(<title>)[^<]*(</title>)'],
+    'meta.description': [r'(<meta name="description" content=")[^"]*(")'],
+    'meta.og_title': [r'(<meta property="og:title" content=")[^"]*(")'],
+    'meta.og_description': [r'(<meta property="og:description" content=")[^"]*(")'],
+    'meta.twitter_title': [r'(<meta name="twitter:title" content=")[^"]*(")'],
+    'meta.twitter_description': [r'(<meta name="twitter:description" content=")[^"]*(")'],
+}
+
+
+def translate_head_meta(html: str, dict_lang: dict) -> str:
+    """Translate <title>, meta description and OG/Twitter texts from `meta.*` dict keys.
+    Keys absent from the dict leave the PT text untouched."""
+    for key, patterns in META_TAGS.items():
+        if key not in dict_lang:
+            continue
+        value = dict_lang[key].replace('"', '&quot;')
+        for pat in patterns:
+            html = re.sub(pat, lambda m, v=value: m.group(1) + v + m.group(2), html, count=1)
     return html
 
 
@@ -250,6 +273,7 @@ def process_page(page: str) -> None:
         out = translate_data_i18n_attr(out, dict_lang)
         out = translate_data_i18n(out, dict_lang)
         out = update_html_lang(out, lang)
+        out = translate_head_meta(out, dict_lang)
         out = update_canonical_and_og(out, page, lang)
         out = insert_hreflang(out, page)
         out = update_lang_switcher(out, page, lang)
