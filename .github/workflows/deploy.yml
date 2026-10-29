@@ -33,6 +33,7 @@ jobs:
         run: |
           mkdir -p _site/assets _site/en _site/es _site/casos
           cp index.html ClaraEA-CMDB.html ClaraEA-Autor.html ClaraEA-Casos.html 404.html _site/
+          cp google*.html _site/ 2>/dev/null || true
           cp -r assets/. _site/assets/
           cp -r casos/. _site/casos/
           cp -r en/. _site/en/
