@@ -22,7 +22,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-PAGES = ['index.html', 'ClaraEA-CMDB.html', 'ClaraEA-Autor.html', 'ClaraEA-Casos.html', 'ClaraEA-IA.html']
+PAGES = ['index.html', 'ClaraEA-CMDB.html', 'ClaraEA-Autor.html', 'ClaraEA-Casos.html', 'ClaraEA-IA.html', 'ClaraEA-Metodo.html']
 LANGS_OTHER = ['en', 'es']  # PT is the canonical default at root
 ALL_LANGS = ['pt', 'en', 'es']
 
