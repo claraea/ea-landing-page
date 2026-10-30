@@ -32,6 +32,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claraea.com.br/ClaraEA-IA.html"/>
   </url>
   <url>
+    <loc>https://www.claraea.com.br/ClaraEA-Metodo.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.claraea.com.br/ClaraEA-Metodo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.claraea.com.br/en/ClaraEA-Metodo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.claraea.com.br/es/ClaraEA-Metodo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.claraea.com.br/ClaraEA-Metodo.html"/>
+  </url>
+  <url>
     <loc>https://www.claraea.com.br/ClaraEA-Autor.html</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
