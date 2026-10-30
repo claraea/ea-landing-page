@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<script src="/assets/analytics.js" async></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método — Como aplicar o Clara/EA</title>
+<meta name="description" content="O Clara/EA não parte de um modelo pronto. Parte de uma página em branco e de ciclos sucessivos, em espiral, que constroem visão comum entre as partes envolvidas — camada a camada, domínio a domínio — e registram tudo no EA/CMDB. Veja como o método funciona e o modelo de maturidade para avaliar onde sua empresa está.">
+<meta name="author" content="Marcelo Andrade Clara">
+<link rel="canonical" href="https://www.claraea.com.br/ClaraEA-Metodo.html">
+<link rel="alternate" hreflang="pt-BR" href="https://www.claraea.com.br/ClaraEA-Metodo.html">
+<link rel="alternate" hreflang="en" href="https://www.claraea.com.br/en/ClaraEA-Metodo.html">
+<link rel="alternate" hreflang="es" href="https://www.claraea.com.br/es/ClaraEA-Metodo.html">
+<link rel="alternate" hreflang="x-default" href="https://www.claraea.com.br/ClaraEA-Metodo.html">
+<!-- Favicon e tema -->
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<meta name="theme-color" content="#1B2D4F">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Clara/EA">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:url" content="https://www.claraea.com.br/ClaraEA-Metodo.html">
+<meta property="og:title" content="Método — Como aplicar o Clara/EA">
+<meta property="og:description" content="Da página em branco à visão comum: ciclos sucessivos em espiral, registrados no EA/CMDB. Como o método funciona, e o modelo de maturidade para avaliar onde sua empresa está.">
+<meta property="og:image" content="https://www.claraea.com.br/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clara/EA · Framework de Arquitetura Corporativa">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Método · Clara/EA">
+<meta name="twitter:description" content="Da página em branco à visão comum: como o método Clara/EA funciona, em ciclos, e o modelo de maturidade.">
+<meta name="twitter:image" content="https://www.claraea.com.br/assets/og-card.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<!-- Structured data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Método — Como aplicar o Clara/EA",
+  "description": "O Clara/EA parte de uma página em branco e evolui em ciclos sucessivos, em espiral, construindo visão comum entre as partes envolvidas — camada a camada, domínio a domínio — e registrando tudo no EA/CMDB.",
+  "url": "https://www.claraea.com.br/ClaraEA-Metodo.html",
+  "inLanguage": "pt-BR",
+  "image": "https://www.claraea.com.br/assets/og-card.jpg",
+  "isPartOf": { "@type": "WebSite", "name": "Clara/EA", "url": "https://www.claraea.com.br/" },
+  "about": { "@type": "Thing", "name": "Clara/EA — Framework de Arquitetura Corporativa" },
+  "author": {
+    "@type": "Person",
+    "name": "Marcelo Andrade Clara",
+    "url": "https://www.claraea.com.br/ClaraEA-Autor.html",
+    "sameAs": [ "https://www.linkedin.com/in/maclara/" ]
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo">Clara<span>/</span>EA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#framework" data-i18n="nav.framework">Framework</a></li>
+        <li><a href="ClaraEA-IA.html" data-i18n="nav.ia">IA</a></li>
+        <li><a href="ClaraEA-Metodo.html" class="current" data-i18n="nav.metodo">Método</a></li>
+        <li><a href="ClaraEA-CMDB.html" data-i18n="nav.cmdb">EA/CMDB</a></li>
+        <li><a href="ClaraEA-Casos.html" data-i18n="nav.cases">Casos</a></li>
+        <li><a href="index.html#contato" data-i18n="nav.contact">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="/ClaraEA-Metodo.html" data-lang="pt" class="active">PT</a>
+        <a href="/en/ClaraEA-Metodo.html" data-lang="en">EN</a>
+        <a href="/es/ClaraEA-Metodo.html" data-lang="es">ES</a>
+      </div>
+      <a href="https://cmdb-app-shell.onrender.com" class="btn btn-outline btn-sm btn-login" data-i18n="nav.login">Entrar</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero" style="border-top: none;">
+  <div class="container">
+    <p class="section-eyebrow" data-i18n="hero.eyebrow">Como aplicar o framework</p>
+    <h1 class="section-title" style="font-size: clamp(36px,5vw,58px); max-width: 20ch;" data-i18n="hero.title">Da página em branco à visão comum.</h1>
+    <p class="section-lead" style="font-size: 20px; max-width: 64ch;" data-i18n="hero.lead">O Clara/EA não começa com um modelo pronto trazido de fora. Começa em branco — mesmo quando a empresa já existe — e evolui em ciclos sucessivos, em espiral, até que camadas, domínios, entidades, processos e relacionamentos sejam entendidos da mesma forma por quem vive a operação.</p>
+    <div class="hero-ctas" style="margin-top: 32px;">
+      <a href="#espiral" class="btn btn-primary" data-i18n="hero.cta1">Como funciona o ciclo →</a>
+      <a href="#maturidade" class="btn btn-outline" data-i18n="hero.cta2">Modelo de maturidade →</a>
+    </div>
+  </div>
+</section>
+
+<!-- O PONTO DE PARTIDA -->
+<section id="partida">
+  <div class="container reveal">
+    <div class="manifesto-grid">
+      <div>
+        <p class="section-eyebrow" data-i18n="start.eyebrow">O ponto de partida</p>
+        <h2 class="section-title" data-i18n="start.title">Sempre uma página em branco</h2>
+      </div>
+      <div>
+        <p class="section-lead" data-i18n="start.p1">Não se importa um modelo pronto de outra empresa, nem se preenche um template genérico. O Clara/EA se constrói junto com quem vive a operação — e isso vale tanto para mapear uma empresa que já existe quanto para discutir a criação de uma nova.</p>
+        <p class="section-lead" data-i18n="start.p2">No uso defensivo, a página em branco é deliberada: mesmo onde já existe documentação, começa-se do zero para que o modelo reflita a operação real, não o que ficou registrado anos atrás. No uso greenfield, a página em branco é literal — as camadas são definidas antes de qualquer sistema ser construído, servindo de planta para o crescimento.</p>
+        <blockquote class="pullquote" data-i18n="start.quote">"O mais importante não é preencher um template. É construir, com as pessoas certas na sala, uma visão comum do que a empresa é."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O CICLO EM ESPIRAL -->
+<section id="espiral" style="background: var(--bg-elevated);">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="spiral.eyebrow">O método</p>
+    <h2 class="section-title" style="max-width: 26ch;" data-i18n="spiral.title">Não são etapas lineares. É um ciclo em espiral.</h2>
+    <p class="section-lead" data-i18n="spiral.lead">O Clara/EA não se aplica numa sequência única de passos, do início ao fim. Aplica-se em várias iterações sucessivas — em espiral — que permeiam as camadas repetidas vezes, cada passagem revendo e aprofundando o que a anterior já havia levantado.</p>
+
+    <div class="concept-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 56px;">
+      <article class="concept-card">
+        <span class="num">1</span>
+        <h3 data-i18n="spiral.c1.title">Discutir</h3>
+        <p data-i18n="spiral.c1.desc">Reúnem-se as partes envolvidas — stakeholders e áreas que participam da dinâmica em questão — para examinar uma camada, um domínio, um subdomínio.</p>
+      </article>
+      <article class="concept-card">
+        <span class="num">2</span>
+        <h3 data-i18n="spiral.c2.title">Entender em comum</h3>
+        <p data-i18n="spiral.c2.desc">A discussão busca uma única coisa: que todos enxerguem da mesma forma as entidades, os processos e os relacionamentos daquela camada — não a opinião de quem fala mais alto.</p>
+      </article>
+      <article class="concept-card">
+        <span class="num">3</span>
+        <h3 data-i18n="spiral.c3.title">Registrar</h3>
+        <p data-i18n="spiral.c3.desc">Tudo o que se entende em comum é registrado — hoje, no EA/CMDB. Não para burocratizar a conversa, mas para que a próxima iteração comece de onde esta parou, não do zero.</p>
+      </article>
+      <article class="concept-card concept-card--featured">
+        <span class="num">4</span>
+        <h3 data-i18n="spiral.c4.title">Revalidar e adaptar</h3>
+        <p data-i18n="spiral.c4.desc">A cada nova volta da espiral, o que já foi registrado é revisto à luz do que se aprendeu depois — e adaptado quando necessário. É por isso que o modelo é evolutivo, não definitivo.</p>
+      </article>
+    </div>
+
+    <p style="margin-top: 48px; font-size: 18px; line-height: 1.6; color: var(--ink-primary); max-width: 68ch;" data-i18n="spiral.close">O ciclo se repete camada a camada, domínio a domínio — cada passagem mais rápida que a anterior, porque parte do que já foi validado, não do zero.</p>
+  </div>
+</section>
+
+<!-- DE NEGÓCIO PARA TI -->
+<section id="ponte">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="bridge.eyebrow">Onde o negócio encontra a tecnologia</p>
+    <h2 class="section-title" style="max-width: 28ch;" data-i18n="bridge.title">Os domínios de TI nascem do ciclo de vida do produto, não do inventário de sistemas</h2>
+    <p class="section-lead" data-i18n="bridge.lead">Ao chegar na arquitetura de TI, o ponto de partida não é uma lista de sistemas existentes. É a arquitetura de negócios já mapeada: os domínios e subdomínios de TI são identificados a partir da análise dos produtos e serviços e dos processos envolvidos em seu ciclo de vida — porque as soluções existem para suportar esses processos, não o contrário.</p>
+
+    <div class="relations-chain" aria-hidden="true" style="margin-top: 48px;">
+      <span data-i18n="bridge.c1">Produtos e Serviços</span><span class="rel-arrow" data-i18n="bridge.a1">cujo ciclo de vida gera</span><span data-i18n="bridge.c2">Processos</span><span class="rel-arrow" data-i18n="bridge.a2">agrupados em</span><span data-i18n="bridge.c3">Domínios e Subdomínios</span><span class="rel-arrow" data-i18n="bridge.a3">suportados por</span><span data-i18n="bridge.c4">Soluções · Camada IX</span>
+    </div>
+    <p class="relations-legend" data-i18n="bridge.legend">É essa cadeia — não o inventário técnico — que determina como os sistemas deveriam estar agrupados e integrados.</p>
+  </div>
+</section>
+
+<!-- MODELO DE MATURIDADE -->
+<section id="maturidade" style="background: var(--bg-elevated);">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="mat.eyebrow">Modelo de maturidade</p>
+    <h2 class="section-title" data-i18n="mat.title">Da reação à adaptação</h2>
+    <p class="section-lead" data-i18n="mat.lead">Cinco níveis para avaliar onde uma empresa está — e para onde o método a leva, iteração após iteração.</p>
+
+    <div class="concept-grid" style="margin-top: 48px;">
+      <article class="concept-card">
+        <span class="num">1</span>
+        <h3 data-i18n="mat.l1.title">Reativo</h3>
+        <p data-i18n="mat.l1.desc">Decisões sob pressão, sem modelo explícito. Quando a arquitetura existe, vive na cabeça de poucas pessoas.</p>
+      </article>
+      <article class="concept-card">
+        <span class="num">2</span>
+        <h3 data-i18n="mat.l2.title">Organizado</h3>
+        <p data-i18n="mat.l2.desc">Primeiros mapeamentos registrados, isolados por área. Ainda não há visão comum entre negócio e tecnologia.</p>
+      </article>
+      <article class="concept-card">
+        <span class="num">3</span>
+        <h3 data-i18n="mat.l3.title">Estruturado</h3>
+        <p data-i18n="mat.l3.desc">Camadas e domínios mapeados de forma consistente, com método repetível e um repositório vivo.</p>
+      </article>
+      <article class="concept-card">
+        <span class="num">4</span>
+        <h3 data-i18n="mat.l4.title">Integrado</h3>
+        <p data-i18n="mat.l4.desc">Negócio e tecnologia compartilham a mesma visão em grafo. O impacto de uma mudança é analisado antes de acontecer.</p>
+      </article>
+      <article class="concept-card concept-card--featured">
+        <span class="num">5</span>
+        <h3 data-i18n="mat.l5.title">Adaptativo</h3>
+        <p data-i18n="mat.l5.desc">A arquitetura evolui em ciclos curtos, com intenção. A empresa muda por decisão, não por reação.</p>
+      </article>
+    </div>
+
+    <p style="margin-top: 40px; font-size: 18px; line-height: 1.6; color: var(--ink-primary); max-width: 68ch;" data-i18n="mat.close">A meta não é rigidez — é a capacidade de mudar com intenção e rapidez. Em que nível sua empresa está hoje?</p>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section id="fechamento" class="newsletter">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="close.eyebrow">Para fechar</p>
+    <h2 data-i18n="close.title">O método não termina — ele se repete</h2>
+    <p data-i18n="close.lead">Cada iteração da espiral deixa a empresa mais perto da visão comum e mais alto no modelo de maturidade. Para facilitar esse processo, ou para conhecer onde tudo fica registrado, siga em frente.</p>
+    <div class="hero-ctas" style="margin-top: 32px; justify-content: center;">
+      <a href="ClaraEA-CMDB.html" class="btn btn-primary" data-i18n="close.cta1">Conheça o EA/CMDB →</a>
+      <a href="ClaraEA-Autor.html" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);" data-i18n="close.cta2">Fale com o autor →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Clara<span>/</span>EA</a>
+        <p class="footer-tagline" data-i18n="footer.tagline">Arquitetura corporativa que conecta estratégia, negócios e tecnologia.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h1">Framework</h4>
+        <ul>
+          <li><a href="index.html#framework" data-i18n="footer.l1">Camadas</a></li>
+          <li><a href="index.html#manifesto" data-i18n="footer.l2">Manifesto</a></li>
+          <li><a href="ClaraEA-IA.html" data-i18n="footer.l3">IA e Arquitetura</a></li>
+          <li><a href="ClaraEA-Metodo.html" class="current" data-i18n="footer.l9">Método</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h2">Ferramenta</h4>
+        <ul>
+          <li><a href="ClaraEA-CMDB.html" data-i18n="footer.l4">EA/CMDB</a></li>
+          <li><a href="ClaraEA-CMDB.html#compare" data-i18n="footer.l6">Comparativo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h3">Sobre</h4>
+        <ul>
+          <li><a href="ClaraEA-Autor.html" data-i18n="footer.l7">Autor</a></li>
+          <li><a href="ClaraEA-Casos.html" data-i18n="footer.l5">Casos</a></li>
+          <li><a href="https://www.linkedin.com/in/maclara/" target="_blank" rel="noopener" data-i18n="footer.linkedin">LinkedIn</a></li>
+          <li><a href="mailto:contato@claraea.com.br">contato@claraea.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div data-i18n="footer.copy">© 2026 Marcelo Andrade Clara. Todos os direitos reservados.</div>
+      <div data-i18n="footer.lang">PT · EN · ES</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const translations = {
+    pt: {
+      'nav.framework': 'Framework', 'nav.ia': 'IA', 'nav.metodo': 'Método', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contato', 'nav.login': 'Entrar',
+      'footer.tagline': 'Arquitetura corporativa que conecta estratégia, negócios e tecnologia.',
+      'footer.h1': 'Framework', 'footer.h2': 'Ferramenta', 'footer.h3': 'Sobre',
+      'footer.l1': 'Camadas', 'footer.l2': 'Manifesto', 'footer.l3': 'IA e Arquitetura', 'footer.l9': 'Método',
+      'footer.l4': 'EA/CMDB', 'footer.l6': 'Comparativo', 'footer.l5': 'Casos',
+      'footer.l7': 'Autor', 'footer.linkedin': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. Todos os direitos reservados.',
+      'footer.lang': 'PT · EN · ES',
+      'hero.eyebrow': 'Como aplicar o framework', 'hero.title': 'Da página em branco à visão comum.',
+      'hero.lead': 'O Clara/EA não começa com um modelo pronto trazido de fora. Começa em branco — mesmo quando a empresa já existe — e evolui em ciclos sucessivos, em espiral, até que camadas, domínios, entidades, processos e relacionamentos sejam entendidos da mesma forma por quem vive a operação.',
+      'hero.cta1': 'Como funciona o ciclo →', 'hero.cta2': 'Modelo de maturidade →',
+      'start.eyebrow': 'O ponto de partida', 'start.title': 'Sempre uma página em branco',
+      'start.p1': 'Não se importa um modelo pronto de outra empresa, nem se preenche um template genérico. O Clara/EA se constrói junto com quem vive a operação — e isso vale tanto para mapear uma empresa que já existe quanto para discutir a criação de uma nova.',
+      'start.p2': 'No uso defensivo, a página em branco é deliberada: mesmo onde já existe documentação, começa-se do zero para que o modelo reflita a operação real, não o que ficou registrado anos atrás. No uso greenfield, a página em branco é literal — as camadas são definidas antes de qualquer sistema ser construído, servindo de planta para o crescimento.',
+      'start.quote': '"O mais importante não é preencher um template. É construir, com as pessoas certas na sala, uma visão comum do que a empresa é."',
+      'spiral.eyebrow': 'O método', 'spiral.title': 'Não são etapas lineares. É um ciclo em espiral.',
+      'spiral.lead': 'O Clara/EA não se aplica numa sequência única de passos, do início ao fim. Aplica-se em várias iterações sucessivas — em espiral — que permeiam as camadas repetidas vezes, cada passagem revendo e aprofundando o que a anterior já havia levantado.',
+      'spiral.c1.title': 'Discutir', 'spiral.c1.desc': 'Reúnem-se as partes envolvidas — stakeholders e áreas que participam da dinâmica em questão — para examinar uma camada, um domínio, um subdomínio.',
+      'spiral.c2.title': 'Entender em comum', 'spiral.c2.desc': 'A discussão busca uma única coisa: que todos enxerguem da mesma forma as entidades, os processos e os relacionamentos daquela camada — não a opinião de quem fala mais alto.',
+      'spiral.c3.title': 'Registrar', 'spiral.c3.desc': 'Tudo o que se entende em comum é registrado — hoje, no EA/CMDB. Não para burocratizar a conversa, mas para que a próxima iteração comece de onde esta parou, não do zero.',
+      'spiral.c4.title': 'Revalidar e adaptar', 'spiral.c4.desc': 'A cada nova volta da espiral, o que já foi registrado é revisto à luz do que se aprendeu depois — e adaptado quando necessário. É por isso que o modelo é evolutivo, não definitivo.',
+      'spiral.close': 'O ciclo se repete camada a camada, domínio a domínio — cada passagem mais rápida que a anterior, porque parte do que já foi validado, não do zero.',
+      'bridge.eyebrow': 'Onde o negócio encontra a tecnologia', 'bridge.title': 'Os domínios de TI nascem do ciclo de vida do produto, não do inventário de sistemas',
+      'bridge.lead': 'Ao chegar na arquitetura de TI, o ponto de partida não é uma lista de sistemas existentes. É a arquitetura de negócios já mapeada: os domínios e subdomínios de TI são identificados a partir da análise dos produtos e serviços e dos processos envolvidos em seu ciclo de vida — porque as soluções existem para suportar esses processos, não o contrário.',
+      'bridge.c1': 'Produtos e Serviços', 'bridge.a1': 'cujo ciclo de vida gera', 'bridge.c2': 'Processos', 'bridge.a2': 'agrupados em', 'bridge.c3': 'Domínios e Subdomínios', 'bridge.a3': 'suportados por', 'bridge.c4': 'Soluções · Camada IX',
+      'bridge.legend': 'É essa cadeia — não o inventário técnico — que determina como os sistemas deveriam estar agrupados e integrados.',
+      'mat.eyebrow': 'Modelo de maturidade', 'mat.title': 'Da reação à adaptação',
+      'mat.lead': 'Cinco níveis para avaliar onde uma empresa está — e para onde o método a leva, iteração após iteração.',
+      'mat.l1.title': 'Reativo', 'mat.l1.desc': 'Decisões sob pressão, sem modelo explícito. Quando a arquitetura existe, vive na cabeça de poucas pessoas.',
+      'mat.l2.title': 'Organizado', 'mat.l2.desc': 'Primeiros mapeamentos registrados, isolados por área. Ainda não há visão comum entre negócio e tecnologia.',
+      'mat.l3.title': 'Estruturado', 'mat.l3.desc': 'Camadas e domínios mapeados de forma consistente, com método repetível e um repositório vivo.',
+      'mat.l4.title': 'Integrado', 'mat.l4.desc': 'Negócio e tecnologia compartilham a mesma visão em grafo. O impacto de uma mudança é analisado antes de acontecer.',
+      'mat.l5.title': 'Adaptativo', 'mat.l5.desc': 'A arquitetura evolui em ciclos curtos, com intenção. A empresa muda por decisão, não por reação.',
+      'mat.close': 'A meta não é rigidez — é a capacidade de mudar com intenção e rapidez. Em que nível sua empresa está hoje?',
+      'close.eyebrow': 'Para fechar', 'close.title': 'O método não termina — ele se repete',
+      'close.lead': 'Cada iteração da espiral deixa a empresa mais perto da visão comum e mais alto no modelo de maturidade. Para facilitar esse processo, ou para conhecer onde tudo fica registrado, siga em frente.',
+      'close.cta1': 'Conheça o EA/CMDB →', 'close.cta2': 'Fale com o autor →',
+    },
+    en: {
+      'meta.title': 'Method — How to apply Clara/EA',
+      'meta.description': 'Clara/EA doesn\'t start from a ready-made model. It starts from a blank page and successive, spiral cycles that build shared understanding among the people involved — layer by layer, domain by domain — recording everything in EA/CMDB. See how the method works and the maturity model to assess where your company stands.',
+      'meta.og_title': 'Method — How to apply Clara/EA',
+      'meta.og_description': 'From blank page to shared understanding: successive spiral cycles, recorded in EA/CMDB. How the method works, and the maturity model to assess where your company stands.',
+      'meta.twitter_title': 'Method · Clara/EA',
+      'meta.twitter_description': 'From blank page to shared understanding: how the Clara/EA method works, in cycles, and the maturity model.',
+      'nav.framework': 'Framework', 'nav.ia': 'AI', 'nav.metodo': 'Method', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Cases', 'nav.contact': 'Contact', 'nav.login': 'Sign in',
+      'footer.tagline': 'Enterprise architecture that connects strategy, business, and technology.',
+      'footer.h1': 'Framework', 'footer.h2': 'Tool', 'footer.h3': 'About',
+      'footer.l1': 'Layers', 'footer.l2': 'Manifesto', 'footer.l3': 'AI and Architecture', 'footer.l9': 'Method',
+      'footer.l4': 'EA/CMDB', 'footer.l6': 'Comparison', 'footer.l5': 'Cases',
+      'footer.l7': 'Author', 'footer.linkedin': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. All rights reserved.',
+      'footer.lang': 'PT · EN · ES',
+      'hero.eyebrow': 'How to apply the framework', 'hero.title': 'From a blank page to shared understanding.',
+      'hero.lead': 'Clara/EA doesn\'t start with a ready-made model brought in from outside. It starts blank — even when the company already exists — and evolves through successive, spiral cycles, until layers, domains, entities, processes and relationships are understood the same way by the people who live the operation.',
+      'hero.cta1': 'How the cycle works →', 'hero.cta2': 'Maturity model →',
+      'start.eyebrow': 'The starting point', 'start.title': 'Always a blank page',
+      'start.p1': 'No ready-made model from another company is imported, and no generic template is filled in. Clara/EA is built together with the people who live the operation — this applies equally to mapping a company that already exists and to discussing the creation of a new one.',
+      'start.p2': 'In defensive use, the blank page is deliberate: even where documentation already exists, the work starts from zero so the model reflects the real operation, not what was written down years ago. In greenfield use, the blank page is literal — the layers are defined before any system is built, serving as a blueprint for growth.',
+      'start.quote': '"The most important thing isn\'t filling in a template. It\'s building, with the right people in the room, a shared understanding of what the company is."',
+      'spiral.eyebrow': 'The method', 'spiral.title': 'Not linear steps. A cycle in a spiral.',
+      'spiral.lead': 'Clara/EA isn\'t applied in a single sequence of steps from start to finish. It\'s applied through several successive iterations — in a spiral — that sweep through the layers repeatedly, each pass reviewing and deepening what the previous one had already raised.',
+      'spiral.c1.title': 'Discuss', 'spiral.c1.desc': 'The people involved — stakeholders and areas that take part in the dynamic in question — come together to examine a layer, a domain, a subdomain.',
+      'spiral.c2.title': 'Understand together', 'spiral.c2.desc': 'The discussion pursues one thing only: that everyone sees the entities, processes and relationships of that layer the same way — not the opinion of whoever speaks loudest.',
+      'spiral.c3.title': 'Record', 'spiral.c3.desc': 'Everything that is understood in common is recorded — today, in EA/CMDB. Not to bureaucratize the conversation, but so the next iteration starts where this one left off, not from zero.',
+      'spiral.c4.title': 'Revalidate and adapt', 'spiral.c4.desc': 'With every new turn of the spiral, what was already recorded is reviewed in light of what was learned afterward — and adapted when necessary. That\'s why the model is evolutionary, not final.',
+      'spiral.close': 'The cycle repeats layer by layer, domain by domain — each pass faster than the last, because it starts from what was already validated, not from zero.',
+      'bridge.eyebrow': 'Where business meets technology', 'bridge.title': 'IT domains come from the product lifecycle, not the systems inventory',
+      'bridge.lead': 'When the work reaches IT architecture, the starting point isn\'t a list of existing systems. It\'s the business architecture already mapped: IT domains and subdomains are identified by analyzing products and services and the processes involved in their lifecycle — because solutions exist to support those processes, not the other way around.',
+      'bridge.c1': 'Products and Services', 'bridge.a1': 'whose lifecycle generates', 'bridge.c2': 'Processes', 'bridge.a2': 'grouped into', 'bridge.c3': 'Domains and Subdomains', 'bridge.a3': 'supported by', 'bridge.c4': 'Solutions · Layer IX',
+      'bridge.legend': 'It\'s this chain — not the technical inventory — that determines how systems should be grouped and integrated.',
+      'mat.eyebrow': 'Maturity model', 'mat.title': 'From reaction to adaptation',
+      'mat.lead': 'Five levels to assess where a company stands — and where the method takes it, iteration after iteration.',
+      'mat.l1.title': 'Reactive', 'mat.l1.desc': 'Decisions made under pressure, without an explicit model. When architecture exists, it lives in a few people\'s heads.',
+      'mat.l2.title': 'Organized', 'mat.l2.desc': 'First mappings recorded, isolated by area. There is still no shared view between business and technology.',
+      'mat.l3.title': 'Structured', 'mat.l3.desc': 'Layers and domains consistently mapped, with a repeatable method and a living repository.',
+      'mat.l4.title': 'Integrated', 'mat.l4.desc': 'Business and technology share the same view in a graph. The impact of a change is analyzed before it happens.',
+      'mat.l5.title': 'Adaptive', 'mat.l5.desc': 'Architecture evolves in short cycles, with intention. The company changes by decision, not by reaction.',
+      'mat.close': 'The goal isn\'t rigidity — it\'s the capacity to change with intention and speed. Where is your company today?',
+      'close.eyebrow': 'In closing', 'close.title': 'The method doesn\'t end — it repeats',
+      'close.lead': 'Each turn of the spiral leaves the company closer to shared understanding and higher on the maturity model. To facilitate this process, or to see where everything gets recorded, read on.',
+      'close.cta1': 'Explore EA/CMDB →', 'close.cta2': 'Talk to the author →',
+    },
+    es: {
+      'meta.title': 'Método — Cómo aplicar Clara/EA',
+      'meta.description': 'Clara/EA no parte de un modelo ya hecho. Parte de una página en blanco y de ciclos sucesivos, en espiral, que construyen una visión común entre las partes involucradas — capa a capa, dominio a dominio — y lo registran todo en EA/CMDB. Vea cómo funciona el método y el modelo de madurez para evaluar en qué punto está su empresa.',
+      'meta.og_title': 'Método — Cómo aplicar Clara/EA',
+      'meta.og_description': 'De la página en blanco a la visión común: ciclos sucesivos en espiral, registrados en EA/CMDB. Cómo funciona el método, y el modelo de madurez para evaluar en qué punto está su empresa.',
+      'meta.twitter_title': 'Método · Clara/EA',
+      'meta.twitter_description': 'De la página en blanco a la visión común: cómo funciona el método Clara/EA, en ciclos, y el modelo de madurez.',
+      'nav.framework': 'Framework', 'nav.ia': 'IA', 'nav.metodo': 'Método', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contacto', 'nav.login': 'Iniciar sesión',
+      'footer.tagline': 'Arquitectura empresarial que conecta estrategia, negocio y tecnología.',
+      'footer.h1': 'Framework', 'footer.h2': 'Herramienta', 'footer.h3': 'Acerca',
+      'footer.l1': 'Capas', 'footer.l2': 'Manifiesto', 'footer.l3': 'IA y Arquitectura', 'footer.l9': 'Método',
+      'footer.l4': 'EA/CMDB', 'footer.l6': 'Comparativo', 'footer.l5': 'Casos',
+      'footer.l7': 'Autor', 'footer.linkedin': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. Todos los derechos reservados.',
+      'footer.lang': 'PT · EN · ES',
+      'hero.eyebrow': 'Cómo aplicar el framework', 'hero.title': 'De la página en blanco a la visión común.',
+      'hero.lead': 'Clara/EA no empieza con un modelo ya hecho traído de afuera. Empieza en blanco — incluso cuando la empresa ya existe — y evoluciona en ciclos sucesivos, en espiral, hasta que capas, dominios, entidades, procesos y relaciones son entendidos de la misma forma por quienes viven la operación.',
+      'hero.cta1': 'Cómo funciona el ciclo →', 'hero.cta2': 'Modelo de madurez →',
+      'start.eyebrow': 'El punto de partida', 'start.title': 'Siempre una página en blanco',
+      'start.p1': 'No se importa un modelo ya hecho de otra empresa, ni se llena una plantilla genérica. Clara/EA se construye junto con quienes viven la operación — esto vale tanto para mapear una empresa que ya existe como para discutir la creación de una nueva.',
+      'start.p2': 'En el uso defensivo, la página en blanco es deliberada: incluso donde ya existe documentación, se empieza desde cero para que el modelo refleje la operación real, no lo que quedó registrado años atrás. En el uso greenfield, la página en blanco es literal — las capas se definen antes de construir cualquier sistema, sirviendo de plano para el crecimiento.',
+      'start.quote': '"Lo más importante no es llenar una plantilla. Es construir, con las personas correctas en la sala, una visión común de lo que la empresa es."',
+      'spiral.eyebrow': 'El método', 'spiral.title': 'No son etapas lineales. Es un ciclo en espiral.',
+      'spiral.lead': 'Clara/EA no se aplica en una única secuencia de pasos, de principio a fin. Se aplica en varias iteraciones sucesivas — en espiral — que recorren las capas repetidas veces, cada pasada revisando y profundizando lo que la anterior ya había planteado.',
+      'spiral.c1.title': 'Discutir', 'spiral.c1.desc': 'Se reúnen las partes involucradas — stakeholders y áreas que participan de la dinámica en cuestión — para examinar una capa, un dominio, un subdominio.',
+      'spiral.c2.title': 'Entender en común', 'spiral.c2.desc': 'La discusión busca una sola cosa: que todos vean de la misma forma las entidades, los procesos y las relaciones de esa capa — no la opinión de quien habla más fuerte.',
+      'spiral.c3.title': 'Registrar', 'spiral.c3.desc': 'Todo lo que se entiende en común se registra — hoy, en EA/CMDB. No para burocratizar la conversación, sino para que la próxima iteración empiece donde esta se detuvo, no desde cero.',
+      'spiral.c4.title': 'Revalidar y adaptar', 'spiral.c4.desc': 'En cada nueva vuelta de la espiral, lo que ya fue registrado se revisa a la luz de lo que se aprendió después — y se adapta cuando es necesario. Por eso el modelo es evolutivo, no definitivo.',
+      'spiral.close': 'El ciclo se repite capa a capa, dominio a dominio — cada pasada más rápida que la anterior, porque parte de lo que ya fue validado, no de cero.',
+      'bridge.eyebrow': 'Donde el negocio encuentra la tecnología', 'bridge.title': 'Los dominios de TI nacen del ciclo de vida del producto, no del inventario de sistemas',
+      'bridge.lead': 'Al llegar a la arquitectura de TI, el punto de partida no es una lista de sistemas existentes. Es la arquitectura de negocio ya mapeada: los dominios y subdominios de TI se identifican a partir del análisis de los productos y servicios y de los procesos involucrados en su ciclo de vida — porque las soluciones existen para soportar esos procesos, no al revés.',
+      'bridge.c1': 'Productos y Servicios', 'bridge.a1': 'cuyo ciclo de vida genera', 'bridge.c2': 'Procesos', 'bridge.a2': 'agrupados en', 'bridge.c3': 'Dominios y Subdominios', 'bridge.a3': 'soportados por', 'bridge.c4': 'Soluciones · Capa IX',
+      'bridge.legend': 'Es esa cadena — no el inventario técnico — la que determina cómo deberían agruparse e integrarse los sistemas.',
+      'mat.eyebrow': 'Modelo de madurez', 'mat.title': 'De la reacción a la adaptación',
+      'mat.lead': 'Cinco niveles para evaluar en qué punto está una empresa — y hacia dónde la lleva el método, iteración tras iteración.',
+      'mat.l1.title': 'Reactivo', 'mat.l1.desc': 'Decisiones bajo presión, sin modelo explícito. Cuando la arquitectura existe, vive en la cabeza de pocas personas.',
+      'mat.l2.title': 'Organizado', 'mat.l2.desc': 'Primeros mapeos registrados, aislados por área. Todavía no hay visión común entre negocio y tecnología.',
+      'mat.l3.title': 'Estructurado', 'mat.l3.desc': 'Capas y dominios mapeados de forma consistente, con método repetible y un repositorio vivo.',
+      'mat.l4.title': 'Integrado', 'mat.l4.desc': 'Negocio y tecnología comparten la misma visión en grafo. El impacto de un cambio se analiza antes de que ocurra.',
+      'mat.l5.title': 'Adaptativo', 'mat.l5.desc': 'La arquitectura evoluciona en ciclos cortos, con intención. La empresa cambia por decisión, no por reacción.',
+      'mat.close': 'La meta no es rigidez — es la capacidad de cambiar con intención y rapidez. ¿En qué nivel está su empresa hoy?',
+      'close.eyebrow': 'Para cerrar', 'close.title': 'El método no termina — se repite',
+      'close.lead': 'Cada vuelta de la espiral deja a la empresa más cerca de la visión común y más alto en el modelo de madurez. Para facilitar este proceso, o para conocer dónde queda todo registrado, siga adelante.',
+      'close.cta1': 'Conozca EA/CMDB →', 'close.cta2': 'Hable con el autor →',
+    }
+  };
+
+  function applyTranslations(lang) {
+    document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : lang);
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = translations[lang][key];
+      if (val !== undefined) el.innerHTML = val;
+    });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
