@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<script src="/assets/analytics.js" async></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA e Arquitetura Corporativa — Clara/EA</title>
+<meta name="description" content="Sem um modelo explícito da empresa, agentes de IA inferem mercados, produtos e processos — e podem errar sem que ninguém perceba. Veja por que a Arquitetura Corporativa é pré-requisito, não opcional, para IA agêntica confiável.">
+<meta name="author" content="Marcelo Andrade Clara">
+<link rel="canonical" href="https://www.claraea.com.br/ClaraEA-IA.html">
+<link rel="alternate" hreflang="pt-BR" href="https://www.claraea.com.br/ClaraEA-IA.html">
+<link rel="alternate" hreflang="en" href="https://www.claraea.com.br/en/ClaraEA-IA.html">
+<link rel="alternate" hreflang="es" href="https://www.claraea.com.br/es/ClaraEA-IA.html">
+<link rel="alternate" hreflang="x-default" href="https://www.claraea.com.br/ClaraEA-IA.html">
+<!-- Favicon e tema -->
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<meta name="theme-color" content="#1B2D4F">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Clara/EA">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:url" content="https://www.claraea.com.br/ClaraEA-IA.html">
+<meta property="og:title" content="IA e Arquitetura Corporativa — Clara/EA">
+<meta property="og:description" content="Sem um modelo explícito da empresa, agentes de IA inferem mercados, produtos e processos. Veja por que a Arquitetura Corporativa é pré-requisito para IA agêntica confiável.">
+<meta property="og:image" content="https://www.claraea.com.br/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clara/EA · Framework de Arquitetura Corporativa">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IA e Arquitetura Corporativa · Clara/EA">
+<meta name="twitter:description" content="Sem modelo explícito, a IA adivinha a sua empresa. Por que a Arquitetura Corporativa é pré-requisito para IA agêntica confiável.">
+<meta name="twitter:image" content="https://www.claraea.com.br/assets/og-card.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<!-- Structured data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "IA e Arquitetura Corporativa — Clara/EA",
+  "description": "Sem um modelo explícito da empresa, agentes de IA inferem mercados, produtos e processos. A Arquitetura Corporativa é o contexto determinístico, rastreável e verificável que uma IA consulta em vez de adivinhar.",
+  "url": "https://www.claraea.com.br/ClaraEA-IA.html",
+  "inLanguage": "pt-BR",
+  "image": "https://www.claraea.com.br/assets/og-card.jpg",
+  "isPartOf": { "@type": "WebSite", "name": "Clara/EA", "url": "https://www.claraea.com.br/" },
+  "about": { "@type": "Thing", "name": "Clara/EA — Framework de Arquitetura Corporativa" },
+  "author": {
+    "@type": "Person",
+    "name": "Marcelo Andrade Clara",
+    "url": "https://www.claraea.com.br/ClaraEA-Autor.html",
+    "sameAs": [ "https://www.linkedin.com/in/maclara/" ]
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo">Clara<span>/</span>EA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#framework" data-i18n="nav.framework">Framework</a></li>
+        <li><a href="ClaraEA-IA.html" class="current" data-i18n="nav.ia">IA</a></li>
+        <li><a href="ClaraEA-CMDB.html" data-i18n="nav.cmdb">EA/CMDB</a></li>
+        <li><a href="ClaraEA-Casos.html" data-i18n="nav.cases">Casos</a></li>
+        <li><a href="index.html#contato" data-i18n="nav.contact">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="/ClaraEA-IA.html" data-lang="pt" class="active">PT</a>
+        <a href="/en/ClaraEA-IA.html" data-lang="en">EN</a>
+        <a href="/es/ClaraEA-IA.html" data-lang="es">ES</a>
+      </div>
+      <a href="https://cmdb-app-shell.onrender.com" class="btn btn-outline btn-sm btn-login" data-i18n="nav.login">Entrar</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero" style="border-top: none;">
+  <div class="container">
+    <p class="section-eyebrow" data-i18n="hero.eyebrow">IA e Arquitetura Corporativa</p>
+    <h1 class="section-title" style="font-size: clamp(36px,5vw,58px); max-width: 20ch;" data-i18n="hero.title">Sem modelo explícito, a IA adivinha a sua empresa.</h1>
+    <p class="section-lead" style="font-size: 20px; max-width: 64ch;" data-i18n="hero.lead">Agentes de IA são excelentes em inferir — mas mercados, produtos, veículos legais e sistemas não deveriam ser inferidos. O Clara/EA é o modelo explícito, rastreável e verificável que transforma a IA de um palpite plausível em raciocínio sobre fatos.</p>
+    <div class="hero-ctas" style="margin-top: 32px;">
+      <a href="#prova" class="btn btn-primary" data-i18n="hero.cta1">Veja a prova →</a>
+      <a href="ClaraEA-CMDB.html" class="btn btn-outline" data-i18n="hero.cta2">Conheça o EA/CMDB →</a>
+    </div>
+  </div>
+</section>
+
+<!-- O EXPERIMENTO -->
+<section id="experimento">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="exp.eyebrow">Um experimento de um minuto</p>
+    <h2 class="section-title" data-i18n="exp.title">Peça a uma IA para descrever a empresa onde você trabalha.</h2>
+    <p class="section-lead" data-i18n="exp.lead">Mercados, produtos, processos, sistemas, infraestrutura. A resposta vai soar plausível. A pergunta que importa: quanto dela é verdade — e quanto você consegue verificar?</p>
+    <blockquote class="pullquote" data-i18n="exp.quote">"A IA não inventou por malícia. Inferiu porque ninguém lhe deu o modelo."</blockquote>
+  </div>
+</section>
+
+<!-- O RISCO -->
+<section id="risco" style="background: var(--surface-dark); color: #fff; border: none;">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="risk.eyebrow">O risco, em números · 2026</p>
+    <h2 class="section-title" style="color: #fff;" data-i18n="risk.title">A decisão de usar IA já foi tomada. A governança, não.</h2>
+
+    <div class="case-stats" style="grid-template-columns: repeat(4, 1fr); margin-top: 48px; gap: 8px;">
+      <div class="case-stat" style="border-left: 1px solid rgba(255,255,255,0.18);">
+        <div class="figure" style="color: var(--accent-gold);">71%</div>
+        <div class="desc" style="color: rgba(255,255,255,0.72);" data-i18n="risk.s1">planejam colocar IA agêntica em produção nos próximos 12 meses</div>
+        <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 8px;" data-i18n="risk.src1">Gartner, IT Symposium, out. 2026</div>
+      </div>
+      <div class="case-stat" style="border-left: 1px solid rgba(255,255,255,0.18);">
+        <div class="figure" style="color: var(--accent-gold);">21%</div>
+        <div class="desc" style="color: rgba(255,255,255,0.72);" data-i18n="risk.s2">têm capacidade de governança para isso hoje</div>
+        <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 8px;" data-i18n="risk.src2">Gartner, IT Symposium, out. 2026</div>
+      </div>
+      <div class="case-stat" style="border-left: 1px solid rgba(255,255,255,0.18);">
+        <div class="figure" style="color: var(--accent-gold);">362</div>
+        <div class="desc" style="color: rgba(255,255,255,0.72);" data-i18n="risk.s3">incidentes de IA reportados em 2025 — recorde histórico</div>
+        <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 8px;" data-i18n="risk.src3">Stanford, AI Index 2026</div>
+      </div>
+      <div class="case-stat" style="border-left: 1px solid rgba(255,255,255,0.18);">
+        <div class="figure" style="color: var(--accent-gold);">US$ 6 mi</div>
+        <div class="desc" style="color: rgba(255,255,255,0.72);" data-i18n="risk.s4">custo médio de uma violação em que atacantes usaram IA</div>
+        <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 8px;" data-i18n="risk.src4">IBM e Ponemon, Cost of a Data Breach, jul. 2026</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 48px; font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.85); max-width: 68ch;" data-i18n="risk.close">O gargalo não é vontade — é contexto. A maioria das empresas ainda não tem um modelo explícito de si mesma para entregar à IA.</p>
+  </div>
+</section>
+
+<!-- A DISTINÇÃO -->
+<section id="distincao">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="dist.eyebrow">A distinção que importa</p>
+    <h2 class="section-title" style="max-width: 26ch;" data-i18n="dist.title">Sem contexto, a IA infere. Com o grafo, ela raciocina sobre fatos.</h2>
+    <p class="section-lead" data-i18n="dist.lead">Inferência não é o problema — é o que torna a IA útil. O problema é a inferência sem lastro: um agente sem onde consultar os fatos preenche a lacuna com o padrão estatisticamente mais plausível. Às vezes acerta. Quando erra, ninguém percebe, porque a resposta errada também soa plausível. O Clara/EA fecha essa lacuna: um modelo explícito das camadas de negócio e tecnologia da empresa, materializado em grafo pelo EA/CMDB, que a IA consulta em vez de adivinhar.</p>
+
+    <div class="concept-grid" style="grid-template-columns: 1fr 1fr; margin-top: 48px;">
+      <article class="concept-card">
+        <span class="num">A</span>
+        <h3 data-i18n="dist.cardA.title">O que não se delega</h3>
+        <p data-i18n="dist.cardA.desc">Mercados, segmentos e marcas. Produtos, serviços e veículos legais. Estrutura, papéis e responsabilidades. Os sistemas e a infraestrutura que sustentam tudo isso. São decisões sobre o que a empresa é — não se decidem por inferência não verificada.</p>
+      </article>
+      <article class="concept-card concept-card--featured">
+        <span class="num">B</span>
+        <h3 data-i18n="dist.cardB.title">Onde a IA agrega</h3>
+        <p data-i18n="dist.cardB.desc">Consultar o modelo como fonte de verdade. Acelerar mapeamento e documentação. Analisar o impacto de uma mudança antes que ela aconteça. Simular cenários — sobre fatos, não sobre palpites.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- A PROVA -->
+<section id="prova" style="background: var(--bg-elevated);">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="proof.eyebrow">A prova, não a promessa</p>
+    <h2 class="section-title" style="max-width: 28ch;" data-i18n="proof.title">Mesmo método, mesmo agente, só divulgação pública — e o resultado é rastreável.</h2>
+    <p class="section-lead" data-i18n="proof.lead">Para testar a tese, um agente de IA recebeu o Clara/EA como instrução e, de cada organização, apenas a divulgação pública — relatórios regulatórios, formulários de referência, portais de relação com investidores. Nada mais. O agente devolveu a arquitetura de negócios instanciada, domínio a domínio, com cada afirmação rastreada até a fonte que a sustenta.</p>
+
+    <div class="compare-wrap" style="margin-top: 40px;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th data-i18n="proof.col1">Organização</th>
+            <th data-i18n="proof.col2">Domínios</th>
+            <th data-i18n="proof.col3">Entidades</th>
+            <th data-i18n="proof.col4">Fontes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="feature">Itaú Unibanco</td><td>83</td><td>472</td><td>16</td></tr>
+          <tr><td class="feature">Bradesco</td><td>82</td><td>505</td><td>18</td></tr>
+          <tr><td class="feature">XP Inc.</td><td>80</td><td>467</td><td>17</td></tr>
+          <tr><td class="feature">Nubank</td><td>75</td><td>465</td><td>17</td></tr>
+          <tr><td class="feature">CVC Corp</td><td>74</td><td>463</td><td>17</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hero-ctas" style="margin-top: 32px;">
+      <a href="ClaraEA-Casos.html" class="btn btn-primary" data-i18n="proof.cta">Explore os cinco casos →</a>
+    </div>
+    <p style="margin-top: 16px; font-size: 14px; color: var(--ink-muted);" data-i18n="proof.note">Documentos analíticos independentes, sem endosso das organizações.</p>
+  </div>
+</section>
+
+<!-- A DIFERENÇA REAL -->
+<section id="diferenca">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="depth.eyebrow">A diferença real</p>
+    <h2 class="section-title" style="max-width: 28ch;" data-i18n="depth.title">Dar contexto a uma IA não é exclusividade de ninguém. A profundidade do contexto, é.</h2>
+    <p class="section-lead" data-i18n="depth.lead">Ancorar um agente de IA em um grafo para reduzir alucinação já é prática comum — qualquer ferramenta de RAG ou de knowledge graph empresarial faz essa promessa. A pergunta que decide se o contexto é confiável é outra: até onde esse grafo desce? A maioria dos EA Repositories do mercado para em Business Capability. O Clara/EA desce a Mercado, Segmento, Marca e Veículos Legais — a hierarquia de valor completa, não só a camada de tecnologia.</p>
+    <div class="hero-ctas" style="margin-top: 24px;">
+      <a href="ClaraEA-CMDB.html#capacidades" class="btn btn-outline" data-i18n="depth.cta">Veja a hierarquia completa no EA/CMDB →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section id="fechamento" class="newsletter">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="close.eyebrow">Para fechar</p>
+    <h2 data-i18n="close.title">A Arquitetura é desenhada por pessoas — e condiciona o que a IA pode saber com segurança</h2>
+    <p data-i18n="close.lead">Desenhar essa estrutura deixou de ser tarefa de bastidor. É o que determina se a IA, na sua empresa, raciocina sobre fatos ou adivinha.</p>
+    <div class="hero-ctas" style="margin-top: 32px; justify-content: center;">
+      <a href="index.html#framework" class="btn btn-primary" data-i18n="close.cta1">Conheça o framework →</a>
+      <a href="ClaraEA-Autor.html" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);" data-i18n="close.cta2">Fale com o autor →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Clara<span>/</span>EA</a>
+        <p class="footer-tagline" data-i18n="footer.tagline">Arquitetura corporativa que conecta estratégia, negócios e tecnologia.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h1">Framework</h4>
+        <ul>
+          <li><a href="index.html#framework" data-i18n="footer.l1">Camadas</a></li>
+          <li><a href="index.html#manifesto" data-i18n="footer.l2">Manifesto</a></li>
+          <li><a href="ClaraEA-IA.html" class="current" data-i18n="footer.l3">IA e Arquitetura</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h2">Ferramenta</h4>
+        <ul>
+          <li><a href="ClaraEA-CMDB.html" data-i18n="footer.l4">EA/CMDB</a></li>
+          <li><a href="ClaraEA-CMDB.html#compare" data-i18n="footer.l6">Comparativo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h3">Sobre</h4>
+        <ul>
+          <li><a href="ClaraEA-Autor.html" data-i18n="footer.l7">Autor</a></li>
+          <li><a href="ClaraEA-Casos.html" data-i18n="footer.l5">Casos</a></li>
+          <li><a href="https://www.linkedin.com/in/maclara/" target="_blank" rel="noopener" data-i18n="footer.linkedin">LinkedIn</a></li>
+          <li><a href="mailto:contato@claraea.com.br">contato@claraea.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div data-i18n="footer.copy">© 2026 Marcelo Andrade Clara. Todos os direitos reservados.</div>
+      <div data-i18n="footer.lang">PT · EN · ES</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const translations = {
+    pt: {
+      'nav.framework': 'Framework', 'nav.ia': 'IA', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contato', 'nav.login': 'Entrar',
+      'footer.tagline': 'Arquitetura corporativa que conecta estratégia, negócios e tecnologia.',
+      'footer.h1': 'Framework', 'footer.h2': 'Ferramenta', 'footer.h3': 'Sobre',
+      'footer.l1': 'Camadas', 'footer.l2': 'Manifesto', 'footer.l3': 'IA e Arquitetura',
+      'footer.l4': 'EA/CMDB', 'footer.l6': 'Comparativo', 'footer.l5': 'Casos',
+      'footer.l7': 'Autor', 'footer.linkedin': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. Todos os direitos reservados.',
+      'footer.lang': 'PT · EN · ES',
+      'hero.eyebrow': 'IA e Arquitetura Corporativa', 'hero.title': 'Sem modelo explícito, a IA adivinha a sua empresa.',
+      'hero.lead': 'Agentes de IA são excelentes em inferir — mas mercados, produtos, veículos legais e sistemas não deveriam ser inferidos. O Clara/EA é o modelo explícito, rastreável e verificável que transforma a IA de um palpite plausível em raciocínio sobre fatos.',
+      'hero.cta1': 'Veja a prova →', 'hero.cta2': 'Conheça o EA/CMDB →',
+      'exp.eyebrow': 'Um experimento de um minuto', 'exp.title': 'Peça a uma IA para descrever a empresa onde você trabalha.',
+      'exp.lead': 'Mercados, produtos, processos, sistemas, infraestrutura. A resposta vai soar plausível. A pergunta que importa: quanto dela é verdade — e quanto você consegue verificar?',
+      'exp.quote': '"A IA não inventou por malícia. Inferiu porque ninguém lhe deu o modelo."',
+      'risk.eyebrow': 'O risco, em números · 2026', 'risk.title': 'A decisão de usar IA já foi tomada. A governança, não.',
+      'risk.s1': 'planejam colocar IA agêntica em produção nos próximos 12 meses', 'risk.src1': 'Gartner, IT Symposium, out. 2026',
+      'risk.s2': 'têm capacidade de governança para isso hoje', 'risk.src2': 'Gartner, IT Symposium, out. 2026',
+      'risk.s3': 'incidentes de IA reportados em 2025 — recorde histórico', 'risk.src3': 'Stanford, AI Index 2026',
+      'risk.s4': 'custo médio de uma violação em que atacantes usaram IA', 'risk.src4': 'IBM e Ponemon, Cost of a Data Breach, jul. 2026',
+      'risk.close': 'O gargalo não é vontade — é contexto. A maioria das empresas ainda não tem um modelo explícito de si mesma para entregar à IA.',
+      'dist.eyebrow': 'A distinção que importa', 'dist.title': 'Sem contexto, a IA infere. Com o grafo, ela raciocina sobre fatos.',
+      'dist.lead': 'Inferência não é o problema — é o que torna a IA útil. O problema é a inferência sem lastro: um agente sem onde consultar os fatos preenche a lacuna com o padrão estatisticamente mais plausível. Às vezes acerta. Quando erra, ninguém percebe, porque a resposta errada também soa plausível. O Clara/EA fecha essa lacuna: um modelo explícito das camadas de negócio e tecnologia da empresa, materializado em grafo pelo EA/CMDB, que a IA consulta em vez de adivinhar.',
+      'dist.cardA.title': 'O que não se delega',
+      'dist.cardA.desc': 'Mercados, segmentos e marcas. Produtos, serviços e veículos legais. Estrutura, papéis e responsabilidades. Os sistemas e a infraestrutura que sustentam tudo isso. São decisões sobre o que a empresa é — não se decidem por inferência não verificada.',
+      'dist.cardB.title': 'Onde a IA agrega',
+      'dist.cardB.desc': 'Consultar o modelo como fonte de verdade. Acelerar mapeamento e documentação. Analisar o impacto de uma mudança antes que ela aconteça. Simular cenários — sobre fatos, não sobre palpites.',
+      'proof.eyebrow': 'A prova, não a promessa', 'proof.title': 'Mesmo método, mesmo agente, só divulgação pública — e o resultado é rastreável.',
+      'proof.lead': 'Para testar a tese, um agente de IA recebeu o Clara/EA como instrução e, de cada organização, apenas a divulgação pública — relatórios regulatórios, formulários de referência, portais de relação com investidores. Nada mais. O agente devolveu a arquitetura de negócios instanciada, domínio a domínio, com cada afirmação rastreada até a fonte que a sustenta.',
+      'proof.col1': 'Organização', 'proof.col2': 'Domínios', 'proof.col3': 'Entidades', 'proof.col4': 'Fontes',
+      'proof.cta': 'Explore os cinco casos →', 'proof.note': 'Documentos analíticos independentes, sem endosso das organizações.',
+      'depth.eyebrow': 'A diferença real', 'depth.title': 'Dar contexto a uma IA não é exclusividade de ninguém. A profundidade do contexto, é.',
+      'depth.lead': 'Ancorar um agente de IA em um grafo para reduzir alucinação já é prática comum — qualquer ferramenta de RAG ou de knowledge graph empresarial faz essa promessa. A pergunta que decide se o contexto é confiável é outra: até onde esse grafo desce? A maioria dos EA Repositories do mercado para em Business Capability. O Clara/EA desce a Mercado, Segmento, Marca e Veículos Legais — a hierarquia de valor completa, não só a camada de tecnologia.',
+      'depth.cta': 'Veja a hierarquia completa no EA/CMDB →',
+      'close.eyebrow': 'Para fechar', 'close.title': 'A Arquitetura é desenhada por pessoas — e condiciona o que a IA pode saber com segurança',
+      'close.lead': 'Desenhar essa estrutura deixou de ser tarefa de bastidor. É o que determina se a IA, na sua empresa, raciocina sobre fatos ou adivinha.',
+      'close.cta1': 'Conheça o framework →', 'close.cta2': 'Fale com o autor →',
+    },
+    en: {
+      'meta.title': 'AI and Enterprise Architecture — Clara/EA',
+      'meta.description': 'Without an explicit model of the company, AI agents infer markets, products and processes — and can be wrong without anyone noticing. See why Enterprise Architecture is a prerequisite, not optional, for trustworthy agentic AI.',
+      'meta.og_title': 'AI and Enterprise Architecture — Clara/EA',
+      'meta.og_description': 'Without an explicit model of the company, AI agents infer markets, products and processes. See why Enterprise Architecture is a prerequisite for trustworthy agentic AI.',
+      'meta.twitter_title': 'AI and Enterprise Architecture · Clara/EA',
+      'meta.twitter_description': 'Without an explicit model, AI guesses your company. Why Enterprise Architecture is a prerequisite for trustworthy agentic AI.',
+      'nav.framework': 'Framework', 'nav.ia': 'AI', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Cases', 'nav.contact': 'Contact', 'nav.login': 'Sign in',
+      'footer.tagline': 'Enterprise architecture that connects strategy, business, and technology.',
+      'footer.h1': 'Framework', 'footer.h2': 'Tool', 'footer.h3': 'About',
+      'footer.l1': 'Layers', 'footer.l2': 'Manifesto', 'footer.l3': 'AI and Architecture',
+      'footer.l4': 'EA/CMDB', 'footer.l6': 'Comparison', 'footer.l5': 'Cases',
+      'footer.l7': 'Author', 'footer.linkedin': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. All rights reserved.',
+      'footer.lang': 'PT · EN · ES',
+      'hero.eyebrow': 'AI and Enterprise Architecture', 'hero.title': 'Without an explicit model, AI guesses your company.',
+      'hero.lead': 'AI agents are excellent at inferring — but markets, products, legal entities and systems should not be inferred. Clara/EA is the explicit, traceable, verifiable model that turns AI from a plausible guess into reasoning over facts.',
+      'hero.cta1': 'See the proof →', 'hero.cta2': 'Explore EA/CMDB →',
+      'exp.eyebrow': 'A one-minute experiment', 'exp.title': 'Ask an AI to describe the company you work for.',
+      'exp.lead': 'Markets, products, processes, systems, infrastructure. The answer will sound plausible. The question that matters: how much of it is true — and how much can you verify?',
+      'exp.quote': '"The AI didn\'t make it up out of malice. It inferred because no one gave it the model."',
+      'risk.eyebrow': 'The risk, in numbers · 2026', 'risk.title': 'The decision to use AI has been made. Governance has not.',
+      'risk.s1': 'plan to put agentic AI into production in the next 12 months', 'risk.src1': 'Gartner, IT Symposium, Oct. 2026',
+      'risk.s2': 'have the governance capability for it today', 'risk.src2': 'Gartner, IT Symposium, Oct. 2026',
+      'risk.s3': 'AI incidents reported in 2025 — a historic record', 'risk.src3': 'Stanford, AI Index 2026',
+      'risk.s4': 'average cost of a breach in which attackers used AI', 'risk.src4': 'IBM and Ponemon, Cost of a Data Breach, Jul. 2026',
+      'risk.close': 'The bottleneck is not willingness — it\'s context. Most companies still don\'t have an explicit model of themselves to hand to AI.',
+      'dist.eyebrow': 'The distinction that matters', 'dist.title': 'Without context, AI infers. With the graph, it reasons over facts.',
+      'dist.lead': 'Inference isn\'t the problem — it\'s what makes AI useful. The problem is ungrounded inference: an agent with nowhere to check the facts fills the gap with the statistically most plausible pattern. Sometimes it\'s right. When it\'s wrong, no one notices, because the wrong answer sounds just as plausible. Clara/EA closes that gap: an explicit model of the company\'s business and technology layers, materialized as a graph by EA/CMDB, that AI consults instead of guessing.',
+      'dist.cardA.title': 'What isn\'t delegated',
+      'dist.cardA.desc': 'Markets, segments and brands. Products, services and legal entities. Structure, roles and responsibilities. The systems and infrastructure that support all of it. These are decisions about what the company is — not decided by unverified inference.',
+      'dist.cardB.title': 'Where AI adds value',
+      'dist.cardB.desc': 'Consulting the model as a source of truth. Accelerating mapping and documentation. Analyzing the impact of a change before it happens. Simulating scenarios — over facts, not guesses.',
+      'proof.eyebrow': 'The proof, not the promise', 'proof.title': 'Same method, same agent, only public disclosure — and the result is traceable.',
+      'proof.lead': 'To test the thesis, an AI agent received Clara/EA as its instruction and, for each organization, only its public disclosure — regulatory filings, reference forms, investor-relations portals. Nothing else. The agent returned the business architecture instantiated, domain by domain, with every statement traced back to the source that supports it.',
+      'proof.col1': 'Organization', 'proof.col2': 'Domains', 'proof.col3': 'Entities', 'proof.col4': 'Sources',
+      'proof.cta': 'Explore the five cases →', 'proof.note': 'Independent analytical documents, not endorsed by the organizations.',
+      'depth.eyebrow': 'The real difference', 'depth.title': 'Giving an AI context isn\'t exclusive to anyone. The depth of that context is.',
+      'depth.lead': 'Grounding an AI agent in a graph to reduce hallucination is already common practice — any RAG tool or enterprise knowledge graph makes that promise. The question that decides whether the context is trustworthy is different: how far down does that graph go? Most EA Repositories on the market stop at Business Capability. Clara/EA goes down to Market, Segment, Brand and Legal Entities — the full value hierarchy, not just the technology layer.',
+      'depth.cta': 'See the full hierarchy in EA/CMDB →',
+      'close.eyebrow': 'In closing', 'close.title': 'Architecture is designed by people — and it determines what AI can safely know',
+      'close.lead': 'Designing that structure is no longer backstage work. It determines whether AI, in your company, reasons over facts or guesses.',
+      'close.cta1': 'Explore the framework →', 'close.cta2': 'Talk to the author →',
+    },
+    es: {
+      'meta.title': 'IA y Arquitectura Empresarial — Clara/EA',
+      'meta.description': 'Sin un modelo explícito de la empresa, los agentes de IA infieren mercados, productos y procesos — y pueden equivocarse sin que nadie lo note. Vea por qué la Arquitectura Empresarial es un prerrequisito, no opcional, para una IA agéntica confiable.',
+      'meta.og_title': 'IA y Arquitectura Empresarial — Clara/EA',
+      'meta.og_description': 'Sin un modelo explícito de la empresa, los agentes de IA infieren mercados, productos y procesos. Vea por qué la Arquitectura Empresarial es un prerrequisito para una IA agéntica confiable.',
+      'meta.twitter_title': 'IA y Arquitectura Empresarial · Clara/EA',
+      'meta.twitter_description': 'Sin un modelo explícito, la IA adivina su empresa. Por qué la Arquitectura Empresarial es un prerrequisito para una IA agéntica confiable.',
+      'nav.framework': 'Framework', 'nav.ia': 'IA', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contacto', 'nav.login': 'Iniciar sesión',
+      'footer.tagline': 'Arquitectura empresarial que conecta estrategia, negocio y tecnología.',
+      'footer.h1': 'Framework', 'footer.h2': 'Herramienta', 'footer.h3': 'Acerca',
+      'footer.l1': 'Capas', 'footer.l2': 'Manifiesto', 'footer.l3': 'IA y Arquitectura',
+      'footer.l4': 'EA/CMDB', 'footer.l6': 'Comparativo', 'footer.l5': 'Casos',
+      'footer.l7': 'Autor', 'footer.linkedin': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. Todos los derechos reservados.',
+      'footer.lang': 'PT · EN · ES',
+      'hero.eyebrow': 'IA y Arquitectura Empresarial', 'hero.title': 'Sin un modelo explícito, la IA adivina su empresa.',
+      'hero.lead': 'Los agentes de IA son excelentes para inferir — pero mercados, productos, entidades legales y sistemas no deberían inferirse. Clara/EA es el modelo explícito, trazable y verificable que convierte a la IA de una suposición plausible en un razonamiento sobre hechos.',
+      'hero.cta1': 'Vea la prueba →', 'hero.cta2': 'Conozca EA/CMDB →',
+      'exp.eyebrow': 'Un experimento de un minuto', 'exp.title': 'Pídale a una IA que describa la empresa donde usted trabaja.',
+      'exp.lead': 'Mercados, productos, procesos, sistemas, infraestructura. La respuesta sonará plausible. La pregunta que importa: ¿cuánto de ella es verdad — y cuánto puede usted verificar?',
+      'exp.quote': '"La IA no lo inventó por malicia. Lo infirió porque nadie le dio el modelo."',
+      'risk.eyebrow': 'El riesgo, en números · 2026', 'risk.title': 'La decisión de usar IA ya fue tomada. La gobernanza, no.',
+      'risk.s1': 'planean poner IA agéntica en producción en los próximos 12 meses', 'risk.src1': 'Gartner, IT Symposium, oct. 2026',
+      'risk.s2': 'tienen capacidad de gobernanza para ello hoy', 'risk.src2': 'Gartner, IT Symposium, oct. 2026',
+      'risk.s3': 'incidentes de IA reportados en 2025 — récord histórico', 'risk.src3': 'Stanford, AI Index 2026',
+      'risk.s4': 'costo promedio de una violación en la que los atacantes usaron IA', 'risk.src4': 'IBM y Ponemon, Cost of a Data Breach, jul. 2026',
+      'risk.close': 'El cuello de botella no es voluntad — es contexto. La mayoría de las empresas aún no tiene un modelo explícito de sí misma para entregar a la IA.',
+      'dist.eyebrow': 'La distinción que importa', 'dist.title': 'Sin contexto, la IA infiere. Con el grafo, razona sobre hechos.',
+      'dist.lead': 'La inferencia no es el problema — es lo que hace útil a la IA. El problema es la inferencia sin respaldo: un agente sin dónde consultar los hechos llena el vacío con el patrón estadísticamente más plausible. A veces acierta. Cuando se equivoca, nadie lo nota, porque la respuesta errónea también suena plausible. Clara/EA cierra esa brecha: un modelo explícito de las capas de negocio y tecnología de la empresa, materializado en grafo por EA/CMDB, que la IA consulta en lugar de adivinar.',
+      'dist.cardA.title': 'Lo que no se delega',
+      'dist.cardA.desc': 'Mercados, segmentos y marcas. Productos, servicios y entidades legales. Estructura, roles y responsabilidades. Los sistemas e infraestructura que sostienen todo esto. Son decisiones sobre lo que la empresa es — no se deciden por inferencia no verificada.',
+      'dist.cardB.title': 'Dónde la IA agrega valor',
+      'dist.cardB.desc': 'Consultar el modelo como fuente de verdad. Acelerar el mapeo y la documentación. Analizar el impacto de un cambio antes de que ocurra. Simular escenarios — sobre hechos, no sobre suposiciones.',
+      'proof.eyebrow': 'La prueba, no la promesa', 'proof.title': 'Mismo método, mismo agente, solo divulgación pública — y el resultado es trazable.',
+      'proof.lead': 'Para probar la tesis, un agente de IA recibió Clara/EA como instrucción y, de cada organización, solo su divulgación pública — informes regulatorios, formularios de referencia, portales de relación con inversionistas. Nada más. El agente devolvió la arquitectura de negocio instanciada, dominio a dominio, con cada afirmación trazada hasta la fuente que la sustenta.',
+      'proof.col1': 'Organización', 'proof.col2': 'Dominios', 'proof.col3': 'Entidades', 'proof.col4': 'Fuentes',
+      'proof.cta': 'Explore los cinco casos →', 'proof.note': 'Documentos analíticos independientes, sin aval de las organizaciones.',
+      'depth.eyebrow': 'La diferencia real', 'depth.title': 'Dar contexto a una IA no es exclusivo de nadie. La profundidad del contexto, sí.',
+      'depth.lead': 'Anclar un agente de IA en un grafo para reducir la alucinación ya es una práctica común — cualquier herramienta de RAG o de knowledge graph empresarial hace esa promesa. La pregunta que decide si el contexto es confiable es otra: ¿hasta dónde baja ese grafo? La mayoría de los EA Repositories del mercado se detienen en Business Capability. Clara/EA baja hasta Mercado, Segmento, Marca y Entidades Legales — la jerarquía de valor completa, no solo la capa de tecnología.',
+      'depth.cta': 'Vea la jerarquía completa en EA/CMDB →',
+      'close.eyebrow': 'Para cerrar', 'close.title': 'La Arquitectura la diseñan personas — y condiciona lo que la IA puede saber con seguridad',
+      'close.lead': 'Diseñar esa estructura dejó de ser tarea de bambalinas. Es lo que determina si la IA, en su empresa, razona sobre hechos o adivina.',
+      'close.cta1': 'Conozca el framework →', 'close.cta2': 'Hable con el autor →',
+    }
+  };
+
+  function applyTranslations(lang) {
+    document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : lang);
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = translations[lang][key];
+      if (val !== undefined) el.innerHTML = val;
+    });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
