@@ -126,6 +126,13 @@ header {
 .lang-switch button.active { color: var(--brand-deep); border-bottom: 1px solid var(--accent-gold); }
 .lang-switch button:hover { color: var(--brand-deep); }
 
+/* Em telas estreitas, logo e nav-right (idiomas + Entrar) não cabem numa linha só —
+   sem isso, o botão Entrar fica cortado fora da viewport. */
+@media (max-width: 600px) {
+  .nav { flex-wrap: wrap; row-gap: 12px; }
+  .nav-right { flex-basis: 100%; justify-content: flex-end; }
+}
+
 /* ============ BUTTONS ============ */
 .btn {
   display: inline-block;
