@@ -108,7 +108,7 @@
   <div class="container reveal">
     <p class="section-eyebrow" data-i18n="st.eyebrow">Estrutura</p>
     <h2 class="section-title" style="max-width: 30ch;" data-i18n="st.title">Camadas são planos. Domínios e subdomínios, retângulos dentro deles.</h2>
-    <p class="section-lead" data-i18n="st.p1">Cada camada — as oito de negócios, as cinco de TI — é um plano. Empilhados, na ordem em que aparecem na pilha, esses planos formam a arquitetura completa: a primeira camada de cada lado, negócios ou TI, é o plano mais à frente; as demais se sucedem atrás dela.</p>
+    <p class="section-lead" data-i18n="st.p1">Cada camada — as oito de negócios, as cinco de TI — é um plano. Empilhados, na ordem em que aparecem na pilha, esses planos formam a arquitetura completa: a camada em foco fica no plano mais à frente; as vizinhas na pilha se sucedem atrás dela.</p>
     <p class="section-lead" data-i18n="st.p2">Dentro de cada plano, retângulos representam os domínios daquela camada. Dentro de cada domínio, novos retângulos agrupam as entidades e os processos que têm algo em comum entre si — são os subdomínios.</p>
     <p class="section-lead" data-i18n="st.p3">Entidades e processos não vivem numa hierarquia estrita: eles se relacionam entre si em rede, no sentido N para N — um processo pode envolver várias entidades, e uma mesma entidade pode ser usada por vários processos. Quando uma entidade atende subdomínios diferentes, ela é <strong>multi-domínio</strong>: pertence a mais de um agrupamento ao mesmo tempo.</p>
 
@@ -122,7 +122,9 @@
         </defs>
         <!-- camadas fantasmas, empilhadas atrás -->
         <path d="M 10,160 L 370,160 L 490,50 L 130,50 Z" fill="var(--bg-elevated)" stroke="#D9D4C7" stroke-width="1.3"/>
+        <text x="45" y="152" font-family="'Source Serif 4', serif" font-style="italic" font-size="10.5" fill="#B8945E" opacity="0.55" data-i18n="st.layer.back2">Camada VI · Processos</text>
         <path d="M 40,230 L 400,230 L 520,120 L 160,120 Z" fill="var(--bg-elevated)" stroke="#D9D4C7" stroke-width="1.3"/>
+        <text x="75" y="222" font-family="'Source Serif 4', serif" font-style="italic" font-size="11" fill="#B8945E" opacity="0.65" data-i18n="st.layer.back1">Camada V · Veículos Legais</text>
         <!-- plano da frente: a camada em foco -->
         <path d="M 70,300 L 430,300 L 550,190 L 190,190 Z" fill="var(--bg-elevated)" stroke="#B8945E" stroke-width="2"/>
 
@@ -158,7 +160,7 @@
           <text x="392.8" y="311.2" data-i18n="st.d4">Investimentos</text>
         </g>
         <g font-family="'Source Serif 4', serif" font-style="italic" font-size="12" fill="#B8945E" opacity="0.8">
-          <text x="246" y="330" text-anchor="middle" data-i18n="st.layer.label">Camada VI · Produtos e Serviços</text>
+          <text x="246" y="330" text-anchor="middle" data-i18n="st.layer.label">Camada IV · Produtos e Serviços</text>
         </g>
       </svg>
     </div>
@@ -181,6 +183,10 @@
             <stop offset="100%" stop-color="#B8945E" stop-opacity="0.3"/>
           </radialGradient>
         </defs>
+        <path d="M 10,160 L 370,160 L 490,50 L 130,50 Z" fill="var(--bg-primary)" stroke="#D9D4C7" stroke-width="1.3"/>
+        <text x="45" y="152" font-family="'Source Serif 4', serif" font-style="italic" font-size="10.5" fill="#B8945E" opacity="0.55" data-i18n="it.layer.back2">Camada XI · Tecnologia</text>
+        <path d="M 40,230 L 400,230 L 520,120 L 160,120 Z" fill="var(--bg-primary)" stroke="#D9D4C7" stroke-width="1.3"/>
+        <text x="75" y="222" font-family="'Source Serif 4', serif" font-style="italic" font-size="11" fill="#B8945E" opacity="0.65" data-i18n="it.layer.back1">Camada X · Dados</text>
         <path d="M 70,300 L 430,300 L 550,190 L 190,190 Z" fill="var(--bg-primary)" stroke="#B8945E" stroke-width="2"/>
 
         <path d="M 94.0,291.2 L 169.6,291.2 L 270.4,198.8 L 194.8,198.8 Z" fill="#E8DCC0" fill-opacity="0.55" stroke="#B8945E" stroke-width="1.4"/>
@@ -289,18 +295,20 @@
       'hero.lead': 'Toda camada do Clara/EA — de negócios ou de TI — segue a mesma gramática: domínios agrupam o que é afim; subdomínios, dentro de cada domínio, agrupam o que é ainda mais específico. Entidades e processos se relacionam entre si em rede, não numa hierarquia só de cima para baixo. É essa gramática que o EA/CMDB materializa em grafo.',
       'hero.cta1': 'Ver a estrutura →', 'hero.cta2': 'Ver exemplo de TI →',
       'st.eyebrow': 'Estrutura', 'st.title': 'Camadas são planos. Domínios e subdomínios, retângulos dentro deles.',
-      'st.p1': 'Cada camada — as oito de negócios, as cinco de TI — é um plano. Empilhados, na ordem em que aparecem na pilha, esses planos formam a arquitetura completa: a primeira camada de cada lado, negócios ou TI, é o plano mais à frente; as demais se sucedem atrás dela.',
+      'st.p1': 'Cada camada — as oito de negócios, as cinco de TI — é um plano. Empilhados, na ordem em que aparecem na pilha, esses planos formam a arquitetura completa: a camada em foco fica no plano mais à frente; as vizinhas na pilha se sucedem atrás dela.',
       'st.p2': 'Dentro de cada plano, retângulos representam os domínios daquela camada. Dentro de cada domínio, novos retângulos agrupam as entidades e os processos que têm algo em comum entre si — são os subdomínios.',
       'st.p3': 'Entidades e processos não vivem numa hierarquia estrita: eles se relacionam entre si em rede, no sentido N para N — um processo pode envolver várias entidades, e uma mesma entidade pode ser usada por vários processos. Quando uma entidade atende subdomínios diferentes, ela é <strong>multi-domínio</strong>: pertence a mais de um agrupamento ao mesmo tempo.',
       'st.entity.label': 'Motor de Score',
       'st.d1': 'Contas', 'st.d2': 'Crédito', 'st.d3': 'Cartões', 'st.d4': 'Investimentos',
-      'st.layer.label': 'Camada VI · Produtos e Serviços',
+      'st.layer.label': 'Camada IV · Produtos e Serviços',
+      'st.layer.back1': 'Camada V · Veículos Legais', 'st.layer.back2': 'Camada VI · Processos',
       'st.caption': 'Exemplo na camada de Produtos e Serviços: domínios à frente — Contas, Crédito, Cartões, Investimentos. Dentro de Crédito, os subdomínios <strong>1</strong> Consignado, <strong>2</strong> Pessoal e <strong>3</strong> Imobiliário. O Motor de Score é multi-domínio — atende tanto Crédito quanto Cartões.',
       'it.eyebrow': 'Exemplo — arquitetura de TI', 'it.title': 'A mesma gramática na Arquitetura de Soluções',
       'it.lead': 'A gramática não muda ao cruzar para a arquitetura de TI — só os domínios e subdomínios, que nascem dos macroprocessos de negócio, como já descrito na Arquitetura de Soluções. O mesmo recorte — domínio, subdomínio, entidade multi-domínio — se repete aqui.',
       'it.entity.label': 'Gateway de Autenticação',
       'it.d1': 'Core Bancário', 'it.d2': 'Pagamentos', 'it.d3': 'Canais Digitais', 'it.d4': 'Dados &amp; Analytics', 'it.d4short': 'Analytics',
       'it.layer.label': 'Camada IX · Arquitetura de Soluções',
+      'it.layer.back1': 'Camada X · Dados', 'it.layer.back2': 'Camada XI · Tecnologia',
       'it.caption': 'Na Arquitetura de Soluções: domínios Core Bancário, Pagamentos, Canais Digitais e Dados &amp; Analytics. Dentro de Pagamentos, os subdomínios <strong>1</strong> PIX, <strong>2</strong> TED/DOC e <strong>3</strong> Boletos. O Gateway de Autenticação é multi-domínio — compartilhado entre Pagamentos e Canais Digitais.',
       'close.eyebrow': 'Para fechar', 'close.title': 'É essa gramática que o EA/CMDB materializa em grafo',
       'close.lead': 'Camadas, domínios, subdomínios, entidades, processos e suas relações N para N — tudo isso vira grafo navegável no EA/CMDB, não um diagrama estático que fica desatualizado.',
@@ -325,18 +333,20 @@
       'hero.lead': 'Every Clara/EA layer — business or IT — follows the same grammar: domains group what\'s alike; subdomains, within each domain, group what\'s even more specific. Entities and processes relate to each other as a network, not a strict top-down hierarchy. That grammar is what EA/CMDB materializes as a graph.',
       'hero.cta1': 'See the structure →', 'hero.cta2': 'See the IT example →',
       'st.eyebrow': 'Structure', 'st.title': 'Layers are planes. Domains and subdomains, rectangles within them.',
-      'st.p1': 'Each layer — the eight business layers, the five IT layers — is a plane. Stacked in the order they appear in the stack, these planes form the complete architecture: the first layer on each side, business or IT, is the frontmost plane; the rest follow behind it.',
+      'st.p1': 'Each layer — the eight business layers, the five IT layers — is a plane. Stacked in the order they appear in the stack, these planes form the complete architecture: the layer in focus sits in the frontmost plane; its neighbors in the stack follow behind it.',
       'st.p2': 'Within each plane, rectangles represent that layer\'s domains. Within each domain, further rectangles group the entities and processes that have something in common — these are the subdomains.',
       'st.p3': 'Entities and processes don\'t live in a strict hierarchy: they relate to each other as a network, in an N-to-N sense — a process can involve several entities, and a single entity can be used by several processes. When an entity serves different subdomains, it\'s <strong>multi-domain</strong>: it belongs to more than one grouping at once.',
       'st.entity.label': 'Credit Scoring Engine',
       'st.d1': 'Accounts', 'st.d2': 'Credit', 'st.d3': 'Cards', 'st.d4': 'Investments',
-      'st.layer.label': 'Layer VI · Products and Services',
+      'st.layer.label': 'Layer IV · Products and Services',
+      'st.layer.back1': 'Layer V · Legal Entities', 'st.layer.back2': 'Layer VI · Processes',
       'st.caption': 'Example in the Products and Services layer: domains up front — Accounts, Credit, Cards, Investments. Within Credit, the subdomains <strong>1</strong> Payroll-deductible, <strong>2</strong> Personal and <strong>3</strong> Mortgage. The Credit Scoring Engine is multi-domain — it serves both Credit and Cards.',
       'it.eyebrow': 'Example — IT architecture', 'it.title': 'The same grammar in Solutions Architecture',
       'it.lead': 'The grammar doesn\'t change when crossing into IT architecture — only the domains and subdomains, which come from the business macro-processes, as already described in Solutions Architecture. The same cut — domain, subdomain, multi-domain entity — repeats here.',
       'it.entity.label': 'Authentication Gateway',
       'it.d1': 'Core Banking', 'it.d2': 'Payments', 'it.d3': 'Digital Channels', 'it.d4': 'Data &amp; Analytics', 'it.d4short': 'Analytics',
       'it.layer.label': 'Layer IX · Solutions Architecture',
+      'it.layer.back1': 'Layer X · Data', 'it.layer.back2': 'Layer XI · Technology',
       'it.caption': 'In Solutions Architecture: domains Core Banking, Payments, Digital Channels and Data &amp; Analytics. Within Payments, the subdomains <strong>1</strong> Instant Payments, <strong>2</strong> Wire Transfers and <strong>3</strong> Bill Payments. The Authentication Gateway is multi-domain — shared between Payments and Digital Channels.',
       'close.eyebrow': 'In closing', 'close.title': 'That grammar is what EA/CMDB materializes as a graph',
       'close.lead': 'Layers, domains, subdomains, entities, processes and their N-to-N relationships — all of it becomes a navigable graph in EA/CMDB, not a static diagram that goes stale.',
@@ -361,18 +371,20 @@
       'hero.lead': 'Cada capa de Clara/EA — de negocio o de TI — sigue la misma gramática: los dominios agrupan lo que es afín; los subdominios, dentro de cada dominio, agrupan lo que es aún más específico. Las entidades y los procesos se relacionan entre sí en red, no en una jerarquía estricta de arriba hacia abajo. Esa gramática es la que el EA/CMDB materializa en grafo.',
       'hero.cta1': 'Ver la estructura →', 'hero.cta2': 'Ver ejemplo de TI →',
       'st.eyebrow': 'Estructura', 'st.title': 'Las capas son planos. Dominios y subdominios, rectángulos dentro de ellos.',
-      'st.p1': 'Cada capa — las ocho de negocio, las cinco de TI — es un plano. Apilados, en el orden en que aparecen en la pila, esos planos forman la arquitectura completa: la primera capa de cada lado, negocio o TI, es el plano más al frente; las demás se suceden detrás de ella.',
+      'st.p1': 'Cada capa — las ocho de negocio, las cinco de TI — es un plano. Apilados, en el orden en que aparecen en la pila, esos planos forman la arquitectura completa: la capa en foco ocupa el plano más al frente; sus vecinas en la pila se suceden detrás de ella.',
       'st.p2': 'Dentro de cada plano, rectángulos representan los dominios de esa capa. Dentro de cada dominio, nuevos rectángulos agrupan las entidades y los procesos que tienen algo en común entre sí — son los subdominios.',
       'st.p3': 'Las entidades y los procesos no viven en una jerarquía estricta: se relacionan entre sí en red, en sentido N a N — un proceso puede involucrar varias entidades, y una misma entidad puede ser usada por varios procesos. Cuando una entidad atiende subdominios diferentes, es <strong>multi-dominio</strong>: pertenece a más de un agrupamiento a la vez.',
       'st.entity.label': 'Motor de Score',
       'st.d1': 'Cuentas', 'st.d2': 'Crédito', 'st.d3': 'Tarjetas', 'st.d4': 'Inversiones',
-      'st.layer.label': 'Capa VI · Productos y Servicios',
+      'st.layer.label': 'Capa IV · Productos y Servicios',
+      'st.layer.back1': 'Capa V · Vehículos Legales', 'st.layer.back2': 'Capa VI · Procesos',
       'st.caption': 'Ejemplo en la capa de Productos y Servicios: dominios al frente — Cuentas, Crédito, Tarjetas, Inversiones. Dentro de Crédito, los subdominios <strong>1</strong> Nómina, <strong>2</strong> Personal y <strong>3</strong> Hipotecario. El Motor de Score es multi-dominio — atiende tanto Crédito como Tarjetas.',
       'it.eyebrow': 'Ejemplo — arquitectura de TI', 'it.title': 'La misma gramática en la Arquitectura de Soluciones',
       'it.lead': 'La gramática no cambia al cruzar a la arquitectura de TI — solo los dominios y subdominios, que nacen de los macroprocesos de negocio, como ya se describió en la Arquitectura de Soluciones. El mismo recorte — dominio, subdominio, entidad multi-dominio — se repite aquí.',
       'it.entity.label': 'Gateway de Autenticación',
       'it.d1': 'Core Bancario', 'it.d2': 'Pagos', 'it.d3': 'Canales Digitales', 'it.d4': 'Datos &amp; Analytics', 'it.d4short': 'Analytics',
       'it.layer.label': 'Capa IX · Arquitectura de Soluciones',
+      'it.layer.back1': 'Capa X · Datos', 'it.layer.back2': 'Capa XI · Tecnología',
       'it.caption': 'En la Arquitectura de Soluciones: dominios Core Bancario, Pagos, Canales Digitales y Datos &amp; Analytics. Dentro de Pagos, los subdominios <strong>1</strong> Pagos instantáneos, <strong>2</strong> Transferencias y <strong>3</strong> Boletas. El Gateway de Autenticación es multi-dominio — compartido entre Pagos y Canales Digitales.',
       'close.eyebrow': 'Para cerrar', 'close.title': 'Esa gramática es la que el EA/CMDB materializa en grafo',
       'close.lead': 'Capas, dominios, subdominios, entidades, procesos y sus relaciones N a N — todo eso se convierte en un grafo navegable en EA/CMDB, no en un diagrama estático que queda desactualizado.',
