@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<script src="/assets/analytics.js" async></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metamodelo — Camadas, Domínios e Subdomínios · Clara/EA</title>
+<meta name="description" content="Como o Clara/EA organiza camadas, domínios e subdomínios — e por que uma entidade pode ser multi-domínio. Exemplos de negócios e de TI.">
+<meta name="author" content="Marcelo Andrade Clara">
+<link rel="canonical" href="https://www.claraea.com.br/ClaraEA-Metamodelo.html">
+<link rel="alternate" hreflang="pt-BR" href="https://www.claraea.com.br/ClaraEA-Metamodelo.html">
+<link rel="alternate" hreflang="en" href="https://www.claraea.com.br/en/ClaraEA-Metamodelo.html">
+<link rel="alternate" hreflang="es" href="https://www.claraea.com.br/es/ClaraEA-Metamodelo.html">
+<link rel="alternate" hreflang="x-default" href="https://www.claraea.com.br/ClaraEA-Metamodelo.html">
+<!-- Favicon e tema -->
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+<meta name="theme-color" content="#1B2D4F">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Clara/EA">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:url" content="https://www.claraea.com.br/ClaraEA-Metamodelo.html">
+<meta property="og:title" content="Metamodelo — Camadas, Domínios e Subdomínios · Clara/EA">
+<meta property="og:description" content="Camadas são planos; domínios e subdomínios, retângulos dentro deles. Como o Clara/EA organiza a hierarquia — com exemplos de negócios e de TI.">
+<meta property="og:image" content="https://www.claraea.com.br/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clara/EA · Framework de Arquitetura Corporativa">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Metamodelo · Clara/EA">
+<meta name="twitter:description" content="Camadas, domínios, subdomínios e entidades multi-domínio — a gramática por trás do framework.">
+<meta name="twitter:image" content="https://www.claraea.com.br/assets/og-card.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<!-- Structured data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Metamodelo — Camadas, Domínios e Subdomínios · Clara/EA",
+  "description": "Como o Clara/EA organiza camadas, domínios e subdomínios, e por que uma entidade pode ser multi-domínio — com exemplos de negócios e de TI.",
+  "url": "https://www.claraea.com.br/ClaraEA-Metamodelo.html",
+  "inLanguage": "pt-BR",
+  "image": "https://www.claraea.com.br/assets/og-card.jpg",
+  "isPartOf": { "@type": "WebSite", "name": "Clara/EA", "url": "https://www.claraea.com.br/" },
+  "about": { "@type": "Thing", "name": "Clara/EA — Framework de Arquitetura Corporativa" },
+  "author": {
+    "@type": "Person",
+    "name": "Marcelo Andrade Clara",
+    "url": "https://www.claraea.com.br/ClaraEA-Autor.html",
+    "sameAs": [ "https://www.linkedin.com/in/maclara/" ]
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo">Clara<span>/</span>EA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#framework" data-i18n="nav.framework">Framework</a></li>
+        <li><a href="ClaraEA-IA.html" data-i18n="nav.ia">IA</a></li>
+        <li><a href="ClaraEA-Metodo.html" data-i18n="nav.metodo">Método</a></li>
+        <li><a href="ClaraEA-CMDB.html" data-i18n="nav.cmdb">EA/CMDB</a></li>
+        <li><a href="ClaraEA-Casos.html" data-i18n="nav.cases">Casos</a></li>
+        <li><a href="index.html#contato" data-i18n="nav.contact">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="/ClaraEA-Metamodelo.html" data-lang="pt" class="active">PT</a>
+        <a href="/en/ClaraEA-Metamodelo.html" data-lang="en">EN</a>
+        <a href="/es/ClaraEA-Metamodelo.html" data-lang="es">ES</a>
+      </div>
+      <a href="https://cmdb.saranlabs.net" class="btn btn-outline btn-sm btn-login" data-i18n="nav.login">Entrar</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero" style="border-top: none;">
+  <div class="container">
+    <p class="section-eyebrow" data-i18n="hero.eyebrow">O metamodelo</p>
+    <h1 class="section-title" style="font-size: clamp(36px,5vw,58px); max-width: 24ch;" data-i18n="hero.title">Camada, domínio e subdomínio: a gramática do framework</h1>
+    <p class="section-lead" style="font-size: 20px; max-width: 68ch;" data-i18n="hero.lead">Toda camada do Clara/EA — de negócios ou de TI — segue a mesma gramática: domínios agrupam o que é afim; subdomínios, dentro de cada domínio, agrupam o que é ainda mais específico. Entidades e processos se relacionam entre si em rede, não numa hierarquia só de cima para baixo. É essa gramática que o EA/CMDB materializa em grafo.</p>
+    <div class="hero-ctas" style="margin-top: 32px;">
+      <a href="#estrutura" class="btn btn-primary" data-i18n="hero.cta1">Ver a estrutura →</a>
+      <a href="#exemplo-ti" class="btn btn-outline" data-i18n="hero.cta2">Ver exemplo de TI →</a>
+    </div>
+  </div>
+</section>
+
+<!-- A ESTRUTURA -->
+<section id="estrutura">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="st.eyebrow">Estrutura</p>
+    <h2 class="section-title" style="max-width: 30ch;" data-i18n="st.title">Camadas são planos. Domínios e subdomínios, retângulos dentro deles.</h2>
+    <p class="section-lead" data-i18n="st.p1">Cada camada — as oito de negócios, as cinco de TI — é um plano. Empilhados, na ordem em que aparecem na pilha, esses planos formam a arquitetura completa: a primeira camada de cada lado, negócios ou TI, é o plano mais à frente; as demais se sucedem atrás dela.</p>
+    <p class="section-lead" data-i18n="st.p2">Dentro de cada plano, retângulos representam os domínios daquela camada. Dentro de cada domínio, novos retângulos agrupam as entidades e os processos que têm algo em comum entre si — são os subdomínios.</p>
+    <p class="section-lead" data-i18n="st.p3">Entidades e processos não vivem numa hierarquia estrita: eles se relacionam entre si em rede, no sentido N para N — um processo pode envolver várias entidades, e uma mesma entidade pode ser usada por vários processos. Quando uma entidade atende subdomínios diferentes, ela é <strong>multi-domínio</strong>: pertence a mais de um agrupamento ao mesmo tempo.</p>
+
+    <div style="display: flex; justify-content: center; margin: 48px 0 16px;" aria-hidden="true">
+      <svg viewBox="0 0 620 340" style="width: 100%; max-width: 560px; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="metaGlow1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F5E5B5" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#B8945E" stop-opacity="0.3"/>
+          </radialGradient>
+        </defs>
+        <!-- camadas fantasmas, empilhadas atrás -->
+        <path d="M 10,160 L 370,160 L 490,50 L 130,50 Z" fill="var(--bg-elevated)" stroke="#D9D4C7" stroke-width="1.3"/>
+        <path d="M 40,230 L 400,230 L 520,120 L 160,120 Z" fill="var(--bg-elevated)" stroke="#D9D4C7" stroke-width="1.3"/>
+        <!-- plano da frente: a camada em foco -->
+        <path d="M 70,300 L 430,300 L 550,190 L 190,190 Z" fill="var(--bg-elevated)" stroke="#B8945E" stroke-width="2"/>
+
+        <!-- domínios -->
+        <path d="M 94.0,291.2 L 169.6,291.2 L 270.4,198.8 L 194.8,198.8 Z" fill="#E8DCC0" fill-opacity="0.55" stroke="#B8945E" stroke-width="1.4"/>
+        <path d="M 180.4,291.2 L 259.6,291.2 L 360.4,198.8 L 281.2,198.8 Z" fill="#E8DCC0" fill-opacity="0.35" stroke="#B8945E" stroke-width="1.4"/>
+        <path d="M 270.4,291.2 L 346.0,291.2 L 446.8,198.8 L 371.2,198.8 Z" fill="#E8DCC0" fill-opacity="0.55" stroke="#B8945E" stroke-width="1.4"/>
+        <path d="M 356.8,291.2 L 428.8,291.2 L 529.6,198.8 L 457.6,198.8 Z" fill="#E8DCC0" fill-opacity="0.55" stroke="#B8945E" stroke-width="1.4"/>
+
+        <!-- subdomínios dentro do domínio "Crédito" -->
+        <path d="M 194.3,282.4 L 215.0,282.4 L 296.6,207.6 L 275.9,207.6 Z" fill="#B8945E" fill-opacity="0.75" stroke="#8A6A3E" stroke-width="1"/>
+        <path d="M 219.3,282.4 L 239.9,282.4 L 321.5,207.6 L 300.9,207.6 Z" fill="#B8945E" fill-opacity="0.75" stroke="#8A6A3E" stroke-width="1"/>
+        <path d="M 244.2,282.4 L 264.9,282.4 L 346.5,207.6 L 325.8,207.6 Z" fill="#B8945E" fill-opacity="0.75" stroke="#8A6A3E" stroke-width="1"/>
+        <g font-family="var(--sans)" font-weight="700" font-size="11" fill="#fff" text-anchor="middle">
+          <text x="245.4" y="248.5">1</text>
+          <text x="270.4" y="248.5">2</text>
+          <text x="295.4" y="248.5">3</text>
+        </g>
+
+        <!-- conector da entidade multi-domínio -->
+        <line x1="245.4" y1="245.0" x2="358.6" y2="245.0" stroke="#1B2D4F" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <circle cx="245.4" cy="245.0" r="26" fill="url(#metaGlow1)"/>
+        <circle cx="245.4" cy="245.0" r="6" fill="#1B2D4F"/>
+        <circle cx="358.6" cy="245.0" r="6" fill="#1B2D4F"/>
+        <rect x="258" y="222" width="100" height="18" rx="3" fill="var(--bg-primary)" stroke="#D9D4C7" stroke-width="1"/>
+        <text x="308" y="235" font-family="'Source Serif 4', serif" font-style="italic" font-size="11" fill="#1B2D4F" text-anchor="middle" data-i18n="st.entity.label">Motor de Score</text>
+
+        <!-- rótulos dos domínios -->
+        <g font-family="var(--sans)" font-weight="600" font-size="13" fill="var(--ink-primary)" text-anchor="middle">
+          <text x="131.8" y="311.2" data-i18n="st.d1">Contas</text>
+          <text x="220.0" y="311.2" data-i18n="st.d2">Crédito</text>
+          <text x="308.2" y="311.2" data-i18n="st.d3">Cartões</text>
+          <text x="392.8" y="311.2" data-i18n="st.d4">Investimentos</text>
+        </g>
+        <g font-family="'Source Serif 4', serif" font-style="italic" font-size="12" fill="#B8945E" opacity="0.8">
+          <text x="246" y="330" text-anchor="middle" data-i18n="st.layer.label">Camada VI · Produtos e Serviços</text>
+        </g>
+      </svg>
+    </div>
+    <p style="max-width: 68ch; margin: 0 auto; text-align: center; font-size: 14px; color: var(--ink-muted);" data-i18n="st.caption">Exemplo na camada de Produtos e Serviços: domínios à frente — Contas, Crédito, Cartões, Investimentos. Dentro de Crédito, os subdomínios <strong>1</strong> Consignado, <strong>2</strong> Pessoal e <strong>3</strong> Imobiliário. O Motor de Score é multi-domínio — atende tanto Crédito quanto Cartões.</p>
+  </div>
+</section>
+
+<!-- EXEMPLO DE TI -->
+<section id="exemplo-ti" style="background: var(--bg-elevated);">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="it.eyebrow">Exemplo — arquitetura de TI</p>
+    <h2 class="section-title" style="max-width: 28ch;" data-i18n="it.title">A mesma gramática na Arquitetura de Soluções</h2>
+    <p class="section-lead" data-i18n="it.lead">A gramática não muda ao cruzar para a arquitetura de TI — só os domínios e subdomínios, que nascem dos macroprocessos de negócio, como já descrito na Arquitetura de Soluções. O mesmo recorte — domínio, subdomínio, entidade multi-domínio — se repete aqui.</p>
+
+    <div style="display: flex; justify-content: center; margin: 48px 0 16px;" aria-hidden="true">
+      <svg viewBox="0 0 620 340" style="width: 100%; max-width: 560px; height: auto;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="metaGlow2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F5E5B5" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#B8945E" stop-opacity="0.3"/>
+          </radialGradient>
+        </defs>
+        <path d="M 70,300 L 430,300 L 550,190 L 190,190 Z" fill="var(--bg-primary)" stroke="#B8945E" stroke-width="2"/>
+
+        <path d="M 94.0,291.2 L 169.6,291.2 L 270.4,198.8 L 194.8,198.8 Z" fill="#E8DCC0" fill-opacity="0.55" stroke="#B8945E" stroke-width="1.4"/>
+        <path d="M 180.4,291.2 L 259.6,291.2 L 360.4,198.8 L 281.2,198.8 Z" fill="#E8DCC0" fill-opacity="0.35" stroke="#B8945E" stroke-width="1.4"/>
+        <path d="M 270.4,291.2 L 346.0,291.2 L 446.8,198.8 L 371.2,198.8 Z" fill="#E8DCC0" fill-opacity="0.55" stroke="#B8945E" stroke-width="1.4"/>
+        <path d="M 356.8,291.2 L 428.8,291.2 L 529.6,198.8 L 457.6,198.8 Z" fill="#E8DCC0" fill-opacity="0.55" stroke="#B8945E" stroke-width="1.4"/>
+
+        <path d="M 194.3,282.4 L 215.0,282.4 L 296.6,207.6 L 275.9,207.6 Z" fill="#B8945E" fill-opacity="0.75" stroke="#8A6A3E" stroke-width="1"/>
+        <path d="M 219.3,282.4 L 239.9,282.4 L 321.5,207.6 L 300.9,207.6 Z" fill="#B8945E" fill-opacity="0.75" stroke="#8A6A3E" stroke-width="1"/>
+        <path d="M 244.2,282.4 L 264.9,282.4 L 346.5,207.6 L 325.8,207.6 Z" fill="#B8945E" fill-opacity="0.75" stroke="#8A6A3E" stroke-width="1"/>
+        <g font-family="var(--sans)" font-weight="700" font-size="11" fill="#fff" text-anchor="middle">
+          <text x="245.4" y="248.5">1</text>
+          <text x="270.4" y="248.5">2</text>
+          <text x="295.4" y="248.5">3</text>
+        </g>
+
+        <line x1="245.4" y1="245.0" x2="358.6" y2="245.0" stroke="#1B2D4F" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <circle cx="245.4" cy="245.0" r="26" fill="url(#metaGlow2)"/>
+        <circle cx="245.4" cy="245.0" r="6" fill="#1B2D4F"/>
+        <circle cx="358.6" cy="245.0" r="6" fill="#1B2D4F"/>
+        <rect x="248" y="222" width="130" height="18" rx="3" fill="var(--bg-elevated)" stroke="#D9D4C7" stroke-width="1"/>
+        <text x="313" y="235" font-family="'Source Serif 4', serif" font-style="italic" font-size="11" fill="#1B2D4F" text-anchor="middle" data-i18n="it.entity.label">Gateway de Autenticação</text>
+
+        <g font-family="var(--sans)" font-weight="600" font-size="9.5" fill="var(--ink-primary)" text-anchor="middle">
+          <text x="131.8" y="309.5" data-i18n="it.d1">Core Bancário</text>
+          <text x="220.0" y="309.5" data-i18n="it.d2">Pagamentos</text>
+          <text x="308.2" y="309.5" data-i18n="it.d3">Canais Digitais</text>
+          <text x="392.8" y="309.5" data-i18n="it.d4short">Analytics</text>
+        </g>
+        <g font-family="'Source Serif 4', serif" font-style="italic" font-size="12" fill="#B8945E" opacity="0.8">
+          <text x="246" y="330" text-anchor="middle" data-i18n="it.layer.label">Camada IX · Arquitetura de Soluções</text>
+        </g>
+      </svg>
+    </div>
+    <p style="max-width: 68ch; margin: 0 auto; text-align: center; font-size: 14px; color: var(--ink-muted);" data-i18n="it.caption">Na Arquitetura de Soluções: domínios Core Bancário, Pagamentos, Canais Digitais e Dados &amp; Analytics. Dentro de Pagamentos, os subdomínios <strong>1</strong> PIX, <strong>2</strong> TED/DOC e <strong>3</strong> Boletos. O Gateway de Autenticação é multi-domínio — compartilhado entre Pagamentos e Canais Digitais.</p>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section id="fechamento" class="newsletter">
+  <div class="container reveal">
+    <p class="section-eyebrow" data-i18n="close.eyebrow">Para fechar</p>
+    <h2 data-i18n="close.title">É essa gramática que o EA/CMDB materializa em grafo</h2>
+    <p data-i18n="close.lead">Camadas, domínios, subdomínios, entidades, processos e suas relações N para N — tudo isso vira grafo navegável no EA/CMDB, não um diagrama estático que fica desatualizado.</p>
+    <div class="hero-ctas" style="margin-top: 32px; justify-content: center;">
+      <a href="ClaraEA-CMDB.html" class="btn btn-primary" data-i18n="close.cta1">Conheça o EA/CMDB →</a>
+      <a href="ClaraEA-Metodo.html" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4);" data-i18n="close.cta2">Volte ao Método →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Clara<span>/</span>EA</a>
+        <p class="footer-tagline" data-i18n="footer.tagline">Arquitetura corporativa que conecta estratégia, negócios e tecnologia.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h1">Framework</h4>
+        <ul>
+          <li><a href="index.html#framework" data-i18n="footer.l1">Camadas</a></li>
+          <li><a href="index.html#manifesto" data-i18n="footer.l2">Manifesto</a></li>
+          <li><a href="ClaraEA-IA.html" data-i18n="footer.l3">IA e Arquitetura</a></li>
+          <li><a href="ClaraEA-Metodo.html" data-i18n="footer.l9">Método</a></li>
+          <li><a href="ClaraEA-Metamodelo.html" class="current" data-i18n="footer.l10">Metamodelo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h2">Ferramenta</h4>
+        <ul>
+          <li><a href="ClaraEA-CMDB.html" data-i18n="footer.l4">EA/CMDB</a></li>
+          <li><a href="ClaraEA-CMDB.html#compare" data-i18n="footer.l6">Comparativo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h3">Sobre</h4>
+        <ul>
+          <li><a href="ClaraEA-Autor.html" data-i18n="footer.l7">Autor</a></li>
+          <li><a href="ClaraEA-Casos.html" data-i18n="footer.l5">Casos</a></li>
+          <li><a href="https://www.linkedin.com/in/maclara/" target="_blank" rel="noopener" data-i18n="footer.linkedin">LinkedIn</a></li>
+          <li><a href="mailto:contato@claraea.com.br">contato@claraea.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div data-i18n="footer.copy">© 2026 Marcelo Andrade Clara. Todos os direitos reservados.</div>
+      <div data-i18n="footer.lang">PT · EN · ES</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const translations = {
+    pt: {
+      'nav.framework': 'Framework', 'nav.ia': 'IA', 'nav.metodo': 'Método', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contato', 'nav.login': 'Entrar',
+      'footer.tagline': 'Arquitetura corporativa que conecta estratégia, negócios e tecnologia.',
+      'footer.h1': 'Framework', 'footer.h2': 'Ferramenta', 'footer.h3': 'Sobre',
+      'footer.l1': 'Camadas', 'footer.l2': 'Manifesto', 'footer.l3': 'IA e Arquitetura', 'footer.l9': 'Método', 'footer.l10': 'Metamodelo',
+      'footer.l4': 'EA/CMDB', 'footer.l6': 'Comparativo', 'footer.l5': 'Casos',
+      'footer.l7': 'Autor', 'footer.linkedin': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. Todos os direitos reservados.',
+      'footer.lang': 'PT · EN · ES',
+      'hero.eyebrow': 'O metamodelo', 'hero.title': 'Camada, domínio e subdomínio: a gramática do framework',
+      'hero.lead': 'Toda camada do Clara/EA — de negócios ou de TI — segue a mesma gramática: domínios agrupam o que é afim; subdomínios, dentro de cada domínio, agrupam o que é ainda mais específico. Entidades e processos se relacionam entre si em rede, não numa hierarquia só de cima para baixo. É essa gramática que o EA/CMDB materializa em grafo.',
+      'hero.cta1': 'Ver a estrutura →', 'hero.cta2': 'Ver exemplo de TI →',
+      'st.eyebrow': 'Estrutura', 'st.title': 'Camadas são planos. Domínios e subdomínios, retângulos dentro deles.',
+      'st.p1': 'Cada camada — as oito de negócios, as cinco de TI — é um plano. Empilhados, na ordem em que aparecem na pilha, esses planos formam a arquitetura completa: a primeira camada de cada lado, negócios ou TI, é o plano mais à frente; as demais se sucedem atrás dela.',
+      'st.p2': 'Dentro de cada plano, retângulos representam os domínios daquela camada. Dentro de cada domínio, novos retângulos agrupam as entidades e os processos que têm algo em comum entre si — são os subdomínios.',
+      'st.p3': 'Entidades e processos não vivem numa hierarquia estrita: eles se relacionam entre si em rede, no sentido N para N — um processo pode envolver várias entidades, e uma mesma entidade pode ser usada por vários processos. Quando uma entidade atende subdomínios diferentes, ela é <strong>multi-domínio</strong>: pertence a mais de um agrupamento ao mesmo tempo.',
+      'st.entity.label': 'Motor de Score',
+      'st.d1': 'Contas', 'st.d2': 'Crédito', 'st.d3': 'Cartões', 'st.d4': 'Investimentos',
+      'st.layer.label': 'Camada VI · Produtos e Serviços',
+      'st.caption': 'Exemplo na camada de Produtos e Serviços: domínios à frente — Contas, Crédito, Cartões, Investimentos. Dentro de Crédito, os subdomínios <strong>1</strong> Consignado, <strong>2</strong> Pessoal e <strong>3</strong> Imobiliário. O Motor de Score é multi-domínio — atende tanto Crédito quanto Cartões.',
+      'it.eyebrow': 'Exemplo — arquitetura de TI', 'it.title': 'A mesma gramática na Arquitetura de Soluções',
+      'it.lead': 'A gramática não muda ao cruzar para a arquitetura de TI — só os domínios e subdomínios, que nascem dos macroprocessos de negócio, como já descrito na Arquitetura de Soluções. O mesmo recorte — domínio, subdomínio, entidade multi-domínio — se repete aqui.',
+      'it.entity.label': 'Gateway de Autenticação',
+      'it.d1': 'Core Bancário', 'it.d2': 'Pagamentos', 'it.d3': 'Canais Digitais', 'it.d4': 'Dados &amp; Analytics', 'it.d4short': 'Analytics',
+      'it.layer.label': 'Camada IX · Arquitetura de Soluções',
+      'it.caption': 'Na Arquitetura de Soluções: domínios Core Bancário, Pagamentos, Canais Digitais e Dados &amp; Analytics. Dentro de Pagamentos, os subdomínios <strong>1</strong> PIX, <strong>2</strong> TED/DOC e <strong>3</strong> Boletos. O Gateway de Autenticação é multi-domínio — compartilhado entre Pagamentos e Canais Digitais.',
+      'close.eyebrow': 'Para fechar', 'close.title': 'É essa gramática que o EA/CMDB materializa em grafo',
+      'close.lead': 'Camadas, domínios, subdomínios, entidades, processos e suas relações N para N — tudo isso vira grafo navegável no EA/CMDB, não um diagrama estático que fica desatualizado.',
+      'close.cta1': 'Conheça o EA/CMDB →', 'close.cta2': 'Volte ao Método →',
+    },
+    en: {
+      'meta.title': 'Metamodel — Layers, Domains and Subdomains · Clara/EA',
+      'meta.description': 'How Clara/EA organizes layers, domains and subdomains — and why an entity can be multi-domain. With business and IT examples.',
+      'meta.og_title': 'Metamodel — Layers, Domains and Subdomains · Clara/EA',
+      'meta.og_description': 'Layers are planes; domains and subdomains, rectangles within them. How Clara/EA organizes the hierarchy — with business and IT examples.',
+      'meta.twitter_title': 'Metamodel · Clara/EA',
+      'meta.twitter_description': 'Layers, domains, subdomains and multi-domain entities — the grammar behind the framework.',
+      'nav.framework': 'Framework', 'nav.ia': 'AI', 'nav.metodo': 'Method', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Cases', 'nav.contact': 'Contact', 'nav.login': 'Sign in',
+      'footer.tagline': 'Enterprise architecture that connects strategy, business, and technology.',
+      'footer.h1': 'Framework', 'footer.h2': 'Tool', 'footer.h3': 'About',
+      'footer.l1': 'Layers', 'footer.l2': 'Manifesto', 'footer.l3': 'AI and Architecture', 'footer.l9': 'Method', 'footer.l10': 'Metamodel',
+      'footer.l4': 'EA/CMDB', 'footer.l6': 'Comparison', 'footer.l5': 'Cases',
+      'footer.l7': 'Author', 'footer.linkedin': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. All rights reserved.',
+      'footer.lang': 'PT · EN · ES',
+      'hero.eyebrow': 'The metamodel', 'hero.title': 'Layer, domain and subdomain: the framework\'s grammar',
+      'hero.lead': 'Every Clara/EA layer — business or IT — follows the same grammar: domains group what\'s alike; subdomains, within each domain, group what\'s even more specific. Entities and processes relate to each other as a network, not a strict top-down hierarchy. That grammar is what EA/CMDB materializes as a graph.',
+      'hero.cta1': 'See the structure →', 'hero.cta2': 'See the IT example →',
+      'st.eyebrow': 'Structure', 'st.title': 'Layers are planes. Domains and subdomains, rectangles within them.',
+      'st.p1': 'Each layer — the eight business layers, the five IT layers — is a plane. Stacked in the order they appear in the stack, these planes form the complete architecture: the first layer on each side, business or IT, is the frontmost plane; the rest follow behind it.',
+      'st.p2': 'Within each plane, rectangles represent that layer\'s domains. Within each domain, further rectangles group the entities and processes that have something in common — these are the subdomains.',
+      'st.p3': 'Entities and processes don\'t live in a strict hierarchy: they relate to each other as a network, in an N-to-N sense — a process can involve several entities, and a single entity can be used by several processes. When an entity serves different subdomains, it\'s <strong>multi-domain</strong>: it belongs to more than one grouping at once.',
+      'st.entity.label': 'Credit Scoring Engine',
+      'st.d1': 'Accounts', 'st.d2': 'Credit', 'st.d3': 'Cards', 'st.d4': 'Investments',
+      'st.layer.label': 'Layer VI · Products and Services',
+      'st.caption': 'Example in the Products and Services layer: domains up front — Accounts, Credit, Cards, Investments. Within Credit, the subdomains <strong>1</strong> Payroll-deductible, <strong>2</strong> Personal and <strong>3</strong> Mortgage. The Credit Scoring Engine is multi-domain — it serves both Credit and Cards.',
+      'it.eyebrow': 'Example — IT architecture', 'it.title': 'The same grammar in Solutions Architecture',
+      'it.lead': 'The grammar doesn\'t change when crossing into IT architecture — only the domains and subdomains, which come from the business macro-processes, as already described in Solutions Architecture. The same cut — domain, subdomain, multi-domain entity — repeats here.',
+      'it.entity.label': 'Authentication Gateway',
+      'it.d1': 'Core Banking', 'it.d2': 'Payments', 'it.d3': 'Digital Channels', 'it.d4': 'Data &amp; Analytics', 'it.d4short': 'Analytics',
+      'it.layer.label': 'Layer IX · Solutions Architecture',
+      'it.caption': 'In Solutions Architecture: domains Core Banking, Payments, Digital Channels and Data &amp; Analytics. Within Payments, the subdomains <strong>1</strong> Instant Payments, <strong>2</strong> Wire Transfers and <strong>3</strong> Bill Payments. The Authentication Gateway is multi-domain — shared between Payments and Digital Channels.',
+      'close.eyebrow': 'In closing', 'close.title': 'That grammar is what EA/CMDB materializes as a graph',
+      'close.lead': 'Layers, domains, subdomains, entities, processes and their N-to-N relationships — all of it becomes a navigable graph in EA/CMDB, not a static diagram that goes stale.',
+      'close.cta1': 'Explore EA/CMDB →', 'close.cta2': 'Back to the Method →',
+    },
+    es: {
+      'meta.title': 'Metamodelo — Capas, Dominios y Subdominios · Clara/EA',
+      'meta.description': 'Cómo Clara/EA organiza capas, dominios y subdominios — y por qué una entidad puede ser multi-dominio. Con ejemplos de negocio y de TI.',
+      'meta.og_title': 'Metamodelo — Capas, Dominios y Subdominios · Clara/EA',
+      'meta.og_description': 'Las capas son planos; dominios y subdominios, rectángulos dentro de ellos. Cómo Clara/EA organiza la jerarquía — con ejemplos de negocio y de TI.',
+      'meta.twitter_title': 'Metamodelo · Clara/EA',
+      'meta.twitter_description': 'Capas, dominios, subdominios y entidades multi-dominio — la gramática detrás del framework.',
+      'nav.framework': 'Framework', 'nav.ia': 'IA', 'nav.metodo': 'Método', 'nav.cmdb': 'EA/CMDB', 'nav.cases': 'Casos', 'nav.contact': 'Contacto', 'nav.login': 'Iniciar sesión',
+      'footer.tagline': 'Arquitectura empresarial que conecta estrategia, negocio y tecnología.',
+      'footer.h1': 'Framework', 'footer.h2': 'Herramienta', 'footer.h3': 'Acerca',
+      'footer.l1': 'Capas', 'footer.l2': 'Manifiesto', 'footer.l3': 'IA y Arquitectura', 'footer.l9': 'Método', 'footer.l10': 'Metamodelo',
+      'footer.l4': 'EA/CMDB', 'footer.l6': 'Comparativo', 'footer.l5': 'Casos',
+      'footer.l7': 'Autor', 'footer.linkedin': 'LinkedIn',
+      'footer.copy': '© 2026 Marcelo Andrade Clara. Todos los derechos reservados.',
+      'footer.lang': 'PT · EN · ES',
+      'hero.eyebrow': 'El metamodelo', 'hero.title': 'Capa, dominio y subdominio: la gramática del framework',
+      'hero.lead': 'Cada capa de Clara/EA — de negocio o de TI — sigue la misma gramática: los dominios agrupan lo que es afín; los subdominios, dentro de cada dominio, agrupan lo que es aún más específico. Las entidades y los procesos se relacionan entre sí en red, no en una jerarquía estricta de arriba hacia abajo. Esa gramática es la que el EA/CMDB materializa en grafo.',
+      'hero.cta1': 'Ver la estructura →', 'hero.cta2': 'Ver ejemplo de TI →',
+      'st.eyebrow': 'Estructura', 'st.title': 'Las capas son planos. Dominios y subdominios, rectángulos dentro de ellos.',
+      'st.p1': 'Cada capa — las ocho de negocio, las cinco de TI — es un plano. Apilados, en el orden en que aparecen en la pila, esos planos forman la arquitectura completa: la primera capa de cada lado, negocio o TI, es el plano más al frente; las demás se suceden detrás de ella.',
+      'st.p2': 'Dentro de cada plano, rectángulos representan los dominios de esa capa. Dentro de cada dominio, nuevos rectángulos agrupan las entidades y los procesos que tienen algo en común entre sí — son los subdominios.',
+      'st.p3': 'Las entidades y los procesos no viven en una jerarquía estricta: se relacionan entre sí en red, en sentido N a N — un proceso puede involucrar varias entidades, y una misma entidad puede ser usada por varios procesos. Cuando una entidad atiende subdominios diferentes, es <strong>multi-dominio</strong>: pertenece a más de un agrupamiento a la vez.',
+      'st.entity.label': 'Motor de Score',
+      'st.d1': 'Cuentas', 'st.d2': 'Crédito', 'st.d3': 'Tarjetas', 'st.d4': 'Inversiones',
+      'st.layer.label': 'Capa VI · Productos y Servicios',
+      'st.caption': 'Ejemplo en la capa de Productos y Servicios: dominios al frente — Cuentas, Crédito, Tarjetas, Inversiones. Dentro de Crédito, los subdominios <strong>1</strong> Nómina, <strong>2</strong> Personal y <strong>3</strong> Hipotecario. El Motor de Score es multi-dominio — atiende tanto Crédito como Tarjetas.',
+      'it.eyebrow': 'Ejemplo — arquitectura de TI', 'it.title': 'La misma gramática en la Arquitectura de Soluciones',
+      'it.lead': 'La gramática no cambia al cruzar a la arquitectura de TI — solo los dominios y subdominios, que nacen de los macroprocesos de negocio, como ya se describió en la Arquitectura de Soluciones. El mismo recorte — dominio, subdominio, entidad multi-dominio — se repite aquí.',
+      'it.entity.label': 'Gateway de Autenticación',
+      'it.d1': 'Core Bancario', 'it.d2': 'Pagos', 'it.d3': 'Canales Digitales', 'it.d4': 'Datos &amp; Analytics', 'it.d4short': 'Analytics',
+      'it.layer.label': 'Capa IX · Arquitectura de Soluciones',
+      'it.caption': 'En la Arquitectura de Soluciones: dominios Core Bancario, Pagos, Canales Digitales y Datos &amp; Analytics. Dentro de Pagos, los subdominios <strong>1</strong> Pagos instantáneos, <strong>2</strong> Transferencias y <strong>3</strong> Boletas. El Gateway de Autenticación es multi-dominio — compartido entre Pagos y Canales Digitales.',
+      'close.eyebrow': 'Para cerrar', 'close.title': 'Esa gramática es la que el EA/CMDB materializa en grafo',
+      'close.lead': 'Capas, dominios, subdominios, entidades, procesos y sus relaciones N a N — todo eso se convierte en un grafo navegable en EA/CMDB, no en un diagrama estático que queda desactualizado.',
+      'close.cta1': 'Conozca EA/CMDB →', 'close.cta2': 'Vuelva al Método →',
+    }
+  };
+
+  function applyTranslations(lang) {
+    document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : lang);
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const val = translations[lang][key];
+      if (val !== undefined) el.innerHTML = val;
+    });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
